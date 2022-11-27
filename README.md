@@ -9,7 +9,7 @@ En nuestro catálogo encontrarán las categorías: **Novelas, infantiles, divulg
 
 - **Jose Luis Acevedo**: 
 
-- **Marcos Borquez**:
+- **Marcos Borquez**: Vivo en Villa la Angostura, Neuquen. Trabajo en el FabLab de la localidad, en el cual doy clases de Robotica inicial con Arduino y clases de Fabricacion digital, soy un fiel defensor de la educación autodidacta, además, me gusta la biotecnología, la pintura, la musica y la lectura.
 
 - **Agustina Ferrada**:
 
