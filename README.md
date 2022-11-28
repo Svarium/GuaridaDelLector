@@ -5,7 +5,7 @@ En nuestro catálogo encontrarán las categorías: **Novelas, infantiles, divulg
 
 ####- Integrantes del Equipo:
 
-- **Sebastian Gallardo**:
+- **Sebastian Gallardo**:Vivo en lanus Buenos aires , tengo 22 años y trabajo en pami lanus donde cumplo la funcion de camillero . me dedico a estudiar todo lo que aprendemos en el curso y tambien a la musica .
 
 - **Jose Luis Acevedo**: 
 
