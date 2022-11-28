@@ -7,7 +7,7 @@ En nuestro catálogo encontrarán las categorías: **Novelas, infantiles, divulg
 
 - **Sebastian Gallardo**:
 
-- **Jose Luis Acevedo**: 
+- **Jose Luis Acevedo**: vivo en bella vista, trabajo en seguridad privada. actualmente estoy estudiando programacion ( fullstack ). tengo 2 hijos y en mis tiempos libres me gusta dibujar, escuchar rock y jugar al basquet.
 
 - **Marcos Borquez**: Vivo en Villa la Angostura, Neuquen. Trabajo en el FabLab de la localidad, en el cual doy clases de Robotica inicial con Arduino y clases de Fabricacion digital, soy un fiel defensor de la educación autodidacta, además, me gusta la biotecnología, la pintura, la musica y la lectura.
 
