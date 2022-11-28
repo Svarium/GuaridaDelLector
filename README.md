@@ -5,7 +5,7 @@ En nuestro catálogo encontrarán las categorías: **Novelas, infantiles, divulg
 
 ####- Integrantes del Equipo:
 
-- **Sebastian Gallardo**:
+- **Sebastian Gallardo**:Vivo en lanus Buenos aires , tengo 22 años y trabajo en pami lanus donde cumplo la funcion de camillero . me dedico a estudiar todo lo que aprendemos en el curso y tambien a la musica .
 
 - **Jose Luis Acevedo**: vivo en bella vista, tengo 33 años. Trabajo en seguridad privada. 
 Actualmente estoy estudiando programacion ( fullstack ), tengo 2 hijos y en mis tiempos libres me gusta dibujar, escuchar rock y jugar al basquet.
