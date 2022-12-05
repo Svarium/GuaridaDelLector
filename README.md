@@ -12,7 +12,7 @@ Actualmente estoy estudiando programacion ( fullstack ), tengo 2 hijos y en mis 
 
 - **Marcos Borquez**: Vivo en Villa la Angostura, Neuquen. Trabajo en el FabLab de la localidad, en el cual doy clases de Robotica inicial con Arduino y clases de Fabricacion digital, soy un fiel defensor de la educación autodidacta, además, me gusta la biotecnología, la pintura, la musica y la lectura.
 
-- **Agustina Ferrada**:
+- **Agustina Ferrada**: Vivo en Moron, tengo 20 años. Actualmente estudio programacion web full stack, soy mamá de una princesa de 1 añito y me encanta estar con mi familia en todos mis ratos libres.
 
 - **Ezequiel Muñoz:** Vivo en lanús, tengo 31 años, soy musico, tengo un canal de YouTube, me encanta leer y actualmente estoy estudiando programación (Fullstack python y javaScript). Además trabajo en reparación y armado de pc, redes y servidores.
 
