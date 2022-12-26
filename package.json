@@ -1,0 +1,24 @@
+{
+  "name": "guaridadellector",
+  "version": "1.0.0",
+  "description": "Somos un grupo de desarrolladores contratados por la empresa que lleva adelante la librería llamada \"Guarida del Lector\". Se nos contrató para llevar a cabo el desarrollo de un sitio ecommerce de venta de libros con distintas categorías (novelas, divulgación científica, comics y manga, etc). \r Con base en lo conversado e informado por la empresa se prevee el diseño del sitio que llevará el mismo nombre, \"Guarida del Lector\". En esta etapa se contempla el desarrollo del las vistas para los usuarios como así también la lógica necesaria para todas las funcionalidades que requiere una plataforma ecommerce (login de usuarios, formulario, carrito de compras, etc)\r El diseño y la programación se realizarán con node.js y para la base de datos se uilizará mysql.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Svarium/GuaridaDelLector.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Svarium/GuaridaDelLector/issues"
+  },
+  "homepage": "https://github.com/Svarium/GuaridaDelLector#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
