@@ -1,0 +1,48 @@
+.footer{
+    background-color: var(--footer);
+    color: white;
+}
+
+.footer a{
+    color: white;
+}
+
+.footer__info{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto';
+    text-align: center;
+    margin: 30px;
+    padding: 10px;
+}
+
+
+.footer__info hr{   
+    margin: 5px;
+}
+
+.footer__info--metodoPago{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.footer__info--metodoPago img{
+    width: 80%;
+    margin: 10px 0 20px;
+}
+
+.footer__info--metodoPago strong{
+    font-size: 13px;
+    
+}
+
+.footer__info--metodoPago p{
+    font-size: 10px;
+    margin-bottom: 5px;
+}
