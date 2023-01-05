@@ -3,24 +3,32 @@
     color: white;
 }
 
+.footer__section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px 10px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .footer a{
     color: white;
 }
 
-.footer__info{
+.footer__article--info{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
     font-family: 'Roboto';
     text-align: center;
-    margin: 30px;
+    margin: 20px;
     padding: 10px;
 }
 
-
-.footer__info hr{   
+.footer__article--info hr{
     margin: 5px;
 }
 
@@ -29,20 +37,21 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-
-}
-
-.footer__info--metodoPago img{
-    width: 80%;
-    margin: 10px 0 20px;
+    gap: 10px;
 }
 
 .footer__info--metodoPago strong{
-    font-size: 13px;
-    
+    font-size: 12px;
 }
 
-.footer__info--metodoPago p{
-    font-size: 10px;
-    margin-bottom: 5px;
+.footer__info--metodoPago img{  
+    width: 250px;
+
 }
+
+.copy{
+    font-size: 8px;
+    text-align: center;
+    padding: 5px;
+}
+
