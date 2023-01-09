@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Guarida del Lector</title>
+    <title>Home-Guarida del Lector</title>
     <link rel="stylesheet" href="/css/stylesheets.css">
     <script src="https://kit.fontawesome.com/ce970c0111.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="/images/logo" type="image/x-icon">
@@ -17,46 +17,62 @@
             </div>
             <nav class="header__nav">
                 <ul class="header__nav--lista">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Novelas</a></li>
-                    <li><a href="">Infantil</a></li>
-                    <li><a href="">Divulgación Científica</a></li>
-                    <li><a href="">Mangas y Comics</a></li>
+                    <li><a href="">Home |</a></li>
+                    <li><a href="">Novelas |</a></li>
+                    <li><a href="">Infantil |</a></li>
+                    <li><a href="">Divulgación Científica|</a></li>
+                    <li><a href="">Mangas y Comics |</a></li>
                     <li><a href="">Nosotros</a></li>
                 </ul>
             </nav>
+            <div class="header--buscador">
+                <form action="">
+                    <input type="search" name="buscador" placeholder="Buscar títulos y categorías">
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+            </div>
+            <div class="header__nav__menu--user">   
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
             <div class="burger-menu">
                 <i class="fas fa-bars"></i>
                 </div> <br>
-        </div>   
+        </div>
+        
+        
     </header>
     <main class="main">
+        <hr>
+        
     </main>
-    <footer class="footer">
-        <div class="footer__info"> 
-                <div class="footer__info--datos">
-                    <strong>¿Quienes somos?</strong>
-                    <hr>
-                    <p>Grupos de Lectura</p>
-                    <hr>
-                    <a href="#">Iniciar Sesion/Registrarse</a>
-                </div>                
-        </div>
-        <div class="footer__info"> 
-            <div class="footer__info--datos">
-                <strong>¿En qué podemos ayudarte?</strong>
+    <footer class="footer"> 
+        <section class="footer__section">
+            <article class="footer__article--info">                 
+                <strong>¿Quienes somos?</strong>
                 <hr>
-                <a href="#">Preguntas frecuentes</a>
+                <p>Grupos de Lectura</p>
                 <hr>
-                <a href="#">Contactanos</a>
-            </div>                
-    </div>
-        <div class="footer__info--metodoPago">
-            <strong>Aceptamos los siguientes métodos de pago</strong>
-            <img src="/images/metodos de pago.png" alt="">
+                <a href="#">Iniciar Sesion/Registrarse</a>                            
+    </article>
+    <article class="footer__article--info">             
+            <strong>¿En qué podemos ayudarte?</strong>
+            <hr>
+            <a href="#">Preguntas frecuentes</a>
+            <hr>
+            <a href="#">Contactanos</a>                          
+</article>
+    <article class="footer__info--metodoPago">
+        <strong>Aceptamos los siguientes métodos de pago</strong>
+        <img src="/images/pago2.png" alt="">
+    </article>
+        </section>       
+        <section class="copy">
             <p>2022 - Guarida del Lector - Todos los derechos reservados</p>
-        </div>
-
+        </section><br>      
     </footer>
 </body>
 </html>
