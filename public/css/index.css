@@ -17,7 +17,6 @@
     align-self: center;
     height: 5px;
     margin-bottom: 20px;
-    align:center;
 }
 
 
@@ -125,6 +124,16 @@
     color: white;
 }
 
+.index__main__section--banner{
+    margin: 20px auto;
+    width: 100%;    
+}
+
+.index__main__section--banner img{
+    width: 100%;
+    
+}
+
 /* TABLETS */
 
 @media (min-width:768px) { 
@@ -140,7 +149,7 @@
     }
 
      .video--banner{
-        width: 110%;
+        width: 100%;
         display: block;
     }
 
@@ -162,7 +171,7 @@
     }
 
     .index__main__section{
-        justify-content:space-around;
+        justify-content:center;
     }
     
     .contenedor{
