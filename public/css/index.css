@@ -1,15 +1,181 @@
 .main{
-    width: 90%;
+    /* width: 90%; */
+   /*  padding: 20px; */
+}
+
+.index__main--titulares{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.index__main--titulares hr{
+    background-color: var(--footer);
+    width: 20%;
+    align-self: center;
+    height: 5px;
+    margin-bottom: 20px;
+    align:center;
+}
+
+
+.main h2{
+    text-align: center;
+}
+
+
+.index__hr--separador{
+    width: 100%;
+    height: 25px;
+    background-color: var(--footer);
+    margin-bottom: -2px;
+  
 }
 
 .index__main__section{
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
-    flex-direction: column;
-    align-items: center;
+    align-items: center; 
+    margin: 0 auto;
+}
+.index__main__section h2{
+    margin-top: 20px;
+    font-size: 1.3rem ;
+}
+
+
+.video--banner-mobile{
+    width: 100%;
 }
 
 .video--banner{
     display: none;
+}
+
+.index__main__section__article{
+    background-color: var(--footer);
+}
+
+.contenedor{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+}
+
+.card--populares{
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: rgb(226, 223, 223);
+    box-shadow: 0px 1px 10px rgba(0, 0,0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+}
+
+.card--populares:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0,0, 0.4);
+    transform: translateY(-1%);
+}
+
+.card--populares img{
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    
+
+}
+
+.card--populares{
+    padding: 15px;
+    text-align: center;
+}
+
+
+.card--populares p{
+    line-height: 1.5;
+    color: #6a6a6a;
+    display: none;
+}
+
+.card--populares h3{
+    margin-top: 5px;
+    font-weight: bolder;
+    margin-bottom: 18px;
+    color: var(--footer);
+    font-size: 25px;
+}
+
+.card--populares a{
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: var(--footer);
+    border: 1px solid var(--footer);
+    border-radius: 4px;
+    transition: all 400ms ease;
+}
+
+.card--populares a:hover{
+    background-color: var(--footer);
+    color: white;
+}
+
+/* TABLETS */
+
+@media (min-width:768px) { 
+    .contenedor{
+        width: 40%;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    .video--banner-mobile{
+        width: 100%;
+        display: none;
+    }
+
+     .video--banner{
+        width: 110%;
+        display: block;
+    }
+
+
+}
+
+/* DESKTOP */
+
+@media (min-width:1024px) {
+
+    .video--banner-mobile{
+        width: 100%;
+        display: none;
+    }
+    
+
+    .video--banner{
+        display: block;
+    }
+
+    .index__main__section{
+        justify-content:space-around;
+    }
+    
+    .contenedor{
+        width: 20%;
+        justify-content:space-around;
+        align-items: center;
+    }
+
+    .card--populares p{
+        display: block;
+    }
+
+    .index__main--titulares hr{
+        width: 10%;
+    }
 }

@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-Guarida del Lector</title>
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="/css/stylesheets.css">
     <script src="https://kit.fontawesome.com/ce970c0111.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="/images/logo" type="image/x-icon">
@@ -20,7 +22,7 @@
                     <li><a href="">Home |</a></li>
                     <li><a href="">Novelas |</a></li>
                     <li><a href="">Infantil |</a></li>
-                    <li><a href="">Divulgación Científica|</a></li>
+                    <li><a href="">Divulgación Científica |</a></li>
                     <li><a href="">Mangas y Comics |</a></li>
                     <li><a href="">Nosotros</a></li>
                 </ul>
@@ -43,20 +45,102 @@
             </div>
         </div>     
         
-    </header>
-    <!-- VIDEO BANNER -->
-    <video onloadstart="this.muted=true" autoplay muted playsinline loop width="100%" class="video--banner">
-        <source src="/images/Video Inside A Library.mp4"></video>
+    </header> 
+        
     
     <main class="main">
 
+            <!-- VIDEO BANNER -->
+    <section class="index__section--video">
+        <hr class="index__hr--separador">
+    <video onloadstart="this.muted=true" autoplay muted playsinline loop width="100%" class="video--banner">
+        <source src="/images/Video Inside A Library.mp4"></video>
+
+    <video onloadstart="this.muted=true" autoplay muted playsinline loop width="100%" class="video--banner-mobile">
+            <source src="/images/video mobile.mp4"></video>
+    </section>
+   
+
         <!-- SECCION "MAS POPULARES" -->
-        <section class="index__main__section"> <!-- a esta caja darle flex -->
-            <h2>Libros más Populares</h2>
-            <aticle class="index__main__section__article--populares">
+        <section class="index__main__section">
+            <div class="index__main--titulares">
+                <h2>Libros más Populares</h2>
+                <hr>
+            </div> <!-- a esta caja darle flex -->
+            
+            
+                <div class="contenedor" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000">
+                    <div class="card--populares">
+                        <figure>
+                            <img src="/images/Populares/cuento-de-hadas.jpg" alt="">
+                        </figure>
+                        <div class="contenido">
+                            <h3>$3500</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio atque officiis esse iste natus</p>
+                            <a href="#">Leer más</a>
+                        </div>
+                    </div>
+                </div>     
+
+                <div class="contenedor" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000">
+                    <div class="card--populares">
+                        <figure>
+                            <img src="/images/Populares/Esperando al diluvio.jpg" alt="">
+                        </figure>
+                        <div class="contenido">
+                            <h3>$4500</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio atque officiis esse iste natus</p>
+                            <a href="#">Leer más</a>
+                        </div>
+                    </div>
+                </div>     
+
+                <div class="contenedor" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000">
+                    <div class="card--populares">
+                        <figure>
+                            <img src="/images/Populares/ladrona de huesos.jpg" alt="">
+                        </figure>
+                        <div class="contenido">
+                            <h3>$3800</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio atque officiis esse iste natus </p>
+                            <a href="#">Leer más</a>
+                        </div>
+                    </div>
+                </div>     
+
+                <div class="contenedor" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000">
+                    <div class="card--populares">
+                        <figure>
+                            <img src="/images/Populares/violeta-de-isabel-allende.jpg" alt="">
+                        </figure>
+                        <div class="contenido">
+                            <h3>$5000</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio atque officiis esse iste natus</p>
+                            <a href="#">Leer más</a>
+                        </div>
+                    </div>
+                </div>     
+           
+
+
+
+
+
+            <!-- <aticle class="index__main__section__article">
+                <div class="index__main__section__article--populares">
                 <img src="/images/Populares/cuento-de-hadas.jpg" alt="" width="100px">
                 <p>$3500</p>
                 <h3>Cuento de Hadas</h3>
+                </div>
+                
             </aticle>
             <aticle class="index__main__section__article--populares">
                 <img src="/images/Populares/Esperando al diluvio.jpg" alt="" width="100px">
@@ -67,7 +151,7 @@
                 <img src="/images/Populares/violeta-de-isabel-allende.jpg" alt="" width="100px">
                 <p>$4000</p>
                 <h3>violeta</h3>
-            </aticle>
+            </aticle> -->
         </section>
         
     </main>
@@ -96,5 +180,10 @@
             <p>2022 - Guarida del Lector - Todos los derechos reservados</p>
         </section><br>      
     </footer>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
