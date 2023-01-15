@@ -19,6 +19,18 @@
     margin-bottom: 20px;
 }
 
+.envios-gratis-span{
+    background-color:var(--footer);
+    width: 100%;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+
 
 .main h2{
     text-align: center;
@@ -48,6 +60,23 @@
 
 .video--banner-mobile{
     width: 100%;
+}
+
+.index__section--video{
+    position: relative;
+}
+
+.texto-video--mobile{
+    position: absolute;
+    top: 100px;
+    z-index: 10000;  
+    color: white; 
+    text-shadow: 2px 5px 4px rgb(0, 0, 0);
+    left: 25px;
+    font-size: 18px;
+    font-weight: bolder;
+    width: 60%;
+
 }
 
 .video--banner{
@@ -151,6 +180,9 @@
      .video--banner{
         width: 100%;
         display: block;
+    }
+    .texto-video--mobile{
+        display: none;
     }
 
 
