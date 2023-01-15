@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-Guarida del Lector</title>
+    <!-- GLIDER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- MI ESTILO -->
     <link rel="stylesheet" href="/css/stylesheets.css">
+    <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/ce970c0111.js" crossorigin="anonymous"></script>
+    <!-- FAVICON -->
     <link rel="shortcut icon" href="/images/logo" type="image/x-icon">
 </head>
 <body>
@@ -145,9 +150,32 @@
             </figure>
         </section>
 
-        <!-- SECCION CATEGORIAS -->
+        <!-- SECCION CATEGORIAS -->   
+            
+        <section class="index__section--categorias" data-aos="zoom-in">
 
-        
+            <div class="glider-contain">
+                <div class="glider">
+                    <div class="imagen--categoria"><img src="/images/categorias/novelas2.jpg" alt=""></div>
+                    <div class="imagen--categoria"><img src="/images/categorias/infantil.jpg" alt=""></div>
+                    <div class="imagen--categoria"><img src="/images/categorias/divulgacion.jpg" alt=""></div>
+                    <div class="imagen--categoria"><img src="/images/categorias/manga.jpg" alt=""></div>  
+                </div>
+              
+                <button aria-label="Previous" class="glider-prev">«</button>
+                <button aria-label="Next" class="glider-next">»</button>
+                <div role="tablist" class="dots"></div>
+              </div>
+
+        </section>
+                
+                         
+       
+
+           
+       
+
+
         
     </main>
     <footer class="footer"> 
@@ -179,6 +207,45 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+
+    <!-- GLIDER -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+    <script>
+new Glider(document.querySelector('.glider'), {
+  // Mobile-first defaults
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  scrollLock: true,
+  dots: '#resp-dots',
+  arrows: {
+    prev: '.glider-prev',
+    next: '.glider-next'
+  },
+  responsive: [
+    {
+      // screens greater than >= 775px
+      breakpoint: 768,
+      settings: {
+        // Set to `auto` and provide item width to adjust to viewport
+        slidesToShow: '2',
+        slidesToScroll: '2',
+        itemWidth: 150,
+        duration: 0.25
+      }
+    },{
+      // screens greater than >= 1024px
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        itemWidth: 100,
+        duration: 0.25
+      }
+    }
+  ]
+});
     </script>
 </body>
 </html>

@@ -163,6 +163,18 @@
     
 }
 
+.index__section--categorias{
+ 
+  width: 100%;
+  
+  padding: 20px;
+  
+}
+
+.imagen--categoria img{
+    width: 100%;
+}
+
 /* TABLETS */
 
 @media (min-width:768px) { 
