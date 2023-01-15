@@ -158,9 +158,12 @@
     width: 100%;    
 }
 
+.banner__oferta--desktop{
+    display: none;
+}
+
 .index__main__section--banner img{
-    width: 100%;
-    
+    width: 100%;    
 }
 
 .index__section--categorias{
@@ -168,12 +171,36 @@
   width: 100%;
   
   padding: 20px;
+  position: relative;
   
+}
+
+.imagen--categoria{
+    
+}
+
+.imagen--categoria p{
+    position: absolute;
+    top: 138px;
+    left: 90px;
+    z-index: 10000;  
+    color: white; 
+    text-shadow: 2px 5px 4px rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: bolder;
+
 }
 
 .imagen--categoria img{
     width: 100%;
+    transition: all 0.3s ;
 }
+
+.imagen--categoria img:hover{
+      /* filter:blur(0.5px); */
+      transform:scale(1.03);
+}
+
 
 /* TABLETS */
 
@@ -194,6 +221,14 @@
         display: block;
     }
     .texto-video--mobile{
+        display: none;
+    }
+
+    .banner__oferta--desktop{
+        display: block;
+    }
+
+    .banner__oferta--mobile{
         display: none;
     }
 
