@@ -1,0 +1,145 @@
+.register__body{
+    background-image: url('/images/background-pics/2111.w039.n003.23B.p1.23.jpg');
+    background-size: 100%;
+    background-repeat:repeat-y;
+}
+
+
+.titulo--registro{
+    font-size: 17px;
+    color: white;
+    width: 100%;
+    /* margin: 10px 0; */
+    text-align: center;
+}
+
+.register__section--form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   
+    margin-top: 50%;
+}
+
+.fomulario-registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+    gap: 15px;    
+    padding: 15px;
+    background-color:#76367c;
+    border-radius: 4px;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0);
+    
+    
+}
+
+/* 
+.fomulario-registro p{
+    font-weight: 100;
+    text-align:start;
+    margin: 10px 0 10px 0;
+    font-size: 12px;
+    width: 100%;
+} */
+
+input{
+    width: 100%;
+    border: none;
+    /* border-color: var(--footer); */
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.datos--personales{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+
+}
+
+.form--password{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+.form--password label{
+    align-self:flex-start;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.form--condiciones a{
+    font-size: 12px;
+    font-family: 'roboto';
+    color: white;
+}
+.form--condiciones a:hover{
+    font-weight: bolder;
+    text-decoration: underline;
+
+}
+
+.form--buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;  
+    margin-bottom: 10px;  
+    
+}
+
+.form--buttons button{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var( --footer);
+    background-color: white;
+    color: var(--footer);
+    font-weight: bolder;
+   
+}
+
+.form--buttons button:hover{
+    box-shadow: 0px 0px 12px rgb(250, 249, 249);
+    /* color: white; */
+    font-weight: bolder;
+}
+
+
+
+/* TABLETS */
+
+@media (min-width:768px) { 
+    .fomulario-registro{
+        width: 35%;
+    }
+
+    .register__section--form{
+        margin-top: 20%;
+    }
+
+
+
+}
+
+
+/* DESKTOP */
+
+@media (min-width:1024px) {
+    .register__section--form{
+        margin-top: 10%;
+    }
+
+    .fomulario-registro{
+        width: 25%;
+    }
+}
