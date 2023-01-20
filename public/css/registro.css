@@ -17,7 +17,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;   
-    margin-top: 50%;
+    margin-top: 35%;
 }
 
 .fomulario-registro{
@@ -124,7 +124,7 @@ input{
     }
 
     .register__section--form{
-        margin-top: 20%;
+        margin-top: 15%;
     }
 
 
