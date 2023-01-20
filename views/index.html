@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-Guarida del Lector</title>
+    <!-- GLIDER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- MI ESTILO -->
     <link rel="stylesheet" href="/css/stylesheets.css">
+    <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/ce970c0111.js" crossorigin="anonymous"></script>
+    <!-- FAVICON -->
     <link rel="shortcut icon" href="/images/logo" type="image/x-icon">
 </head>
 <body>
@@ -20,7 +27,7 @@
                     <li><a href="">Home |</a></li>
                     <li><a href="">Novelas |</a></li>
                     <li><a href="">Infantil |</a></li>
-                    <li><a href="">Divulgación Científica|</a></li>
+                    <li><a href="">Divulgación Científica |</a></li>
                     <li><a href="">Mangas y Comics |</a></li>
                     <li><a href="">Nosotros</a></li>
                 </ul>
@@ -44,9 +51,154 @@
         </div>
         
         
-    </header>
+    </header> 
+        
+    
     <main class="main">
-        <hr>
+
+            <!-- VIDEO BANNER -->
+    <section class="index__section--video">
+        <span class="envios-gratis-span">ENVIOS GRATIS EN PRODUCTOS MAYORES A $5000</span>
+        <!-- <hr class="index__hr--separador"> -->
+    <video onloadstart="this.muted=true" autoplay muted playsinline loop width="100%" class="video--banner">
+        <source src="/images/Videodesktop.mp4"></video>
+
+    <video onloadstart="this.muted=true" autoplay muted playsinline loop width="100%" class="video--banner-mobile">
+            <source src="/images/mobilecuadrado.mp4">           
+        </video>
+        <p class="texto-video--mobile">"El regalo de un libro, además de obsequio, es un delicado elogio."<br>
+            -Anónimo</p>
+    </section>
+
+   
+
+        <!-- SECCION "MAS POPULARES" -->
+        <section class="index__main__section">
+
+            <div class="index__main--titulares">
+                <h2>Libros más Populares</h2>
+                <hr>
+            </div> 
+            
+            
+                <div class="contenedor" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000">
+                    <div class="card--populares">
+                        <figure>
+                            <img src="/images/Populares/cuento-de-hadas.jpg" alt="">
+                        </figure>
+                        <div class="contenido">
+                            <h3>$3500</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio atque officiis esse iste natus</p>
+                            <a href="#">Leer más</a>
+                        </div>
+                    </div>
+                </div>     
+
+                <div class="contenedor" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000">
+                    <div class="card--populares">
+                        <figure>
+                            <img src="/images/Populares/Esperando al diluvio.jpg" alt="">
+                        </figure>
+                        <div class="contenido">
+                            <h3>$4500</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio atque officiis esse iste natus</p>
+                            <a href="#">Leer más</a>
+                        </div>
+                    </div>
+                </div>     
+
+                <div class="contenedor" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000">
+                    <div class="card--populares">
+                        <figure>
+                            <img src="/images/Populares/ladrona de huesos.jpg" alt="">
+                        </figure>
+                        <div class="contenido">
+                            <h3>$3800</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio atque officiis esse iste natus </p>
+                            <a href="#">Leer más</a>
+                        </div>
+                    </div>
+                </div>     
+
+                <div class="contenedor" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000">
+                    <div class="card--populares">
+                        <figure>
+                            <img src="/images/Populares/violeta-de-isabel-allende.jpg" alt="">
+                        </figure>
+                        <div class="contenido">
+                            <h3>$5000</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio atque officiis esse iste natus</p>
+                            <a href="#">Leer más</a>
+                        </div>
+                    </div>
+                </div>     
+        
+        </section>
+
+        <!-- BANNER DE OFERTAS -->
+
+        <section class="index__main__section--banner">
+            <figure class="banner__oferta--desktop">
+                <img src="/images/bannerdesktop2-02.png" alt="">
+            </figure>
+            <figure class="banner__oferta--mobile">
+                <img src="/images/banner mobile.png" alt="">
+            </figure>
+        </section>
+
+        <!-- SECCION CATEGORIAS -->   
+            
+        <section class="index__section--categorias" data-aos="zoom-in">
+
+            <div class="index__main--titulares">
+                <h2>¡Elige tu categoría favorita!</h2>
+                <hr>
+            </div> 
+
+            <div class="glider-contain">
+                <div class="glider">
+                    <div class="imagen--categoria">
+                        <a href="#"><img src="/images/categorias/novelas.png" alt=""></a>                        
+                    </div>
+                    <div class="imagen--categoria">
+                        <a href="#"><img src="/images/categorias/infantiles.png" alt=""></a>                        
+                    </div>
+                    <div class="imagen--categoria"> <a href=""><img src="/images/categorias/divulgacion.png" alt=""></a></div>
+                    <div class="imagen--categoria"> <a href=""><img src="/images/categorias/mangas.png" alt=""> </a></div>  
+                </div>
+              
+                <button aria-label="Previous" class="glider-prev">«</button>
+                <button aria-label="Next" class="glider-next">»</button>
+                <div role="tablist" class="dots"></div>
+              </div>
+
+        </section>
+                
+           <!-- REDES SOCIALES -->              
+       <section class="index__section__redes">
+            <h5>¡Seguinos en nuestras redes!</h5>
+            <div class="redes-sociales">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>           
+            </div>
+
+       </section>
+
+           
+       
+
+
         
     </main>
     <footer class="footer"> 
@@ -74,5 +226,49 @@
             <p>2022 - Guarida del Lector - Todos los derechos reservados</p>
         </section><br>      
     </footer>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- GLIDER -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+    <script>
+new Glider(document.querySelector('.glider'), {
+  // Mobile-first defaults
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  scrollLock: true,
+  dots: '#resp-dots',
+  arrows: {
+    prev: '.glider-prev',
+    next: '.glider-next'
+  },
+  responsive: [
+    {
+      // screens greater than >= 775px
+      breakpoint: 768,
+      settings: {
+        // Set to `auto` and provide item width to adjust to viewport
+        slidesToShow: '2',
+        slidesToScroll: '2',
+        itemWidth: 150,
+        duration: 0.25
+      }
+    },{
+      // screens greater than >= 1024px
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        itemWidth: 100,
+        duration: 0.25
+      }
+    }
+  ]
+});
+    </script>
 </body>
 </html>

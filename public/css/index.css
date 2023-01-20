@@ -1,0 +1,306 @@
+.main{
+    /* width: 90%; */
+   /*  padding: 20px; */
+}
+
+.index__main--titulares{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.index__main--titulares hr{
+    background-color: var(--footer);
+    width: 20%;
+    align-self: center;
+    height: 5px;
+    margin-bottom: 20px;
+}
+
+.envios-gratis-span{
+    background-color:var(--footer);
+    width: 100%;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+
+
+.main h2{
+    text-align: center;
+}
+
+
+.index__hr--separador{
+    width: 100%;
+    height: 25px;
+    background-color: var(--footer);
+    margin-bottom: -2px;
+  
+}
+
+.index__main__section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center; 
+    margin: 0 auto;
+}
+.index__main__section h2{
+    margin-top: 20px;
+    font-size: 1.3rem ;
+}
+
+
+.video--banner-mobile{
+    width: 100%;
+}
+
+.index__section--video{
+    position: relative;
+}
+
+.texto-video--mobile{
+    position: absolute;
+    top: 100px;
+    z-index: 10000;  
+    color: white; 
+    text-shadow: 2px 5px 4px rgb(0, 0, 0);
+    left: 25px;
+    font-size: 18px;
+    font-weight: bolder;
+    width: 60%;
+
+}
+
+.video--banner{
+    display: none;
+}
+
+.index__main__section__article{
+    background-color: var(--footer);
+}
+
+.contenedor{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+}
+
+.card--populares{
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: rgb(226, 223, 223);
+    box-shadow: 0px 1px 10px rgba(0, 0,0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+}
+
+.card--populares:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0,0, 0.4);
+    transform: translateY(-1%);
+}
+
+.card--populares img{
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    
+
+}
+
+.card--populares{
+    padding: 15px;
+    text-align: center;
+}
+
+
+.card--populares p{
+    line-height: 1.5;
+    color: #6a6a6a;
+    display: none;
+}
+
+.card--populares h3{
+    margin-top: 5px;
+    font-weight: bolder;
+    margin-bottom: 18px;
+    color: var(--footer);
+    font-size: 25px;
+}
+
+.card--populares a{
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: var(--footer);
+    border: 1px solid var(--footer);
+    border-radius: 4px;
+    transition: all 400ms ease;
+}
+
+.card--populares a:hover{
+    background-color: var(--footer);
+    color: white;
+}
+
+.index__main__section--banner{
+    margin: 30px auto;
+    width: 100%;    
+}
+
+.banner__oferta--desktop{
+    display: none;
+}
+
+.index__main__section--banner img{
+    width: 100%;    
+}
+
+.index__section--categorias{ 
+  width: 100%;  
+  padding: 0 20px 0 20px;
+  position: relative;
+  
+}
+
+.imagen--categoria{
+    
+}
+
+.imagen--categoria p{
+    position: absolute;
+    top: 138px;
+    left: 90px;
+    z-index: 10000;  
+    color: white; 
+    text-shadow: 2px 5px 4px rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.imagen--categoria img{
+    width: 100%;
+    transition: all 0.3s ;
+}
+
+.imagen--categoria img:hover{
+      /* filter:blur(0.5px); */
+      transform:scale(1.01);
+}
+
+.index__section__redes{
+   display: flex;
+   flex-direction: column; 
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   background-color: bisque;
+   padding: 10px;
+}
+
+.index__section__redes img{
+    width: 200px;
+}
+
+.index__section__redes h5{
+    font-size: 22px;
+    font-weight: 100;
+}
+
+.redes-sociales{
+    font-size: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 17px;    
+}
+
+.redes-sociales i{
+    color: var(--footer);
+}
+
+.redes-sociales a:hover{
+    transform: rotate(0.5deg) scale(1.3);
+   /*  transition: width 1s, height 1s, transform 1s; */
+}
+
+/* TABLETS */
+
+@media (min-width:768px) { 
+    .contenedor{
+        width: 40%;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    .video--banner-mobile{
+        width: 100%;
+        display: none;
+    }
+
+     .video--banner{
+        width: 100%;
+        display: block;
+    }
+    .texto-video--mobile{
+        display: none;
+    }
+
+    .banner__oferta--desktop{
+        display: block;
+    }
+
+    .banner__oferta--mobile{
+        display: none;
+    }
+
+}
+
+/* DESKTOP */
+
+@media (min-width:1024px) {
+
+    .video--banner-mobile{
+        width: 100%;
+        display: none;
+    }
+    
+
+    .video--banner{
+        display: block;
+    }
+
+    .index__main__section{
+        justify-content:center;
+    }
+    
+    .contenedor{
+        width: 20%;
+        justify-content:space-around;
+        align-items: center;
+    }
+
+    .card--populares p{
+        display: block;
+    }
+
+    .index__main--titulares hr{
+        width: 10%;
+    }
+
+    .index__section__redes{
+        flex-direction: row;
+        gap: 50px;
+    }
+}
