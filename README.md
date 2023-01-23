@@ -29,3 +29,7 @@ Actualmente estoy estudiando programacion ( fullstack ), tengo 2 hijos y en mis 
 - También analizamos a https://www.cuspide.com/ y nos gustó mucho como organiza en una grilla los libros y sus categorías, además del sutil efecto hover que presenta en esa sección. Nos gustaría lograr algo similar  en la pagina donde estarán todos los libros para agregar al carrito. 
 
 - https://www.buscalibre.com.ar/v2/u es la última web que decidimos analizar. En específico vamos a tomar como referencia la sección del login que nos pareció bastante sencilla y funcional para el usuario. 
+
+####- Link de nuestro Trello:
+
+https://trello.com/b/5mxNaIoU/c18-grupo6-guarida-del-lector
