@@ -36,15 +36,24 @@
    border-radius: 5px;
 }
 
+.carrito__main--titulares{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.carrito__main--titulares h2{
+   font-weight: 100;
+}
+
+.carrito__main--titulares hr{
+   background-color: var(--footer);
+   height: 5px;
+}
 
 /*TERMINA PRUEBA  */
 
 
-.carrito__main h5{
-   border-bottom: 1px solid var(--footer) ;
-   margin-bottom: 15px;
-   width: 49%;
-}
+
 
 .carrito__main{
    display: flex;
@@ -302,10 +311,11 @@
 
 .main__cajaCompra{
    flex-direction: column;
+   flex-wrap: wrap;
+   align-self: flex-start;
    position: absolute;
-   left: 60%;
-
-
+   top: 55%;
+   left: 50%;
 }
 
 
@@ -333,16 +343,6 @@
     align-self: flex-start;
       
    }
-/*   
-   .main__cajaCompra{
-     
-     
-     align-self: flex-end;
-     position: relative;
-     bottom: 488px;
-     left: 163px;
-
-   }  */
    .main__carrito{
       background-color: rgb(242, 229, 211);;
       border:1px solid var(--footer);
