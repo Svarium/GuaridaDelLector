@@ -1,4 +1,6 @@
-# Proyecto Integrador: Guarida del Lector.
+# Proyecto Integrador: 
+
+![Logo del sitio](/public/images/logo)
 
 Somos un grupo de desarrolladores contratados por la empresa que lleva adelante la librería llamada "Guarida del Lector". Se nos contrató para llevar a cabo el desarrollo de un sitio ecommerce de venta de libros con distintas categorías (novelas, divulgación científica, comics y manga, etc). 
 Con base en lo conversado e informado por la empresa se prevee el diseño del sitio que llevará el mismo nombre, "Guarida del Lector". En esta etapa se contempla el desarrollo del las vistas para los usuarios como así también la lógica necesaria para todas las funcionalidades que requiere una plataforma ecommerce (login de usuarios, formulario, carrito de compras, etc)
@@ -26,4 +28,4 @@ Actualmente estoy estudiando programacion ( fullstack ), tengo 2 hijos y en mis 
 
 - [Buscalibre](https://www.buscalibre.com.ar) es la última web que decidimos analizar. En específico vamos a tomar como referencia la sección del login que nos pareció bastante sencilla y funcional para el usuario. 
 
-#### - Tablero de Trello: (https://trello.com/b/5mxNaIoU/c18-grupo6-guarida-del-lector)
+#### [Tablero de Trello](https://trello.com/b/5mxNaIoU/c18-grupo6-guarida-del-lector)
