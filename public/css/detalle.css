@@ -1,0 +1,51 @@
+.detalle{
+    width: 100%;
+    margin: 5px;
+    color: var(--footer);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.detalle__section{
+    width: 100%;
+    background-image: url(/images/background-pics/2111.w039.n003.23B.p1.23.jpg);
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+.detalle__section img{
+    width: 40%;
+    position: relative;
+    left: 0%;
+    
+}
+.detalle__section__article{
+
+}
+.detalle__section__article--datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+
+}
+.detalle__section__article--datos h2{
+    color: var(--footer);
+}
+
+.detalle__section__article--compra{
+
+}
+.detalle__section__article--envio{
+
+}
+
+@media (min-width: 768px){
+}
+
+@media (min-width: 1024px){
+
+}
