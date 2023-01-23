@@ -23,6 +23,17 @@
     box-shadow: 5px 5px 5px rgb(0,0,0);
 }
 
+.detalle__main--titulares h2{
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+.detalle__main--titulares hr{
+    height: 3px;
+    background-color: var(--footer);
+    
+}
+
 .imagen-detalle{
     width: 100%;
 }
@@ -44,7 +55,9 @@
    
 }
 .detalle__section__article--datos p{
-    width: 100%;    
+    width: 100%; 
+    text-align: center;
+    padding: 10px;   
 }
 
 .detalle__section__article--datos h2{
@@ -54,7 +67,7 @@
 .detalle__section__article--envio{
     margin: 20px 0;
     display: flex;
-    gap: 5px;
+    gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -62,21 +75,31 @@
 
 .detalle-comprar{
     padding: 10px;
-    background-color:var(--botonesDeCompra)!important;
+    /* background-color:var(--botonesDeCompra); */
     color: white;
-    border: 1px solid var(--botonesDeCompra) !important;
+   /*  border: 1px solid var(--botonesDeCompra) */ ;
     border-radius: 5px;
     align-self: center;
     font-family:'roboto' ;
 }
 .detalle__section__article--envio button{
-    padding: 10px;
-    background-color:var(--botonesGenerales) ;
+    padding: 15px;
+    background-color:#4c92dd ;
     color: white;
-    border: 1px solid var(--botonesGenerales);
+    border: 1px solid #4c92dd;
     border-radius: 5px;
     font-family:'roboto' ;
+    font-weight: 100;
 }
+
+.detalle__section__article--envio button:hover{
+    transform: scale(1.05);
+    box-shadow: 1px 1px 10px rgb(43, 154, 206);
+}
+
+
+
+
 
 @media (min-width: 768px){
 
@@ -85,7 +108,7 @@
     }
 
     .detalle-comprar{
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .detalle__section__article--envio i{

@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home-Guarida del Lector</title>
+    <title>Detalle</title>
     <!-- GLIDER -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
     <!-- AOS -->
@@ -18,11 +18,12 @@
     <header class="header">
         <div class="header__nav-menu">
             <div class="logo">  
-                <img src="/images/logo" alt="">
+                <a href="/"><img src="/images/logo" alt=""></a>
+                
             </div>
             <nav class="header__nav">
                 <ul class="header__nav--lista">
-                    <li><a href="">Home |</a></li>
+                    <li><a href="/">Home |</a></li>
                     <li><a href="">Novelas |</a></li>
                     <li><a href="">Infantil |</a></li>
                     <li><a href="">Divulgación Científica |</a></li>
@@ -40,8 +41,8 @@
 
             </div>
             <div class="header__nav__menu--user">   
-                <a href="#"><i class="fa-solid fa-user"></i></a>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="/registro"><i class="fa-solid fa-user"></i></a>
+                <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
             <div class="burger-menu">
                 <i class="fas fa-bars"></i>
@@ -52,17 +53,17 @@
     </header> 
     <span class="envios-gratis-span">ENVIOS GRATIS EN PRODUCTOS MAYORES A $5000</span>
     <main class="detalle">
-        <section class="detalle__section">
-           <!--  <div class="index__main--titulares">
-                <h2>Detalle del producto:</h2>
-            </div>  -->
+        <section class="detalle__section" data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="500">
+       
             <div class="imagen-detalle">
                 <img src="images/comics y manga/Spider-Man_Deadpool_Vol_1_3200.jpg" alt="">
             </div>
             
             <article class="detalle__section__article">
                 <div class="detalle__section__article--datos">
-                    <div class="index__main--titulares">
+                    <div class="detalle__main--titulares">
                         <h2>Spider-Man VS Deadpool</h2>
                         <hr>
                     </div>
@@ -71,12 +72,10 @@
                     <p>¡The Webbed Wonder y Merc with a Mouth se unen para su primera serie! Es acción, aventura y solo un poco de (b) romance en esta epopeya episódica que presenta al SUPERHÉROE MÁS GRANDE DEL MUNDO y la estrella de LA REVISTA DE CÓMICS MÁS GRANDE DEL MUNDO. ¡Habla de un dúo dinámico REAL!</p>
                     <h3>Precio: $5000</h3>
                 </div>
-               <!--  <div class="detalle__section__article--compra">
-                    <button>Comprar</button>
-                </div> -->
+            
             
                 <div class="detalle__section__article--envio">
-                    <button class="detalle-comprar">Comprar</button>
+                    <button class="detalle-comprar">Comprar ahora</button>
                     <button>
                         <i class="fa-solid fa-truck"></i>
                     </button>
@@ -86,6 +85,18 @@
                 </div>
             </article>
         </section>
+
+        <!-- BANNER DE OFERTAS -->
+
+        <section class="index__main__section--banner">
+            <figure class="banner__oferta--desktop">
+                <img src="/images/bannerdesktop2-02.png" alt="">
+            </figure>
+            <figure class="banner__oferta--mobile">
+                <img src="/images/banner mobile.png" alt="">
+            </figure>
+        </section>
+
 
     </main>
             <!-- REDES SOCIALES -->              
@@ -100,31 +111,74 @@
                 </div>
         
            </section>
-    <footer class="footer"> 
-        <section class="footer__section">
-            <article class="footer__article--info">                 
-                <strong>¿Quienes somos?</strong>
+           <footer class="footer"> 
+            <section class="footer__section">
+                <article class="footer__article--info">                 
+                    <strong>¿Quienes somos?</strong>
+                    <hr>
+                    <a href="#">Grupos de Lectura</a>
+                    <hr>
+                    <a href="#">Iniciar Sesion/Registrarse</a>                            
+        </article>
+        <article class="footer__article--info">             
+                <strong>¿En qué podemos ayudarte?</strong>
                 <hr>
-                <p>Grupos de Lectura</p>
+                <a href="#">Preguntas frecuentes</a>
                 <hr>
-                <a href="#">Iniciar Sesion/Registrarse</a>                            
+                <a href="#">Contactanos</a>                          
     </article>
-    <article class="footer__article--info">             
-            <strong>¿En qué podemos ayudarte?</strong>
-            <hr>
-            <a href="#">Preguntas frecuentes</a>
-            <hr>
-            <a href="#">Contactanos</a>                          
-</article>
-    <article class="footer__info--metodoPago">
-        <strong>Aceptamos los siguientes métodos de pago</strong>
-        <img src="/images/pago2.png" alt="">
-    </article>
-        </section>       
-        <section class="copy">
-            <p>2022 - Guarida del Lector - Todos los derechos reservados</p>
-        </section><br>      
-    </footer>
+        <article class="footer__info--metodoPago">
+            <strong>Aceptamos los siguientes métodos de pago</strong>
+            <img src="/images/pago2.png" alt="">
+        </article>
+            </section>       
+            <section class="copy">
+                <p>2022 - Guarida del Lector - Todos los derechos reservados</p>
+            </section><br>      
+        </footer>
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
     
-</body>
-</html>
+        <!-- GLIDER -->
+        <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+    
+        <script>
+    new Glider(document.querySelector('.glider'), {
+      // Mobile-first defaults
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      scrollLock: true,
+      dots: '#resp-dots',
+      arrows: {
+        prev: '.glider-prev',
+        next: '.glider-next'
+      },
+      responsive: [
+        {
+          // screens greater than >= 775px
+          breakpoint: 768,
+          settings: {
+            // Set to `auto` and provide item width to adjust to viewport
+            slidesToShow: '2',
+            slidesToScroll: '2',
+            itemWidth: 150,
+            duration: 0.25
+          }
+        },{
+          // screens greater than >= 1024px
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            itemWidth: 100,
+            duration: 0.25
+          }
+        }
+      ]
+    });
+        </script>
+    </body>
+    </html>

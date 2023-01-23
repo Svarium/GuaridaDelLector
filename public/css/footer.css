@@ -24,7 +24,7 @@
     justify-content: center;
     font-family: 'Roboto';
     text-align: center;
-    margin: 20px;
+   /*  margin: 20px; */
     padding: 10px;
 }
 
@@ -41,6 +41,7 @@
     justify-content: center;
     gap: 15px;
     flex-direction: column;
+    align-content: center;
 }
 
 .footer__info--metodoPago strong{
@@ -49,15 +50,40 @@
 
 .footer__info--metodoPago img{  
     width: 250px;
-
 }
 
 .copy{
-    font-size: 8px;
+    font-size: 10px;
     text-align: center;
-    padding: 5px;
-    margin: 10px;
+    margin: 30px 0 0 0;
 }
+
+
+
+/* tablets */
+
+@media (min-width:768px) {
+    .footer__section{        
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+    }         
+    
+    .footer__info--metodoPago{
+        margin: 25px 5px 0 0;
+
+    }
+
+    .footer__info--metodoPago img{  
+        width: 200px;
+    }
+
+}
+
+
+
+/* desktop */
 
 
 @media (min-width:1024px) {
@@ -66,6 +92,10 @@
         flex-wrap: wrap;
         justify-content: space-around;
         align-content: center;
-    }              
+    }   
+    
+    .footer__info--metodoPago img{  
+        width: 250px;
+    }
     
 }

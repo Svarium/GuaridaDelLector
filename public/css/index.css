@@ -1,8 +1,3 @@
-.main{
-    /* width: 90%; */
-   /*  padding: 20px; */
-}
-
 .index__main--titulares{
     display: flex;
     flex-direction: column;
