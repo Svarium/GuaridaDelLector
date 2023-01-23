@@ -1,51 +1,115 @@
 .detalle{
     width: 100%;
-    margin: 5px;
+    /* background-image: url(/images/background-pics/2111.w039.n003.23B.p1.23.jpg);
+    background-size: 100%;
+    background-repeat: repeat-y; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.detalle__section{
+    width: 90%;
+    margin: 20px 0;
     color: var(--footer);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:space-between;
     align-items: center;
+    flex-wrap: wrap;
+    border: none;
+    background-color: #DCDCDC;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px rgb(0,0,0);
 }
-.detalle__section{
+
+.imagen-detalle{
     width: 100%;
-    background-image: url(/images/background-pics/2111.w039.n003.23B.p1.23.jpg);
-    background-size: 100%;
-    background-repeat: repeat-y;
 }
-.detalle__section img{
-    width: 40%;
-    position: relative;
-    left: 0%;
+
+.imagen-detalle img{
+    width: 100%;
+}
+
+
+.detalle__section__article{
     
 }
-.detalle__section__article{
 
-}
 .detalle__section__article--datos{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
-
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   
 }
+.detalle__section__article--datos p{
+    width: 100%;    
+}
+
 .detalle__section__article--datos h2{
     color: var(--footer);
 }
 
-.detalle__section__article--compra{
-
-}
 .detalle__section__article--envio{
+    margin: 20px 0;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 
+.detalle-comprar{
+    padding: 10px;
+    background-color:var(--botonesDeCompra)!important;
+    color: white;
+    border: 1px solid var(--botonesDeCompra) !important;
+    border-radius: 5px;
+    align-self: center;
+    font-family:'roboto' ;
+}
+.detalle__section__article--envio button{
+    padding: 10px;
+    background-color:var(--botonesGenerales) ;
+    color: white;
+    border: 1px solid var(--botonesGenerales);
+    border-radius: 5px;
+    font-family:'roboto' ;
 }
 
 @media (min-width: 768px){
+
+    .detalle__section__article{
+    width: 90%;
+    }
+
+    .detalle-comprar{
+        font-size: 25px;
+    }
+
+    .detalle__section__article--envio i{
+        font-size: 25px;
+    }
 }
 
 @media (min-width: 1024px){
+
+    .detalle__section{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .imagen-detalle{
+        width: 35%;
+    }
+
+    .detalle__section__article{
+    width: 60%;
+    }
+    .detalle__section__article--datos p{
+        width: 90%;    
+    }
+    
 
 }
