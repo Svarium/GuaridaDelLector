@@ -153,6 +153,11 @@
         width: 100%;
     }
 
+    .header__nav--lista a:hover{
+        color: var(--footer);
+        font-weight: bolder;
+    }
+
     .header__nav__menu--user i{
         font-size:30px;
     }

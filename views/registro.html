@@ -1,12 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registro</title>
+    <title>Home-Guarida del Lector</title>
+    <!-- GLIDER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- MI ESTILO -->
+    <link rel="stylesheet" href="/css/stylesheets.css">
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/ce970c0111.js" crossorigin="anonymous"></script>
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="/images/logo" type="image/x-icon">
 </head>
-<body>
-    
+<body class="register__body">
+<!--     <header class="header">
+        <div class="header__nav-menu">
+            <div class="logo">  
+                <img src="/images/logo" alt="">
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav--lista">
+                    <li><a href="">Home |</a></li>
+                    <li><a href="">Novelas |</a></li>
+                    <li><a href="">Infantil |</a></li>
+                    <li><a href="">Divulgación Científica |</a></li>
+                    <li><a href="">Mangas y Comics |</a></li>
+                    <li><a href="">Nosotros</a></li>
+                </ul>
+            </nav>
+            <div class="header--buscador">
+                <form action="">
+                    <input type="search" name="buscador" placeholder="Buscar títulos y categorías">
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+            </div>
+            <div class="header__nav__menu--user">   
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>     
+        
+    </header>  -->
+   
+    <main class="registro__main">
+        
+
+        <!-- formulario registro -->
+       <section class="register__section--form">
+         
+         
+        
+            <form action="/registro" method="POST" class="fomulario-registro">
+                <h2 class="titulo--registro">Formulario de Registro</h2>
+
+                <div class="datos--personales">
+                <input type="text" name="usuario" id="usuario"  placeholder="Nombre de usuario" required>
+                <input type="email" name="email" id="email" placeholder="E-mail">
+                </div>
+
+                <div class="form--password">
+                    <input type="password" name="password" id="password" placeholder="Ingrese su contraseña" required>
+                    <input type="password" name="password2" id="password2" placeholder="Confirme su contraseña" required>
+                </div>
+                <div class="form--condiciones">
+                    <a href="#">¿Ya tenes una cuenta?</a>
+                </div>
+                <div class="form--buttons">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Borrar</button>
+                </div>
+            </form>
+
+       </section>
+      
+
+    </main>
+
+  <!--   <footer class="footer"> 
+        <section class="footer__section">
+            <article class="footer__article--info">                 
+                <strong>¿Quienes somos?</strong>
+                <hr>
+                <p>Grupos de Lectura</p>
+                <hr>
+                <a href="#">Iniciar Sesion/Registrarse</a>                            
+    </article>
+    <article class="footer__article--info">             
+            <strong>¿En qué podemos ayudarte?</strong>
+            <hr>
+            <a href="#">Preguntas frecuentes</a>
+            <hr>
+            <a href="#">Contactanos</a>                          
+</article>
+    <article class="footer__info--metodoPago">
+        <strong>Aceptamos los siguientes métodos de pago</strong>
+        <img src="/images/pago2.png" alt="">
+    </article>
+        </section>       
+        <section class="copy">
+            <p>2022 - Guarida del Lector - Todos los derechos reservados</p>
+        </section><br>      
+    </footer> -->
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- GLIDER -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+    <script>
+new Glider(document.querySelector('.glider'), {
+  // Mobile-first defaults
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  scrollLock: true,
+  dots: '#resp-dots',
+  arrows: {
+    prev: '.glider-prev',
+    next: '.glider-next'
+  },
+  responsive: [
+    {
+      // screens greater than >= 775px
+      breakpoint: 768,
+      settings: {
+        // Set to `auto` and provide item width to adjust to viewport
+        slidesToShow: '2',
+        slidesToScroll: '2',
+        itemWidth: 150,
+        duration: 0.25
+      }
+    },{
+      // screens greater than >= 1024px
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        itemWidth: 100,
+        duration: 0.25
+      }
+    }
+  ]
+});
+    </script>
 </body>
 </html>
