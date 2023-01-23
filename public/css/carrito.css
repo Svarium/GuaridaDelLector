@@ -1,0 +1,375 @@
+/* PRUEBA CARD CARRITO */
+.carrito{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   width: 90%;
+   border: none;
+   background-color: #DCDCDC;
+   border-radius: 4px;
+   box-shadow: 5px 5px 5px rgb(0,0,0);
+   margin: 20px 0;
+}
+
+.imagen-libro{
+   width: 20%;
+}
+
+.imagen-libro img{
+   width: 100px;
+}
+
+.descripcion{
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   width: 60%;
+   gap:10px ;
+   padding: 10px;
+}
+
+.descripcion button{
+   padding: 10px;
+   background-color:var(--botonesGenerales) ;
+   color: white;
+   border: 1px solid var(--botonesGenerales);
+   border-radius: 5px;
+}
+
+.carrito__main--titulares{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.carrito__main--titulares h2{
+   font-weight: 100;
+}
+
+.carrito__main--titulares hr{
+   background-color: var(--footer);
+   height: 5px;
+}
+
+/*TERMINA PRUEBA  */
+
+
+
+
+.carrito__main{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+   width: 100%;  
+}
+
+.main__contenedor__libros{
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+   border: none;
+   background-color: #DCDCDC;
+   border-radius: 4px;
+   box-shadow: 10px 10px 10px rgb(0,0,0);
+}
+
+.main__div__libro{
+   
+ display: flex;
+ width:100%;
+ justify-content: center;
+ align-items: center;
+ align-content: center;
+ box-sizing: border-box;
+ margin-bottom: 20px;
+
+}
+
+.main__div__libro__imag{
+   display: flex;
+   border-right: 1px  solid var(--footer);
+   padding: 9px;
+   position: relative;
+   height: 170px;
+}
+.main__nombre__libro{
+   border-bottom: 1px  solid var(--footer);
+   width: 219px;
+   height: 30px;
+}
+.main__div__detalles{
+   display: flex;
+   flex-direction: row;
+   width: 63%; 
+   position: relative;
+   top: 47px;
+   right: 193px;  
+}
+.main__div__detalles--precio--autor{
+   display: flex;
+}
+.main__div__detalles--precio--autor p{
+   position: relative;
+   top: 10px;
+   left: 25px;
+   width: 82px;
+}
+.main__div__detalles--precio--autor span{
+   position: relative;
+   width: 106px;
+   top: -8px;
+   left: -20px;
+}
+
+.main__id span{
+   position: relative;
+   width: 106px;
+   top: 46px;
+   right: 205px;
+   
+}
+.main__id p{
+   position: relative;
+   width: 106px;
+   top: 67px;
+   right: 204px;
+}
+.main__precio{
+
+}
+.main__cajaCompra{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 20px 0;
+} 
+.main__precioFinal{
+       display: flex;
+       flex-direction: column;
+       text-align: center;
+      margin-bottom: 20px;
+}
+.main__precioFinal--envio{
+   border-bottom: 3px solid var(--footer);
+   margin-bottom: 10px;
+}
+.man__precioFinal--subTotal{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     margin-bottom: 10px;
+}
+
+.main__precioFinal button{
+      padding: 10px;
+      background-color:var(--botonesDeCompra) ;
+      color: white;
+      border: 1px solid var(--botonesDeCompra);
+      border-radius: 5px;
+      width: 215px;
+}
+.main__carrito{
+    background-color: rgb(242, 229, 211);;
+  /*   border:1px solid var(--footer); */
+    border-radius: 4px;
+    box-shadow: 4px 5px 5px rgb(0,0,0);
+    width: 236px;
+    height: 87px;
+   display: flex;
+   align-items: center;
+   margin: 20px 0;
+}
+.main__carrito p{
+    text-align: center;
+
+}
+.main__carrito i{
+  position: relative;
+  left: 8px;
+  color: var(--footer) ;
+}
+.main__redes{
+
+}
+
+   /* Tablet */
+@media (min-width:768px){
+
+/* SECCION CARDS CARRITO */
+.carrito{
+   justify-content: space-between;
+}
+
+.imagen-libro{
+   width: 40%;
+}
+.imagen-libro img{
+   width: 160px;
+}
+
+.descripcion{
+   width: 50%;
+   gap: 20px;
+   padding: 30px;
+}
+
+.descripcion button{
+   width: 50%;
+}
+
+.main__cajaCompra{
+   margin: 20px 0;
+   flex-direction: row;
+   gap: 100px;
+   justify-content: space-between;
+   align-items: center;
+   align-content: center;
+}
+
+
+/* SECCION CARD CARRITO */
+
+
+   main h5{
+      margin-bottom: 40px;
+   }
+
+
+   
+   
+   
+   .main__div__libro{
+   
+      display: flex;
+      width: 430px;
+      box-sizing: border-box;
+      margin-bottom: 40px;
+      border: none;
+     /*  background-color: #DCDCDC;
+      border-radius: 4px;
+      box-shadow: 10px 10px 10px rgb(0,0,0); */
+     
+     }
+     .main__nombre__libro{
+      border-bottom: 1px  solid var(--footer);
+      width: 331px;
+      
+       
+    }
+    .main__div__detalles{
+      height: 182px;
+
+    }
+    .main__div__libro__imag{
+      height: 182px;
+    }
+    .main__div__detalles--precio--autor p{
+      position: relative;
+      top: 10px;
+      left: 25px;
+      width: 82px;
+   }
+   .main__div__detalles--precio--autor span{
+      position: relative;
+      width: 106px;
+      top: -8px;
+      left: -118px;
+   }
+   
+   .main__id span{
+      position: relative;
+      top: 46px;
+      right: 303px;
+      
+   }
+   .main__id p{
+      position: relative;
+      width: 106px;
+      top: 67px;
+      right: 315px;
+   }
+
+
+}
+   /* Pc */
+@media (min-width:1024px){
+/* card carrito */
+
+.carrito{
+   width: 40%;
+  margin-right: 40%;
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  
+}
+
+.main__cajaCompra{
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-self: flex-start;
+   position: absolute;
+   top: 55%;
+   left: 50%;
+}
+
+
+
+
+/* card carrito */
+
+
+
+
+
+
+
+
+   main .main__contenedor__libros,.main__cajaCompra {
+      display: flex;
+      width: 50%;
+      padding: 20px;
+      align-items: flex-start;
+      
+   }
+   .main__contenedor__libros{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+      
+   }
+   .main__carrito{
+      background-color: rgb(242, 229, 211);;
+      border:1px solid var(--footer);
+      border-radius: 4px;
+      box-shadow: 4px 5px 10px rgb(0,0,0);
+      width: 272px;
+      height: 118px;
+     display: flex;
+     align-items: center;
+  }
+  .main__precioFinal{
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   padding-left: 6px;
+  margin-bottom: 46px;
+}
+  .main__precioFinal button{
+   padding: 10px;
+   background-color:var(--botonesDeCompra) ;
+   color: white;
+   border: 1px solid var(--botonesDeCompra);
+   border-radius: 5px;
+   width: 255px;
+}
+
+
+}
+
+

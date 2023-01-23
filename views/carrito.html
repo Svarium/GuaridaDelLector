@@ -5,8 +5,175 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>carrito</title>
+    <link rel="stylesheet" href="/css/stylesheets.css">
+    <script src="https://kit.fontawesome.com/ce970c0111.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/images/logo" type="image/x-icon">
 </head>
 <body>
+    <header class="header">
+        <div class="header__nav-menu">
+            <div class="logo">  
+                <img src="/images/logo" alt="">
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav--lista">
+                    <li><a href="">Home |</a></li>
+                    <li><a href="">Novelas |</a></li>
+                    <li><a href="">Infantil |</a></li>
+                    <li><a href="">Divulgación Científica|</a></li>
+                    <li><a href="">Mangas y Comics |</a></li>
+                    <li><a href="">Nosotros</a></li>
+                </ul>
+            </nav>
+            <div class="header--buscador">
+                <form action="">
+                    <input type="search" name="buscador" placeholder="Buscar títulos y categorías">
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+            </div>
+            <div class="header__nav__menu--user">   
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>  
+    </header>
+
+     <main class="carrito__main" >
+        <span class="envios-gratis-span">ENVIOS GRATIS EN PRODUCTOS MAYORES A $5000</span>
+
+        <div class="carrito__main--titulares">
+            <h2>Carrito de compras</h2>
+            <hr>
+        </div> 
+        
+        <!-- PRUEBA CARD CARRITO -->
+
+<article class="carrito">
+    <div class="imagen-libro">
+        <img src="/images/Caos de James Gleick.jpg" alt="">
+    </div>
+    <div class="descripcion">
+        <strong>Titulo del libro: Caos</strong>
+        <hr>
+        <span>Autor: James Gleick</span>
+        <strong> Precio: $1305</strong>
+        <button type="submit">Eliminar del carrito</button>
+    </div>
+</article>
+
+<article class="carrito">
+    <div class="imagen-libro">
+        <img src="/images/Spider-Man_Deadpool_Vol_1_3200.jpg" alt="">
+    </div>
+    <div class="descripcion">
+        <strong>Titulo del libro: Spider-Man / Deadpool</strong>
+        <hr>
+        <span>Autor: Joe Kelli</span>
+        <strong> Precio: $ 2140</strong>
+        <button type="submit">Eliminar del carrito</button>
+    </div>
+</article>
     
+     
+        <div class="main__cajaCompra">
+            <div class="main__precioFinal">
+
+                <p class="main__precioFinal--envio">Precio del envio / gratuito</p>
+                <div class="man__precioFinal--subTotal">
+                    <p>Subtotal</p>
+                <p>$ 3245</p>
+                </div>                
+                <form action="" method="get">
+                <button type="submit">Proceder al pago seguro</button>
+                </form>
+           </div>
+           <div class="main__carrito"> 
+              <i class="fa-sharp fa-solid fa-truck"></i>
+              <p>Envios gratuitos con su compra mayor a $5000</p>
+           </div>
+        </div>
+   
+      
+
+
+
+
+        
+
+
+<!-- <article class="carrito">
+    <div class="imagen-libro">
+        <img src="/images/Caos de James Gleick.jpg" alt="">
+    </div>
+    <div class="descripcion">
+        <strong>Titulo del libro: Caos</strong>
+        <hr>
+        <span>Autor: James Gleick</span>
+        <strong> Precio: $1305</strong>
+        <button type="submit">Eliminar del carrito</button>
+    </div>
+</article>
+
+<article class="carrito">
+    <div class="imagen-libro">
+        <img src="/images/Caos de James Gleick.jpg" alt="">
+    </div>
+    <div class="descripcion">
+        <strong>Titulo del libro: Caos</strong>
+        <hr>
+        <span>Autor: James Gleick</span>
+        <strong> Precio: $1305</strong>
+        <button type="submit">Eliminar del carrito</button>
+    </div>
+</article> -->
+
+
+   
+     </main>
+     <!-- REDES SOCIALES -->              
+<section class="index__section__redes">
+    <h5>¡Seguinos en nuestras redes!</h5>
+    <div class="redes-sociales">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-youtube"></i></a>
+        <a href=""><i class="fa-brands fa-linkedin"></i></a>           
+    </div>
+
+</section>
+
+
+    <footer class="footer"> 
+        <section class="footer__section">
+            <article class="footer__article--info">                 
+                <strong>¿Quienes somos?</strong>
+                <hr>
+                <p>Grupos de Lectura</p>
+                <hr>
+                <a href="#">Iniciar Sesion/Registrarse</a>                            
+    </article>
+    <article class="footer__article--info">             
+            <strong>¿En qué podemos ayudarte?</strong>
+            <hr>
+            <a href="#">Preguntas frecuentes</a>
+            <hr>
+            <a href="#">Contactanos</a>                          
+</article>
+    <article class="footer__info--metodoPago">
+        <strong>Aceptamos los siguientes métodos de pago</strong>
+        <img src="/images/pago2.png" alt="">
+    </article>
+        </section>       
+        <section class="copy">
+            <p>2022 - Guarida del Lector - Todos los derechos reservados</p>
+        </section><br>      
+    </footer>
 </body>
 </html>
