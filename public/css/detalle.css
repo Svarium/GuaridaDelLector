@@ -34,7 +34,8 @@
 
 
 .detalle__section__article{
-    
+    padding: 10px;
+    text-align: center;
 }
 
 .detalle__section__article--datos{
@@ -112,6 +113,14 @@
     border-radius: 5px;
     font-family:'roboto' ;
 }
+.detalle__section--banner{
+    margin: 30px auto;
+    width:100%;    
+}
+
+.detalle__section--banner img{
+    width: 100%;    
+}
 
 @media (min-width: 768px){
 
@@ -126,6 +135,10 @@
     .detalle__section__article--envio i{
         font-size: 25px;
     }
+    .banner__oferta--mobile{
+        display: none;
+    }
+
 }
 
 @media (min-width: 1024px){
@@ -184,7 +197,8 @@
     }
 
     .detalle__section__article{
-    width: 60%;
+        width: 60%;
+       
     }
     .detalle__section__article--datos p{
         width: 90%;    
