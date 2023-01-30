@@ -18,7 +18,7 @@
     <header class="header">
         <div class="header__nav-menu">
             <div class="logo">  
-                <img src="/images/logo" alt="">
+                <a href="/"><img src="/images/logo" alt=""></a>
             </div>
             <nav class="header__nav">
                 <ul class="header__nav--lista">
@@ -53,7 +53,7 @@
     <main class="
     categoria">
         <h1>categorias</h1>
-        <h2>Novelas y Sagas</h2>
+        <h2 id="novela">Novelas y Sagas</h2>
         <section class="
         categoria__section">
             <% libros.forEach(libro => { %>
@@ -72,7 +72,7 @@
             <% } %>
             <% }) %>
         </section>
-        <h2>Infantiles</h2>
+        <h2 id="infantil">Infantiles</h2>
         <section class="
         categoria__section">
             <% libros.forEach(libro => { %>
@@ -91,7 +91,7 @@
             <% } %>
             <% }) %>
         </section>
-        <h2>Divulgacion Cientifica</h2>
+        <h2 id="ciencia">Divulgacion Cientifica</h2>
         <section class="
         categoria__section">
             <% libros.forEach(libro => { %>
@@ -110,7 +110,7 @@
             <% } %>
             <% }) %>
         </section>
-        <h2>Comics y Mangas</h2>
+        <h2 id="Comics">Comics y Mangas</h2>
         <section class="
         categoria__section">
             <% libros.forEach(libro => { %>

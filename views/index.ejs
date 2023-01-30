@@ -43,8 +43,8 @@
 
             </div>
             <div class="header__nav__menu--user">   
-                <a href="/registro"><i class="fa-solid fa-user"></i></a>
-                <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="/user/login"><i class="fa-solid fa-user"></i></a>
+                <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
             <div class="burger-menu">
                 <i class="fas fa-bars"></i>
@@ -82,65 +82,27 @@
             </div> 
             
             
-                <div class="contenedor" data-aos="fade-down"
-                data-aos-easing="linear"
-                data-aos-duration="1000">
-                    <div class="card--populares">
-                        <figure>
-                            <img src="/images/Populares/cuento-de-hadas.jpg" alt="">
-                        </figure>
+            
+                <% libros.forEach(libro => { %>
+                    <% if(libro.id >= 33 && libro.id < 37 ) { %>
+                        <div class="contenedor" data-aos="fade-down"
+                            data-aos-easing="linear"
+                            data-aos-duration="1000">
+                        <div class="card--populares">
+                            <figure>
+                            <img src="/images/<%=libro.imagen%>" alt="">
+                            </figure>
                         <div class="contenido">
-                            <h3>$3500</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio atque officiis esse iste natus</p>
-                            <a href="/products/detail/">Leer más</a>
+                            <h3>$<%=libro.precio%></h3>
+                            <p> <%= libro.description1.slice(0,100) %>...  </p>
+                            <a href="/products/detail/<%=libro.id%>">Leer más</a>
                         </div>
                     </div>
-                </div>     
-
-                <div class="contenedor" data-aos="fade-down"
-                data-aos-easing="linear"
-                data-aos-duration="1000">
-                    <div class="card--populares">
-                        <figure>
-                            <img src="/images/Populares/Esperando al diluvio.jpg" alt="">
-                        </figure>
-                        <div class="contenido">
-                            <h3>$4500</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio atque officiis esse iste natus</p>
-                            <a href="/products/detail">Leer más</a>
-                        </div>
-                    </div>
-                </div>     
-
-                <div class="contenedor" data-aos="fade-down"
-                data-aos-easing="linear"
-                data-aos-duration="1000">
-                    <div class="card--populares">
-                        <figure>
-                            <img src="/images/Populares/ladrona de huesos.jpg" alt="">
-                        </figure>
-                        <div class="contenido">
-                            <h3>$3800</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio atque officiis esse iste natus </p>
-                            <a href="/products/detail">Leer más</a>
-                        </div>
-                    </div>
-                </div>     
-
-                <div class="contenedor" data-aos="fade-down"
-                data-aos-easing="linear"
-                data-aos-duration="1000">
-                    <div class="card--populares">
-                        <figure>
-                            <img src="/images/Populares/violeta-de-isabel-allende.jpg" alt="">
-                        </figure>
-                        <div class="contenido">
-                            <h3>$5000</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio atque officiis esse iste natus</p>
-                            <a href="/products/detail">Leer más</a>
-                        </div>
-                    </div>
-                </div>     
+                </div>   
+                <% } %>  
+                <% }) %>
+                     
+            
         
         </section>
 
@@ -167,13 +129,13 @@
             <div class="glider-contain">
                 <div class="glider">
                     <div class="imagen--categoria">
-                        <a href="/products/category"><img src="/images/categorias/novelas.png" alt=""></a>                        
+                        <a href="/products/category/#novela"><img src="/images/categorias/novelas.png" alt=""></a>                        
                     </div>
                     <div class="imagen--categoria">
-                        <a href="/products/category"><img src="/images/categorias/infantiles.png" alt=""></a>                        
+                        <a href="/products/category/#infantil"><img src="/images/categorias/infantiles.png" alt=""></a>                        
                     </div>
-                    <div class="imagen--categoria"> <a href="/products/category"><img src="/images/categorias/divulgacion.png" alt=""></a></div>
-                    <div class="imagen--categoria"> <a href="/products/category"><img src="/images/categorias/mangas.png" alt=""> </a></div>  
+                    <div class="imagen--categoria"> <a href="/products/category/#ciencia"><img src="/images/categorias/divulgacion.png" alt=""></a></div>
+                    <div class="imagen--categoria"> <a href="/products/category/#Comics"><img src="/images/categorias/mangas.png" alt=""> </a></div>  
                 </div>
               
                 <button aria-label="Previous" class="glider-prev">«</button>

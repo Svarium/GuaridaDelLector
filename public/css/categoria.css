@@ -1,4 +1,4 @@
-.categoria h1 h2{
+.categoria h1, h2{
     display: flex;
     flex-direction: column;
     justify-content: center;
