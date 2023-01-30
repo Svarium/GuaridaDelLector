@@ -1,0 +1,160 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-Guarida del Lector</title>
+    <!-- GLIDER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- MI ESTILO -->
+    <link rel="stylesheet" href="/css/stylesheets.css">
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/ce970c0111.js" crossorigin="anonymous"></script>
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="/images/logo" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="header__nav-menu">
+            <div class="logo">  
+                <img src="/images/logo" alt="">
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav--lista">
+                    <li><a href="">Home |</a></li>
+                    <li><a href="">Novelas |</a></li>
+                    <li><a href="">Infantil |</a></li>
+                    <li><a href="">Divulgación Científica |</a></li>
+                    <li><a href="">Mangas y Comics |</a></li>
+                    <li><a href="">Nosotros</a></li>
+                </ul>
+            </nav>
+            <div class="header--buscador">
+                <form action="">
+                    <input type="search" name="buscador" placeholder="Buscar títulos y categorías">
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+            </div>
+            <div class="header__nav__menu--user">   
+                <a href="/user/login"><i class="fa-solid fa-user"></i></a>
+                <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="burger-menu">
+                <i class="fas fa-bars"></i>
+                </div> <br>
+        </div>
+        
+        
+    </header> 
+    <main class="
+    categoria">
+        <h1>categorias</h1>
+        <h2>Novelas y Sagas</h2>
+        <section class="
+        categoria__section">
+            <% libros.forEach(libro => { %>
+            <% if(libro.id >= 0 && libro.id < 9 ) { %>
+                <article class="
+                categoria__section__article">
+                    <a href="/products/detail/<%=libro.id%>">
+                        <img src= "/images/<%=libro.imagen%>" alt="">
+                        <div class="
+                        categoria__section__article__div">
+                            <h3><%=libro.titulo%></h3>
+                            <p>$<%=libro.precio%></p>
+                        </div>
+                    </a>
+                </article>
+            <% } %>
+            <% }) %>
+        </section>
+        <h2>Infantiles</h2>
+        <section class="
+        categoria__section">
+            <% libros.forEach(libro => { %>
+            <% if(libro.id >= 9 && libro.id < 17 ) { %>
+                <article class="
+                categoria__section__article">
+                    <a href="/products/detail/<%=libro.id%>">
+                        <img src= "/images/<%=libro.imagen%>" alt="">
+                        <div class="
+                        categoria__section__article__div">
+                            <h3><%=libro.titulo%></h3>
+                            <p>$<%=libro.precio%></p>
+                        </div>
+                    </a>
+                </article>
+            <% } %>
+            <% }) %>
+        </section>
+        <h2>Divulgacion Cientifica</h2>
+        <section class="
+        categoria__section">
+            <% libros.forEach(libro => { %>
+            <% if(libro.id >= 17 && libro.id < 25 ) { %>
+                <article class="
+                categoria__section__article">
+                    <a href="/products/detail/<%=libro.id%>">
+                        <img src= "/images/<%=libro.imagen%>" alt="">
+                        <div class="
+                        categoria__section__article__div">
+                            <h3><%=libro.titulo%></h3>
+                            <p>$<%=libro.precio%></p>
+                        </div>
+                    </a>
+                </article>
+            <% } %>
+            <% }) %>
+        </section>
+        <h2>Comics y Mangas</h2>
+        <section class="
+        categoria__section">
+            <% libros.forEach(libro => { %>
+            <% if(libro.id >= 25 && libro.id < 33 ) { %>
+                <article class="
+                categoria__section__article">
+                    <a href="/products/detail/<%=libro.id%>">
+                        <img src= "/images/<%=libro.imagen%>" alt="">
+                        <div class="
+                        categoria__section__article__div">
+                            <h3><%=libro.titulo%></h3>
+                            <p>$<%=libro.precio%></p>
+                        </div>
+                    </a>
+                </article>
+            <% } %>
+            <% }) %>
+        </section>  
+    </main>
+    <footer class="footer"> 
+        <section class="footer__section">
+            <article class="footer__article--info">                 
+                <strong>¿Quienes somos?</strong>
+                <hr>
+                <p>Grupos de Lectura</p>
+                <hr>
+                <a href="#">Iniciar Sesion/Registrarse</a>                            
+    </article>
+    <article class="footer__article--info">             
+            <strong>¿En qué podemos ayudarte?</strong>
+            <hr>
+            <a href="#">Preguntas frecuentes</a>
+            <hr>
+            <a href="#">Contactanos</a>                          
+</article>
+    <article class="footer__info--metodoPago">
+        <strong>Aceptamos los siguientes métodos de pago</strong>
+        <img src="/images/pago2.png" alt="">
+    </article>
+        </section>       
+        <section class="copy">
+            <p>2022 - Guarida del Lector - Todos los derechos reservados</p>
+        </section><br>      
+    </footer>
+    
+</body>
+</html>

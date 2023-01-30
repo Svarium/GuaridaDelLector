@@ -138,6 +138,9 @@
     .banner__oferta--mobile{
         display: none;
     }
+    .detalle-extendido{
+        display: block;
+    }
 
 }
 
@@ -156,11 +159,9 @@
     width: 60%;
     }
     .detalle__section__article--datos h2{
-        font-size: 50;
+        font-size: 60;
     }
-    .detalle-extendido{
-        display: block;
-    }
+    
     .detalle__section__article--datos p{
         width: 90%;    
     }

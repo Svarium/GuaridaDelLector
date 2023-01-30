@@ -41,7 +41,7 @@
 
             </div>
             <div class="header__nav__menu--user">   
-                <a href="/registro"><i class="fa-solid fa-user"></i></a>
+                <a href="/user/login"><i class="fa-solid fa-user"></i></a>
                 <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
             <div class="burger-menu">
@@ -58,33 +58,35 @@
         data-aos-duration="500">
        
             <div class="imagen-detalle">
-                <img src="images/comics y manga/Spider-Man_Deadpool_Vol_1_3200.jpg" alt="">
+                <img src="/images/<%= libro.imagen %>" alt="">
             </div>
             
             <article class="detalle__section__article">
                 <div class="detalle__section__article--datos">
                     <div class="index__main--titulares">
-                        <h2>Spider-Man / Deadpool</h2>
+                        <h2><%= libro.titulo %> </h2>
                         <hr>
                     </div>
-                    <p> <strong>Autor:</strong> joe Kelly y Scott Aukerman</p> 
-                    <span><strong>Editorial:</strong> Marvel Comics</span>
-                    <p>¡The Webbed Wonder y Merc with a Mouth se unen para su primera serie! Es acción, aventura y solo un poco de (b) romance en esta epopeya episódica que presenta al SUPERHÉROE MÁS GRANDE DEL MUNDO y la estrella de LA REVISTA DE CÓMICS MÁS GRANDE DEL MUNDO. ¡Habla de un dúo dinámico REAL!</p>
-                    <p class="detalle-extendido">Spiderman y Deadpool se encuentran atados en poder de Dormammu y una legión de los Sin Mente.Spiderman, molesto de que se ha visto arrastrado hasta aquí por Wade. Deadpool distrae a Dormammu hasta que consigue dislocarse la cadera y le da la oportunidad a Spiderman a agarrar su katana y liberarlos. Comienza una pelea en la que Wade vence a los Sin Mente. Una vez que consiguen escapar vuelven al lugar donde Spiderman estaba luchando con Hidroman. La pelea termina cuando Spiderman lanza a Wade dentro del villano, con una granada sin seguro. Ganan, pero Wade acaba en muy malas condiciones. Una vez separados Deadpool va a ver al presunto Dormammu, que resulta ser falso. Todo lo ha orquestado Wede para acercarse a Spiderman. Tras pagar su deuda, Wade recibe un encargo. Su próximo trabajo es matar a Peter Parker.</p>
-                    <h3>Precio: $5000</h3>
+                    <p> <strong>Autor:</strong> <%= libro.autor %></p> 
+                    <span><strong>Editorial:</strong> <%= libro.editorial %></span>
+                    <p> <strong>Genero:</strong> <%= libro.genero %>  </p>
+                    <p> <strong>Paginas:</strong> <%= libro.paginas %>  </p>
+                    <p><%= libro.description1 %></p>
+                    <p class="detalle-extendido"><%= libro.description2 %></p>
+                    <h3><strong>Precio:</strong> $<%= libro.precio %></h3>
                 </div>
                 <div class="detalle__section__article--cantidad">
                     <i>-</i><input type="number" name="" id=""><i>+</i>
                 </div>
                 <div class="detalle__section__article--envio">
                     <button class="detalle-comprar">
-                        <a href="/carrito">comprar</a>
+                        <a href="/cart">comprar</a>
                     </button>
                     <button>
-                        <a href="/carrito"><i class="fa-solid fa-truck"></i></a>
+                        <a href="/cart"><i class="fa-solid fa-truck"></i></a>
                     </button>
                     <button>
-                        <a href="/carrito"><i class="fa-solid fa-credit-card"></i></a>
+                        <a href="/cart"><i class="fa-solid fa-credit-card"></i></a>
                     </button>
                 </div>
             </article>
