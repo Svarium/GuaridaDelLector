@@ -1,5 +1,5 @@
 var express = require('express');
-const { index } = require('../../../guaridaDelLector/controllers/indexController');
+const { index } = require('../controllers/indexController');
 var router = express.Router();
 
 /* GET home page. */
