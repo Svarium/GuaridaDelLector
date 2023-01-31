@@ -1,0 +1,108 @@
+<%- include('./partials/head')  %>
+<body>
+    <%- include('./partials/header')  %>
+    <span class="envios-gratis-span">ENVIOS GRATIS EN PRODUCTOS MAYORES A $5000</span>
+    <main class="agregar__main">
+        <!-- formulario registro -->
+       <section class="register__section--form">
+         
+         
+        
+        <form action="/registro" method="POST" class="fomulario-registro">
+            <h2 class="titulo--registro">Agregar libro al catálogo</h2>
+
+            <div class="datos--personales">
+            <input type="text" name="titulo" id="titulo"  placeholder="Ingrese el título del libro" required>
+            <input type="text" name="autor" id="autor" placeholder="ingrese el nombre del autor" required>
+            <input type="number" name="precio" id="precio" placeholder="ingrese el precio del libro $$$" required>
+            </div>
+
+            <div class="agregar__categorias">
+                <label for="categorias">Elegir categoría</label>
+                <select name="categorias" id="categorias" required>
+                    <option value="novelas">Sagas y novelas</option>
+                    <option value="novelas">Infantiles</option>
+                    <option value="novelas">Divulgación</option>
+                    <option value="novelas">Mangas y Comics</option>
+                </select>
+            </div>
+
+            <div class="agregar__portada">
+                <label for="portada">Subir imagen de portada</label>
+                <input type="file" name="portada" id="portada" accept="image/png, image/jpg">
+            </div>
+
+            <div class="form--buttons">
+                <button type="submit">Agregar</button>
+                <button type="reset">Borrar</button>
+            </div>
+            <div class="form--condiciones">
+                <a href="/">Ir al inicio</a>
+            </div>
+        </form>
+
+   </section>
+
+</main>
+
+
+    </main>
+            <!-- REDES SOCIALES -->              
+            <section class="index__section__redes">
+                <h5>¡Seguinos en nuestras redes!</h5>
+                <div class="redes-sociales">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>           
+                </div>
+        
+           </section>
+           <%- include('./partials/footer')  %>
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+    
+        <!-- GLIDER -->
+        <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+    
+        <script>
+    new Glider(document.querySelector('.glider'), {
+      // Mobile-first defaults
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      scrollLock: true,
+      dots: '#resp-dots',
+      arrows: {
+        prev: '.glider-prev',
+        next: '.glider-next'
+      },
+      responsive: [
+        {
+          // screens greater than >= 775px
+          breakpoint: 768,
+          settings: {
+            // Set to `auto` and provide item width to adjust to viewport
+            slidesToShow: '2',
+            slidesToScroll: '2',
+            itemWidth: 150,
+            duration: 0.25
+          }
+        },{
+          // screens greater than >= 1024px
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            itemWidth: 100,
+            duration: 0.25
+          }
+        }
+      ]
+    });
+        </script>
+    </body>
+    </html>

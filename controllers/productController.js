@@ -12,5 +12,13 @@ module.exports={
         return res.render('detalle', {
             libro
         })
+    },
+    agregar: (req,res)=>{
+        return res.render('agregarLibro')
+    },
+    editar : (req,res)=>{
+        return res.render('editarLibro')
+        /* return res.send('HOLAAAAAAAAAAAAAAAAAA') */
     }
+    
 }
