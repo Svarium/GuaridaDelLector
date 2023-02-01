@@ -1,16 +1,16 @@
-# Proyecto Integrador: Retrospectiva Sprint 1
+# Proyecto Integrador: Retrospectiva Sprint 2
 
 #### - Dejar de hacer:
 
-Dejar de usar whatsapp para trabajar intensivamente en el proyecto porque es incómodo, poco práctico y además buscar la info compartida nos hace perder bastante tiempo.
+Atrasarse en el trabajo por miedo a hacer consultas a los demás compañeros, o por no compartir codigo, vistas, estilos, etc. 
 
 #### - Comenzar a hacer:
 
-Usar la herramienta/plataforma discord para compartir información, compartir pantalla o transmisiones, despejar dudas y juntarnos a codear.
+Hacernos más tiempo para compartir en el grupo de whastapp o en discord cómo venimos con la tarea que nos tocó realizar, ya sea mediante textos, audios o capturas de pantalla del código o las vistas.
 
 #### - Más de: 
 
-Reuniones largas (de al menos una hora) para resolver problemas, dudas y ponernos de acuerdo en consignas y temas generales del proyecto.
+Mejorar más la comunicación respecto a en qué estado esta nuestro trabajo, si tenemos dudas, consultas o si tuvimos problemas (personales o técnicos)
 
 #### - Seguir haciendo: 
 

@@ -150,12 +150,8 @@
         flex-wrap: wrap;
         gap: 5px;
         font-size: 18px;
-        width: 100%;
-    }
-
-    .header__nav--lista a:hover{
-        color: var(--footer);
-        font-weight: bolder;
+        width: 100%; 
+        color: var(--footer);        
     }
 
     .header__nav__menu--user i{

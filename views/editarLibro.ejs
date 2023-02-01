@@ -3,7 +3,9 @@
     <%- include('./partials/header')  %>
     <span class="envios-gratis-span">ENVIOS GRATIS EN PRODUCTOS MAYORES A $5000</span>
     <main class="editar__main">
-        <!-- formulario registro -->
+
+
+        <!-- formulario edicion de libro -->
        <section class="editar__section--form">
          
          
@@ -17,7 +19,7 @@
             <input type="number" name="precio" id="precio" placeholder="Editar el precio del libro $$$" required>
             </div>
 
-            <div class="agregar__categorias">
+            <div class="editar__categorias">
                 <label for="categorias">Editar categoría</label>
                 <select name="categorias" id="categorias" required>
                     <option value="novelas">Sagas y novelas</option>
@@ -27,7 +29,7 @@
                 </select>
             </div>
 
-            <div class="agregar__portada">
+            <div class="editar__portada">
                 <label for="portada">Editar imagen de portada</label>
                 <input type="file" name="portada" id="portada" accept="image/png, image/jpg">
             </div>

@@ -2,23 +2,25 @@
 <body>
     <%- include('./partials/header')  %>
     <span class="envios-gratis-span">ENVIOS GRATIS EN PRODUCTOS MAYORES A $5000</span>
-    <main class="agregar__main">
-        <!-- formulario registro -->
-       <section class="register__section--form">
+    <main class="editar__main">
+
+
+          <!-- formulario edicion de libro -->
+       <section class="editar__section--form">
          
          
         
-        <form action="/registro" method="POST" class="fomulario-registro">
-            <h2 class="titulo--registro">Agregar libro al catálogo</h2>
+        <form action="/registro" method="POST" class="fomulario-edicion">
+            <h2 class="titulo--edicion">Agregar un libro al Catálogo</h2>
 
-            <div class="datos--personales">
-            <input type="text" name="titulo" id="titulo"  placeholder="Ingrese el título del libro" required>
-            <input type="text" name="autor" id="autor" placeholder="ingrese el nombre del autor" required>
-            <input type="number" name="precio" id="precio" placeholder="ingrese el precio del libro $$$" required>
+            <div class="datos--libro">
+            <input type="text" name="titulo" id="titulo"  placeholder="Ingresar el título del libro" required>
+            <input type="text" name="autor" id="autor" placeholder="Ingresar el nombre del autor" required>
+            <input type="number" name="precio" id="precio" placeholder="Ingresar el precio del libro $$$" required>
             </div>
 
-            <div class="agregar__categorias">
-                <label for="categorias">Elegir categoría</label>
+            <div class="editar__categorias">
+                <label for="categorias">Agregar categoría</label>
                 <select name="categorias" id="categorias" required>
                     <option value="novelas">Sagas y novelas</option>
                     <option value="novelas">Infantiles</option>
@@ -27,21 +29,22 @@
                 </select>
             </div>
 
-            <div class="agregar__portada">
-                <label for="portada">Subir imagen de portada</label>
+            <div class="editar__portada">
+                <label for="portada">Agregar imagen de portada</label>
                 <input type="file" name="portada" id="portada" accept="image/png, image/jpg">
             </div>
 
-            <div class="form--buttons">
+            <div class="edicion--buttons">
                 <button type="submit">Agregar</button>
                 <button type="reset">Borrar</button>
             </div>
-            <div class="form--condiciones">
+            <div class="edicion--inicio">
                 <a href="/">Ir al inicio</a>
             </div>
         </form>
 
    </section>
+
 
 </main>
 
