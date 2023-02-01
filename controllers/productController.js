@@ -18,7 +18,7 @@ module.exports={
     },
     editar : (req,res)=>{
         return res.render('editarLibro')
-        /* return res.send('HOLAAAAAAAAAAAAAAAAAA') */
+        
     }
     
 }

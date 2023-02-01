@@ -1,0 +1,68 @@
+.editar__main{
+    width: 100%;
+    background-image: url(/images/background-pics/2111.w039.n003.23B.p1.23.jpg);
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+
+.editar__section--form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  
+}
+
+.titulo--edicion{
+    font-size: 17px;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.fomulario-edicion{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+    gap: 15px;    
+    padding: 15px;
+    background-color:#76367c;
+    border-radius: 16px;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0); 
+}
+
+.datos--libro{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.agregar__categorias{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.agregar__categorias select{
+    background-color:white;
+    border-radius: 4px;
+    padding: 5px;
+    color: black;
+    font-weight: bolder;
+   
+
+}
+
+
+.agregar__categorias label{
+    font-size: 15px;
+    color: white;
+    width: 33%;
+    text-align: center;   
+    font-weight: bolder; 
+}
