@@ -286,9 +286,24 @@
         align-items: center;
     }
 
+    .contenedor{
+        width: 310px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card--populares{
+        width: 900px;
+    }
+
+    .card--populares img{
+      
+    }
+
     .card--populares p{
         display: block;
     }
+
 
     .index__main--titulares hr{
         width: 10%;
