@@ -10,7 +10,11 @@ module.exports={
 
     //Todos los productos por categoria
     listCategory:(req,res)=>{
-        return res.render('categoria', {libros})
+      /*   const infantil = libros.filter(libro => libro.genero === "Infantil"); */
+        return res.render('categoria', {
+            libros,
+            
+        })
     },
 
     //Detalle de un producto

@@ -7,10 +7,8 @@ const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 module.exports = { 
     index:(req,res)=>{
-      const novela = libros.filter(libro => libro.genero === "novela");
       res.render('index', {
-        libros,
-        novela
+        libros
       });      
     },
     listar : (req,res) => {
