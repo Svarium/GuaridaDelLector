@@ -8,7 +8,7 @@
         data-aos-duration="500">
        
             <div class="imagen-detalle">
-                <img src="/images/<%= libro.imagen %>" alt="">
+                <img src="/images/<%= libro.imagen ? libro.imagen : 'not image.png' %>" alt="">
             </div>
             
             <article class="detalle__section__article">
@@ -39,7 +39,7 @@
                         <a href="/cart"><i class="fa-solid fa-credit-card"></i></a>
                     </button> -->
                     <button>
-                      <a href="/products/editar"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="/products/editar/<%= libro.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
                   </button>
                   <button>
                     <a href="/products/agregar"><i class="fa-solid fa-plus"></i></a>

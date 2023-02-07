@@ -10,22 +10,30 @@
          
          
         
-        <form action="/registro" method="POST" class="fomulario-edicion">
+        <form action="/products/" method="POST" class="fomulario-edicion">
             <h2 class="titulo--edicion">Agregar un libro al Catálogo</h2>
 
             <div class="datos--libro">
             <input type="text" name="titulo" id="titulo"  placeholder="Ingresar el título del libro" required>
             <input type="text" name="autor" id="autor" placeholder="Ingresar el nombre del autor" required>
             <input type="number" name="precio" id="precio" placeholder="Ingresar el precio del libro $$$" required>
+            <input type="number" name="paginas" id="paginas" placeholder="Ingrese cantidad de paginas del libro" required>
+            <input type="text" name="editorial" id="editorial" placeholder="Ingrese la editorial del libro" required>
+            <label for="description2" titulo--edicion>Descripción del Libro:</label>
+            <textarea name="description2" id="description2"  placeholder="agregue una breve descripcion del libro"></textarea>
             </div>
 
             <div class="editar__categorias">
-                <label for="categorias">Agregar categoría</label>
-                <select name="categorias" id="categorias" required>
-                    <option value="novelas">Sagas y novelas</option>
-                    <option value="novelas">Infantiles</option>
-                    <option value="novelas">Divulgación</option>
-                    <option value="novelas">Mangas y Comics</option>
+                <label for="categorias">Seleccionar genero</label>
+                <select name="genero" id="genero" required>
+                    <option value="Novela">Novela</option>
+                    <option value="Novela Ficción">Novela Ficción</option>
+                    <option value="Novela Negra">Novela Negra</option>
+                    <option value="Novela Terror">Novela Terror</option>
+                    <option value="Novela Fantasía">Novela Fantasia</option>
+                    <option value="Infantil">Infantil</option>
+                    <option value="Comics">Comics</option>
+                    <option value="Manga">Manga</option>
                 </select>
             </div>
 
@@ -36,7 +44,7 @@
 
             <div class="edicion--buttons">
                 <button type="submit">Agregar</button>
-                <button type="reset">Borrar</button>
+                <button type="reset">Cancelar</button>
             </div>
             <div class="edicion--inicio">
                 <a href="/">Ir al inicio</a>

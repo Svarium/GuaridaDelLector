@@ -1,0 +1,34 @@
+<%- include('./partials/head')  %>
+<body>
+    <%- include('./partials/header')  %>
+    <span class="envios-gratis-span">ENVIOS GRATIS EN PRODUCTOS MAYORES A $5000</span>
+
+    <section class="index__main__section">
+
+        <div class="index__main--titulares">
+            <h2 id="todos">Todos nuestros Libros</h2>
+            <hr>
+        </div> 
+
+    <% libros.forEach(libro => { %>
+        <div class="contenedor">
+    <div class="card--populares">
+        <figure>
+        <img src="/images/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="">
+        </figure>
+    <div class="contenido">
+        <h3>$<%=libro.precio%></h3>
+        <p> <%= libro.description2.slice(0,100) %>...  </p>
+        <a href="/products/detail/<%=libro.id%>">Leer más</a>
+    </div>
+</div>
+</div>   
+    <% }) %>
+
+</section>
+<%- include('./partials/redes')  %>
+</main>
+<%- include('./partials/footer')  %>
+
+</body>
+</html>

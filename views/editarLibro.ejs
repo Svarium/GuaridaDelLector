@@ -10,22 +10,31 @@
          
          
         
-        <form action="/registro" method="POST" class="fomulario-edicion">
-            <h2 class="titulo--edicion">Editar un libro del Catálogo</h2>
+        <form action="/products/editar/<%= id %>?_method=PUT " method="POST" class="fomulario-edicion">
+            <h2 class="titulo--edicion">Editando el libro: <%= titulo %> </h2>
 
             <div class="datos--libro">
-            <input type="text" name="titulo" id="titulo"  placeholder="Editar el título del libro" required>
-            <input type="text" name="autor" id="autor" placeholder="Editar el nombre del autor" required>
-            <input type="number" name="precio" id="precio" placeholder="Editar el precio del libro $$$" required>
-            </div>
+              <input type="text" name="titulo" id="titulo"  placeholder="Editar el título del libro" required value="<%= titulo %>">
+              <input type="text" name="autor" id="autor" placeholder="Editar el nombre del autor" required value="<%= autor %>">
+              <input type="number" name="precio" id="precio" placeholder="Editar el precio del libro $$$" required value="<%= precio %>">
+              <input type="number" name="paginas" id="paginas" placeholder="Editar cantidad de paginas del libro" required value="<%= paginas %>">
+              <input type="text" name="editorial" id="editorial" placeholder="Editar la editorial del libro" required value="<%= editorial %>">
+              <label for="description2" class="titulo--edicion">Editar descripción del Libro:</label>
+              <textarea name="description2" id="description2" placeholder="agregue una breve descripcion del libro"></textarea>
+          
+              </div>
 
-            <div class="editar__categorias">
-                <label for="categorias">Editar categoría</label>
-                <select name="categorias" id="categorias" required>
-                    <option value="novelas">Sagas y novelas</option>
-                    <option value="novelas">Infantiles</option>
-                    <option value="novelas">Divulgación</option>
-                    <option value="novelas">Mangas y Comics</option>
+              <div class="editar__categorias">
+                <label for="categorias">Seleccionar genero</label>
+                <select name="genero" id="genero" required>
+                    <option value="Novela">Novela</option>
+                    <option value="Novela Ficción">Novela Ficción</option>
+                    <option value="Novela Negra">Novela Negra</option>
+                    <option value="Novela Terror">Novela Terror</option>
+                    <option value="Novela Fantasía">Novela Fantasia</option>
+                    <option value="Infantil">Infantil</option>
+                    <option value="Comics">Comics</option>
+                    <option value="Manga">Manga</option>
                 </select>
             </div>
 
@@ -35,8 +44,8 @@
             </div>
 
             <div class="edicion--buttons">
-                <button type="submit">Editar</button>
-                <button type="reset">Borrar</button>
+                <button type="submit">Editar Libro</button>
+                <button type="reset">Cancelar</button>
             </div>
             <div class="edicion--inicio">
                 <a href="/">Ir al inicio</a>
