@@ -15,5 +15,23 @@ module.exports = {
       res.render('libros',{
         libros
       })
+    },
+    search : (req,res) => {
+      let elemento = req.query.search
+
+      /* return res.send({elemento}) */
+      const books = 
+      libros.filter(libro => 
+        libro.titulo.toLowerCase().includes(elemento.toLowerCase()) ||
+        libro.autor.toLowerCase().includes(elemento.toLowerCase()) ||
+        libro.genero.toLowerCase().includes(elemento.toLowerCase()) ||
+        libro.editorial.toLowerCase().includes(elemento.toLowerCase())
+        )
+
+      return res.render('busqueda', 
+      {
+        busqueda: elemento,
+        books
+      });
     }
 }

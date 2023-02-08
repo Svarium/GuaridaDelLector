@@ -1,0 +1,55 @@
+.card h3, p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    width: 96%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   
+}
+.card--{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-img{
+   width: 100%;
+   padding: 5px;
+    
+
+}
+.card__section__article__div{
+
+}
+
+@media (min-width: 768px){
+    .card{
+        width: 47%;
+       
+    }
+}
+
+@media (min-width: 1024px){
+    .card{
+        width: 96%;
+        margin-bottom: 30px;
+}
+    
+    
+  /*   .card__section__article{
+        width: 22%;
+       
+    } */
+    .card-img{
+        width: 90%;    
+}
+}

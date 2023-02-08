@@ -14,15 +14,16 @@
                 <li><a href="/libros">Catálogo</a></li>
             </ul>
         </nav>
+
         <div class="header--buscador">
-            <form action="">
-                <input type="search" name="buscador" placeholder="Buscar títulos y categorías">
-                <button>
+            <form action="/search" method="get">
+                <input type="search" name="search" placeholder="Buscar títulos y categorías">
+                <button type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
-
         </div>
+        
         <div class="header__nav__menu--user">   
             <a href="/user/login"><i class="fa-solid fa-user"></i></a>
             <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
