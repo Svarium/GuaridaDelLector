@@ -388,12 +388,10 @@
       "titulo": "Cuentos de Adas",
       "precio": 8800,
       "autor": "Stephen King",
-      "genero": "Novela, Terror",
+      "genero": "Novela",
       "editorial": "PLAZA & JANES EDITORES",
       "paginas": 856,
-      "description1": "Stephen King regresa a la fantasía por todo lo alto con una novela magnífica sobre un inesperado héroe que deberá tomar parte en la épica batalla entre el bien y el mal.",
-      "description2": " BIENVENIDOS AL LADO OSCURO DE ÉRASE UNA VEZ Charlie Reade parece un estudiante de instituto normal y corriente, pero carga con un gran peso sobre los hombros. Cuando él solo tenía diez años, su madre fue víctima de un atropello y la pena empujó a su padre a la bebida. Aunque era demasiado joven, Charlie tuvo que aprender a cuidarse solo... y también a ocuparse de su padre.",
-      "imagen": "populares/cuento-de-hadas.jpg"
+      "description2": ""
    },
    {
       "id": 34,
@@ -432,16 +430,6 @@
       "imagen": "populares/violeta-de-isabel-allende.jpg"
    },
    {
-      "id": 37,
-      "titulo": "Trenza del Mar Esmeralda",
-      "precio": 8599,
-      "autor": "Brandon Sanderson",
-      "genero": "Infantil",
-      "editorial": "Nova",
-      "paginas": 500,
-      "description2": "El Nuevo libro de Brandon Sanderson!!!"
-   },
-   {
       "id": 38,
       "titulo": "Danza de Dragones",
       "precio": 11000,
@@ -449,6 +437,7 @@
       "genero": "Novela Fantasía",
       "editorial": "Planeta",
       "paginas": 780,
-      "description2": "Quinto libro de la INCONCLUSA saga llamada Canción de Hielo y Fuego. "
+      "description2": "Quinto libro de la INCONCLUSA saga llamada Canción de Hielo y Fuego. ",
+      "imagen": null
    }
 ]

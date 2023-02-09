@@ -1,5 +1,5 @@
 const express = require('express');
-const { listCategory, detail, agregar, editar, store, update} = require('../controllers/productController');
+const { listCategory, detail, agregar, editar, store, update,remove} = require('../controllers/productController');
 const router = express.Router();
 
 /*llego con:   /products/ */
@@ -19,5 +19,6 @@ router.get('/editar/:id', editar);
 router.put('/editar/:id', update) 
 
 /* eliminar un producto */
+router.delete('/delete/:id',remove) 
 
 module.exports = router;
