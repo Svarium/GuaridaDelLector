@@ -42,6 +42,16 @@
     width: 100%;
 }
 
+.datos--libro label{
+    font-size: 14px;
+    color: white;
+    width: 100%;
+    margin: 10px 0;
+    font-weight: bolder; 
+    
+}
+
+
 .editar__categorias{
     display: flex;
     flex-wrap: wrap;

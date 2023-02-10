@@ -28,7 +28,7 @@
       "titulo": "El nombre del viento",
       "precio": 9700,
       "autor": "Patrick Rothfuss",
-      "genero": "Novela Fantasia",
+      "genero": "Novela Fantasía",
       "editorial": "PLAZA & JANES EDITORES",
       "paginas": 880,
       "description1": "Atípica, profunda y sincera,El nombre del viento es una novela de aventuras, de historias dentro de otras historias, de misterio, de amistad, de amor, de magia y de superación.",
@@ -52,7 +52,7 @@
       "titulo": "El señor de los anillos - la comunidad del anillo",
       "precio": 5200,
       "autor": "J.R.R. Tolkien",
-      "genero": "Novela Fantasia",
+      "genero": "Novela Fantasía",
       "editorial": "MINOTAURO",
       "paginas": 488,
       "description1": "Este libro es como un relámpago en un cielo claro. Decir que la novela heroica, espléndida, elocuente y desinhibida, ha retornado de pronto en una época de un antirromanticismo casi patológico, sería inadecuado.",
@@ -384,17 +384,6 @@
       "imagen": "comics y manga/spiderman 3200.jfif"
    },
    {
-      "id": 33,
-      "titulo": "Cuentos de Adas",
-      "precio": 8800,
-      "autor": "Stephen King",
-      "genero": "Novela",
-      "editorial": "PLAZA & JANES EDITORES",
-      "paginas": 856,
-      "description2": " BIENVENIDOS AL LADO OSCURO DE ÉRASE UNA VEZ Charlie Reade parece un estudiante de instituto normal y corriente, pero carga con un gran peso sobre los hombros. Cuando él solo tenía diez años, su madre fue víctima de un atropello y la pena empujó a su padre a la bebida. Aunque era demasiado joven, Charlie tuvo que aprender a cuidarse solo... y también a ocuparse de su padre.",
-      "imagen": "populares/cuento-de-hadas.jpg"
-   },
-   {
       "id": 34,
       "titulo": "Esperando al diluvio",
       "precio": 4800,
@@ -439,5 +428,27 @@
       "editorial": "Planeta",
       "paginas": 780,
       "description2": ""
+   },
+   {
+      "id": 39,
+      "titulo": "Imperio Final",
+      "precio": 8950,
+      "autor": "Brandon Sanderson",
+      "genero": "Novela Fantasía",
+      "editorial": "Nova ediciones b",
+      "paginas": 800,
+      "description2": "Primer libro de la trilogía llamada Mistborn",
+      "imagen": null
+   },
+   {
+      "id": 40,
+      "titulo": "Imperio Final",
+      "precio": 8950,
+      "autor": "Brandon Sanderson",
+      "genero": "Novela Fantasía",
+      "editorial": "Nova ediciones b",
+      "paginas": 800,
+      "description2": "Primer libro de la trilogía llamada Mistborn",
+      "imagen": null
    }
 ]

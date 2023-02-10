@@ -14,7 +14,7 @@
         </div> 
        
         <% libros.forEach(libro => { %> 
-                <% if(libro.genero === "Novela" ||  libro.genero === "Novela Ficción" || libro.genero === "Novela Terror" || libro.genero === "Novela Fantasia" || libro.genero === "Novela Negra") { %>
+                <% if(libro.genero === "Novela" ||  libro.genero === "Novela Ficción" || libro.genero === "Novela Terror" || libro.genero === "Novela Fantasía" || libro.genero === "Novela Negra") { %>
                     <div class="contenedor-catalogo">                    
                         <a href="/products/detail/<%=libro.id%>">
                         <img src="/images/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="" >
