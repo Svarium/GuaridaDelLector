@@ -44,6 +44,9 @@
                   <button>
                     <a href="/products/agregar"><i class="fa-solid fa-plus"></i></a>
                 </button>
+                 <form action="/products/delete/<%= libro.id %>?_method=DELETE" method="POST" >
+                    <button type="submit">ELIMINAR</button>
+                   </form> 
                 </div>
             </article>
         </section>

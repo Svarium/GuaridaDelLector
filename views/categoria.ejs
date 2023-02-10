@@ -12,9 +12,9 @@
             <h2>Novelas</h2>
             <hr>
         </div> 
-        
-        <% libros.forEach(libro => { %>
-                <% if(libro.genero === "Novela" ||  libro.genero === "novela, ficcion" || libro.genero === "novela, terror" || libro.genero ==="Novela, fantasía" || libro.genero === "Novela Negra") { %>
+        <!-- ARREGLAR GENERO PARA QUE SEA IGUAL A LO QUE MANDO POR FORMULARIO -->
+        <% libros.forEach(libro => { %> 
+                <% if(libro.genero === "Novela" ||  libro.genero === "novela, ficcion" || libro.genero === "novela, terror" || libro.genero === "Novela Fantasía" || libro.genero === "Novela Negra") { %>
                     <div class="contenedor">
                     <div class="card--populares">
                         <figure>

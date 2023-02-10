@@ -2,16 +2,15 @@
 const fs = require('fs');
 const path = require('path');
 
-
 const productsFilePath = path.join(__dirname, '../data/books.json');
-const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
 
 module.exports={
 
     //Todos los productos por categoria
     listCategory:(req,res)=>{
       /*   const infantil = libros.filter(libro => libro.genero === "Infantil"); */
-        return res.render('categoria', {
+      return res.render('categoria', {
             libros,
             
         })
@@ -99,6 +98,12 @@ module.exports={
         /* res.send(librosModified) */
         fs.writeFileSync(productsFilePath,JSON.stringify(librosModified, null, 3),'utf-8');
         return res.redirect('/products/detail/' + id )
-    }
+    },
+    remove : (req,res)=>{
+        const {id} = req.params;
+        const librosModified = libros.filter(libro => libro.id !== +id )
+        fs.writeFileSync(productsFilePath, JSON.stringify(librosModified,null,3),'utf-8')
+        return res.redirect('/libros')
+    } 
     
 }
