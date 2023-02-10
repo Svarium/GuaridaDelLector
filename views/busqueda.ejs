@@ -4,40 +4,37 @@
 
   <body>
     <%- include('./partials/header') %>
-    <main class="busqueda">
+    <main class="search-main">
+      <span class="envios-gratis-span">ENVIOS GRATIS EN PRODUCTOS MAYORES A $5000</span>
 
-      <h1>Resultado de la busqueda: <%= busqueda %> </h1>
+      <section class="index__main__section">
+
+        <div class="index__main--titulares">
+            <h2 id="allNovels">Resultados de la busqueda: "<%= busqueda %>"</h2>
+            <hr>
+        </div> 
 
       <% if (books.length != 0) { %>
-        <section class="resultados">
-          <% books.forEach(libro => { %>
+          <% books.forEach(libro => { %>            
+            <div class="contenedor-catalogo">                    
+              <a href="/products/detail/<%=libro.id%>">
+              <img src="/images/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="" >
+              </a>                
+            </div>   
             
-              <%- include('./partials/card',{
-                id: libro.id,
-                imagen: libro.imagen,
-                titulo: libro.titulo,
-                description1: libro.description1,
-                precio: libro.precio 
-              }) %> 
-              
-            </section>
             <% }) %>
+          </section>
         <% }else { %>
-        <h1>
-          No se encontraron coincidencias con la busqueda de: <%= busqueda %>
-        </h1>
-        <section class="resultados">
-          <div>
-            <div class="card-img">
-              <img class="notFound" src="/images/travolta-gif-4.gif" alt="producto no encontrado" />
-            </div>
-            <div class="card-text-box">
-              <h3 class="card-name">No se encontraron productos relacionados con tu busqueda</h3>
-            </div>
+          <div class="noResults">
+            <video onloadstart="this.muted=true" autoplay muted playsinline loop>
+              <source src="/images/404 error.mp4"></video>
+              <h4>No encontramos resultados para tu busqueda :(</h4>
           </div>
-        </section>
+          
         <% } %>
+        
     </main>
+   
     <%- include('./partials/footer') %>
     
   </body>
