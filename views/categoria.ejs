@@ -9,12 +9,12 @@
     <section class="index__main__section">
 
         <div class="index__main--titulares">
-            <h2>Novelas</h2>
+            <h2 id="allNovels">Novelas</h2>
             <hr>
         </div> 
         <!-- ARREGLAR GENERO PARA QUE SEA IGUAL A LO QUE MANDO POR FORMULARIO -->
         <% libros.forEach(libro => { %> 
-                <% if(libro.genero === "Novela" ||  libro.genero === "novela, ficcion" || libro.genero === "novela, terror" || libro.genero === "Novela Fantasía" || libro.genero === "Novela Negra") { %>
+                <% if(libro.genero === "Novela" ||  libro.genero === "Novela Ficción" || libro.genero === "Novela Terror" || libro.genero === "Novela Fantasia" || libro.genero === "Novela Negra") { %>
                     <div class="contenedor">
                     <div class="card--populares">
                         <figure>
@@ -34,7 +34,7 @@
         <section class="index__main__section">
 
             <div class="index__main--titulares">
-                <h2>Infantiles</h2>
+                <h2 id="infantil">Infantiles</h2>
                 <hr>
             </div> 
             
@@ -61,7 +61,7 @@
         <section class="index__main__section">
 
             <div class="index__main--titulares">
-                <h2>Divulgación Científica</h2>
+                <h2 id="ciencia">Divulgación Científica</h2>
                 <hr>
             </div> 
             
@@ -83,16 +83,16 @@
         </section>
         
 
-        <!-- COMICS -->
+        <!-- COMICS y MANGAS -->
         <section class="index__main__section">
 
             <div class="index__main--titulares">
-                <h2>Comics</h2>
+                <h2 id="comics">Comics y Mangas</h2>
                 <hr>
             </div> 
             
             <% libros.forEach(libro => { %>
-                    <% if(libro.genero === "Comics" ) { %>
+                    <% if(libro.genero === "Comics" || libro.genero === "Manga" ) { %>
                         <div class="contenedor">
                         <div class="card--populares">
                             <figure>
@@ -108,30 +108,7 @@
                 <% }) %>        
         </section>
         
-        <!-- MANGA -->
-        <section class="index__main__section">
-
-            <div class="index__main--titulares">
-                <h2>Mangas</h2>
-                <hr>
-            </div> 
-            
-            <% libros.forEach(libro => { %>
-                    <% if(libro.genero === "Manga" ) { %>
-                        <div class="contenedor">
-                        <div class="card--populares">
-                            <figure>
-                            <img src="/images/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="">
-                            </figure>
-                        <div class="contenido">
-                            <h3>$<%=libro.precio%></h3>                            
-                            <a href="/products/detail/<%=libro.id%>">Leer más</a>
-                        </div>
-                    </div>
-                </div>   
-                <% } %>  
-                <% }) %>        
-        </section>
+       
         
 <!-- AGREGAR FILTRADO POR CATEGORIAS QUE MUESTRE TODOS LOS LIBROS DE CADA CATEGORIA --> 
 
