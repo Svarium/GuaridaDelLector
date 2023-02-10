@@ -1,5 +1,5 @@
 <%- include('./partials/head')  %>
-<body>
+<body class="catalogo">
     <%- include('./partials/header')  %>
     <span class="envios-gratis-span">ENVIOS GRATIS EN PRODUCTOS MAYORES A $5000</span>
     <main class="
@@ -12,19 +12,13 @@
             <h2 id="allNovels">Novelas</h2>
             <hr>
         </div> 
-        <!-- ARREGLAR GENERO PARA QUE SEA IGUAL A LO QUE MANDO POR FORMULARIO -->
+       
         <% libros.forEach(libro => { %> 
                 <% if(libro.genero === "Novela" ||  libro.genero === "Novela Ficción" || libro.genero === "Novela Terror" || libro.genero === "Novela Fantasia" || libro.genero === "Novela Negra") { %>
-                    <div class="contenedor">
-                    <div class="card--populares">
-                        <figure>
-                        <img src="/images/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="">
-                        </figure>
-                    <div class="contenido">
-                        <h3>$<%=libro.precio%></h3>
-                        <a href="/products/detail/<%=libro.id%>">Leer más</a>
-                    </div>
-                </div>
+                    <div class="contenedor-catalogo">                    
+                        <a href="/products/detail/<%=libro.id%>">
+                        <img src="/images/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="" >
+                        </a>                
             </div>   
             <% } %>  
             <% }) %>        
@@ -40,16 +34,10 @@
             
             <% libros.forEach(libro => { %>
                     <% if(libro.genero === "Infantil" ) { %>
-                        <div class="contenedor">
-                        <div class="card--populares">
-                            <figure>
-                            <img src="/images/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="">
-                            </figure>
-                        <div class="contenido">
-                            <h3>$<%=libro.precio%></h3>
-                            <a href="/products/detail/<%=libro.id%>">Leer más</a>
-                        </div>
-                    </div>
+                        <div class="contenedor-catalogo">                    
+                            <a href="/products/detail/<%=libro.id%>">
+                            <img src="/images/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="" >
+                            </a>                
                 </div>   
                 <% } %>  
                 <% }) %>        
@@ -67,16 +55,10 @@
             
             <% libros.forEach(libro => { %>
                     <% if(libro.genero === "Divulgacion Cientifica" ) { %>
-                        <div class="contenedor">
-                        <div class="card--populares">
-                            <figure>
-                            <img src="/images/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="">
-                            </figure>
-                        <div class="contenido">
-                            <h3>$<%=libro.precio%></h3>
-                            <a href="/products/detail/<%=libro.id%>">Leer más</a>
-                        </div>
-                    </div>
+                        <div class="contenedor-catalogo">                    
+                            <a href="/products/detail/<%=libro.id%>">
+                            <img src="/images/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="" >
+                            </a>                
                 </div>   
                 <% } %>  
                 <% }) %>        
@@ -93,16 +75,10 @@
             
             <% libros.forEach(libro => { %>
                     <% if(libro.genero === "Comics" || libro.genero === "Manga" ) { %>
-                        <div class="contenedor">
-                        <div class="card--populares">
-                            <figure>
-                            <img src="/images/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="">
-                            </figure>
-                        <div class="contenido">
-                            <h3>$<%=libro.precio%></h3>
-                            <a href="/products/detail/<%=libro.id%>">Leer más</a>
-                        </div>
-                    </div>
+                        <div class="contenedor-catalogo">                    
+                            <a href="/products/detail/<%=libro.id%>">
+                            <img src="/images/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="" >
+                            </a>                
                 </div>   
                 <% } %>  
                 <% }) %>        
