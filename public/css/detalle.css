@@ -132,21 +132,7 @@
     width: 100%;    
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-}
-body{
-    background: #efefef;
-}
-/*:::Boton-Modal:::*/
-.boton-modal{
-   
-   
-}
+
 .boton-modal label{
     padding: 13px ;
     background-color: var(--footer);
@@ -158,7 +144,7 @@ body{
 .boton-modal label:hover{
     background-color: #dd1818;
 }
-/*:::Fin Boton-Modal:::*/
+
 
 /*:::Ventana Modal:::*/
 #btn-modal{
