@@ -1,20 +1,20 @@
-# Proyecto Integrador: Retrospectiva Sprint 2
+# Proyecto Integrador: Retrospectiva Sprint 3
 
 #### - Dejar de hacer:
 
-Atrasarse en el trabajo por miedo a hacer consultas a los demás compañeros, o por no compartir codigo, vistas, estilos, etc. 
+Para este punto no encontramos algo puntual que mencionar ya que el equipo funcionó muy bien en este sprint. 
 
 #### - Comenzar a hacer:
 
-Hacernos más tiempo para compartir en el grupo de whastapp o en discord cómo venimos con la tarea que nos tocó realizar, ya sea mediante textos, audios o capturas de pantalla del código o las vistas.
+Prestarle mas atención al trello. 
 
 #### - Más de: 
 
-Mejorar más la comunicación respecto a en qué estado esta nuestro trabajo, si tenemos dudas, consultas o si tuvimos problemas (personales o técnicos)
+Seguir comunicando nuestro avance en el grupo y el trello y más reuniones para codear. 
 
 #### - Seguir haciendo: 
 
-Las dailys de 10 a 15 minutos todos los días. Nos ayudan mucho a saber cómo venimos y dónde estamos parados. 
+Las dailys de 10 a 15 minutos todos los días. Nos ayudan mucho a saber cómo venimos y dónde estamos parados. Adelantar trabajo para las siguientes entregas a medida que aprendemos mas contenido. 
 
 #### - Menos de:
 
