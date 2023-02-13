@@ -441,5 +441,26 @@
       "paginas": 800,
       "description2": "Primer libro de la trilogía llamada Mistborn",
       "imagen": null
+   },
+   {
+      "id": 41,
+      "titulo": "El señor de los anillos",
+      "precio": 99999,
+      "autor": "Tolkien",
+      "genero": "Novela",
+      "editorial": "Nova ediciones b",
+      "paginas": 300,
+      "description2": "El Señor de los anillos - Tolkien",
+      "imagen": null
+   },
+   {
+      "id": 42,
+      "titulo": "Shaman King",
+      "precio": 1500,
+      "autor": "sdhgsfghfsghdg",
+      "genero": "Manga",
+      "editorial": "cuspide",
+      "paginas": 100,
+      "description2": "Manga de lucha entre shamanes"
    }
 ]
