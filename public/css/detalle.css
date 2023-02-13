@@ -105,6 +105,7 @@
     align-self: center;
     font-family:'roboto' ;
 }
+
 .detalle__section__article--envio button{
     padding: 10px;
     background-color:var(--footer) ;
@@ -112,7 +113,16 @@
     border: 4px solid var(--footer);
     border-radius: 5px;
     font-family:'roboto' ;
+    cursor: pointer;
 }
+
+.detalle__section__article--envio button:hover{
+    transform: rotate(0.5deg) scale(1.1);
+}
+
+
+
+
 .detalle__section--banner{
     margin: 30px auto;
     width:100%;    
@@ -121,6 +131,114 @@
 .detalle__section--banner img{
     width: 100%;    
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background: #efefef;
+}
+/*:::Boton-Modal:::*/
+.boton-modal{
+   
+   
+}
+.boton-modal label{
+    padding: 13px ;
+    background-color: var(--footer);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.boton-modal label:hover{
+    background-color: #dd1818;
+}
+/*:::Fin Boton-Modal:::*/
+
+/*:::Ventana Modal:::*/
+#btn-modal{
+    display: none;
+}
+.container-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(144, 148, 150, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+#btn-modal:checked ~ .container-modal{
+    display: flex;
+}
+.content-modal{
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.content-modal h2{
+    margin-bottom: 15px;
+}
+.content-modal p{
+    padding: 15px 0px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+}
+.content-modal .btn-cerrar{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+.content-modal .btn-cerrar label{
+    padding: 7px 10px;
+    background-color: #1f79c2;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 14px;
+}
+.btn-cerrar button{
+    padding: 10px 10px;
+    background-color: #d12811;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    border: none;
+    margin: 0 5px;
+}
+
+
+
+.content-modal .btn-cerrar label:hover{
+    background-color:#185E83;
+}
+.cerrar-modal{
+    width:100%;
+    height: 100vh;
+    position: absolute;
+    top:0; left: 0;
+    z-index: -1;
+}
+@media screen and (max-width:800px) {
+    .content-modal{
+        width: 90%;
+    }
+}
+/*:::Fin Ventana Modal:::*/
+
+
 
 @media (min-width: 768px){
 
