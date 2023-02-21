@@ -432,35 +432,14 @@
       "imagen": "populares/cuento-de-hadas.jpg"
    },
    {
-      "id": 40,
-      "titulo": "Imperio Final",
-      "precio": 8950,
+      "id": 38,
+      "titulo": "Michi book",
+      "precio": 5000,
       "autor": "Brandon Sanderson",
-      "genero": "Novela Fantasía",
+      "genero": "Comics",
       "editorial": "Nova ediciones b",
-      "paginas": 800,
-      "description2": "Primer libro de la trilogía llamada Mistborn",
-      "imagen": null
-   },
-   {
-      "id": 41,
-      "titulo": "El señor de los anillos",
-      "precio": 99999,
-      "autor": "Tolkien",
-      "genero": "Novela",
-      "editorial": "Nova ediciones b",
-      "paginas": 300,
-      "description2": "El Señor de los anillos - Tolkien",
-      "imagen": null
-   },
-   {
-      "id": 42,
-      "titulo": "Shaman King",
-      "precio": 1500,
-      "autor": "sdhgsfghfsghdg",
-      "genero": "Manga",
-      "editorial": "cuspide",
-      "paginas": 100,
-      "description2": "Manga de lucha entre shamanes"
+      "paginas": 500,
+      "description2": "Libro Acerca de como cuidar a un michi II",
+      "imagen": "1677008605609_products_.jpg"
    }
 ]

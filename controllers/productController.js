@@ -18,6 +18,8 @@ module.exports={
 
     //Detalle de un producto
     detail : (req,res) => {
+        const productsFilePath = path.join(__dirname, '../data/books.json');
+        const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         let id = +req.params.id
 
         let libro = libros.find(libro => libro.id === id)
@@ -34,7 +36,7 @@ module.exports={
 
     // agregar - metodo par agregar/crear
     store: (req,res) => {
-        const {titulo, precio, autor, genero, editorial, paginas, description1, description2, imagen} = req.body;
+        const {titulo, precio, autor, genero, editorial, paginas, description1, description2} = req.body;
 
         const newLibro = {
             id : libros[libros.length -1].id +1,
@@ -45,8 +47,10 @@ module.exports={
             editorial : editorial.trim(),
             paginas : +paginas,
             description2 : description2,
-            imagen : null
+            imagen : req.file ? req.file.filename : null,
         };
+
+      /*   return res.send (newLibro); */
 
         libros.push(newLibro);
 
@@ -61,9 +65,10 @@ module.exports={
     //formulario para editar
     editar: (req,res)=>{
         const {id} = req.params;
-        const libroAeditar = libros.find(libro => libro.id === +id);
+        const libroAEditar = libros.find(libro => libro.id === +id);
+
         return res.render('editarLibro',{
-            ...libroAeditar
+            ...libroAEditar
         })
         
     },
@@ -86,7 +91,7 @@ module.exports={
             editorial : editorial.trim(),
             paginas : +paginas,
             description2 : description2,
-            imagen : imagen
+            imagen : req.file ? req.file.filename : imagen
         };
         const librosModified = libros.map(libro=>{
             if(libro.id === +id){

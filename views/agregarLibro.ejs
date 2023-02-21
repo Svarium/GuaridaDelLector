@@ -10,7 +10,7 @@
          
          
         
-        <form action="/products/" method="POST" class="fomulario-edicion">
+        <form action="/products/" method="POST" class="fomulario-edicion" enctype="multipart/form-data">
             <h2 class="titulo--edicion">Agregar un libro al Catálogo</h2>
 
             <div class="datos--libro">
@@ -34,12 +34,13 @@
                     <option value="Infantil">Infantil</option>
                     <option value="Comics">Comics</option>
                     <option value="Manga">Manga</option>
+                    <option value="Divulgacion Cientifica">Divulgacion Cientifica</option>
                 </select>
             </div>
 
             <div class="editar__portada">
                 <label for="portada">Agregar imagen de portada</label>
-                <input type="file" name="portada" id="portada" accept="image/png, image/jpg">
+                <input type="file" name="image" id="image" accept="image/png, image/jpg">
             </div>
 
 

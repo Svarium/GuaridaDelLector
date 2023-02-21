@@ -10,7 +10,7 @@
          
          
         
-        <form action="/products/editar/<%= id %>?_method=PUT " method="POST" class="fomulario-edicion">
+        <form action="/products/editar/<%= id %>?_method=PUT " method="POST" class="fomulario-edicion" enctype="multipart/form-data">
             <h2 class="titulo--edicion">Editando el libro: <%= titulo %> </h2>
 
             <div class="datos--libro">
@@ -20,27 +20,29 @@
               <input type="number" name="paginas" id="paginas" placeholder="Editar cantidad de paginas del libro" required value="<%= paginas %>">
               <input type="text" name="editorial" id="editorial" placeholder="Editar la editorial del libro" required value="<%= editorial %>">
               <label for="description2" class="titulo--edicion">Editar descripción del Libro:</label>
-              <textarea name="description2" id="description2" placeholder="agregue una breve descripcion del libro"></textarea>
-          
+              <textarea name="description2" id="description2" placeholder=""><%= description2 %></textarea>          
               </div>
 
               <div class="editar__categorias">
                 <label for="categorias">Seleccionar genero</label>
-                <select name="genero" id="genero" required>
+                <select name="genero" id="genero">
                     <option value="Novela">Novela</option>
                     <option value="Novela Ficción">Novela Ficción</option>
                     <option value="Novela Negra">Novela Negra</option>
                     <option value="Novela Terror">Novela Terror</option>
-                    <option value="Novela Fantasía">Novela Fantasia</option>
+                    <option value="Novela Fantasía" <% if (genero === "Novela Fantasía") { %>
+                     selected
+                    <% } %>>Novela Fantasia</option>
                     <option value="Infantil">Infantil</option>
                     <option value="Comics">Comics</option>
                     <option value="Manga">Manga</option>
+                    <option value="Divulgacion Cientifica">Divulgacion Cientifica</option>
                 </select>
             </div>
 
             <div class="editar__portada">
                 <label for="portada">Editar imagen de portada</label>
-                <input type="file" name="portada" id="portada" accept="image/png, image/jpg">
+                <input type="file" name="image" id="image" accept="image/png, image/jpg">
             </div>
 
             <div class="edicion--buttons">
