@@ -20,23 +20,21 @@
               <input type="number" name="paginas" id="paginas" placeholder="Editar cantidad de paginas del libro" required value="<%= paginas %>">
               <input type="text" name="editorial" id="editorial" placeholder="Editar la editorial del libro" required value="<%= editorial %>">
               <label for="description2" class="titulo--edicion">Editar descripción del Libro:</label>
-              <textarea name="description2" id="description2" placeholder=""><%= description2 %></textarea>          
+              <textarea name="description2" id="description2" placeholder="" rows="5"><%= description2 %></textarea>          
               </div>
 
               <div class="editar__categorias">
                 <label for="categorias">Seleccionar genero</label>
                 <select name="genero" id="genero">
-                    <option value="Novela">Novela</option>
-                    <option value="Novela Ficción">Novela Ficción</option>
-                    <option value="Novela Negra">Novela Negra</option>
-                    <option value="Novela Terror">Novela Terror</option>
-                    <option value="Novela Fantasía" <% if (genero === "Novela Fantasía") { %>
-                     selected
-                    <% } %>>Novela Fantasia</option>
-                    <option value="Infantil">Infantil</option>
-                    <option value="Comics">Comics</option>
-                    <option value="Manga">Manga</option>
-                    <option value="Divulgacion Cientifica">Divulgacion Cientifica</option>
+                    <option value="Novela" <%= genero ==="Novela" && 'selected' %>>Novela</option>
+                    <option value="Novela Ficción" <%= genero ==="Novela Ficción" && 'selected' %>>Novela Ficción</option>
+                    <option value="Novela Negra" <%= genero ==="Novela Negra" && 'selected' %>>Novela Negra</option>
+                    <option value="Novela Terror" <%= genero ==="Novela Terror" && 'selected' %>>Novela Terror</option>
+                    <option value="Novela Fantasía" <%= genero ==="Novela Fantasía" && 'selected' %>>Novela Fantasia</option>
+                    <option value="Infantil" <%= genero ==="Infantil" && 'selected' %>>Infantil</option>
+                    <option value="Comics" <%= genero ==="Comics" && 'selected' %>>Comics</option>
+                    <option value="Manga" <%= genero ==="Manga" && 'selected' %>>Manga</option>
+                    <option value="Divulgacion Cientifica" <%= genero ==="Divulgacion Cientifica" && 'selected' %>>Divulgacion Cientifica</option>
                 </select>
             </div>
 
