@@ -16,6 +16,7 @@
     color: white;
     width: 100%;
     text-align: center;
+    margin: 0;
 }
 
 .fomulario-edicion{
@@ -28,8 +29,8 @@
     flex-wrap: wrap;
     gap: 15px;    
     padding: 20px;
-    background-color:#76367c;
-    border-radius: 16px;
+    background-color:#502d4a;
+    border-radius: 10px;
     box-shadow: 10px 10px 10px rgb(0, 0, 0); 
 }
 
@@ -48,6 +49,19 @@
     width: 100%;
     margin: 10px 0;
     font-weight: bolder; 
+}
+
+
+.datos--libro small{
+    text-align: center;
+    color: rgb(235, 105, 105);
+    font-weight: bolder;   
+}
+
+.datos--libro textarea{
+    border-radius: 5px;
+    padding: 5px;
+    resize:vertical;
     
 }
 
@@ -65,17 +79,17 @@
     padding: 5px;
     color: black;
     font-weight: bolder;
-   
-
+    width: 100%;
 }
 
 
 .editar__categorias label{
     font-size: 14px;
     color: white;
-    width: 33%;
+    width: 100%;
     text-align: center;   
     font-weight: bolder; 
+    margin-bottom: 10px;
 }
 
 .editar__portada{
@@ -93,7 +107,7 @@
 }
 
 .editar__portada input{
-    padding: 2px !important;
+    padding: 1px !important;
 }
 
 
@@ -132,6 +146,15 @@
     text-decoration: underline;
 }
 
+.agregarLibro label{
+    background-color: rgb(235, 105, 105)!important;
+    font-size: 10px;
+}
+
+.agregarLibro label:hover{
+    background-color: red !important;
+}
+
 
 /* Tablet */
 
@@ -150,13 +173,19 @@
     
 
     .datos--libro{
-        width: 75%;
+        width: 90%;
+        flex-direction: row;
     }  
+
+    .datos--libro textarea{
+        width: 100%;
+        
+    }
 
     .editar__categorias{
         flex-direction: column;
-        width: 76%;
-        gap: 10px;
+        width: 90%;
+      /*   gap: 10px; */
     }
 
     .editar__categorias label{
@@ -164,8 +193,8 @@
     }
     
     .editar__portada{
-        width: 76%;
-        margin-top: 10px;
+        width: 90%;
+        margin-bottom: 20px;
     }
 
     .editar__portada input{
@@ -175,6 +204,10 @@
     .edicion--buttons{
         width: 100%;
         font-size: 30px;
+    }
+
+    .agregarLibro label{
+        font-size: 15px;
     }
     
 
@@ -191,13 +224,34 @@
         margin-top: 40px;
     }
 
+    .datos--libro{
+       justify-content:center;
+        width: 100%;
+    }
+
+    .datos--libro textarea{
+        width: 80%;
+    }
+
+    .datos--libro small{
+        width: 100%;
+    }
+
+    .datos--libro input{
+
+        width: 80%;
+    }
+
     .editar__categorias{
         width: 36%;
     }
 
     .editar__portada{
+        margin-top: 18px;
         width: 36%;
     }
+
+ 
 
 
 }

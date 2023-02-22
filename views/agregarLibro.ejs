@@ -30,7 +30,9 @@
             <input type="text" name="editorial" id="editorial" placeholder="Ingrese la editorial del libro">
             <small><%= locals.errors && errors.editorial ? errors.editorial.msg : null %></small>
 
-            <label for="description2" titulo--edicion>Descripción del Libro:</label>
+            <input type="text" name="video" id="video" placeholder="ingrese link de video reseña"> <!-- agregar al controlador, al json y validar -->
+
+            <label for="description2" class="titulo--edicion">Descripción del Libro:</label>
             <textarea name="description2" id="description2"  placeholder="agregue una breve descripcion del libro" rows="5"></textarea>
             <small><%= locals.errors && errors.description2 ? errors.description2.msg : null %></small>
             </div>
@@ -59,7 +61,7 @@
 
             <div class="edicion--buttons">
                  <!--Boton para abrir el modal-->
-            <div class="boton-modal detalle-comprar">
+            <div class="boton-modal detalle-comprar agregarLibro">
               <label for="btn-modal">
                 AGREGAR <i class="fa-solid fa-plus"></i></i>
               </label>
