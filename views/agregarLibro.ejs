@@ -40,6 +40,7 @@
             <div class="editar__categorias">
                 <label for="categorias">Seleccionar genero</label>
                 <select name="genero" id="genero">
+                  <option value="" selected hidden> Seleccione...</option>
                     <option value="Novela">Novela</option>
                     <option value="Novela Ficción">Novela Ficción</option>
                     <option value="Novela Negra">Novela Negra</option>
@@ -56,6 +57,7 @@
             <div class="editar__portada">
                 <label for="portada">Agregar imagen de portada</label>
                 <input type="file" name="image" id="image" accept="image/png, image/jpg">
+                <small><%= locals.errors && errors.image ? errors.image.msg : null %></small>
             </div>
 
 

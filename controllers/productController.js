@@ -40,12 +40,21 @@ module.exports={
 
         const errors = validationResult(req)
 
-       /*  return res.send(errors.mapped()) */
+        /* return res.send(errors.mapped()) */
+
+        if(!req.file){  //VALIDA SI VIENE UNA IMAGEN Y AGREGA UN MENSAJE DE ERROR 
+            errors.errors.push({
+                value : "",
+                msg : "El libro debe tener una imagen",
+                param : "image",
+                location : "file"
+            })
+        }
 
        if(errors.isEmpty()){
         const productsFilePath = path.join(__dirname, '../data/books.json');
         const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
-        const {titulo, precio, autor, genero, editorial, paginas, description1, description2} = req.body;
+        const {titulo, precio, autor, genero, editorial, paginas, description1, description2, video} = req.body;
 
         const newLibro = {
             id : libros[libros.length -1].id +1,
@@ -54,6 +63,7 @@ module.exports={
             autor : autor.trim(),
             genero : genero,
             editorial : editorial.trim(),
+            video : video,
             paginas : +paginas,
             description2 : description2,
             imagen : req.file ? req.file.filename : null,
@@ -68,6 +78,11 @@ module.exports={
 
 
        } else{
+
+        if(req.file){
+            fs.unlinkSync(`./public/images/${req.file.filename}`) //SI HAY ERROR Y CARGÓ IMAGEN ESTE METODO LA BORRA
+        }
+
         const productsFilePath = path.join(__dirname, '../data/books.json');
         const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
 
