@@ -1,6 +1,8 @@
 const express = require('express');
 const { listCategory, detail, agregar, editar, store, update,remove} = require('../controllers/productController');
 const { uploadProductImages } = require('../middlewares/upload');
+const addLibroValidator = require('../validations/addLibroValidator');
+
 
 const router = express.Router();
 
@@ -14,7 +16,7 @@ router.get('/detail/:id', detail );
 
 /* agregar nuevo producto */
 router.get('/agregar/', agregar)
-router.post('/', uploadProductImages.single('image') ,  store)
+router.post('/', uploadProductImages.single('image'), addLibroValidator,  store)
 
 /* editar un producto */
 router.get('/editar/:id', editar);

@@ -1,6 +1,7 @@
 /* const libros = require("../data/books.json") */
 const fs = require('fs');
 const path = require('path');
+const {validationResult} = require('express-validator')
 
 const productsFilePath = path.join(__dirname, '../data/books.json');
 const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
@@ -29,13 +30,21 @@ module.exports={
         })
     },
 
-    //formulario de creacion
+    // muestra el formulario de creacion
     agregar: (req,res)=>{
         return res.render('agregarLibro')
     },
 
     // agregar - metodo par agregar/crear
     store: (req,res) => {
+
+        const errors = validationResult(req)
+
+       /*  return res.send(errors.mapped()) */
+
+       if(errors.isEmpty()){
+        const productsFilePath = path.join(__dirname, '../data/books.json');
+        const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
         const {titulo, precio, autor, genero, editorial, paginas, description1, description2} = req.body;
 
         const newLibro = {
@@ -50,7 +59,6 @@ module.exports={
             imagen : req.file ? req.file.filename : null,
         };
 
-      /*   return res.send (newLibro); */
 
         libros.push(newLibro);
 
@@ -59,10 +67,19 @@ module.exports={
         return res.redirect('/libros')
 
 
+       } else{
+        const productsFilePath = path.join(__dirname, '../data/books.json');
+        const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
+
+        return res.render('agregarLibro',{
+            errors: errors.mapped(),
+            old : req.body
+        })
+       }       
+
     },
 
-
-    //formulario para editar
+    //muestra el formulario para editar
     editar: (req,res)=>{
         const {id} = req.params;
         const libroAEditar = libros.find(libro => libro.id === +id);

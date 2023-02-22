@@ -14,18 +14,30 @@
             <h2 class="titulo--edicion">Agregar un libro al Catálogo</h2>
 
             <div class="datos--libro">
-            <input type="text" name="titulo" id="titulo"  placeholder="Ingresar el título del libro" required>
-            <input type="text" name="autor" id="autor" placeholder="Ingresar el nombre del autor" required>
-            <input type="number" name="precio" id="precio" placeholder="Ingresar el precio del libro $$$" required>
-            <input type="number" name="paginas" id="paginas" placeholder="Ingrese cantidad de paginas del libro" required>
-            <input type="text" name="editorial" id="editorial" placeholder="Ingrese la editorial del libro" required>
+
+            <input type="text" name="titulo" id="titulo"  placeholder="Ingresar el título del libro">
+            <small><%= locals.errors && errors.titulo ? errors.titulo.msg : null %></small>
+
+            <input type="text" name="autor" id="autor" placeholder="Ingresar el nombre del autor">
+            <small><%= locals.errors && errors.autor ? errors.autor.msg : null %></small>
+
+            <input type="number" name="precio" id="precio" placeholder="Ingresar el precio del libro $$$">
+            <small><%= locals.errors && errors.precio ? errors.precio.msg : null %></small>
+
+            <input type="number" name="paginas" id="paginas" placeholder="Ingrese cantidad de paginas del libro">
+            <small><%= locals.errors && errors.paginas ? errors.paginas.msg : null %></small>
+
+            <input type="text" name="editorial" id="editorial" placeholder="Ingrese la editorial del libro">
+            <small><%= locals.errors && errors.editorial ? errors.editorial.msg : null %></small>
+
             <label for="description2" titulo--edicion>Descripción del Libro:</label>
             <textarea name="description2" id="description2"  placeholder="agregue una breve descripcion del libro"></textarea>
+            <small><%= locals.errors && errors.description2 ? errors.description2.msg : null %></small>
             </div>
 
             <div class="editar__categorias">
                 <label for="categorias">Seleccionar genero</label>
-                <select name="genero" id="genero" required>
+                <select name="genero" id="genero">
                     <option value="Novela">Novela</option>
                     <option value="Novela Ficción">Novela Ficción</option>
                     <option value="Novela Negra">Novela Negra</option>
@@ -36,6 +48,7 @@
                     <option value="Manga">Manga</option>
                     <option value="Divulgacion Cientifica">Divulgacion Cientifica</option>
                 </select>
+                <small><%= locals.errors && errors.genero ? errors.genero.msg : null %></small>
             </div>
 
             <div class="editar__portada">
