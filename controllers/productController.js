@@ -80,7 +80,7 @@ module.exports={
        } else{
 
         if(req.file){
-            fs.unlinkSync(`./public/images/${req.file.filename}`) //SI HAY ERROR Y CARGÓ IMAGEN ESTE METODO LA BORRA
+            fs.existsSync(`./public/images/${req.file.filename}`) && fs.unlinkSync(`./public/images/${req.file.filename}`) //SI HAY ERROR Y CARGÓ IMAGEN ESTE METODO LA BORRA
         }
 
         const productsFilePath = path.join(__dirname, '../data/books.json');

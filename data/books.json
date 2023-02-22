@@ -441,5 +441,17 @@
       "paginas": 500,
       "description2": "Libro Acerca de como cuidar a un michi II",
       "imagen": "1677008605609_products_.jpg"
+   },
+   {
+      "id": 39,
+      "titulo": "Dr.Stone",
+      "precio": 2500,
+      "autor": "Brandon Sanderson",
+      "genero": "Manga",
+      "editorial": "Nova ediciones b",
+      "video": "https://youtu.be/WI9dx58itTk",
+      "paginas": 100,
+      "description2": "Manga de Dr.Stone el mejor manga de ciencia!!!!!!!!",
+      "imagen": "1677105610666_products_.jpg"
    }
 ]
