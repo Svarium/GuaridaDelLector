@@ -31,7 +31,8 @@
               <input type="text" class="<%= locals.errors && errors.editorial ? 'errorInput' : null %>" name="editorial" id="editorial" placeholder="Editar la editorial del libro"  value="<%= editorial %>">
               <small><%= locals.errors && errors.editorial ? errors.editorial.msg : null %></small>
 
-              <input type="text" name="video" id="video" placeholder="ingrese link de video reseña"> <!-- agregar al controlador, al json y validar -->
+              <input type="text" class="<%= locals.errors && errors.video ? 'errorInput' : null %>"  name="video" id="video" placeholder="ingrese link de video reseña" value="<%= video %>"> <!-- agregar al controlador, al json y validar -->
+              <small><%= locals.errors && errors.video ? errors.video.msg : null %></small>
 
               <label for="description2" class="titulo--edicion">Editar descripción del Libro:</label>
               <textarea name="description2" class="<%= locals.errors && errors.description2 ? 'errorInput' : null %>" id="description2" placeholder="" rows="5"><%= description2 %></textarea>    
