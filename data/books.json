@@ -445,12 +445,13 @@
    {
       "id": 39,
       "titulo": "Dr Stone",
-      "precio": 8,
+      "precio": 1500,
       "autor": "Brandon Sanderson",
       "genero": "Manga",
       "editorial": "Nova ediciones b",
+      "video": "https://youtu.be/MikhrutBJso",
       "paginas": 100,
-      "description2": "Manga de Dr.Stone el mejor manga de ciencia!!!!!!!!",
-      "imagen": "1677180885651_products_.jpg"
+      "description2": "Manga de Dr Stone el mejor manga de ciencia de la historia!!!!!!!!",
+      "imagen": "1677186215877_products_.jpg"
    }
 ]

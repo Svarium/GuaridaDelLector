@@ -22,6 +22,9 @@ module.exports = [
     .notEmpty().withMessage('Debe ingresar la editorial').bail()
     .isLength({min:5, max:20}).withMessage('La editorial tiene entre 5 y 20 carácteres'),
 
+    check('video')
+    .notEmpty().withMessage('Debe ingresar el link del video'),
+
     check('description2')
     .notEmpty().withMessage('Debe ingresar una descripción').bail()
     .isLength({min:10, max:200}).withMessage('La descripción puede tener entre 10 y 200 caracteres'),

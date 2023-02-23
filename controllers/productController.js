@@ -70,7 +70,7 @@ module.exports={
        if(errors.isEmpty()){
         const productsFilePath = path.join(__dirname, '../data/books.json');
         const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
-        const {titulo, precio, autor, genero, editorial, paginas, description1, description2, video} = req.body;
+        const {titulo, precio, autor, genero, editorial, paginas, description2, video} = req.body;
 
         const newLibro = {
             id : libros[libros.length -1].id +1,
@@ -143,7 +143,7 @@ module.exports={
             const productsFilePath = path.join(__dirname, '../data/books.json');
             const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
 
-            const {titulo, precio, autor, genero, editorial, paginas, description2, imagen} = req.body;
+            const {titulo, precio, autor, genero, editorial, paginas, description2,video,  imagen} = req.body;
 
         const id = +req.params.id
 
@@ -156,6 +156,7 @@ module.exports={
             autor : autor.trim(),
             genero : genero,
             editorial : editorial.trim(),
+            video: video,
             paginas : +paginas,
             description2 : description2,
             imagen : req.file ? req.file.filename : libro.imagen

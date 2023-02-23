@@ -146,6 +146,12 @@
     background-color: #dd1818;
 }
 
+.videoReseña iframe{
+    width: 293px;
+    height: 350px;
+    box-shadow: 5px 5px 5px rgb(0,0,0);
+}
+
 
 /*:::Ventana Modal:::*/
 #btn-modal{
@@ -255,6 +261,10 @@
         padding: 13.5px ;
     }
 
+    .videoReseña iframe{
+        width: 500px;
+    }
+
 }
 
 @media (min-width: 1024px){
@@ -282,7 +292,10 @@
     .boton-modal label{
         padding: 13px ;
     }
-    
+
+    .videoReseña iframe{
+        width: 600px;
+    }    
 
 }
 
