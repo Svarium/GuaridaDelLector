@@ -9,6 +9,7 @@ const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 module.exports={
 
     //Todos los productos por categoria
+
     listCategory:(req,res)=>{
       /*   const infantil = libros.filter(libro => libro.genero === "Infantil"); */
       return res.render('categoria', {
@@ -18,6 +19,7 @@ module.exports={
     },
 
     //Detalle de un producto
+
     detail : (req,res) => {
         const productsFilePath = path.join(__dirname, '../data/books.json');
         const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -31,6 +33,7 @@ module.exports={
     },
 
     // muestra el formulario de creacion
+    
     agregar: (req,res)=>{
         return res.render('agregarLibro')
     },
@@ -40,9 +43,8 @@ module.exports={
 
         const errors = validationResult(req)
 
-        /* return res.send(errors.mapped()) */
-
-
+    
+       /*  return res.send(errors.mapped()) */
    
         if(req.fileValidationError){ //este if valida que solo se puedan subir extensiones (jpg|jpeg|png|gif|webp)
             errors.errors.push({
@@ -60,6 +62,8 @@ module.exports={
                 param : "image",
                 location : "file"
             })
+
+            
         } 
 
 
@@ -120,7 +124,26 @@ module.exports={
     //Metodo para editar
 
     update: (req,res) => {
-        const {titulo, precio, autor, genero, editorial, paginas, description1, description2, imagen} = req.body;
+
+        const errors = validationResult(req);
+
+         /* return res.send(errors.mapped()) */
+
+        if(req.fileValidationError){ //este if valida que solo se puedan subir extensiones (jpg|jpeg|png|gif|webp)
+            errors.errors.push({
+                value : "",
+                msg : req.fileValidationError,
+                param : "image",
+                location : "file"
+            })
+        }
+
+        if(errors.isEmpty()){
+
+            const productsFilePath = path.join(__dirname, '../data/books.json');
+            const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
+
+            const {titulo, precio, autor, genero, editorial, paginas, description2, imagen} = req.body;
 
         const id = +req.params.id
 
@@ -135,8 +158,16 @@ module.exports={
             editorial : editorial.trim(),
             paginas : +paginas,
             description2 : description2,
-            imagen : req.file ? req.file.filename : imagen
+            imagen : req.file ? req.file.filename : libro.imagen
         };
+
+        //si existe una nueva imagen borra la imagen anterior y lee de nuevo el json
+        if(req.file){
+            fs.existsSync(`./public/images/${libro.imagen}`) && fs.unlinkSync(`./public/images/${libro.imagen}`) 
+            const productsFilePath = path.join(__dirname, '../data/books.json');
+            const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
+        }
+
         const librosModified = libros.map(libro=>{
             if(libro.id === +id){
                 return libroUpdated
@@ -144,9 +175,37 @@ module.exports={
             return libro
         });
 
-        /* res.send(librosModified) */
+
         fs.writeFileSync(productsFilePath,JSON.stringify(librosModified, null, 3),'utf-8');
         return res.redirect('/products/detail/' + id )
+
+        } else {
+
+            const productsFilePath = path.join(__dirname, '../data/books.json');
+            const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
+
+            if(req.file){
+                fs.existsSync(`./public/images/${req.file.filename}`) && fs.unlinkSync(`./public/images/${req.file.filename}`) //SI HAY ERROR Y CARGÓ IMAGEN ESTE METODO LA BORRA
+            }
+
+            const {id} = req.params;
+            const libroAEditar = libros.find(libro => libro.id === +id);
+    
+            return res.render('editarLibro',{
+                ...libroAEditar,
+                errors : errors.mapped(),
+                old : req.body
+            })
+            
+
+
+
+        }
+
+
+
+
+        
     },
     remove : (req,res)=>{
         const {id} = req.params;

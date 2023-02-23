@@ -20,7 +20,7 @@ router.post('/', uploadProductImages.single('image'), addLibroValidator,  store)
 
 /* editar un producto */
 router.get('/editar/:id', editar);
-router.put('/editar/:id',uploadProductImages.single('image'),  update) 
+router.put('/editar/:id',uploadProductImages.single('image'), addLibroValidator,  update) 
 
 /* eliminar un producto */
 router.delete('/delete/:id',remove) 
