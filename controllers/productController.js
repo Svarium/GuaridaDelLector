@@ -42,14 +42,26 @@ module.exports={
 
         /* return res.send(errors.mapped()) */
 
-        if(!req.file){  //VALIDA SI VIENE UNA IMAGEN Y AGREGA UN MENSAJE DE ERROR 
+
+   
+        if(req.fileValidationError){ //este if valida que solo se puedan subir extensiones (jpg|jpeg|png|gif|webp)
+            errors.errors.push({
+                value : "",
+                msg : req.fileValidationError,
+                param : "image",
+                location : "file"
+            })
+        }
+
+              if(!req.file){  //este if valida que se suba una imagen
             errors.errors.push({
                 value : "",
                 msg : "El libro debe tener una imagen",
                 param : "image",
                 location : "file"
             })
-        }
+        } 
+
 
        if(errors.isEmpty()){
         const productsFilePath = path.join(__dirname, '../data/books.json');
