@@ -15,26 +15,26 @@
 
             <div class="datos--libro">
 
-              <input type="text" name="titulo" id="titulo"  placeholder="Editar el título del libro"  value="<%= titulo %>">
+              <input type="text" class="<%= locals.errors && errors.titulo ? 'errorInput' : null %>" name="titulo" id="titulo"  placeholder="Editar el título del libro"  value="<%= titulo %>">
               <small><%= locals.errors && errors.titulo ? errors.titulo.msg : null %></small>
 
-              <input type="text" name="autor" id="autor" placeholder="Editar el nombre del autor"  value="<%= autor %>">
+              <input type="text" class="<%= locals.errors && errors.autor? 'errorInput' : null %>" name="autor" id="autor" placeholder="Editar el nombre del autor"  value="<%= autor %>">
               <small><%= locals.errors && errors.autor ? errors.autor.msg : null %></small>
 
-              <input type="number" name="precio" id="precio" placeholder="Editar el precio del libro $$$"  value="<%= precio %>">
+              <input type="number" class="<%= locals.errors && errors.precio ? 'errorInput' : null %>" name="precio" id="precio" placeholder="Editar el precio del libro $$$"  value="<%= precio %>">
               <small><%= locals.errors && errors.precio ? errors.precio.msg : null %></small>
 
-              <input type="number" name="paginas" id="paginas" placeholder="Editar cantidad de paginas del libro"  value="<%= paginas %>">
+              <input type="number" class="<%= locals.errors && errors.paginas ? 'errorInput' : null %>" name="paginas" id="paginas" placeholder="Editar cantidad de paginas del libro"  value="<%= paginas %>">
               <small><%= locals.errors && errors.paginas ? errors.paginas.msg : null %></small>
 
 
-              <input type="text" name="editorial" id="editorial" placeholder="Editar la editorial del libro"  value="<%= editorial %>">
+              <input type="text" class="<%= locals.errors && errors.editorial ? 'errorInput' : null %>" name="editorial" id="editorial" placeholder="Editar la editorial del libro"  value="<%= editorial %>">
               <small><%= locals.errors && errors.editorial ? errors.editorial.msg : null %></small>
 
               <input type="text" name="video" id="video" placeholder="ingrese link de video reseña"> <!-- agregar al controlador, al json y validar -->
 
               <label for="description2" class="titulo--edicion">Editar descripción del Libro:</label>
-              <textarea name="description2" id="description2" placeholder="" rows="5"><%= description2 %></textarea>    
+              <textarea name="description2" class="<%= locals.errors && errors.description2 ? 'errorInput' : null %>" id="description2" placeholder="" rows="5"><%= description2 %></textarea>    
               <small><%= locals.errors && errors.description2 ? errors.description2.msg : null %></small>      
               </div>
 
@@ -56,7 +56,7 @@
 
             <div class="editar__portada">
                 <label for="portada">Editar imagen de portada</label>
-                <input type="file" name="image" id="image">
+                <input type="file" class="<%= locals.errors && errors.image ? 'errorInput' : null %>" name="image" id="image">
                 <small><%= locals.errors && errors.image ? errors.image.msg : null %></small>
             </div>
 

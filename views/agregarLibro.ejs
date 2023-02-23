@@ -15,25 +15,25 @@
 
             <div class="datos--libro">
 
-            <input type="text" name="titulo" id="titulo"  placeholder="Ingresar el título del libro">
+            <input type="text" class="<%= locals.errors && errors.titulo ? 'errorInput' : null %>" name="titulo" id="titulo"  placeholder="Ingresar el título del libro" value="<%= locals.old && old.titulo ? old.titulo : null %>">
             <small><%= locals.errors && errors.titulo ? errors.titulo.msg : null %></small>
 
-            <input type="text" name="autor" id="autor" placeholder="Ingresar el nombre del autor">
+            <input type="text" class="<%= locals.errors && errors.autor ? 'errorInput' : null %>" name="autor" id="autor" placeholder="Ingresar el nombre del autor" value="<%= locals.old && old.autor ? old.autor : null %>">
             <small><%= locals.errors && errors.autor ? errors.autor.msg : null %></small>
 
-            <input type="number" name="precio" id="precio" placeholder="Ingresar el precio del libro $$$">
+            <input type="number" class="<%= locals.errors && errors.precio ? 'errorInput' : null %>" name="precio" id="precio" placeholder="Ingresar el precio del libro $$$" value="<%= locals.old && old.precio ? old.precio : null %>">
             <small><%= locals.errors && errors.precio ? errors.precio.msg : null %></small>
 
-            <input type="number" name="paginas" id="paginas" placeholder="Ingrese cantidad de paginas del libro">
+            <input type="number" class="<%= locals.errors && errors.paginas ? 'errorInput' : null %>" name="paginas" id="paginas" placeholder="Ingrese cantidad de paginas del libro" value="<%= locals.old && old.paginas ? old.paginas : null %>">
             <small><%= locals.errors && errors.paginas ? errors.paginas.msg : null %></small>
 
-            <input type="text" name="editorial" id="editorial" placeholder="Ingrese la editorial del libro">
+            <input type="text" class="<%= locals.errors && errors.editorial ? 'errorInput' : null %>" name="editorial" id="editorial" placeholder="Ingrese la editorial del libro" value="<%= locals.old && old.editorial ? old.editorial : null %>">
             <small><%= locals.errors && errors.editorial ? errors.editorial.msg : null %></small>
 
             <input type="text" name="video" id="video" placeholder="ingrese link de video reseña"> <!-- agregar al controlador, al json y validar -->
 
             <label for="description2" class="titulo--edicion">Descripción del Libro:</label>
-            <textarea name="description2" id="description2"  placeholder="agregue una breve descripcion del libro" rows="5"></textarea>
+            <textarea name="description2" class="<%= locals.errors && errors.description2 ? 'errorInput' : null %>" id="description2"  placeholder="agregue una breve descripcion del libro" rows="5"><%= locals.old && old.description2 ? old.description2 : null %></textarea>
             <small><%= locals.errors && errors.description2 ? errors.description2.msg : null %></small>
             </div>
 
@@ -41,22 +41,22 @@
                 <label for="categorias">Seleccionar genero</label>
                 <select name="genero" id="genero">
                   <option value="" selected hidden> Seleccione...</option>
-                    <option value="Novela">Novela</option>
-                    <option value="Novela Ficción">Novela Ficción</option>
-                    <option value="Novela Negra">Novela Negra</option>
-                    <option value="Novela Terror">Novela Terror</option>
-                    <option value="Novela Fantasía" >Novela Fantasia</option>
-                    <option value="Infantil">Infantil</option>
-                    <option value="Comics">Comics</option>
-                    <option value="Manga">Manga</option>
-                    <option value="Divulgacion Cientifica">Divulgacion Cientifica</option>
+                    <option value="Novela" <%= (locals.old && old.genero === "Novela") && 'selected' %>>Novela</option>
+                    <option value="Novela Ficción" <%= (locals.old && old.genero === "Novela Ficción") && 'selected' %>>Novela Ficción</option>
+                    <option value="Novela Negra" <%= (locals.old && old.genero === "Novela Negra") && 'selected' %>>Novela Negra</option>
+                    <option value="Novela Terror" <%= (locals.old && old.genero === "Novela Terror") && 'selected' %>>Novela Terror</option>
+                    <option value="Novela Fantasía" <%= (locals.old && old.genero === "Novela Fantasía") && 'selected' %>>Novela Fantasia</option>
+                    <option value="Infantil" <%= (locals.old && old.genero === "Infantil") && 'selected' %>>Infantil</option>
+                    <option value="Comics" <%= (locals.old && old.genero === "Comics") && 'selected' %>>Comics</option>
+                    <option value="Manga" <%= (locals.old && old.genero === "Manga") && 'selected' %>>Manga</option>
+                    <option value="Divulgacion Cientifica" <%= (locals.old && old.genero === "Divulgacion Cientifica") && 'selected' %>>Divulgacion Cientifica</option>
                 </select>
                 <small><%= locals.errors && errors.genero ? errors.genero.msg : null %></small>
             </div>
 
             <div class="editar__portada">
                 <label for="portada">Agregar imagen de portada</label>
-                <input type="file" name="image" id="image">
+                <input type="file" class="<%= locals.errors && errors.image ? 'errorInput' : null %>" name="image" id="image">
                 <small><%= locals.errors && errors.image ? errors.image.msg : null %></small>
             </div>
 
