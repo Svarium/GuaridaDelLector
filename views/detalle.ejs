@@ -17,16 +17,20 @@
                         <h2><%= libro.titulo %> </h2>
                         <hr>
                     </div>
-                    <p> <strong>Autor:</strong> <%= libro.autor %></p> 
-                    <span><strong>Editorial:</strong> <%= libro.editorial %></span>
-                    <p> <strong>Genero:</strong> <%= libro.genero %>  </p>
-                    <p> <strong>Paginas:</strong> <%= libro.paginas %>  </p>
                     <p><%= libro.description1 %></p>
                     <p class="detalle-extendido"><%= libro.description2 %></p>
+                    <p> <strong>Autor:</strong> <%= libro.autor %></p> 
+                    <span><strong>Editorial:</strong><%= libro.editorial %></span>
+                    <p> <strong>Genero:</strong> <%= libro.genero %>  </p>
+                    <p> <strong>Paginas:</strong> <%= libro.paginas %>  </p>
                     <h3><strong>Precio:</strong> $<%= libro.precio %></h3>
                 </div>
-                <div class="detalle__section__article--cantidad">
+
+                <div>
+                  <form action="" class="detalle__section__article--cantidad">
                     <i>-</i><input type="number" name="" id=""><i>+</i>
+                  </form>
+                    
                 </div>
                 <div class="detalle__section__article--envio">
                     <button class="">
@@ -70,7 +74,7 @@
 
 
 <div class="videoReseña">
-  <iframe src="https://www.youtube.com/embed/<%= libro.video.slice(17)%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/<%= libro.video ?  libro.video.slice(17) : 'tv7hKMYY0S8'%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
           

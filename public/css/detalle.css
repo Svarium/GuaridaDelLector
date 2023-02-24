@@ -46,7 +46,8 @@
    
 }
 .detalle__section__article--datos p{
-    width: 100%;  
+    text-align: justify;
+    width: 90%;  
 }
 .detalle-extendido{
     display: none;
@@ -91,8 +92,8 @@
     width: 30px;
     height: 34px;
     margin: 5px;
-    border-radius: 50%;
-    border: 2px black solid;
+    border-radius: 35px;
+   /*  border: 2px black solid; */
 }
 
 
@@ -131,6 +132,9 @@
 .detalle__section--banner img{
     width: 100%;    
 }
+
+
+
 
 /* BOTON ABRIR VENTANA MODAL */
 
@@ -228,14 +232,25 @@
     top:0; left: 0;
     z-index: -1;
 }
+
 @media screen and (max-width:800px) {
     .content-modal{
         width: 90%;
     }
 }
+
 /*:::Fin Ventana Modal:::*/
 
 
+
+
+
+
+
+
+
+
+/* TABLETS */
 
 @media (min-width: 768px){
 
@@ -254,86 +269,88 @@
         display: none;
     }
     .detalle-extendido{
+        display: none;
+    }
+
+    .boton-modal label{
+      
+        padding: 12px ;
+    }
+
+
+ .detalle__section{
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imagen-detalle{
+    width: 35%;
+}
+
+.detalle__section__article{
+    width: 60%;
+   
+}
+.detalle__section__article--datos p{
+    text-align: justify;
+    width: 90%;    
+}
+
+.videoReseña iframe{
+    width: 500px;
+}   
+
+.imagen-detalle img{
+    width: 250px;
+    padding: 10px;
+
+}
+  
+    
+
+}
+
+/* DESKTOP */
+
+@media (min-width: 1024px){
+
+    .detalle__section{
+        width: 63%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .imagen-detalle{
+        width: 20%;
+    }
+
+    .detalle__section__article{
+        width: 70%;
+       
+    }
+    .detalle__section__article--datos p{
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 90%;  
+        text-align: justify; 
+    }
+    
+    .videoReseña iframe{
+        width: 500px;
+        
+    }    
+
+    .detalle-extendido{
         display: block;
     }
 
     .boton-modal label{
-        padding: 13.5px ;
+      
+        padding: 11px ;
     }
 
-    .videoReseña iframe{
-        width: 500px;
-    }
-
-}
-
-@media (min-width: 1024px){
-
-    .detalle__section{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .imagen-detalle{
-        width: 35%;
-    }
-
-    .detalle__section__article{
-    width: 60%;
-    }
-    .detalle__section__article--datos h2{
-        font-size: 60;
-    }
-    
-    .detalle__section__article--datos p{
-        width: 90%;    
-    }
-
-    .boton-modal label{
-        padding: 13px ;
-    }
-
-    .videoReseña iframe{
-        width: 600px;
-    }    
-
-}
-
-
-
-@media (min-width: 768px){
-
-    .detalle__section__article{
-    width: 90%;
-    }
-
-    .detalle-comprar{
-        font-size: 22px;
-    }
-
-    .detalle__section__article--envio i{
-        font-size: 25px;
-    }
-}
-
-@media (min-width: 1024px){
-
-    .detalle__section{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .imagen-detalle{
-        width: 35%;
-    }
-
-    .detalle__section__article{
-        width: 60%;
-       
-    }
-    .detalle__section__article--datos p{
-        width: 90%;    
-    }
-    
+ 
 
 }
