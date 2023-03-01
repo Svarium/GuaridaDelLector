@@ -18,6 +18,12 @@
     flex-wrap: wrap;
     justify-content: center;   
     margin-top: 35%;
+    
+}
+
+.reg{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
 }
 
 .fomulario-registro{
@@ -60,8 +66,15 @@ input{
     gap: 10px;
     margin-top: 10px;
     width: 100%;
-
 }
+
+.datos--personales small{
+    text-align: center;
+    color: rgb(235, 105, 105);
+    font-weight: bolder;   
+}
+
+
 
 .form--password{
     display: flex;
@@ -69,6 +82,12 @@ input{
     flex-wrap: wrap;
     gap: 10px;
     width: 100%;
+}
+
+.form--password small{
+    text-align: center;
+    color: rgb(235, 105, 105);
+    font-weight: bolder;   
 }
 
 .form--password label{

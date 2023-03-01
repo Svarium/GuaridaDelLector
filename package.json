@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Svarium/GuaridaDelLector#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "^3.1.8",

@@ -8,21 +8,29 @@
         
 
         <!-- formulario registro -->
-       <section class="register__section--form">
+       <section class="register__section--form reg">
          
          
         
-            <form action="/registro" method="POST" class="fomulario-registro">
+            <form  method="POST" class="fomulario-registro" enctype="multipart/form-data">
                 <h2 class="titulo--registro">Formulario de Registro</h2>
 
                 <div class="datos--personales">
-                <input type="text" name="usuario" id="usuario"  placeholder="Nombre de usuario" required>
-                <input type="email" name="email" id="email" placeholder="E-mail">
+                <input type="text" name="name" id="name" class="<%= locals.errors && errors.name ? 'errorInput' : null %>"  placeholder="Ingrese su nombre" value="<%= locals.old && old.name ? old.name : null %>">
+                <small><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+                <input type="text" name="surname" id="surname" class="<%= locals.errors && errors.surname ? 'errorInput' : null %>" placeholder="Ingrese su apellido" value="<%= locals.old && old.surname ? old.surname : null %>">
+                <small><%= locals.errors && errors.surname ? errors.surname.msg : null %></small>
+                <input type="email" name="email" id="email" class="<%= locals.errors && errors.email ? 'errorInput' : null %>" placeholder="E-mail" value="<%= locals.old && old.email ? old.email : null %>">
+                <small><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                 </div>
 
                 <div class="form--password">
-                    <input type="password" name="password" id="password" placeholder="Ingrese su contraseña" required>
-                    <input type="password" name="password2" id="password2" placeholder="Confirme su contraseña" required>
+                    <input type="password" name="password" id="password" class="<%= locals.errors && errors.password ? 'errorInput' : null %>" placeholder="Ingrese su contraseña" value="<%= locals.old && old.password ? old.password : null %>">
+                    <small><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                    <input type="password" name="password2" id="password2" class="<%= locals.errors && errors.password2 ? 'errorInput' : null %>" placeholder="Confirme su contraseña" value="<%= locals.old && old.password2 ? old.password2 : null %>">
+                    <small><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
+                    <input type="file" name="icon" id="icon" class="<%= locals.errors && errors.password2 ? 'errorInput' : null %>">
+                    <small><%= locals.errors && errors.icon ? errors.icon.msg : null %></small>
                 </div>
                 <div class="form--condiciones">
                     <a href="/user/login">¿Ya tenes una cuenta?</a>
