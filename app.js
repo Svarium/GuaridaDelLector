@@ -26,16 +26,16 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
-const productsRouter = require('./routes/products');
-const userRouter = require('./routes/user');
-const cartRouter = require('./routes/cart');
+const indexRouter = require('./src/routes/index');
+const productsRouter = require('./src/routes/products');
+const userRouter = require('./src/routes/user');
+const cartRouter = require('./src/routes/cart');
 const methodOverride = require('method-override');
 
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname,'views'));
+app.set('views', path.join(__dirname,'src','views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
