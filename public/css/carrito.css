@@ -1,4 +1,13 @@
 /* PRUEBA CARD CARRITO */
+/* .carrito-body{
+   background-image:(url('/images/background-pics/2111.w039.n003.23B.p1.23.jpg')) ;
+   background-size: 100%;
+   background-repeat:repeat-y;
+   
+} */
+
+
+
 .carrito{
    display: flex;
    flex-wrap: wrap;
@@ -7,7 +16,7 @@
    border: none;
    background-color: #DCDCDC;
    border-radius: 4px;
-   box-shadow: 5px 5px 5px rgb(0,0,0);
+   box-shadow: 5p 5px 5px rgb(0,0,0);
    margin: 20px 0;
 }
 
@@ -27,13 +36,27 @@
    gap:10px ;
    padding: 10px;
 }
+ .carrito_description-buttons{
+    display: flex;
+    flex-direction: row;
+ }
 
 .descripcion button{
-   padding: 10px;
+   padding: 2px;
    background-color:var(--botonesGenerales) ;
    color: white;
    border: 1px solid var(--botonesGenerales);
    border-radius: 5px;
+   margin-bottom: 15px;
+   width: 15%;
+   margin-right: 10px;
+    
+}
+.descripcion a button{
+   background-color: var(--footer);
+   border:  1px solid var(--footer);
+   width: 78%;
+ 
 }
 
 .carrito__main--titulares{
@@ -83,6 +106,10 @@
      justify-content: space-between;
      margin-bottom: 10px;
 }
+/* .main__precioFinal form{
+   display: flex;
+   flex-direction: column;
+} */
 
 .main__precioFinal button{
       padding: 10px;
@@ -91,6 +118,7 @@
       border: 1px solid var(--botonesDeCompra);
       border-radius: 5px;
       width: 215px;
+    /*   margin-bottom: 15px; */
 }
 .main__carrito{
     background-color: rgb(242, 229, 211);;
@@ -129,15 +157,15 @@
 }
 
 .descripcion{
-   width: 50%;
+   width: 60%;
    gap: 20px;
    padding: 30px;
 }
-
-.descripcion button{
-   width: 50%;
-}
-
+/* 
+ .descripcion a button{
+   width: 30%;
+} 
+ */
 .main__cajaCompra{
    margin: 20px 0;
    flex-direction: row;

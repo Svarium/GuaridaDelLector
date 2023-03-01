@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./partials/head')  %>
-<body>
+
     <%- include('./partials/header')  %>
+   
+    <body class="carrito-body"> 
+   
 
      <main class="carrito__main" >
         <span class="envios-gratis-span">ENVIOS GRATIS EN PRODUCTOS MAYORES A $5000</span>
 
 
         <div class="carrito__main--titulares">
-            <h2>Carrito de compras</h2>
+            <h2>Mi Carrito</h2>
             <hr>
         </div> 
         
         <!-- PRUEBA CARD CARRITO -->
 
-<article class="carrito" data-aos="fade-down"
+<!-- <% //libros.forEach(libro => { %>
+ <article class="carrito" data-aos="fade-down"
 data-aos-easing="linear"
 data-aos-duration="1000">
     <div class="imagen-libro">
-        <img src="/images/Caos de James Gleick.jpg" alt="">
+        <img src="<%= //libros.image %>" alt="">
     </div>
     <div class="descripcion">
-        <strong>Titulo del libro: Caos</strong>
+        <strong>Titulo del libro: <%= //libros.titulo %></strong>
         <hr>
-        <span>Autor: James Gleick</span>
-        <strong> Precio: $1305</strong>
+        <span>Autor: <%= //libros.autor %></span>
+        <strong> Precio:<%= //libros.price %></strong>
         <button type="submit">Eliminar del carrito</button>
     </div>
 </article>
+<%// }) %>  -->
+
+
 
 <article class="carrito" data-aos="fade-down"
 data-aos-easing="linear"
@@ -41,10 +48,34 @@ data-aos-duration="1000">
         <hr>
         <span>Autor: Joe Kelli</span>
         <strong> Precio: $ 2140</strong>
-        <button type="submit">Eliminar del carrito</button>
+       <div class="carrito_description-buttons">
+         <button type="submit"><i class="fa-solid fa-trash"></i></button>
+        <a href="/"><button>Seguir Comprando</button></a>
+    
+     </div> 
+       
     </div>
 </article>
     
+<article class="carrito" data-aos="fade-down"
+data-aos-easing="linear"
+data-aos-duration="1000">
+    <div class="imagen-libro">
+        <img src="/images/Spider-Man_Deadpool_Vol_1_3200.jpg" alt="">
+    </div>
+    <div class="descripcion">
+        <strong>Titulo del libro: Spider-Man / Deadpool</strong>
+        <hr>
+        <span>Autor: Joe Kelli</span>
+        <strong> Precio: $ 2140</strong>
+       <div class="carrito_description-buttons">
+         <button type="submit"><i class="fa-solid fa-trash"></i></button>
+        <a href="/"><button>Seguir Comprando</button></a>
+    
+     </div> 
+       
+    </div>
+</article>
      
         <div class="main__cajaCompra">
             <div class="main__precioFinal">
@@ -56,6 +87,7 @@ data-aos-duration="1000">
                 </div>                
                 <form action="" method="get">
                 <button type="submit">Proceder al pago seguro</button>
+               <!--  <a href="#"><button>seguir comprando</button></a> -->
                 </form>
            </div>
            <div class="main__carrito"> 
