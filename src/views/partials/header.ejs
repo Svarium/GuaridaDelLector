@@ -11,7 +11,11 @@
                 <!-- <li><a href="#">¿Quiénes somos?|</a></li> -->
                 <li><a href="/#populares">Best Sellers 2022 |</a></li>
                 <li><a href="/libros">Catálogo Detallado |</a></li>
-                <li><a href="/products/agregar">Agregar libro |</a></li>
+                <% if (locals.userLogin) { %>
+                    <li><a href="/products/agregar">Agregar libro |</a></li>
+                <% } else { %>
+              <li><a href="#">Nosotros |</a></li>
+                <% } %>
             </ul>
         </nav>
 
@@ -25,7 +29,11 @@
         </div>
         
         <div class="header__nav__menu--user">   
+            <% if (locals.userLogin) { %>
+             <small>Hola, <%= userLogin.name %></small>
+            <% } else { %>
             <a href="/user/login"><i class="fa-solid fa-user"></i></a>
+            <% } %>
             <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
         <div class="burger-menu">

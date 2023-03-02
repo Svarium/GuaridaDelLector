@@ -31,6 +31,8 @@ const productsRouter = require('./src/routes/products');
 const userRouter = require('./src/routes/user');
 const cartRouter = require('./src/routes/cart');
 const methodOverride = require('method-override');
+const session = require('express-session');
+const localsUserCheck = require('./src/middlewares/localsUserCheck')
 
 const app = express();
 
@@ -44,6 +46,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use(session({
+  secret : "Guarida del Lector 2023",
+  resave : false,
+  saveUninitialized: true
+}))
+
+app.use(localsUserCheck)
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);

@@ -1,6 +1,7 @@
 const express = require('express');
-const { login, register, processRegister } = require('../controllers/usersController');
+const { login, register, processRegister, processLogin } = require('../controllers/usersController');
 const { uploadIconImage } = require('../middlewares/iconProfile');
+const loginValidator = require('../validations/loginValidator');
 const registerValidator = require('../validations/registerValidator');
 const router = express.Router();
 
@@ -10,6 +11,7 @@ const router = express.Router();
 router.get('/register', register)
 router.post('/register', uploadIconImage.single('icon'), registerValidator, processRegister)
 router.get('/login', login)
+router.post('/login', loginValidator, processLogin)
 
 /* Registrar Usuario */
 

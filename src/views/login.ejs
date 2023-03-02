@@ -45,15 +45,17 @@
          
          
         
-            <form action="/registro" method="POST" class="fomulario-registro">
+            <form action="/user/login" method="POST" class="fomulario-registro">
                 <h2 class="titulo--registro">Login de usuario</h2>
 
                 <div class="datos--personales">
-                <input type="text" name="usuario" id="usuario"  placeholder="Nombre de usuario" required>
+                <input type="email" name="email" id="email" class="<%= locals.errors && errors.email ? 'errorInput' : null %>"  placeholder="Ingrese su email" >
+                <small><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                 </div>
 
                 <div class="form--password">
-                    <input type="password" name="password" id="password" placeholder="Ingrese su contraseña" required>
+                    <input type="password" name="password" id="password" class="<%= locals.errors && errors.password ? 'errorInput' : null %>" placeholder="Ingrese su contraseña" >
+                    <small><%= locals.errors && errors.password ? errors.password.msg : null %></small>
                 </div>
                 <div class="form--condiciones">
                     <a href="/user/register">¿No tenes Cuenta?</a>

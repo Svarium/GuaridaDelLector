@@ -69,5 +69,30 @@ module.exports = {
 
     login : (req,res) => {
         return res.render('login')
+    },
+
+    processLogin : (req,res) =>{
+
+        const errors =  validationResult(req);
+
+        /* return res.send(errors) */
+
+        if(errors.isEmpty()){
+            const {id, name, rol} = readJSON('users.json').find(user=> user.email === req.body.email);
+
+            req.session.userLogin = {
+                id, 
+                name,
+                rol
+            };
+
+            console.log(req.session);
+            return res.redirect('/')
+        } else {
+            return res.render('login',{
+                errors : errors.mapped()
+            })
+        }
+
     }
 }
