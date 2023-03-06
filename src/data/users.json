@@ -142,5 +142,14 @@
       "password": "$2a$10$DY6iS313FkoWLEXImQ/md.gd4w1WW4yc/RpGchUN10.ZYw0eNjdY.",
       "icon": "1677709549313_products_.jpg",
       "rol": "user"
+   },
+   {
+      "id": 17,
+      "name": "jose",
+      "surname": "acevedo",
+      "email": "joseacevedo410@gmail.com",
+      "password": "$2a$10$noAxtb6RvyTNIJ4bnFCgkOBVjwQu2Ck8JFlZSAptPFNtm3c4Oq7MK",
+      "icon": "1678105444451_products_.jpg",
+      "rol": "user"
    }
 ]
