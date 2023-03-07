@@ -95,7 +95,12 @@ input{
     font-weight: bolder;
     font-size: 15px;
 }
-
+.form--condiciones--recordar label{
+    font-size: 12px;
+    font-family: 'roboto';
+    display: flex;
+    color: white;
+}
 .form--condiciones a{
     font-size: 12px;
     font-family: 'roboto';

@@ -32,7 +32,8 @@ const userRouter = require('./src/routes/user');
 const cartRouter = require('./src/routes/cart');
 const methodOverride = require('method-override');
 const session = require('express-session');
-const localsUserCheck = require('./src/middlewares/localsUserCheck')
+const localsUserCheck = require('./src/middlewares/localsUserCheck');
+const cookieCheck = require('./src/middlewares/cookieCheck');
 
 const app = express();
 
@@ -52,6 +53,7 @@ app.use(session({
   saveUninitialized: true
 }))
 
+app.use(cookieCheck)
 app.use(localsUserCheck)
 
 app.use('/', indexRouter);
