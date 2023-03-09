@@ -12,6 +12,11 @@ module.exports = {
         libros
       });      
     },
+    admin : (req,res) =>{
+return res.render('dashboard',{
+  libros
+})
+    },
     listar : (req,res) => {
       const productsFilePath = path.join(__dirname, '../data/books.json');
       const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 

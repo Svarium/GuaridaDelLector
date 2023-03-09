@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head')  %>
+         <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<body>
+    <%- include('./partials/headerAdmin')  %>
+<main>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">libro</th>
+            <th scope="col">precio</th>
+            <th scope="col">autor</th>
+            <th scope="col">acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+         <% libros.forEach(({id,titulo,precio,autor}) => { %>
+            <tr>
+            <th scope="row"><%= id %></th>
+            <td><%= titulo %></td>
+            <td><%= precio %></td>
+            <td><%= autor %></td>
+            <td>
+                <div class="d-flex gap-2">
+                    <a class="btn btn-sm btn-primary" href="products/detail/<%= id %>"><i class="fa-solid fa-eye"></i></a>
+                    <a class="btn btn-sm btn-success" href="products/editar/<%= id %>"><i class="fa-solid fa-edit"></i></a>
+                    <a class="btn btn-sm btn-danger" href="products/delete/<%= id %>"><i class="fa-solid fa-trash"></i></a>
+                </div>
+        </td>
+          </tr>
+         <% }) %>
+          
+         
+        </tbody>
+      </table>
+</main>
+
+<%- include('./partials/footer')  %>
+
+ <!-- AOS -->
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+   AOS.init();
+ </script>
+
+ <!-- GLIDER -->
+ <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+ <script>
+new Glider(document.querySelector('.glider'), {
+// Mobile-first defaults
+slidesToShow: 1,
+slidesToScroll: 1,
+scrollLock: true,
+dots: '#resp-dots',
+arrows: {
+ prev: '.glider-prev',
+ next: '.glider-next'
+},
+responsive: [
+ {
+   // screens greater than >= 775px
+   breakpoint: 768,
+   settings: {
+     // Set to `auto` and provide item width to adjust to viewport
+     slidesToShow: '2',
+     slidesToScroll: '2',
+     itemWidth: 150,
+     duration: 0.25
+   }
+ },{
+   // screens greater than >= 1024px
+   breakpoint: 1024,
+   settings: {
+     slidesToShow: 4,
+     slidesToScroll: 1,
+     itemWidth: 100,
+     duration: 0.25
+   }
+ }
+]
+});
+ </script>
+
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+ </body>
+</html>
