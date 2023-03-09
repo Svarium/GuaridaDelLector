@@ -78,13 +78,16 @@ module.exports = {
         /* return res.send(errors) */
 
         if(errors.isEmpty()){
-            const {id, name, rol} = readJSON('users.json').find(user=> user.email === req.body.email);
+            const {id, name, rol} = readJSON('users.json').find(user => user.email === req.body.email);
 
             req.session.userLogin = {
                 id, 
                 name,
                 rol
             };
+            if (req.body.recordar){
+                res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60})
+            }
 
             console.log(req.session);
             return res.redirect('/')
@@ -94,5 +97,11 @@ module.exports = {
             })
         }
 
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        res.cookie('userGuaridaDelLector', null, {maxAge: -1})
+        return res.redirect('/')
     }
+
 }

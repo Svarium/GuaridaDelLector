@@ -53,9 +53,13 @@
                 <small><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                 </div>
 
-                <div class="form--password">
+                <div class="form--password" >
                     <input type="password" name="password" id="password" class="<%= locals.errors && errors.password ? 'errorInput' : null %>" placeholder="Ingrese su contraseña" >
                     <small><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                </div>
+                <div class="form--condiciones--recordar"> 
+                    <input type="checkbox" name="recordar" id="">
+                    <label for="recordar">Recordarme</label>
                 </div>
                 <div class="form--condiciones">
                     <a href="/user/register">¿No tenes Cuenta?</a>
