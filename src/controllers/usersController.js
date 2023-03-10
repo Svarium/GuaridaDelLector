@@ -78,12 +78,13 @@ module.exports = {
         /* return res.send(errors) */
 
         if(errors.isEmpty()){
-            const {id, name, rol} = readJSON('users.json').find(user => user.email === req.body.email);
+            const {id, name, rol, icon} = readJSON('users.json').find(user => user.email === req.body.email);
 
             req.session.userLogin = {
                 id, 
                 name,
-                rol
+                rol,
+                icon
             };
             if (req.body.recordar){
                 res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60})
