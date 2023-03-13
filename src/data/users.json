@@ -151,5 +151,14 @@
       "password": "$2a$10$noAxtb6RvyTNIJ4bnFCgkOBVjwQu2Ck8JFlZSAptPFNtm3c4Oq7MK",
       "icon": "1678105444451_products_.jpg",
       "rol": "user"
+   },
+   {
+      "id": 18,
+      "name": "sebastian",
+      "surname": "gallardo",
+      "email": "gallardosebastian@gmail.com",
+      "password": "$2a$10$N5.ORyCeloIX2I.CYITW..JGEU.SgX54pvbnoe.LYUJcxJka/WAyS",
+      "icon": "1678329221802_products_.png",
+      "rol": "admin"
    }
 ]

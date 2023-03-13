@@ -197,7 +197,7 @@
    flex-wrap: wrap;
    align-self: flex-start;
    position: absolute;
-   top: 55%;
+   top: 45%;
    left: 50%;
 }
 
@@ -206,6 +206,7 @@
    .main__cajaCompra {
       width: 50%;
      padding: 20px 0px; 
+     gap: 10px;
    } 
 
   .main__precioFinal{

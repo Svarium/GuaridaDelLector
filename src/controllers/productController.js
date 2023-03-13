@@ -212,7 +212,7 @@ module.exports={
         const {id} = req.params;
         const librosModified = libros.filter(libro => libro.id !== +id )
         fs.writeFileSync(productsFilePath, JSON.stringify(librosModified,null,3),'utf-8')
-        return res.redirect('/libros')
+        return res.redirect('/admin')
     } 
     
 }

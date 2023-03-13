@@ -1,16 +1,16 @@
-# Proyecto Integrador: Retrospectiva Sprint 3
+# Proyecto Integrador: Retrospectiva Sprint 5
 
 #### - Dejar de hacer:
 
-Para este punto no encontramos algo puntual que mencionar ya que el equipo funcionó muy bien en este sprint. 
+Dejar tareas pendientes para que los demás puedan avanzar. 
 
 #### - Comenzar a hacer:
 
-Prestarle mas atención al trello. 
+Testear mas entre todos el proyecto para que no surjan errores de último momento y que no queden cosas pendientes de arreglar. 
 
 #### - Más de: 
 
-Seguir comunicando nuestro avance en el grupo y el trello y más reuniones para codear. 
+Seguir comunicando nuestro avance en el grupo de whatsapp y discord. 
 
 #### - Seguir haciendo: 
 

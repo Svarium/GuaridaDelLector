@@ -37,20 +37,21 @@
                         <a href="/cart/<%= libro.id %>"><i class="fa-solid fa-cart-shopping"></i></a>
                     </button>
                                      
-                    <button>
-                      <a href="/products/editar/<%= libro.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
-                  </button>
-                  <button>
-                    <a href="/products/agregar"><i class="fa-solid fa-plus"></i></a>
-                </button>
                 
-                <!--Boton para abrir el modal-->
+                    <% if (locals.userLogin) { %>
+                   <!--Boton para abrir el modal-->
+                
                 <div class="boton-modal detalle-comprar">
                   <label for="btn-modal">
                      <i class="fa-solid fa-trash"></i>
                   </label>
               </div>
               <!--Fin de Boton-->
+                  <% } else { %>
+                
+                  <% } %>
+
+               
             </div>
           </article>
       </section>

@@ -4,22 +4,6 @@
             <a href="/"><img src="/images/logo" alt=""></a>
             <!-- <img src="/images/logo" alt=""> -->
         </div>
-        <nav class="header__nav">
-            <ul class="header__nav--lista">
-                <li><a href="/">Home |</a></li>
-                <li><a href="/#category">Categorias |</a></li>
-                <!-- <li><a href="#">¿Quiénes somos?|</a></li> -->
-                <li><a href="/#populares">Best Sellers 2022 |</a></li>
-                <li><a href="/libros">Catálogo Detallado |</a></li>
-                <% if (locals.userLogin) { %>
-                    <li><a href="/products/agregar">Agregar libro |</a></li>
-                    <li><a href="/user/logout">cerrar sesion |</a></li>
-                <% } else { %>
-              <li><a href="#">Nosotros |</a></li>
-                <% } %>
-            </ul>
-        </nav>
-
         <div class="header--buscador">
             <form action="/search" method="get">
                 <input type="search" name="search" placeholder="Buscar títulos y categorías">
@@ -28,18 +12,42 @@
                 </button>
             </form>
         </div>
+
         
-        <div class="header__nav__menu--user">   
+        <div class="header__nav__menu--user"> 
+            <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="hamburguesa" class="fas fa-bars hamburguesa"></i>  
             <% if (locals.userLogin) { %>
-             <small>Hola, <%= userLogin.name %></small>
+                <a href="#">
+                    <img src="/images/iconsProfile/<%= userLogin.icon %>" alt="">
+                    <small>Hola, <%= userLogin.name %>!</small>
+                </a>
+                
+             
             <% } else { %>
             <a href="/user/login"><i class="fa-solid fa-user"></i></a>
             <% } %>
-            <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+           
         </div>
-        <div class="burger-menu">
+      <!--   <div class="burger-menu">
             <i class="fas fa-bars"></i>
-            </div> <br>
+            </div>  -->
+            <nav class="header__nav">
+                <ul class="header__nav--lista">
+                    <li><a href="/">Home |</a></li>
+                    <li><a href="/#category">Categorias |</a></li>
+                    <!-- <li><a href="#">¿Quiénes somos?|</a></li> -->
+                    <li><a href="/#populares">Best Sellers 2022 |</a></li>
+                    <li><a href="/libros">Catálogo Detallado |</a></li>
+                    <% if (locals.userLogin) { %>
+                        <li><a href="/admin">Dashboard |</a></li>
+                        <li><a href="/user/logout">Cerrar Sesión </a></li>
+                    <% } else { %>
+                  <li><a href="#">Nosotros |</a></li>
+                    <% } %>
+                </ul>
+            </nav>
+          
     </div>
     
     
