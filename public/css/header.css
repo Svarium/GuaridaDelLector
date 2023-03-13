@@ -56,6 +56,14 @@
     box-shadow: 3px 5px 8px rgb(0, 0, 0);
 }
 
+.icon-dash{
+    width:70px;
+    height:70px;
+    border-radius:150px;
+    object-fit: cover;
+    box-shadow: 3px 5px 8px rgb(0, 0, 0);
+}
+
 .header__nav__menu--user small{
     display: none;
 }
