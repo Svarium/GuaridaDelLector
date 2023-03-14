@@ -87,7 +87,7 @@ module.exports = {
                 icon
             };
             if (req.body.recordar){
-                res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60})
+                res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60*5})
             }
 
             console.log(req.session);

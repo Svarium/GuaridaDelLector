@@ -27,7 +27,7 @@ module.exports = [
 
     check('description2')
     .notEmpty().withMessage('Debe ingresar una descripción').bail()
-    .isLength({min:10, max:200}).withMessage('La descripción puede tener entre 10 y 200 caracteres'),
+    .isLength({min:10, max:500}).withMessage('La descripción puede tener entre 10 y 500 caracteres'),
 
     check('genero')
     .notEmpty().withMessage('¿A qué genero pertenece?')
