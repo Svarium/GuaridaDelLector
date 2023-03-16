@@ -78,11 +78,13 @@ module.exports = {
         /* return res.send(errors) */
 
         if(errors.isEmpty()){
-            const {id, name, rol, icon} = readJSON('users.json').find(user => user.email === req.body.email);
+            const {id, name, surname, email, rol, icon} = readJSON('users.json').find(user => user.email === req.body.email);
 
             req.session.userLogin = {
                 id, 
                 name,
+                surname,
+                email,
                 rol,
                 icon
             };
@@ -103,6 +105,9 @@ module.exports = {
         req.session.destroy();
         res.cookie('userGuaridaDelLector', null, {maxAge: -1})
         return res.redirect('/')
+    },
+    perfilDeUsuario: (req, res) => {
+        return res.render('perfilDeUsuario')
     }
 
 }
