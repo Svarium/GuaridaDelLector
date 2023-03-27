@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('./partials/head', {
+        title: "editar usuario"
+    })  %>
+<body class="register__body">
+
+   
+    <main class="registro__main">
+        
+
+        <!-- formulario registro -->
+       <section class="register__section--form reg">
+         
+         
+        
+            <form  method="POST" class="fomulario-registro" enctype="multipart/form-data">
+                <h2 class="titulo--registro">Formulario de Registro</h2>
+
+                <div class="datos--personales">
+                <input type="text" name="name" id="name" class="<%= locals.errors && errors.name ? 'errorInput' : null %>"   value="<%= `${usuario.first_name}` %>">
+                <small><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+                <input type="text" name="surname" id="surname" class="<%= locals.errors && errors.surname ? 'errorInput' : null %>"  value="">
+                <small><%= locals.errors && errors.surname ? errors.surname.msg : null %></small>
+                <input type="email" name="email" id="email" class="<%= locals.errors && errors.email ? 'errorInput' : null %>"  value="">
+                <small><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+                </div>
+
+                <div class="form--password">
+                    <input type="password" name="password" id="password" class="<%= locals.errors && errors.password ? 'errorInput' : null %>"  value="<%= locals.old && old.password ? old.password : null %>">
+                    <small><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                    <input type="password" name="password2" id="password2" class="<%= locals.errors && errors.password2 ? 'errorInput' : null %>"  value="<%= locals.old && old.password2 ? old.password2 : null %>">
+                    <small><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
+                    <input type="file" name="icon" id="icon" class="<%= locals.errors && errors.password2 ? 'errorInput' : null %>">
+                    <small><%= locals.errors && errors.icon ? errors.icon.msg : null %></small>
+                </div>
+                <div class="form--condiciones">
+                    <a href="/user/login">¿Ya tenes una cuenta?</a>
+                </div>
+                <div class="form--buttons">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Borrar</button>
+                </div>
+                <div class="form--condiciones">
+                    <a href="/">Ir al inicio</a>
+                </div>
+            </form>
+
+       </section>
+      
+
+    </main>
+
+  <!--   <footer class="footer"> 
+        <section class="footer__section">
+            <article class="footer__article--info">                 
+                <strong>¿Quienes somos?</strong>
+                <hr>
+                <p>Grupos de Lectura</p>
+                <hr>
+                <a href="#">Iniciar Sesion/Registrarse</a>                            
+    </article>
+    <article class="footer__article--info">             
+            <strong>¿En qué podemos ayudarte?</strong>
+            <hr>
+            <a href="#">Preguntas frecuentes</a>
+            <hr>
+            <a href="#">Contactanos</a>                          
+</article>
+    <article class="footer__info--metodoPago">
+        <strong>Aceptamos los siguientes métodos de pago</strong>
+        <img src="/images/pago2.png" alt="">
+    </article>
+        </section>       
+        <section class="copy">
+            <p>2022 - Guarida del Lector - Todos los derechos reservados</p>
+        </section><br>      
+    </footer> -->
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- GLIDER -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+    <script>
+new Glider(document.querySelector('.glider'), {
+  // Mobile-first defaults
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  scrollLock: true,
+  dots: '#resp-dots',
+  arrows: {
+    prev: '.glider-prev',
+    next: '.glider-next'
+  },
+  responsive: [
+    {
+      // screens greater than >= 775px
+      breakpoint: 768,
+      settings: {
+        // Set to `auto` and provide item width to adjust to viewport
+        slidesToShow: '2',
+        slidesToScroll: '2',
+        itemWidth: 150,
+        duration: 0.25
+      }
+    },{
+      // screens greater than >= 1024px
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        itemWidth: 100,
+        duration: 0.25
+      }
+    }
+  ]
+});
+    </script>
+</body>
+</html>

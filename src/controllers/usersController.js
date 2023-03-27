@@ -1,6 +1,7 @@
 const {validationResult} = require('express-validator');
 const {readJSON, writeJSON} = require("../data");
 const {hashSync} = require('bcryptjs')
+const usuarios = require('../data/users.json')
 
 module.exports = {
     register : (req,res) => {
@@ -108,6 +109,75 @@ module.exports = {
     },
     perfilDeUsuario: (req, res) => {
         return res.render('perfilDeUsuario')
-    }
+    }, 
+    editarU:(req, res) => {
+        let idParams = +req.params.id
+        let usuarioAEditar = usuarios.find((usuario) => usuario.id === idParams)
+
+        return res.render('editarUsuario', {
+            usuario : usuarioAEditar
+        })
+        
+    },
+    editarUsuario: (req,res) =>{
+        
+        const errors = validationResult(req);
+
+        if(req.fileValidationError){ //este if valida que solo se puedan subir extensiones (jpg|jpeg|png|gif|webp)
+            errors.errors.push({
+                value : "",
+                msg : req.fileValidationError,
+                param : "icon",
+                location : "file"
+            })
+        }
+
+              if(!req.file){  //este if valida que se suba una imagen
+            errors.errors.push({
+                value : "",
+                msg : "Debe subir una imagen de perfil",
+                param : "icon",
+                location : "file"
+            })
+            
+        } 
+
+        
+
+     if(errors.isEmpty()){
+        const users = readJSON('users.json');
+        const id = +req.params.id
+        const usuarioAModificar = users.find((usuario) => usuario.id === id) 
+        const {name, surname, email, password} = req.body
+
+        const userEdit = {
+            
+            name : usuario.name.trim(),
+            surname : usuario.surname.trim(),
+            email : usuario.email.trim(),
+            icon : req.file ? req.file.filename : usuario.icon,
+            rol : 'user'
+        }
+
+        users.push(userEdit)
+
+        writeJSON('users.json', users);
+
+        processLogin()
+
+        return res.redirect('/user/perdilDeUsuario')
+
+
+     } else {
+
+        return res.render('register', {
+            errors : errors.mapped(),
+            old : req.body
+        })
+
+     }
+
+    },
+    
 
 }
