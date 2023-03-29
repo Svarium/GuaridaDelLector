@@ -38,7 +38,7 @@
                     </button>
                                      
                 
-                    <% if (locals.userLogin.rol === "admin") { %>
+                    <% if (locals.userLogin && locals.userLogin.rol === "admin") { %>
                    <!--Boton para abrir el modal-->
                 
                 <div class="boton-modal detalle-comprar">
