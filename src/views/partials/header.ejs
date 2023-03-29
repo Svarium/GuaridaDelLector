@@ -18,7 +18,7 @@
             <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
             <i id="hamburguesa" class="fas fa-bars hamburguesa"></i>  
             <% if (locals.userLogin) { %>
-                <a href="#">
+                <a href="/user/perfil">
                     <img src="/images/iconsProfile/<%= userLogin.icon %>" alt="">
                     <small>Hola, <%= userLogin.name %>!</small>
                 </a>

@@ -78,13 +78,16 @@ module.exports = {
         /* return res.send(errors) */
 
         if(errors.isEmpty()){
-            const {id, name, rol, icon} = readJSON('users.json').find(user => user.email === req.body.email);
+            const {id, name, rol, icon, surname, email} = readJSON('users.json').find(user => user.email === req.body.email);
 
             req.session.userLogin = {
                 id, 
                 name,
                 rol,
-                icon
+                icon,
+                surname,
+                email
+
             };
             if (req.body.recordar){
                 res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60*5})
@@ -103,6 +106,10 @@ module.exports = {
         req.session.destroy();
         res.cookie('userGuaridaDelLector', null, {maxAge: -1})
         return res.redirect('/')
+    },
+
+    perfil : (req,res) =>{
+        return res.render('perfil')
     }
 
 }
