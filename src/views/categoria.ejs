@@ -17,7 +17,7 @@
                 <% if(libro.genero === "Novela" ||  libro.genero === "Novela Ficción" || libro.genero === "Novela Terror" || libro.genero === "Novela Fantasía" || libro.genero === "Novela Negra") { %>
                     <div class="contenedor-catalogo">                    
                         <a href="/products/detail/<%=libro.id%>">
-                        <img src="/images/libros/libros/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="" >
+                        <img src="/images/libros/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="" >
                         </a>                
             </div>   
             <% } %>  
