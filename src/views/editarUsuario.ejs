@@ -14,25 +14,27 @@
          
          
         
-            <form  method="POST" class="fomulario-registro" enctype="multipart/form-data">
+            <form action="/user/editarUsuario/<%= usuario.id %>?_method=put" method="post" class="fomulario-registro" enctype="multipart/form-data">
                 <h2 class="titulo--registro">Formulario de Registro</h2>
 
+                <div>
+                    <label for="icon"><img src="/images/iconsProfile/<%= `${usuario.icon}` %>" alt="" style="width: 150px; height: 150px; border-radius: 50%;"></label>
+                    <input type="file" name="icon" id="icon" style="display: none;">
+                    <small><%= locals.errors && errors.icon ? errors.icon.msg : null %></small> 
+                </div>
+
                 <div class="datos--personales">
-                <input type="text" name="name" id="name" class="<%= locals.errors && errors.name ? 'errorInput' : null %>"   value="<%= `${usuario.first_name}` %>">
+                <input type="text" name="name" id="name" class="<%= locals.errors && errors.name ? 'errorInput' : null %>"   value="<%= `${usuario.name}` %>">
                 <small><%= locals.errors && errors.name ? errors.name.msg : null %></small>
-                <input type="text" name="surname" id="surname" class="<%= locals.errors && errors.surname ? 'errorInput' : null %>"  value="">
+                <input type="text" name="surname" id="surname" class="<%= locals.errors && errors.surname ? 'errorInput' : null %>"  value="<%= `${usuario.surname}` %>">
                 <small><%= locals.errors && errors.surname ? errors.surname.msg : null %></small>
-                <input type="email" name="email" id="email" class="<%= locals.errors && errors.email ? 'errorInput' : null %>"  value="">
+                <input type="email" name="email" id="email" class="<%= locals.errors && errors.email ? 'errorInput' : null %>" value="<%= `${usuario.email}` %>">
                 <small><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                 </div>
 
                 <div class="form--password">
-                    <input type="password" name="password" id="password" class="<%= locals.errors && errors.password ? 'errorInput' : null %>"  value="<%= locals.old && old.password ? old.password : null %>">
+                    <input type="password" name="password" id="password" class="<%= locals.errors && errors.password ? 'errorInput' : null %>"  value="<%= `${usuario.password}` %>" disabled>
                     <small><%= locals.errors && errors.password ? errors.password.msg : null %></small>
-                    <input type="password" name="password2" id="password2" class="<%= locals.errors && errors.password2 ? 'errorInput' : null %>"  value="<%= locals.old && old.password2 ? old.password2 : null %>">
-                    <small><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
-                    <input type="file" name="icon" id="icon" class="<%= locals.errors && errors.password2 ? 'errorInput' : null %>">
-                    <small><%= locals.errors && errors.icon ? errors.icon.msg : null %></small>
                 </div>
                 <div class="form--condiciones">
                     <a href="/user/login">¿Ya tenes una cuenta?</a>

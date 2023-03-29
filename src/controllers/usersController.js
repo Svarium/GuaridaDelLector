@@ -120,8 +120,10 @@ module.exports = {
         
     },
     editarUsuario: (req,res) =>{
+
+        /* return res.send(req.body) */
         
-        const errors = validationResult(req);
+       /*  const errors = validationResult(req);
 
         if(req.fileValidationError){ //este if valida que solo se puedan subir extensiones (jpg|jpeg|png|gif|webp)
             errors.errors.push({
@@ -144,40 +146,36 @@ module.exports = {
 
         
 
-     if(errors.isEmpty()){
-        const users = readJSON('users.json');
-        const id = +req.params.id
-        const usuarioAModificar = users.find((usuario) => usuario.id === id) 
-        const {name, surname, email, password} = req.body
+     if(errors.isEmpty()){ */
 
-        const userEdit = {
-            
-            name : usuario.name.trim(),
-            surname : usuario.surname.trim(),
-            email : usuario.email.trim(),
-            icon : req.file ? req.file.filename : usuario.icon,
-            rol : 'user'
-        }
+        let idParams = +req.params.id
+         
+        let {name, surname, email} = req.body
 
-        users.push(userEdit)
-
-        writeJSON('users.json', users);
-
-        processLogin()
-
-        return res.redirect('/user/perdilDeUsuario')
-
-
-     } else {
-
-        return res.render('register', {
-            errors : errors.mapped(),
-            old : req.body
+        usuarios.forEach(usuario => {
+            if(usuario.id === idParams) {
+                usuario.name = name.trim(),
+                usuario.surname = surname.trim(),
+                usuario.email = email.trim()
+            }
         })
 
-     }
+        writeJSON('users.json', usuarios);
 
-    },
+        req.session.reload()
+
+        
+
+        return res.redirect('/')
+    /* } else {
+        return res.render('login',{
+            errors : errors.mapped()
+        })
+    }
+ */
+     } 
+
+    }
+
     
 
-}

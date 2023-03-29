@@ -15,8 +15,8 @@ router.get('/login', checkUser, login)
 router.post('/login', loginValidator, processLogin)
 router.get('/logout', logout)
 router.get('/perfilDeUsuario', perfilDeUsuario)
-router.get('/editarUsuario', editarU)
-router.put('/editarUsuario', editarUsuario)
+router.get('/editarUsuario/:id', editarU)
+router.put('/editarUsuario/:id', uploadIconImage.single('icon'), editarUsuario)
 
 
 /* Registrar Usuario */
