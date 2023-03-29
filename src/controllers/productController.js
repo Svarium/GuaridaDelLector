@@ -165,7 +165,7 @@ module.exports={
 
         //si existe una nueva imagen borra la imagen anterior y lee de nuevo el json
         if(req.file){
-            fs.existsSync(`./public/images/${libro.imagen}`) && fs.unlinkSync(`./public/images/${libro.imagen}`) 
+            fs.existsSync(`./public/images/libros/${libro.imagen}`) && fs.unlinkSync(`./public/images/libros/${libro.imagen}`) 
             const productsFilePath = path.join(__dirname, '../data/books.json');
             const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
         }
