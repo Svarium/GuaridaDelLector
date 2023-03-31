@@ -1,7 +1,6 @@
 const {validationResult} = require('express-validator');
 const {readJSON, writeJSON} = require("../data");
 const {hashSync} = require('bcryptjs')
-const usuarios = require('../data/users.json')
 
 module.exports = {
     register : (req,res) => {
@@ -84,8 +83,6 @@ module.exports = {
             req.session.userLogin = {
                 id, 
                 name,
-                surname,
-                email,
                 rol,
                 icon,
                 surname,
@@ -115,7 +112,4 @@ module.exports = {
         return res.render('perfil')
     }
 
-    }
-
-    
-
+}
