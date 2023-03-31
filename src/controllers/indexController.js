@@ -15,6 +15,8 @@ module.exports = {
       });      
     },
     admin : (req,res) =>{
+      const productsFilePath = path.join(__dirname, '../data/books.json');
+      const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 return res.render('dashboard',{
   libros
 })
@@ -43,5 +45,8 @@ return res.render('dashboard',{
         busqueda: elemento,
         books
       });
+    },
+    nosotros : (req,res) =>{
+      res.render('nosotros')
     }
 }

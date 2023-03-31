@@ -18,7 +18,11 @@
             <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
             <i id="hamburguesa" class="fas fa-bars hamburguesa"></i>  
             <% if (locals.userLogin) { %>
+<<<<<<< HEAD
                 <a href="/user/perfilDeUsuario">
+=======
+                <a href="/user/perfil">
+>>>>>>> develop
                     <img src="/images/iconsProfile/<%= userLogin.icon %>" alt="">
                     <small>Hola, <%= userLogin.name %>!</small>
                 </a>
@@ -41,9 +45,10 @@
                     <li><a href="/libros">Catálogo Detallado |</a></li>
                     <% if (locals.userLogin) { %>
                         <li><a href="/admin">Dashboard |</a></li>
-                        <li><a href="/user/logout">Cerrar Sesión </a></li>
+                        <li><a href="/user/logout">Cerrar Sesión | </a></li>
+                        <li><a href="/user/perfil">Ir al Perfil</a></li>
                     <% } else { %>
-                  <li><a href="#">Nosotros |</a></li>
+                  <li><a href="/nosotros">Nosotros |</a></li>
                     <% } %>
                 </ul>
             </nav>

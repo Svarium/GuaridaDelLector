@@ -90,7 +90,8 @@ module.exports={
 
         fs.writeFileSync(productsFilePath,JSON.stringify(libros, null, 3),'utf-8');
 
-        return res.redirect('/libros')
+        
+        return res.redirect('/admin')
 
 
        } else{
@@ -164,7 +165,7 @@ module.exports={
 
         //si existe una nueva imagen borra la imagen anterior y lee de nuevo el json
         if(req.file){
-            fs.existsSync(`./public/images/${libro.imagen}`) && fs.unlinkSync(`./public/images/${libro.imagen}`) 
+            fs.existsSync(`./public/images/libros/${libro.imagen}`) && fs.unlinkSync(`./public/images/libros/${libro.imagen}`) 
             const productsFilePath = path.join(__dirname, '../data/books.json');
             const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
         }
@@ -212,6 +213,8 @@ module.exports={
         const {id} = req.params;
         const librosModified = libros.filter(libro => libro.id !== +id )
         fs.writeFileSync(productsFilePath, JSON.stringify(librosModified,null,3),'utf-8')
+
+
         return res.redirect('/admin')
     } 
     

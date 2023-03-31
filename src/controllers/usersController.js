@@ -79,7 +79,7 @@ module.exports = {
         /* return res.send(errors) */
 
         if(errors.isEmpty()){
-            const {id, name, surname, email, rol, icon} = readJSON('users.json').find(user => user.email === req.body.email);
+            const {id, name, rol, icon, surname, email} = readJSON('users.json').find(user => user.email === req.body.email);
 
             req.session.userLogin = {
                 id, 
@@ -87,10 +87,13 @@ module.exports = {
                 surname,
                 email,
                 rol,
-                icon
+                icon,
+                surname,
+                email
+
             };
             if (req.body.recordar){
-                res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60})
+                res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60*5})
             }
 
             console.log(req.session);
@@ -107,73 +110,10 @@ module.exports = {
         res.cookie('userGuaridaDelLector', null, {maxAge: -1})
         return res.redirect('/')
     },
-    perfilDeUsuario: (req, res) => {
-        return res.render('perfilDeUsuario')
-    }, 
-    editarU:(req, res) => {
-        let idParams = +req.params.id
-        let usuarioAEditar = usuarios.find((usuario) => usuario.id === idParams)
 
-        return res.render('editarUsuario', {
-            usuario : usuarioAEditar
-        })
-        
-    },
-    editarUsuario: (req,res) =>{
-
-        /* return res.send(req.body) */
-        
-       /*  const errors = validationResult(req);
-
-        if(req.fileValidationError){ //este if valida que solo se puedan subir extensiones (jpg|jpeg|png|gif|webp)
-            errors.errors.push({
-                value : "",
-                msg : req.fileValidationError,
-                param : "icon",
-                location : "file"
-            })
-        }
-
-              if(!req.file){  //este if valida que se suba una imagen
-            errors.errors.push({
-                value : "",
-                msg : "Debe subir una imagen de perfil",
-                param : "icon",
-                location : "file"
-            })
-            
-        } 
-
-        
-
-     if(errors.isEmpty()){ */
-
-        let idParams = +req.params.id
-         
-        let {name, surname, email} = req.body
-
-        usuarios.forEach(usuario => {
-            if(usuario.id === idParams) {
-                usuario.name = name.trim(),
-                usuario.surname = surname.trim(),
-                usuario.email = email.trim()
-            }
-        })
-
-        writeJSON('users.json', usuarios);
-
-        req.session.reload()
-
-        
-
-        return res.redirect('/')
-    /* } else {
-        return res.render('login',{
-            errors : errors.mapped()
-        })
+    perfil : (req,res) =>{
+        return res.render('perfil')
     }
- */
-     } 
 
     }
 

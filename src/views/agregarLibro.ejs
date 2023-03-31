@@ -30,7 +30,7 @@
             <input type="text" class="<%= locals.errors && errors.editorial ? 'errorInput' : null %>" name="editorial" id="editorial" placeholder="Ingrese la editorial del libro" value="<%= locals.old && old.editorial ? old.editorial : null %>">
             <small><%= locals.errors && errors.editorial ? errors.editorial.msg : null %></small>
 
-            <input type="text" class="<%= locals.errors && errors.video ? 'errorInput' : null %>"  name="video" id="video" placeholder="ingrese link de video reseña" value="<%= locals.old && old.video ? old.autor : null %>"> <!-- agregar al controlador, al json y validar -->
+            <input type="text" class="<%= locals.errors && errors.video ? 'errorInput' : null %>"  name="video" id="video" placeholder="ingrese link de video reseña" value="<%= locals.old && old.video ? old.video : null %>"> <!-- agregar al controlador, al json y validar -->
             <small><%= locals.errors && errors.video ? errors.video.msg : null %></small>
 
             <label for="description2" class="titulo--edicion">Descripción del Libro:</label>

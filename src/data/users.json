@@ -25,5 +25,14 @@
       "password": "$2a$10$N5.ORyCeloIX2I.CYITW..JGEU.SgX54pvbnoe.LYUJcxJka/WAyS",
       "icon": "1678329221802_products_.png",
       "rol": "admin"
+   },
+   {
+      "id": 19,
+      "name": "user",
+      "surname": "prueba",
+      "email": "user@gmail.com",
+      "password": "$2a$10$E29yBMXL6Ry5vCmZHsv16uot2NtAtSOYeDvsHucjkI7OxO2QFduw6",
+      "icon": "1680115213969_products_.jpg",
+      "rol": "user"
    }
 ]
