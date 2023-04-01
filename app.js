@@ -19,7 +19,7 @@ app.get('*',(req,res) => res.sendFile(path.join(__dirname, 'views', '404.html'))
 //Servidor levantado
 app.listen(port, () => console.log('Servidor corriendo en el puerto ' + port)) */
 
-
+require('dotenv').config()
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
