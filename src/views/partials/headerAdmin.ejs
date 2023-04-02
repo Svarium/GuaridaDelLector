@@ -16,8 +16,10 @@
         <div class="header__nav__menu--user">   
             <% if (locals.userLogin && locals.userLogin.rol === 'admin') { %>
              <small>Hola, <%= userLogin.name %></small>
+             <li><a href="/user/logout">cerrar sesion |</a></li>
             <% } else { %>
             <a href="/user/login"><i class="fa-solid fa-user"></i></a>
+            
             <% } %>
          <!-- <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a> -->
         <!--  <a href="/products/agregar"><i class="fa-solid fa-plus"></i></a> -->
