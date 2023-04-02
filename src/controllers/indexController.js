@@ -45,5 +45,8 @@ return res.render('dashboard',{
         busqueda: elemento,
         books
       });
+    },
+    nosotros : (req,res) =>{
+      res.render('nosotros')
     }
 }
