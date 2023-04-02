@@ -6,6 +6,8 @@ const {validationResult} = require('express-validator')
 const productsFilePath = path.join(__dirname, '../data/books.json');
 const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
 
+const db =require('../database/models')
+
 module.exports={
 
     //Todos los productos por categoria
