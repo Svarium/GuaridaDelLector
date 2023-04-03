@@ -14,12 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Libro.init({
-    nombre: DataTypes.STRING,
+    titulo: DataTypes.STRING,
     precio: DataTypes.INTEGER,
     editorial: DataTypes.STRING,
     video: DataTypes.STRING,
     paginas: DataTypes.INTEGER,
-    descripcion: DataTypes.STRING,
+    description: DataTypes.STRING,
     imagen: DataTypes.STRING,
     autorId: DataTypes.INTEGER,
     generoId: DataTypes.INTEGER

@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nombre: {
+      titulo: {
         type: Sequelize.STRING
       },
       precio: {
@@ -24,7 +24,7 @@ module.exports = {
       paginas: {
         type: Sequelize.INTEGER
       },
-      descripcion: {
+      description: {
         type: Sequelize.STRING
       },
       imagen: {
@@ -32,18 +32,18 @@ module.exports = {
       },
       autorId: {
         type: Sequelize.INTEGER,
-        references:{
+        /* references:{
           tableName:"Autors"
         },
         key:"id"
-        
+         */
       },
       generoId: {
         type: Sequelize.INTEGER,
-        references:{
+        /* references:{
           tableName:"Generos"
         },
-        key:"id"
+        key:"id" */
       },
       createdAt: {
         allowNull: false,

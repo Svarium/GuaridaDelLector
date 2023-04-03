@@ -14,10 +14,10 @@ module.exports = {
       },
       usuarioId: {
         type: Sequelize.INTEGER,
-        references:{
+        /* references:{
           tableName:"Usuarios"
         },
-        key:"id"
+        key:"id" */
       },
       createdAt: {
         allowNull: false,
