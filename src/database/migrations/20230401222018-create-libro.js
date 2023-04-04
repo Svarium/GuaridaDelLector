@@ -32,18 +32,22 @@ module.exports = {
       },
       autorId: {
         type: Sequelize.INTEGER,
-        /* references:{
+        references:{
+          model : {
           tableName:"Autors"
         },
         key:"id"
-         */
+      }
+        
       },
       generoId: {
         type: Sequelize.INTEGER,
-        /* references:{
+        references:{
+          model:{
           tableName:"Generos"
         },
-        key:"id" */
+        key:"id"
+      }
       },
       createdAt: {
         allowNull: false,

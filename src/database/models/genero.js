@@ -11,6 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Libros.belongsTo(models.Generos,{
+        as:"genero",
+        foreignKey: "generoId"
+      })
+      Libros.belongsTo(models.Generos,{
+        as:"genero",
+        foreignKey: "generoId"
+      })
     }
   }
   Genero.init({
