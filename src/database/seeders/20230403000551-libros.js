@@ -9,7 +9,11 @@ let libros = productos.map(producto => {
       editorial: producto.editorial,
       video: producto.video,
       paginas: producto.paginas,
+      description1: producto.description1,
+      description2: producto.description2,
       imagen: producto.imagen,
+      autorId: producto.autorId,
+      generoId: producto.generoId,
       createdAt: new Date,
       updatedAt: new Date
       

@@ -19,6 +19,10 @@ module.exports = (sequelize, DataTypes) => {
         as:"genero",
         foreignKey: "generoId"
       })
+      Libros.belongsTo(models.editoriales,{
+        as:"edirtorial",
+        foreignKey: "editorialId"
+      })
     }
   }
   Libros.init({
@@ -27,7 +31,8 @@ module.exports = (sequelize, DataTypes) => {
     editorial: DataTypes.STRING,
     video: DataTypes.STRING,
     paginas: DataTypes.INTEGER,
-    description: DataTypes.STRING,
+    description1: DataTypes.STRING,
+    description2: DataTypes.STRING,
     imagen: DataTypes.STRING,
     autorId: DataTypes.INTEGER,
     generoId: DataTypes.INTEGER

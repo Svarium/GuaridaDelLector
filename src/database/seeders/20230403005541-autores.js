@@ -62,10 +62,10 @@ let autores = listadoDeAutores.map(autor=>{
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert("Autors", autores, {})
+    await queryInterface.bulkInsert("Autores", autores, {})
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("Autors", null, {})
+    await queryInterface.bulkDelete("Autores", null, {})
   }
 };
