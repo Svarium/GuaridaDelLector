@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
   Libros.init({
     titulo: DataTypes.STRING,
     precio: DataTypes.INTEGER,
-    editorial: DataTypes.STRING,
+    editorialId: DataTypes.STRING,
     video: DataTypes.STRING,
     paginas: DataTypes.INTEGER,
     description1: DataTypes.STRING,

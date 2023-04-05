@@ -6,7 +6,7 @@ let libros = productos.map(producto => {
   let libro = {
       titulo: producto.titulo ,
       precio: producto.precio,
-      editorial: producto.editorial,
+      editorialId: producto.editorialId,
       video: producto.video,
       paginas: producto.paginas,
       description1: producto.description1,

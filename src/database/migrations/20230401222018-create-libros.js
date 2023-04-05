@@ -15,8 +15,16 @@ module.exports = {
       precio: {
         type: Sequelize.INTEGER
       },
-      editorial: {
-        type: Sequelize.STRING
+      editorialId: {
+        type: Sequelize.INTEGER,
+        allowNull:false,
+        references:{
+          model : {
+          tableName:"Editoriales"
+        },
+        key:"id"
+      }
+        
       },
       video: {
         type: Sequelize.STRING
@@ -35,25 +43,25 @@ module.exports = {
       },
       autorId: {
         type: Sequelize.INTEGER,
-        /* allowNull:false,
+        allowNull:false,
         references:{
           model : {
           tableName:"Autores"
         },
         key:"id"
       }
-       */  
+        
       },
       generoId: {
         type: Sequelize.INTEGER,
-        /* allowNull:false,
+        allowNull:false,
         references:{
           model:{
           tableName:"Generos"
         },
         key:"id"
       }
-       */},
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

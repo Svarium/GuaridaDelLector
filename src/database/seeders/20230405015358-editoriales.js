@@ -32,13 +32,13 @@ let listadoDeEditoriales = [
 
 
 
-let editoriales = listadoDeEditoriales.map(editorial=>{
-  let libro = {
-    nombre : editorial,
+let editoriales = listadoDeEditoriales.map(elemento=>{
+  let editorial = {
+    nombre : elemento,
     createdAt: new Date,  
     updatedAt: new Date
   }
-  return libro
+  return editorial
 })
 
 

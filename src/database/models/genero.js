@@ -4,11 +4,7 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Generos extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+    
     static associate(models) {
       // define association here
       Generos.hasMany(models.Libros,{
@@ -18,8 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Generos.init({
-    nombre: DataTypes.STRING,
-    ranking: DataTypes.INTEGER
+    nombre: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Generos',

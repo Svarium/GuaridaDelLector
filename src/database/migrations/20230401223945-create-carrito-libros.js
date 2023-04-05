@@ -17,18 +17,20 @@ module.exports = {
       },
       libroId: {
         type: Sequelize.INTEGER,
-        /* references:{
+        references:{
+          model: {
           tableName:"Libros"
         },
-        key:"id" */
-      },
+        key:"id"
+      }},
       carritoId: {
         type: Sequelize.INTEGER,
-        /* references:{
+        references:{
+          model: {
           tableName:"Carritos"
         },
-        key:"id" */
-      },
+        key:"id"
+      }},
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
