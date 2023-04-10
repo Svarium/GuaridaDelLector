@@ -4,7 +4,7 @@ const path = require('path');
 const {validationResult} = require('express-validator')
 
 /* const productsFilePath = path.join(__dirname, '../data/books.json');
-const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */ 
+const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));  */
 
 const db =require('../database/models')
 
@@ -47,7 +47,31 @@ module.exports={
     // muestra el formulario de creacion
     
     agregar: (req,res)=>{
-        return res.render('agregarLibro')
+       const genero = db.Generos.findAll({
+        order : [['nombre']],
+        attributes : ['nombre', 'id']
+       })
+    
+       const autor = db.Autores.findAll({
+        order : [['nombre']],
+        attributes : ['nombre', 'id']
+       })
+
+       const editorial = db.Editoriales.findAll({
+        order : [['nombre']],
+        attributes : ['nombre', 'id']
+       })
+
+       Promise.all([genero, autor, editorial])
+       .then(([genero, autor, editorial])=>{
+        return res.render('agregarLibro',{
+            genero,
+            autor,
+            editorial
+        })
+       })
+       .catch(error => console.log(error))
+
     },
 
     // agregar - metodo par agregar/crear
@@ -56,7 +80,7 @@ module.exports={
         const errors = validationResult(req)
 
     
-       /*  return res.send(errors.mapped()) */
+        /* return res.send(errors.mapped()) */
    
         if(req.fileValidationError){ //este if valida que solo se puedan subir extensiones (jpg|jpeg|png|gif|webp)
             errors.errors.push({
@@ -80,45 +104,65 @@ module.exports={
 
 
        if(errors.isEmpty()){
-        const productsFilePath = path.join(__dirname, '../data/books.json');
-        const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
-        const {titulo, precio, autor, genero, editorial, paginas, description2, video} = req.body;
-
-        const newLibro = {
-            id : libros[libros.length -1].id +1,
-            titulo : titulo.trim(),
-            precio : +precio,
-            autor : autor.trim(),
-            genero : genero,
-            editorial : editorial.trim(),
-            video : video,
-            paginas : +paginas,
-            description2 : description2,
-            imagen : req.file ? req.file.filename : null,
-        };
-
-
-        libros.push(newLibro);
-
-        fs.writeFileSync(productsFilePath,JSON.stringify(libros, null, 3),'utf-8');
-
+     
         
-        return res.redirect('/admin')
 
+        const {titulo, precio, autor, genero, editorial, paginas, description2, video}  = req.body;
+
+     
+
+        db.Libros.create( {
+            
+                titulo : titulo.trim(),
+                precio : precio,
+                autorId : autor,
+                generoId : genero,
+                editorialId : editorial,
+                video : video,
+                paginas : paginas,
+                description2 : description2,
+                imagen : req.file ? req.file.filename : null,
+            
+        })
+        .then(libro =>{
+            return res.redirect('/')
+        })
+        .catch(error => console.log(error))     
+      
 
        } else{
 
         if(req.file){
-            fs.existsSync(`./public/images/${req.file.filename}`) && fs.unlinkSync(`./public/images/${req.file.filename}`) //SI HAY ERROR Y CARGÓ IMAGEN ESTE METODO LA BORRA
+            fs.existsSync(`./public/images/${req.file.filename}`) && fs.unlinkSync(`./public/images/${req.file.filename}`) //SI HAY ERROR Y CARGÓ IMAGEN ESTA FUNCIÓN LA BORRA
         }
 
-        const productsFilePath = path.join(__dirname, '../data/books.json');
-        const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
-
-        return res.render('agregarLibro',{
-            errors: errors.mapped(),
-            old : req.body
-        })
+        const genero = db.Generos.findAll({
+            order : [['nombre']],
+            attributes : ['nombre', 'id']
+           })
+        
+           const autor = db.Autores.findAll({
+            order : [['nombre']],
+            attributes : ['nombre', 'id']
+           })
+    
+           const editorial = db.Editoriales.findAll({
+            order : [['nombre']],
+            attributes : ['nombre', 'id']
+           })
+    
+           Promise.all([genero, autor, editorial])
+           .then(([genero, autor, editorial])=>{
+            return res.render('agregarLibro',{
+                genero,
+                autor,
+                editorial,
+                errors: errors.mapped(),
+                old : req.body
+            })
+           })
+           .catch(error => console.log(error))
+    
        }       
 
     },

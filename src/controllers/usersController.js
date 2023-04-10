@@ -13,7 +13,7 @@ module.exports = {
 
         const errors = validationResult(req);
 
-        return res.send(errors.mapped())
+       /*  return res.send(errors.mapped()) */
 
         if(req.fileValidationError){ //este if valida que solo se puedan subir extensiones (jpg|jpeg|png|gif|webp)
             errors.errors.push({
@@ -114,7 +114,9 @@ module.exports = {
 
         const errors =  validationResult(req);
 
-        /* return res.send(errors) */
+       /*  return res.send(errors) */
+
+
 
         if(errors.isEmpty()){
             const {id, name, rol, icon, surname, email} = readJSON('users.json').find(user => user.email === req.body.email);
