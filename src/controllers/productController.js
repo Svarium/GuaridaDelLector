@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const {validationResult} = require('express-validator')
 
-const productsFilePath = path.join(__dirname, '../data/books.json');
-const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
+/* const productsFilePath = path.join(__dirname, '../data/books.json');
+const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */ 
 
 const db =require('../database/models')
 
@@ -13,25 +13,35 @@ module.exports={
     //Todos los productos por categoria
 
     listCategory:(req,res)=>{
-      /*   const infantil = libros.filter(libro => libro.genero === "Infantil"); */
-      return res.render('categoria', {
+    db.Libros.findAll({
+        include : ["genero"]
+    })
+    .then(libros =>{
+        return res.render('categoria', {
             libros,
             
         })
+    })
+    .catch(error => console.log(error))
+     
     },
 
     //Detalle de un producto
 
     detail : (req,res) => {
-        const productsFilePath = path.join(__dirname, '../data/books.json');
-        const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        let id = +req.params.id
+        let id = req.params.id
 
-        let libro = libros.find(libro => libro.id === id)
-
+       db.Libros.findByPk(id, {
+        include :['genero', 'autor', 'editorial']
+       })
+       .then(libro =>{
+       
         return res.render('detalle', {
             libro
         })
+       })
+       .catch(error => console.log(error))
+     
     },
 
     // muestra el formulario de creacion

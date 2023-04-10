@@ -3,6 +3,8 @@ const path = require('path');
 const {readJSON, writeJSON} = require("../data");
 
 
+const db =require('../database/models')
+
 const productsFilePath = path.join(__dirname, '../data/books.json');
 const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -22,11 +24,17 @@ return res.render('dashboard',{
 })
     },
     listar : (req,res) => {
-      const productsFilePath = path.join(__dirname, '../data/books.json');
-      const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
-      res.render('libros',{
-        libros
+
+      db.Libros.findAll({
+        attributes : ['imagen', 'precio', 'description2']
       })
+      .then(libros =>{
+        res.render('libros',{
+          libros
+        })
+      })
+      .catch(error => console.log(error))
+
     },
     search : (req,res) => {
       let elemento = req.query.search

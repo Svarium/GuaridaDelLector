@@ -19,9 +19,9 @@
                     </div>
                     <p><%= libro.description1 %></p>
                     <p class="detalle-extendido"><%= libro.description2 %></p>
-                    <p> <strong>Autor:</strong> <%= libro.autor %></p> 
-                    <span><strong>Editorial:</strong><%= libro.editorial %></span>
-                    <p> <strong>Genero:</strong> <%= libro.genero %>  </p>
+                    <p> <strong>Autor:</strong> <%= libro.autor.nombre %></p> 
+                    <span><strong>Editorial:</strong><%= libro.editorial.nombre %></span>
+                    <p> <strong>Genero:</strong> <%= libro.genero.nombre %>  </p>
                     <p> <strong>Paginas:</strong> <%= libro.paginas %>  </p>
                     <h3><strong>Precio:</strong> $<%= libro.precio %></h3>
                 </div>

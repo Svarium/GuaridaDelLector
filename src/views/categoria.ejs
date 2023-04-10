@@ -14,7 +14,7 @@
         </div> 
        
         <% libros.forEach(libro => { %> 
-                <% if(libro.genero === "Novela" ||  libro.genero === "Novela Ficción" || libro.genero === "Novela Terror" || libro.genero === "Novela Fantasía" || libro.genero === "Novela Negra") { %>
+                <% if(libro.genero.nombre === "Novela" ||  libro.genero.nombre === "Novela Ficción" || libro.genero.nombre === "Novela Terror" || libro.genero.nombre === "Novela Fantasía" || libro.genero.nombre === "Novela Negra") { %>
                     <div class="contenedor-catalogo">                    
                         <a href="/products/detail/<%=libro.id%>">
                         <img src="/images/libros/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="" >
@@ -33,7 +33,7 @@
             </div> 
             
             <% libros.forEach(libro => { %>
-                    <% if(libro.genero === "Infantil" ) { %>
+                    <% if(libro.genero.nombre === "Infantil" ) { %>
                         <div class="contenedor-catalogo">                    
                             <a href="/products/detail/<%=libro.id%>">
                             <img src="/images/libros/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="" >
@@ -54,7 +54,7 @@
             </div> 
             
             <% libros.forEach(libro => { %>
-                    <% if(libro.genero === "Divulgacion Cientifica" ) { %>
+                    <% if(libro.genero.nombre === "Divulgacion Cientifica" ) { %>
                         <div class="contenedor-catalogo">                    
                             <a href="/products/detail/<%=libro.id%>">
                             <img src="/images/libros/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="" >
@@ -74,7 +74,7 @@
             </div> 
             
             <% libros.forEach(libro => { %>
-                    <% if(libro.genero === "Comics" || libro.genero === "Manga" ) { %>
+                    <% if(libro.genero.nombre === "Comics" || libro.genero.nombre === "Manga" ) { %>
                         <div class="contenedor-catalogo">                    
                             <a href="/products/detail/<%=libro.id%>">
                             <img src="/images/libros/<%=libro.imagen ? libro.imagen : 'not image.png'%>" alt="" >
