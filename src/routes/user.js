@@ -11,7 +11,7 @@ const router = express.Router();
 /*llego con:    /users/ */
 
 router.get('/register', checkUser, register)
-router.post('/register', uploadIconImage.single('icon'), registerValidator, processRegister)
+router.post('/register', uploadIconImage.single('icon'), registerValidator , processRegister)
 router.get('/login', checkUser, login)
 router.post('/login', loginValidator, processLogin)
 router.get('/logout', logout)

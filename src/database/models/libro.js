@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Libros.belongsTo(models.Autors,{
+      Libros.belongsTo(models.Autores,{
         as:"autor",
         foreignKey: "autorId"
       })
@@ -19,8 +19,8 @@ module.exports = (sequelize, DataTypes) => {
         as:"genero",
         foreignKey: "generoId"
       })
-      Libros.belongsTo(models.editoriales,{
-        as:"edirtorial",
+      Libros.belongsTo(models.Editoriales,{
+        as:"editorial",
         foreignKey: "editorialId"
       })
     }

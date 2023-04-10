@@ -1,6 +1,9 @@
 const {validationResult} = require('express-validator');
 const {readJSON, writeJSON} = require("../data");
-const {hashSync} = require('bcryptjs')
+const bcrypt = require('bcrypt')
+
+const db = require("../database/models")
+
 
 module.exports = {
     register : (req,res) => {
@@ -9,6 +12,8 @@ module.exports = {
     processRegister: (req,res) =>{
 
         const errors = validationResult(req);
+
+        return res.send(errors.mapped())
 
         if(req.fileValidationError){ //este if valida que solo se puedan subir extensiones (jpg|jpeg|png|gif|webp)
             errors.errors.push({
@@ -33,7 +38,45 @@ module.exports = {
 
      if(errors.isEmpty()){
 
-        const users = readJSON('users.json');
+     /* return res.send(req.body) */
+
+        const {name, surname, email, pass} = req.body 
+
+         db.Usuarios.create({
+            name,
+            surname,
+            email,
+            pass : bcrypt.hashSync(pass, 10),
+            icon :req.file ? req.file.filename : "not image.png",
+            rolId : 2
+        })
+        .then(usuario => {
+
+            /* return res.send(usuario) */
+
+                req.session.userLogin = {
+                    id : usuario.id, 
+                    name : usuario.name,
+                    rolId : usuario.rolId,
+                    icon : usuario.icon,
+                    surname : usuario.surname,
+                    email : usuario.email
+    
+                };
+                if (req.body.recordar){
+                    res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60*5})
+                }
+                
+                
+                return res.redirect('/')
+
+            })
+            .catch(error => console.log(error))
+
+       
+
+
+        /* const users = readJSON('users.json');
         const {name, surname, email, password} = req.body
 
         const newUser = {
@@ -48,12 +91,13 @@ module.exports = {
 
         users.push(newUser)
 
-        writeJSON('users.json', users);
-
+        writeJSON('users.json', users); 
+    
         return res.redirect('/user/login')
+        */
 
 
-     } else {
+    }else {
 
         return res.render('register', {
             errors : errors.mapped(),
@@ -61,12 +105,7 @@ module.exports = {
         })
 
      }
-
     },
-
-
-
-
     login : (req,res) => {
         return res.render('login')
     },

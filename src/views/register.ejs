@@ -25,8 +25,8 @@
                 </div>
 
                 <div class="form--password">
-                    <input type="password" name="password" id="password" class="<%= locals.errors && errors.password ? 'errorInput' : null %>" placeholder="Ingrese su contraseña" value="<%= locals.old && old.password ? old.password : null %>">
-                    <small><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                    <input type="password" name="pass" id="password" autocomplete="off" class="<%= locals.errors && errors.pass ? 'errorInput' : null %>" placeholder="Ingrese su contraseña" value="<%= locals.old && old.pass ? old.pass : null %>">
+                    <small><%= locals.errors && errors.pass ? errors.pass.msg : null %></small>
                     <input type="password" name="password2" id="password2" class="<%= locals.errors && errors.password2 ? 'errorInput' : null %>" placeholder="Confirme su contraseña" value="<%= locals.old && old.password2 ? old.password2 : null %>">
                     <small><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
                     <input type="file" name="icon" id="icon" class="<%= locals.errors && errors.password2 ? 'errorInput' : null %>">
