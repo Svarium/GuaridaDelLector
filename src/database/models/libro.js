@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         as:"genero",
         foreignKey: "generoId"
       })
-      Libros.belongsTo(models.Editorial,{
+      Libros.belongsTo(models.Editoriales,{
         as:"editorial",
         foreignKey: "editorialId"
       })
