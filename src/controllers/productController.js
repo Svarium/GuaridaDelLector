@@ -170,12 +170,37 @@ module.exports={
     //muestra el formulario para editar
     editar: (req,res)=>{
         const {id} = req.params;
-        const libroAEditar = libros.find(libro => libro.id === +id);
-
-        return res.render('editarLibro',{
-            ...libroAEditar
+       
+        const libro = db.Libros.findByPk(id, {
+            include :['genero', 'autor', 'editorial']
         })
+
+        const genero = db.Generos.findAll({
+            order : [['nombre']],
+            attributes : ['nombre', 'id']
+           })
         
+        const autor = db.Autores.findAll({
+            order : [['nombre']],
+            attributes : ['nombre', 'id']
+           })
+    
+        const editorial = db.Editoriales.findAll({
+            order : [['nombre']],
+            attributes : ['nombre', 'id']
+           })
+
+    Promise.all([libro,genero, autor, editorial])  
+    .then(([libro,genero, autor, editorial])=>{
+        return res.render('editarLibro',{
+            ...libro.dataValues, 
+            genero,
+            autor, 
+            editorial
+        })
+    })  
+    .catch(error => console.log(error))   
+
     },
 
     //Metodo para editar
@@ -183,8 +208,6 @@ module.exports={
     update: (req,res) => {
 
         const errors = validationResult(req);
-
-         /* return res.send(errors.mapped()) */
 
         if(req.fileValidationError){ //este if valida que solo se puedan subir extensiones (jpg|jpeg|png|gif|webp)
             errors.errors.push({
@@ -197,72 +220,88 @@ module.exports={
 
         if(errors.isEmpty()){
 
-            const productsFilePath = path.join(__dirname, '../data/books.json');
-            const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
-
-            const {titulo, precio, autor, genero, editorial, paginas, description2,video,  imagen} = req.body;
+            const {titulo, precio, autor, genero, editorial, paginas, description2, video}  = req.body;
 
         const id = +req.params.id
 
-        const libro = libros.find(libro => libro.id === +id)
+        db.Libros.findByPk(id)
+        .then(libro => {
 
-        const libroUpdated = {
-            id : id,
-            titulo : titulo.trim(),
-            precio : +precio,
-            autor : autor.trim(),
-            genero : genero,
-            editorial : editorial.trim(),
-            video: video,
-            paginas : +paginas,
-            description2 : description2,
-            imagen : req.file ? req.file.filename : libro.imagen
-        };
-
-        //si existe una nueva imagen borra la imagen anterior y lee de nuevo el json
+            db.Libros.update(
+            
+                {
+                    titulo : titulo.trim(),
+                    precio : precio,
+                    autorId : autor,
+                    generoId : genero,
+                    editorialId : editorial,
+                    video : video,
+                    paginas : paginas,
+                    description2 : description2,
+                    imagen : req.file ? req.file.filename : libro.imagen
+                },
+                {
+                    where : {id}
+                }
+                
+                  )
+                  .then(libroUpdate => {
+                   
         if(req.file){
-            fs.existsSync(`./public/images/libros/${libro.imagen}`) && fs.unlinkSync(`./public/images/libros/${libro.imagen}`) 
-            const productsFilePath = path.join(__dirname, '../data/books.json');
-            const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
+            fs.existsSync(`./public/images/libros/${libroUpdate.imagen}`) && fs.unlinkSync(`./public/images/libros/${libroUpdate.imagen}`)  
         }
+        return res.redirect('/products/detail/'
+        + id)
+                  })
+                   
+        })
+        .catch(error=> console.log(error))
 
-        const librosModified = libros.map(libro=>{
-            if(libro.id === +id){
-                return libroUpdated
-            }
-            return libro
-        });
-
-
-        fs.writeFileSync(productsFilePath,JSON.stringify(librosModified, null, 3),'utf-8');
-        return res.redirect('/products/detail/' + id )
+       
 
         } else {
 
-            const productsFilePath = path.join(__dirname, '../data/books.json');
-            const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); 
+    
 
             if(req.file){
                 fs.existsSync(`./public/images/${req.file.filename}`) && fs.unlinkSync(`./public/images/${req.file.filename}`) //SI HAY ERROR Y CARGÓ IMAGEN ESTE METODO LA BORRA
             }
 
             const {id} = req.params;
-            const libroAEditar = libros.find(libro => libro.id === +id);
+       
+            const libro = db.Libros.findByPk(id, {
+                include :['genero', 'autor', 'editorial']
+            })
     
+            const genero = db.Generos.findAll({
+                order : [['nombre']],
+                attributes : ['nombre', 'id']
+               })
+            
+            const autor = db.Autores.findAll({
+                order : [['nombre']],
+                attributes : ['nombre', 'id']
+               })
+        
+            const editorial = db.Editoriales.findAll({
+                order : [['nombre']],
+                attributes : ['nombre', 'id']
+               })
+    
+        Promise.all([libro,genero, autor, editorial])  
+        .then(([libro,genero, autor, editorial])=>{
             return res.render('editarLibro',{
-                ...libroAEditar,
-                errors : errors.mapped(),
+                ...libro.dataValues, 
+                genero,
+                autor, 
+                editorial,
+                errors: errors.mapped(),
                 old : req.body
             })
-            
-
-
+        })  
+        .catch(error => console.log(error))
 
         }
-
-
-
-
         
     },
     remove : (req,res)=>{

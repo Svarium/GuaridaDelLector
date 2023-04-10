@@ -18,17 +18,31 @@
               <input type="text" class="<%= locals.errors && errors.titulo ? 'errorInput' : null %>" name="titulo" id="titulo"  placeholder="Editar el título del libro"  value="<%= titulo %>">
               <small><%= locals.errors && errors.titulo ? errors.titulo.msg : null %></small>
 
-              <input type="text" class="<%= locals.errors && errors.autor? 'errorInput' : null %>" name="autor" id="autor" placeholder="Editar el nombre del autor"  value="<%= autor %>">
-              <small><%= locals.errors && errors.autor ? errors.autor.msg : null %></small>
+              
+            <label for="autor" class="titulo--edicion">Seleccionar Autor</label>
+            <select name="autor" id="autor">
+              <option value="" selected hidden>Seleccione...</option>
+              <% autor.forEach(({nombre, id}) => { %>
+               <option value="<%= id %>" <%= locals.old && old.autor.nombre && old.autor.nombre === nombre ? 'selected' : null %> ><%= nombre %> </option>
+              <% }) %>
+            </select>
+            <small><%= locals.errors && errors.autor ? errors.autor.msg : null %></small>
 
-              <input type="number" class="<%= locals.errors && errors.precio ? 'errorInput' : null %>" name="precio" id="precio" placeholder="Editar el precio del libro $$$"  value="<%= precio %>">
+        
+
+              <input type="number" class="<%= locals.errors && errors.precio ? 'errorInput' : null %>" name="precio" id="precio" placeholder="Editar el precio del libro $$$"  value="<%=  precio %>">
               <small><%= locals.errors && errors.precio ? errors.precio.msg : null %></small>
 
               <input type="number" class="<%= locals.errors && errors.paginas ? 'errorInput' : null %>" name="paginas" id="paginas" placeholder="Editar cantidad de paginas del libro"  value="<%= paginas %>">
               <small><%= locals.errors && errors.paginas ? errors.paginas.msg : null %></small>
 
-
-              <input type="text" class="<%= locals.errors && errors.editorial ? 'errorInput' : null %>" name="editorial" id="editorial" placeholder="Editar la editorial del libro"  value="<%= editorial %>">
+              <label for="editorial" class="titulo--edicion">Seleccionar Editorial</label>
+              <select name="editorial" id="editorial">
+                <option value="" selected hidden>Seleccione...</option>
+                <% editorial.forEach(({nombre, id}) => { %>
+                 <option value="<%= id %>"><%= nombre %> </option>
+                <% }) %>
+              </select>
               <small><%= locals.errors && errors.editorial ? errors.editorial.msg : null %></small>
 
               <input type="text" class="<%= locals.errors && errors.video ? 'errorInput' : null %>"  name="video" id="video" placeholder="ingrese link de video reseña" value="<%= video %>"> <!-- agregar al controlador, al json y validar -->
@@ -42,15 +56,10 @@
               <div class="editar__categorias">
                 <label for="categorias">Seleccionar genero</label>
                 <select name="genero" id="genero">
-                    <option value="Novela" <%= genero ==="Novela" && 'selected' %>>Novela</option>
-                    <option value="Novela Ficción" <%= genero ==="Novela Ficción" && 'selected' %>>Novela Ficción</option>
-                    <option value="Novela Negra" <%= genero ==="Novela Negra" && 'selected' %>>Novela Negra</option>
-                    <option value="Novela Terror" <%= genero ==="Novela Terror" && 'selected' %>>Novela Terror</option>
-                    <option value="Novela Fantasía" <%= genero ==="Novela Fantasía" && 'selected' %>>Novela Fantasia</option>
-                    <option value="Infantil" <%= genero ==="Infantil" && 'selected' %>>Infantil</option>
-                    <option value="Comics" <%= genero ==="Comics" && 'selected' %>>Comics</option>
-                    <option value="Manga" <%= genero ==="Manga" && 'selected' %>>Manga</option>
-                    <option value="Divulgacion Cientifica" <%= genero ==="Divulgacion Cientifica" && 'selected' %>>Divulgacion Cientifica</option>
+                  <option value="" selected hidden>Seleccione...</option>
+                  <% genero.forEach(({nombre, id}) => { %>
+                   <option value="<%= id %>"><%= nombre %> </option>
+                  <% }) %>
                 </select>
                 <small><%= locals.errors && errors.genero ? errors.genero.msg : null %></small>
             </div>
