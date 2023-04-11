@@ -27,14 +27,14 @@
         <section class="index__main__section">
 
             <div class="index__main--titulares">
-                <h2 id="populares">Libros más Populares</h2>
+                <h2 id="new">Nuestras Novedades</h2>
                 <hr>
             </div> 
             
             
             
                 <% libros.forEach(libro => { %>
-                    <% if(libro.id >= 33 && libro.id <= 37 ) { %>
+                    
                         <div class="contenedor" data-aos="fade-down"
                             data-aos-easing="linear"
                             data-aos-duration="1000">
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </div>   
-                <% } %>  
+                
                 <% }) %>                 
             
         

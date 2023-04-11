@@ -14,7 +14,7 @@ const router = express.Router();
 router.get('/category', listCategory);
 
 /* detalle de un producto */
-router.get('/detail/:id', detail );
+router.get('/detail/:id', detail);
 
 /* agregar nuevo producto */
 router.get('/agregar/' /* checkUserAdmin */, agregar)
@@ -25,6 +25,6 @@ router.get('/editar/:id'/* , checkUserAdmin */, editar);
 router.put('/editar/:id',uploadProductImages.single('image'), addLibroValidator,  update) 
 
 /* eliminar un producto */
-router.delete('/delete/:id',checkUserAdmin ,remove) 
+router.delete('/delete/:id'/* ,checkUserAdmin */ ,remove) 
 
 module.exports = router;

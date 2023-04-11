@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Editoriales.hasMany(models.Libros,{
         as:"libros",
-        foreignKey: "editorialId"
+        foreignKey: "editorialId",
+        onDelete: "CASCADE"
       })
     }
   }

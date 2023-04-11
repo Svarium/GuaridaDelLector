@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Autores.hasMany(models.Libros,{
         as:"libros",
-        foreignKey: "autorId"
+        foreignKey: "autorId",
+        onDelete: "CASCADE"
       })
     }
   }

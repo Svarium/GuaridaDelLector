@@ -4,7 +4,7 @@ module.exports = [
     
     check('titulo')
     .notEmpty().withMessage('Debe ingresar el título del libro').bail()
-    .isLength({min:5, max:20}).withMessage('El Título tiene entre 5 y 20 carácteres'),
+    .isLength({min:5, max:40}).withMessage('El Título tiene entre 5 y 40 carácteres'),
 
     check('autor')
     .notEmpty().withMessage('¿Cuál es el autor del libro?')
@@ -26,7 +26,7 @@ module.exports = [
 
     check('description2')
     .notEmpty().withMessage('Debe ingresar una descripción').bail()
-    .isLength({min:10, max:500}).withMessage('La descripción puede tener entre 10 y 500 caracteres'),
+    .isLength({min:10, max:700}).withMessage('La descripción puede tener entre 10 y 700 caracteres'),
 
     check('genero')
     .notEmpty().withMessage('¿A qué genero pertenece?')

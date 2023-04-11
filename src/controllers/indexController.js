@@ -1,32 +1,40 @@
 const fs = require('fs');
 const path = require('path');
-const {readJSON, writeJSON} = require("../data");
-
-
+const { Op } = require("sequelize");
 const db =require('../database/models')
 
-const productsFilePath = path.join(__dirname, '../data/books.json');
-const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 module.exports = { 
     index:(req,res)=>{
     
+      db.Libros.findAll({
+        attributes : ['imagen', 'precio', 'description2', 'id'],
+        order : [['createdAt', 'DESC']], 
+        limit :  4      
+      })
+      .then(libros =>{
+        return res.render('index',{
+          libros
+        })
+      })
+      .catch(error => console.log(error))
      
-     res.render('index', {
-        libros,
-      });      
+        
     },
     admin : (req,res) =>{
-      const productsFilePath = path.join(__dirname, '../data/books.json');
-      const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-return res.render('dashboard',{
-  libros
+     db.Libros.findAll()
+     .then(libros =>{
+      return res.render('dashboard',{
+        libros
+     })
 })
     },
     listar : (req,res) => {
 
       db.Libros.findAll({
-        attributes : ['imagen', 'precio', 'description2']
+        attributes : ['imagen', 'precio', 'description2', 'id'],
+        order : [['titulo']],        
       })
       .then(libros =>{
         res.render('libros',{
@@ -36,24 +44,63 @@ return res.render('dashboard',{
       .catch(error => console.log(error))
 
     },
-    search : (req,res) => {
-      let elemento = req.query.search
+    search :  (req,res) => {
+      const query = req.query.q;
+      db.Libros.findAll({
+        where : {
+          titulo : {
+            [Op.like] : `%${query}%`
+          }
+        },
+        include :['genero', 'autor', 'editorial']
+      })
+      .then(books=>{
+        return res.send(books)
+        return res.render('busqueda',{
+          books
+        })
+      })
 
-      /* return res.send({elemento}) */
-      const books = 
-      libros.filter(libro => 
-        libro.titulo.toLowerCase().includes(elemento.toLowerCase()) ||
-        libro.autor.toLowerCase().includes(elemento.toLowerCase()) ||
-        libro.genero.toLowerCase().includes(elemento.toLowerCase()) ||
-        libro.editorial.toLowerCase().includes(elemento.toLowerCase())
-        )
 
-      return res.render('busqueda', 
-      {
-        busqueda: elemento,
-        books
-      });
+
+
+
+
+
+
+
+
+
+
+
+     /*  db.Libros.findAll({
+        include :['genero', 'autor', 'editorial']
+       })
+       .then(libros =>{
+       
+        let elemento = req.query.search
+
+   
+        const books = 
+        libros.filter(libro => 
+          libro.titulo.toLowerCase().includes(elemento.toLowerCase()) ||
+          libro.autor.toLowerCase().includes(elemento.toLowerCase()) ||
+          libro.genero.toLowerCase().includes(elemento.toLowerCase()) ||
+          libro.editorial.toLowerCase().includes(elemento.toLowerCase())
+          )
+  
+        return res.render('busqueda', 
+        {
+          busqueda: elemento,
+          books
+        });
+       })
+       .catch(error => console.log(error)) */
+
+      
     },
+
+
     nosotros : (req,res) =>{
       res.render('nosotros')
     }

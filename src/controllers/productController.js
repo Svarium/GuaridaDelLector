@@ -2,6 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 const {validationResult} = require('express-validator')
+const { Op } = require("sequelize");
+
 
 /* const productsFilePath = path.join(__dirname, '../data/books.json');
 const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));  */
@@ -125,7 +127,7 @@ module.exports={
             
         })
         .then(libro =>{
-            return res.redirect('/')
+            return res.redirect('/#new')
         })
         .catch(error => console.log(error))     
       
@@ -305,12 +307,15 @@ module.exports={
         
     },
     remove : (req,res)=>{
-        const {id} = req.params;
-        const librosModified = libros.filter(libro => libro.id !== +id )
-        fs.writeFileSync(productsFilePath, JSON.stringify(librosModified,null,3),'utf-8')
-
-
-        return res.redirect('/admin')
+        
+       db.Libros.destroy({
+        where : {id:req.params.id},
+        force:true
+       }).then(()=>{
+        return res.redirect('/#new')
+       })
+       .catch(error => console.log(error))
+        
     } 
     
 }

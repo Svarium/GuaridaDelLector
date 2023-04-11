@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Generos.hasMany(models.Libros,{
         as:"libros",
-        foreignKey: "generoId"
+        foreignKey: "generoId",
+        onDelete: "CASCADE"
       })
     }
   }
