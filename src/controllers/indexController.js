@@ -45,7 +45,7 @@ module.exports = {
 
     },
     search :  (req,res) => {
-      const query = req.query.q;
+      const query = req.query.search;
       db.Libros.findAll({
         where : {
           titulo : {
@@ -55,7 +55,7 @@ module.exports = {
         include :['genero', 'autor', 'editorial']
       })
       .then(books=>{
-        return res.send(books)
+     
         return res.render('busqueda',{
           books
         })
