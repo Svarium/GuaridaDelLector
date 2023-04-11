@@ -23,7 +23,7 @@
                 <select name="autor" id="autor" class="<%= locals.errors && errors.autor ? 'errorInput' : null %>">
                   <option value="" selected hidden>Seleccione...</option>
                   <% autor.forEach(({nombre, id}) => { %>
-                   <option value="<%= id %>"><%= nombre %> </option>
+                   <option value="<%= id %>"<%= locals.errors && old.autor && old.nombre === nombre ? 'selected' : null %> ><%= nombre %> </option>
                   <% }) %>
                 </select>
                 <small><%= locals.errors && errors.autor ? errors.autor.msg : null %></small>
