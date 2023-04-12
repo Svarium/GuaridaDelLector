@@ -24,9 +24,7 @@ router.post('/login', loginValidator, processLogin)
 
 /* Editar usuario */
 
-router.put('/perfil/:id',registerValidator, editarPerfil)
-
-
+router.put('/update', editarPerfil)
 
 
 

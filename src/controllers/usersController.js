@@ -113,12 +113,42 @@ module.exports = {
     },
     editarPerfil: (req,res) => {
 
-     const {name, surname, email} = req.body
 
+        db.Usuario.update({
+            ...req.body
+        },
+        {
+            where : {id:req.session.userLogin.id}
+        })
+        .then(()=>{
+            res.redirect('/user/perfil')
+        })
+        .catch(error => console.log(error))
+
+
+
+        
+    /*  const {name, surname, email} = req.body
+
+     console.log(req.session.userLogin);
+  
      const {id} = req.session.userLogin
-
-
-
+     
+     db.Usuario.findByPk(id)
+     .then(user=>{
+         db.Usuario.update({
+            name : name,
+            surname : surname,
+            email : email,
+           
+        
+        })
+     })
+     .then(user=>{
+        return res.send(user)
+     })
+     .catch(error => console.log(error))
+ */
     },
     logout: (req, res) => {
         req.session.destroy();
