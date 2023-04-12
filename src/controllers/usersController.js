@@ -1,6 +1,7 @@
 const {validationResult} = require('express-validator');
-/* const {readJSON, writeJSON} = require("../data"); */
 const bcrypt = require('bcrypt')
+const fs = require('fs');
+const path = require('path');
 
 const db = require("../database/models")
 
@@ -113,42 +114,68 @@ module.exports = {
     },
     editarPerfil: (req,res) => {
 
+        const errors = validationResult(req);
+
+    
+
+    if(req.fileValidationError){ 
+        errors.errors.push({
+            value : "",
+            msg : req.fileValidationError,
+            param : "icon",
+            location : "file"
+        })
+    }
+
+    if (!req.file){ 
+        errors.errors.push({ 
+            value : "",
+            msg : "Debes subir una imagen de perfil",
+            param : "icon",
+            location : "file"
+        })
+    }
+/* 
+       return res.send(errors.mapped()) */
+
+    if(errors.isEmpty()){
+        const {name, surname, email, pass} = req.body
 
         db.Usuario.update({
-            ...req.body
+            name : name.trim(),
+            surname : surname.trim(),
+            email : email.trim(),
+            pass : bcrypt.hashSync(pass, 10),
+            icon : req.file ? req.file.filename : usuario.icon
         },
         {
             where : {id:req.session.userLogin.id}
         })
-        .then(()=>{
+        .then((user)=>{
+            if(req.file){
+                fs.existsSync(`./public/images/libros/${user.imagen}`) && fs.unlinkSync(`./public/images/libros/${user.imagen}`)  
+            }
             res.redirect('/user/perfil')
         })
         .catch(error => console.log(error))
 
 
+    } else {
 
+            db.Usuario.findByPk(req.session.userLogin.id,{
+                attributes : ['name', 'surname', 'email', 'icon'],
+                include : ['rol']
+            })
+            .then(user =>{
+               return res.render('perfil',{
+                    user,
+                    errors : errors.mapped(),
+                    old: req.body
+                })
+            }).catch(error => console.log(error))
         
-    /*  const {name, surname, email} = req.body
+    }
 
-     console.log(req.session.userLogin);
-  
-     const {id} = req.session.userLogin
-     
-     db.Usuario.findByPk(id)
-     .then(user=>{
-         db.Usuario.update({
-            name : name,
-            surname : surname,
-            email : email,
-           
-        
-        })
-     })
-     .then(user=>{
-        return res.send(user)
-     })
-     .catch(error => console.log(error))
- */
     },
     logout: (req, res) => {
         req.session.destroy();
@@ -166,6 +193,7 @@ module.exports = {
                 user
             })
         })
+        .catch(error => console.log(error))
     }
 
 }

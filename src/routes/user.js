@@ -5,10 +5,11 @@ const checkUser = require('../middlewares/CheckUser')
 const loginValidator = require('../validations/loginValidator');
 const registerValidator = require('../validations/registerValidator');
 const checkUserLogin = require('../middlewares/checkUserLogin');
+const updateValidator = require('../validations/updateValidator');
 const router = express.Router();
 
 
-/*llego con:    /users/ */
+/*llego con:    /user/ */
 router.get('/logout', logout)
 router.get('/perfil', checkUserLogin, perfil)
 
@@ -23,8 +24,7 @@ router.get('/login', checkUser, login)
 router.post('/login', loginValidator, processLogin)
 
 /* Editar usuario */
-
-router.put('/update', editarPerfil)
+router.put('/update',uploadIconImage.single('icon'),updateValidator, editarPerfil)
 
 
 
