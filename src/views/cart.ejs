@@ -27,9 +27,9 @@ data-aos-duration="1000">
         <img src="/images/libros/<%= libro.imagen ? libro.imagen : 'not image.png' %>" alt="">
     </div>
     <div class="descripcion">
-        <strong>Titulo del libro:<%= libro.titulo %></strong>
+        <strong>Titulo del libro: <%= libro.titulo %></strong>
         <hr>
-        <span>Autor:<%= libro.autor %></span>
+        <span>Autor: <%= libro.autor.nombre %></span>
         <strong> Precio: $<%= libro.precio %></strong>
        <div class="carrito_description-buttons">
          <button type="submit"><i class="fa-solid fa-trash"></i></button>
