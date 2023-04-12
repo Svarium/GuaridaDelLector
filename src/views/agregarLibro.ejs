@@ -23,7 +23,7 @@
                 <select name="autor" id="autor" class="<%= locals.errors && errors.autor ? 'errorInput' : null %>">
                   <option value="" selected hidden>Seleccione...</option>
                   <% autor.forEach(({nombre, id}) => { %>
-                   <option value="<%= id %>"<%= locals.errors && old.autor && old.nombre === nombre ? 'selected' : null %> ><%= nombre %> </option>
+                   <option value="<%= id %>"<%= locals.old.autor && locals.old.autor == id ? 'selected' : null %> ><%= nombre %></option>
                   <% }) %>
                 </select>
                 <small><%= locals.errors && errors.autor ? errors.autor.msg : null %></small>
@@ -47,7 +47,7 @@
   <select name="editorial" id="editorial" class="<%= locals.errors && errors.editorial ? 'errorInput' : null %>">
     <option value="" selected hidden>Seleccione...</option>
     <% editorial.forEach(({nombre, id}) => { %>
-     <option value="<%= id %>"><%= nombre %> </option>
+     <option value="<%= id %>"<%= locals.old.editorial && locals.old.editorial == id ? 'selected' : null %>><%= nombre %> </option>
     <% }) %>
   </select>
   <small><%= locals.errors && errors.editorial ? errors.editorial.msg : null %></small>
@@ -67,7 +67,7 @@
                 <select name="genero" id="genero" class="<%= locals.errors && errors.genero ? 'errorInput' : null %>">
                   <option value="" selected hidden> Seleccione...</option>
                   <% genero.forEach(({nombre, id}) => { %>
-                    <option value="<%= id %>"><%= nombre %> </option>
+                    <option value="<%= id %>"<%= locals.old.genero && locals.old.genero == id ? 'selected' : null %>><%= nombre %> </option>
                    <% }) %>
                 </select>
                 <small><%= locals.errors && errors.genero ? errors.genero.msg : null %></small>

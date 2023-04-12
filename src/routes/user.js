@@ -1,5 +1,5 @@
 const express = require('express');
-const { login, register, processRegister, processLogin, logout, perfil } = require('../controllers/usersController');
+const { login, register, processRegister, processLogin, logout, perfil, editarPerfil } = require('../controllers/usersController');
 const { uploadIconImage } = require('../middlewares/iconProfile');
 const checkUser = require('../middlewares/CheckUser')
 const loginValidator = require('../validations/loginValidator');
@@ -9,15 +9,24 @@ const router = express.Router();
 
 
 /*llego con:    /users/ */
-
-router.get('/register', /* checkUser, */ register)
-router.post('/register', uploadIconImage.single('icon'), registerValidator , processRegister)
-router.get('/login', /* checkUser, */ login)
-router.post('/login', loginValidator, processLogin)
 router.get('/logout', logout)
 router.get('/perfil', checkUserLogin, perfil)
 
+
 /* Registrar Usuario */
+router.get('/register', checkUser, register)
+router.post('/register', uploadIconImage.single('icon'), registerValidator , processRegister)
+
+
+/* Loguear usuario */
+router.get('/login', checkUser, login)
+router.post('/login', loginValidator, processLogin)
+
+/* Editar usuario */
+
+router.put('/perfil/:id',registerValidator, editarPerfil)
+
+
 
 
 

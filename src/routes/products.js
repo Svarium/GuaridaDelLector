@@ -17,14 +17,14 @@ router.get('/category', listCategory);
 router.get('/detail/:id', detail);
 
 /* agregar nuevo producto */
-router.get('/agregar/' /* checkUserAdmin */, agregar)
+router.get('/agregar/' ,checkUserAdmin, agregar)
 router.post('/', uploadProductImages.single('image'), addLibroValidator,  store)
 
 /* editar un producto */
-router.get('/editar/:id'/* , checkUserAdmin */, editar);
+router.get('/editar/:id', checkUserAdmin, editar);
 router.put('/editar/:id',uploadProductImages.single('image'), addLibroValidator,  update) 
 
 /* eliminar un producto */
-router.delete('/delete/:id'/* ,checkUserAdmin */ ,remove) 
+router.delete('/delete/:id',checkUserAdmin ,remove) 
 
 module.exports = router;

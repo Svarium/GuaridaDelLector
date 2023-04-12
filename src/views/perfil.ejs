@@ -36,9 +36,9 @@
             <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Buscar</button>
           </form> -->
           <li class="nav-item me-3">
-            <a class="nav-link active" href="#" aria-current="page">Bienvenido, <%= userLogin.name %> <span class="visually-hidden">(current)</span></a>
+            <a class="nav-link active" href="#" aria-current="page">Bienvenido, <%= user.name %> <span class="visually-hidden">(current)</span></a>
           </li>        
-          <a href="/"><img src="/images/iconsProfile/<%= userLogin.icon %>" class="icon-dash" alt=""></a>
+          <a href="/"><img src="/images/iconsProfile/<%= user.icon %>" class="icon-dash" alt=""></a>
         </div>
       </div>
     </nav><br>
@@ -48,13 +48,13 @@
             <div class="row">
               <div class="col-12 col-md-3">
                 <div class="card">
-                  <img src="/images/iconsProfile/<%= userLogin.icon %>" alt="User Profile Image" class="card-img-top">
+                  <img src="/images/iconsProfile/<%= user.icon %>" alt="User Profile Image" class="card-img-top">
                   <div class="card-body">
-                    <h5 class="card-title"> <%= userLogin.name %> <%= userLogin.surname %> </h5>
+                    <h5 class="card-title"> <%= user.name %> <%= user.surname %> </h5>
                   </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Rol de usuario: <%= userLogin.rol %> </li>
-                    <li class="list-group-item"><%= userLogin.email %> </li>
+                  <ul class="list-group list-group-flush text-center">
+                    <li class="list-group-item">Rol de usuario: <%= user.rol.nombreRol%> </li>
+                    <li class="list-group-item">Email: <%= user.email %> </li>
                   </ul>
         
                 </div>
@@ -64,26 +64,26 @@
                 <hr>
                 <div class="row justify-content-center">
                   
-                    <form class="col-sm-12 col-md-6 col-lg-10">
+                    <form class="col-sm-12 col-md-6 col-lg-10" action="/products/editar/<%=  %>?_method=PUT " method="POST"  enctype="multipart/form-data">
                         <div class="mb-3">
                           <label for="nombre" class="form-label">Nombre</label>
-                          <input type="text" class="form-control" id="nombre" required>
+                          <input type="text" name="name" class="form-control" id="nombre" >
                         </div>
                         <div class="mb-3">
                           <label for="apellido" class="form-label">Apellido</label>
-                          <input type="text" class="form-control" id="apellido" required>
+                          <input type="text" name="surname" class="form-control" id="apellido" >
                         </div>
                         <div class="mb-3">
                           <label for="email" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="email" required>
+                          <input type="email" name="email" class="form-control" id="email" >
                         </div>
                         <div class="mb-3">
                           <label for="password" class="form-label">Contraseña</label>
-                          <input type="password" class="form-control" id="password" required>
+                          <input type="password" name="pass" class="form-control" id="password" >
                         </div>
                         <div class="mb-3">
                           <label for="perfil" class="form-label">Foto de perfil</label>
-                          <input class="form-control" type="file" id="perfil">
+                          <input class="form-control" name="icon" type="file" id="perfil">
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar</button>
                       </form>
