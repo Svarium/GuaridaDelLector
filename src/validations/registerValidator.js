@@ -21,25 +21,23 @@ module.exports = [
 
 
 
-    body('email').trim()
-    .notEmpty().withMessage('El email es obligatorio').bail()
-    .isEmail().withMessage('Debe ingresar un mail válido').bail(),
-    
-    
-    body('email').custom((value, {req}) => {
-        return db.Usuario.findOne({
-            where : {
-                email : value
-            }
-        }).then(usuario => {
-            if(usuario){
-                return Promise.reject()
-            }
-        }).catch((error) => {
-            console.log(error)
-            return Promise.reject('El email ya se encuentra registrado')
-        })
-    }),
+    body('email')
+        .notEmpty().withMessage('El email es obligatorio').bail()
+        .isEmail().withMessage('Debe ser un email con formato válido').bail()
+        .custom((value, {req}) => {
+            return db.Usuario.findOne({
+                where : {
+                    email : value
+                }
+            }).then(user => {
+                if(user){
+                    return Promise.reject()
+                }
+            }).catch((error) => {
+                console.log(error)
+                return Promise.reject('El email ya se encuentra registrado')
+            })
+        }),
 
 
     check('pass')
