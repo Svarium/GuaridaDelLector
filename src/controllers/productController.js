@@ -315,6 +315,67 @@ module.exports={
        })
        .catch(error => console.log(error))
         
-    } 
+    } ,
+
+    addAutor : (req,res) =>{
+        return res.render('addAutor',{
+            title: 'agrega un autor'
+        }) 
+    },
+
+    storeAutor : (req, res) =>{
+        const errors = validationResult(req);
+     /*    res.send(errors.mapped()) */
+
+     if(errors.isEmpty()){
+        db.Autores.create({
+            ...req.body
+        })
+        .then(autor =>{
+            res.redirect('/admin')
+        })
+        .catch(error => console.log(error))
+
+     } else {
+
+        return res.render('addAutor',{
+            title:'agrega un autor',
+            errors:errors.mapped(),
+            old:req.body
+        })
+
+     }
+
+
+    },
+
+    addEditorial : (req,res) =>{
+        return res.render('addEditorial',{
+            title: 'agrega una editorial'
+        }) 
+    },
+
+    storeEditorial : (req, res) =>{
+        const errors = validationResult(req);
+        /* return res.send(errors.mapped()) */
+
+        if(errors.isEmpty()){
+            db.Editoriales.create({
+                ...req.body
+            })
+            .then(editorial =>{
+                res.redirect('/admin')
+            })
+            .catch(error => console.log(error))
+        }else{
+            
+        return res.render('addEditorial',{
+            title:'agrega autor o editorial',
+            errors:errors.mapped(),
+            old:req.body
+        })
+
+        }
+    }
     
 }
