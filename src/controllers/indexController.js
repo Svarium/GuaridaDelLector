@@ -23,12 +23,15 @@ module.exports = {
         
     },
     admin : (req,res) =>{
-     db.Libros.findAll()
+     db.Libros.findAll({
+      include : ['autor']
+     })
      .then(libros =>{
       return res.render('dashboard',{
         libros
      })
-})
+    
+}) .catch(error => console.log(error))
     },
     listar : (req,res) => {
 

@@ -18,14 +18,5 @@ module.exports = {
         })
         .catch(error => console.log(error))
 
-       /*   const productsFilePath = path.join(__dirname, '../data/books.json');
-        const libros = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        let id = +req.params.id
-
-        let libro = libros.find(libro => libro.id === id)
-
-        return res.render('cart',{
-            libro
-        }) */
        
  }}
