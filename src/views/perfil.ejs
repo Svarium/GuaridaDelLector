@@ -76,16 +76,6 @@
                           <small class="text-danger ms-2"><%= locals.errors && errors.surname ? errors.surname.msg : null %></small>
                         </div>
                         <div class="mb-3">
-                          <label for="email" class="form-label">Email</label>
-                          <input type="email" name="email" class="form-control <%= (locals.errors && errors.email) && 'is-invalid'%>" id="email" >
-                          <small class="text-danger ms-2"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
-                        </div>
-                        <div class="mb-3">
-                          <label for="password" class="form-label">Contraseña</label>
-                          <input type="password" name="pass" class="form-control <%= (locals.errors && errors.pass) && 'is-invalid'%>" id="password" >
-                          <small class="text-danger ms-2"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
-                        </div>
-                        <div class="mb-3">
                           <label for="perfil" class="form-label">Foto de perfil</label>
                           <input class="form-control <%= (locals.errors && errors.icon) && 'is-invalid'%>" name="icon" type="file" id="perfil">
                           <small class="text-danger ms-2"><%= locals.errors && errors.icon ? errors.icon.msg : null %></small>
@@ -93,8 +83,7 @@
                         <button type="submit" class="btn btn-primary">Enviar</button>
                       </form>
             </div>
-          </div>
-          
+          </div>        
           
     </main>
 

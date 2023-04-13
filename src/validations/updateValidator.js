@@ -19,7 +19,7 @@ module.exports = [
 
 
 
-    body('email')
+ /*    body('email')
         .notEmpty().withMessage('El email es obligatorio').bail()
         .isEmail().withMessage('Debe ser un email con formato válido').bail()
         .custom(async(value) => {
@@ -31,16 +31,16 @@ module.exports = [
                 })
                 return user ? Promise.reject() : Promise.resolve();
          
-        }).withMessage('El email ya se encuentra registrado'),
+        }).withMessage('El email ya se encuentra registrado'), */
 
 
-    check('pass')
+  /*   check('pass')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()
         .isLength({
             min: 6,
             max: 12
         }).withMessage('Debe tener entre 6 y 12 caracteres'),
-
+ */
 
 
    /*  body('password2')

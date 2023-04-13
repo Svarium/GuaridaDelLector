@@ -135,8 +135,7 @@ module.exports = {
             location : "file"
         })
     }
-/* 
-       return res.send(errors.mapped()) */
+
 
     if(errors.isEmpty()){
         const {name, surname, email, pass} = req.body
@@ -144,16 +143,23 @@ module.exports = {
         db.Usuario.update({
             name : name.trim(),
             surname : surname.trim(),
-            email : email.trim(),
-            pass : bcrypt.hashSync(pass, 10),
             icon : req.file ? req.file.filename : usuario.icon
         },
         {
             where : {id:req.session.userLogin.id}
         })
         .then((user)=>{
+
+            req.session.userLogin = {
+                id : user.id, 
+                name : user.name,
+                rol: user.rolId,
+                icon : user.icon,
+
+            };
+
             if(req.file){
-                fs.existsSync(`./public/images/libros/${user.imagen}`) && fs.unlinkSync(`./public/images/libros/${user.imagen}`)  
+                fs.existsSync(`./public/images/iconsProfile/${user.icon}`) && fs.unlinkSync(`./public/images/iconsProfile/${user.icon}`)  
             }
             res.redirect('/user/perfil')
         })

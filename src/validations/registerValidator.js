@@ -12,7 +12,7 @@ module.exports = [
 
     check('surname')
         .notEmpty().withMessage('El apellido es obligatorio').bail()
-        .isLength({ min: 2 }).withMessage('Mínimo de dos letras').bail()
+        .isLength({ min: 2, max:50 }).withMessage('Mínimo de dos letras').bail()
         .isAlpha('es-ES', {
             ignore: " "
         }).withMessage('Solo caracteres alfabeticos'),

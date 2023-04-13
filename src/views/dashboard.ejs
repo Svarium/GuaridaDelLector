@@ -21,11 +21,12 @@
               
               <a class="nav-link active" href="/products/agregar">Agregar Libro +</a>
             </li>
+        
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menú</a>
               <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="/usuarios">Ver Usuarios</a>
                 <a class="dropdown-item" href="/user/logout">Cerrar Sesión</a>
-                <a class="dropdown-item" href="#">Editar Usuario</a>
               </div>
             </li>
           </ul>
@@ -61,6 +62,7 @@
             <td><%= autor.nombre %></td>
             <td>
                 <div class="d-flex gap-2">
+                    <!-- <a class="btn btn-sm btn-primary" href="/products/agregar"><i class="fas fa-plus"></i></a> -->
                     <a class="btn btn-sm btn-primary" href="products/detail/<%= id %>"><i class="fa-solid fa-eye"></i></a>
                     <a class="btn btn-sm btn-success" href="products/editar/<%= id %>"><i class="fa-solid fa-edit"></i></a>
                     <a class="btn btn-sm btn-danger" href="/products/detail/<%=id%>"><i class="fa-solid fa-trash"></i></a>
