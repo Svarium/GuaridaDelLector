@@ -39,8 +39,11 @@
                     <!-- <li><a href="#">¿Quiénes somos?|</a></li> -->
                     <li><a href="/#populares">Best Sellers 2022 |</a></li>
                     <li><a href="/libros">Catálogo Detallado |</a></li>
-                    <% if (locals.userLogin) { %>
+                    <% if (locals.userLogin && locals.userLogin.rol === 1) { %>
                         <li><a href="/admin">Dashboard |</a></li>
+                    <% } %>
+
+                    <% if (locals.userLogin) { %>
                         <li><a href="/user/logout">Cerrar Sesión | </a></li>
                         <li><a href="/user/perfil">Ir al Perfil</a></li>
                     <% } else { %>

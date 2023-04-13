@@ -126,7 +126,7 @@ module.exports={
             
         })
         .then(libro =>{
-            return res.redirect('/#new')
+            return res.redirect('/admin')
         })
         .catch(error => console.log(error))     
       
