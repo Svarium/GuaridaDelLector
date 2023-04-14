@@ -54,7 +54,18 @@ module.exports = {
         })
         .then(usuario => {             
                 
-                return res.redirect('/user/login')
+          req.session.userLogin = {
+            id : usuario.id, 
+            name : usuario.name,
+            rol: usuario.rolId,
+            icon : usuario.icon,
+
+        };
+        if (req.body){
+            res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60*5})
+        }
+        
+        return res.redirect('/')
 
             })
             .catch(error => console.log(error))
@@ -168,6 +179,8 @@ module.exports = {
                           res.cookie('userGuaridaDelLector', '', { maxAge: -1 });
                           res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60*5});
                         }
+                        if(req.file){
+                          fs.existsSync(`./public/images/iconsProfile/${req.file}`) && fs.unlinkSync(`./public/images/req.filesProfile/${req.file}`) }
                         req.session.save((err) => {
                           req.session.reload((err) => {
                             return res.redirect('/user/perfil');

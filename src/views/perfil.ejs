@@ -25,7 +25,9 @@
                   <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menú</a>
                   <div class="dropdown-menu" aria-labelledby="dropdownId">
                     <a class="dropdown-item" href="/user/logout">Cerrar Sesión</a>
-                    <a class="dropdown-item" href="#">Editar Usuario</a>
+                    <% if (locals.userLogin && locals.userLogin.rol === 1) { %>
+                      <a class="dropdown-item" href="/admin">Dashboard</a>
+                  <% } %>
                   </div>
                 </li>
               
