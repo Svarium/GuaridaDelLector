@@ -24,7 +24,7 @@ router.get('/login', checkUser, login)
 router.post('/login', loginValidator, processLogin)
 
 /* Editar usuario */
-router.put('/update',uploadIconImage.single('icon'),updateValidator, editarPerfil)
+router.put('/update/:id',uploadIconImage.single('icon'),updateValidator, editarPerfil)
 
 
 

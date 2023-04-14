@@ -112,61 +112,74 @@ module.exports = {
         }
 
     },
-    editarPerfil: (req,res) => {
-
+    editarPerfil: (req, res) => {
         const errors = validationResult(req);
-
-    
-
-    if(req.fileValidationError){ 
-        errors.errors.push({
-            value : "",
-            msg : req.fileValidationError,
-            param : "icon",
-            location : "file"
-        })
-    }
-
-    if (!req.file){ 
-        errors.errors.push({ 
-            value : "",
-            msg : "Debes subir una imagen de perfil",
-            param : "icon",
-            location : "file"
-        })
-    }
-
-
-    if(errors.isEmpty()){
-        const {name, surname, email, pass} = req.body
-
-        db.Usuario.update({
-            name : name.trim(),
-            surname : surname.trim(),
-            icon : req.file ? req.file.filename : usuario.icon
-        },
-        {
-            where : {id:req.session.userLogin.id}
-        })
-        .then((user)=>{
-
-            req.session.userLogin = {
-                id : user.id, 
-                name : user.name,
-                rol: user.rolId,
-                icon : user.icon,
-
-            };
-
-            if(req.file){
-                fs.existsSync(`./public/images/iconsProfile/${user.icon}`) && fs.unlinkSync(`./public/images/iconsProfile/${user.icon}`)  
-            }
-            res.redirect('/user/perfil')
-        })
-        .catch(error => console.log(error))
-
-
-    } else {
+  
+        /*  return res.send(errors.mapped()) */
+  
+         if(req.fileValidationError){ //este if valida que solo se puedan subir extensiones (jpg|jpeg|png|gif|webp)
+             errors.errors.push({
+                 value : "",
+                 msg : req.fileValidationError,
+                 param : "icon",
+                 location : "file"
+             })
+         }
+  
+         
+  
+      if(errors.isEmpty()){
+            // manejo de errores de validación
+  
+            const { name, surname } = req.body;
+        
+            db.Usuario.findOne({
+              where: {
+                id: +req.params.id,
+              },
+            })
+              .then((usuario) => {
+                db.Usuario.update(
+                  {
+                    name: name,
+                    surname: surname,
+                    icon: req.file ? req.file.filename : usuario.icon,
+                  },
+                  {
+                    where: {
+                      id: +req.params.id,
+                    },
+                  }
+                )
+                  .then((data) => {
+                    db.Usuario.findOne({
+                      where: {
+                        id: +req.params.id,
+                      },
+                    })
+                      .then((usuario) => {
+                        req.session.userLogin = {
+                          id: usuario.id,
+                          name: usuario.name,
+                          icon: usuario.icon,
+                          rol: usuario.rolId,
+                        };
+                        if (req.cookies.userGuaridaDelLector){
+                          res.cookie('userGuaridaDelLector', '', { maxAge: -1 });
+                          res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60*5});
+                        }
+                        req.session.save((err) => {
+                          req.session.reload((err) => {
+                            return res.redirect('/user/perfil');
+                          });
+                        });
+                      })
+                      .catch((err) => res.send(err));
+                  })
+                  .catch((err) => res.send(err));
+              })
+              .catch((err) => res.send(err));
+          } else {
 
             db.Usuario.findByPk(req.session.userLogin.id,{
                 attributes : ['name', 'surname', 'email', 'icon'],
@@ -176,11 +189,12 @@ module.exports = {
                return res.render('perfil',{
                     user,
                     errors : errors.mapped(),
-                    old: req.body
+                    old : req.body
                 })
-            }).catch(error => console.log(error))
-        
-    }
+            })
+            .catch(error => console.log(error))
+          }
+      
 
     },
     logout: (req, res) => {
@@ -200,6 +214,7 @@ module.exports = {
             })
         })
         .catch(error => console.log(error))
-    }
+    },
+    
 
 }
