@@ -1,5 +1,5 @@
 const express = require('express');
-const { login, register, processRegister, processLogin, logout, perfil, editarPerfil } = require('../controllers/usersController');
+const { login, register, processRegister, processLogin, logout, perfil, editarPerfil, editRol } = require('../controllers/usersController');
 const { uploadIconImage } = require('../middlewares/iconProfile');
 const checkUser = require('../middlewares/CheckUser')
 const loginValidator = require('../validations/loginValidator');
@@ -25,6 +25,9 @@ router.post('/login', loginValidator, processLogin)
 
 /* Editar usuario */
 router.put('/update/:id',uploadIconImage.single('icon'),updateValidator, editarPerfil)
+
+/* Editar Rol de usuario */
+router.post('/rol', editRol)
 
 
 

@@ -218,6 +218,23 @@ module.exports = {
         })
         .catch(error => console.log(error))
     },
+
+    editRol : (req,res) => {
+      /*  return res.send(req.body) */
+
+        db.Usuario.update({
+            rolId : req.body.nuevoRol
+        },
+        {
+            where : {id: req.body.userId}
+        })
+        .then(user => {
+            return res.redirect('/usuarios')
+        })
+        .catch(error => console.log(error))
+
+     
+    }
     
 
 }

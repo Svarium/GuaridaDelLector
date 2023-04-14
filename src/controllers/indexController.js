@@ -33,6 +33,7 @@ module.exports = {
     
 }) .catch(error => console.log(error))
     },
+
     listar : (req,res) => {
 
       db.Libros.findAll({
@@ -110,7 +111,7 @@ module.exports = {
 
     listUsers : (req,res) =>{
       db.Usuario.findAll({
-        attributes:['name', 'surname', 'email', 'rolId'],
+        attributes:['name', 'surname', 'email', 'rolId', 'id'],
         include : ['rol']
     }
        

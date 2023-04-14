@@ -39,7 +39,7 @@
 
    
     
-    <table class="table">
+    <table class="table ms-5">
         <thead>
           <tr>
             <th scope="col">Nombre</th>
@@ -55,13 +55,34 @@
             <th scope="row"><%= name %></th>
             <td><%= surname %></td>
             <td><%= email%></td>
-            <td><%= rolId === 1 ? 'Admin' : 'Usuario' %></td>
+            <td><%= rolId === 1 ? 'Admin' : 'Visitante' %></td>
             <td>
-                <div class="d-flex gap-2">
-                    <a class="btn btn-sm btn-primary" href="#"><i class="fa-solid fa-eye"></i></a>
-                    <a class="btn btn-sm btn-success" href="#"><i class="fa-solid fa-edit"></i></a>
-                    <a class="btn btn-sm btn-danger" href="#"><i class="fa-solid fa-trash"></i></a>
+                <div class="d-flex">
+                  <form action="/user/rol/<%= usuarios.id %>" method="POST" class="row g-6">
+                    <input type="hidden" name="_method" value="PUT">
+                    <input type="hidden" name="userId" value="<%= id %>">
+                   
+                  <div class="col-md-8">
+                    <label for="nuevo_rol" class="form-label">Nuevo rol:</label>
+                    <select name="nuevoRol" id="nuevoRol" class="form-select">
+                      <option value="" selected hidden>Seleccione...</option>
+                      <option value="1">Administrador</option>
+                     <!--  <option value="2">Editor</option> -->
+                      <option value="2">Visitante</option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-4 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                  </div>
+                   
+                </form>
+          
+                    <!-- <a class="btn btn-sm btn-primary" href="#"><i class="fa-solid fa-eye"></i></a>
+                    <a class="btn btn-sm btn-success" href="#"><i class="fa-solid fa-edit"></i></a> -->
+                    <!-- <a class="btn btn-sm btn-danger" href="#"><i class="fa-solid fa-trash"></i></a> -->
                 </div>
+                
         </td>
           </tr>
          <% }) %>
