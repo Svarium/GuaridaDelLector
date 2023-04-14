@@ -4,7 +4,7 @@ module.exports = [
     
     check('titulo')
     .notEmpty().withMessage('Debe ingresar el título del libro').bail()
-    .isLength({min:5, max:40}).withMessage('El Título tiene entre 5 y 40 carácteres'),
+    .isLength({min:5, max:60}).withMessage('El Título tiene entre 5 y 60 carácteres'),
 
     check('autor')
     .notEmpty().withMessage('¿Cuál es el autor del libro?')
