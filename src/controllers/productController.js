@@ -134,7 +134,7 @@ module.exports={
        } else{
 
         if(req.file){
-            fs.existsSync(`./public/images/${req.file.filename}`) && fs.unlinkSync(`./public/images/${req.file.filename}`) //SI HAY ERROR Y CARGÓ IMAGEN ESTA FUNCIÓN LA BORRA
+            fs.existsSync(path.join(__dirname,`../../public/images/libros/${req.file.filename}`)) && fs.unlinkSync(path.join(__dirname,`../../public/images/libros/${req.file.filename}`)) //SI HAY ERROR Y CARGÓ IMAGEN ESTE METODO LA BORRA
         }
 
         const genero = db.Generos.findAll({
@@ -265,7 +265,7 @@ module.exports={
     
 
             if(req.file){
-                fs.existsSync(`./public/images/${req.file.filename}`) && fs.unlinkSync(`./public/images/${req.file.filename}`) //SI HAY ERROR Y CARGÓ IMAGEN ESTE METODO LA BORRA
+                fs.existsSync(path.join(__dirname,`../../public/images/libros/${req.file.filename}`)) && fs.unlinkSync(path.join(__dirname,`../../public/images/libros/${req.file.filename}`)) //SI HAY ERROR Y CARGÓ IMAGEN ESTE METODO LA BORRA
             }
 
             const {id} = req.params;

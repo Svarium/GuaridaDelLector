@@ -64,6 +64,8 @@ module.exports = {
         if (req.body){
             res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60*5})
         }
+
+
         
         return res.redirect('/')
 
@@ -72,6 +74,10 @@ module.exports = {
 
 
     }else {
+      
+      if(req.file){
+        fs.existsSync(path.join(__dirname,`../../public/images/iconsProfile/${req.file.filename}`)) && fs.unlinkSync(path.join(__dirname,`../../public/images/iconsProfile/${req.file.filename}`)) //SI HAY ERROR Y CARGÓ IMAGEN ESTE METODO LA BORRA
+    }
 
         return res.render('register', {
             errors : errors.mapped(),
@@ -123,7 +129,10 @@ module.exports = {
         }
 
     },
-    editarPerfil: (req, res) => {
+    editarPerfil: async (req, res) => {
+
+      try {
+      
         const errors = validationResult(req);
   
         /*  return res.send(errors.mapped()) */
@@ -143,55 +152,33 @@ module.exports = {
             // manejo de errores de validación
   
             const { name, surname } = req.body;
-        
-            db.Usuario.findOne({
-              where: {
-                id: +req.params.id,
-              },
-            })
-              .then((usuario) => {
-                db.Usuario.update(
-                  {
-                    name: name,
-                    surname: surname,
-                    icon: req.file ? req.file.filename : usuario.icon,
-                  },
-                  {
-                    where: {
-                      id: +req.params.id,
-                    },
-                  }
-                )
-                  .then((data) => {
-                    db.Usuario.findOne({
-                      where: {
-                        id: +req.params.id,
-                      },
-                    })
-                      .then((usuario) => {
-                        req.session.userLogin = {
-                          id: usuario.id,
-                          name: usuario.name,
-                          icon: usuario.icon,
-                          rol: usuario.rolId,
-                        };
-                        if (req.cookies.userGuaridaDelLector){
-                          res.cookie('userGuaridaDelLector', '', { maxAge: -1 });
-                          res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60*5});
-                        }
-                        if(req.file){
-                          fs.existsSync(`./public/images/iconsProfile/${req.file}`) && fs.unlinkSync(`./public/images/req.filesProfile/${req.file}`) }
-                        req.session.save((err) => {
-                          req.session.reload((err) => {
-                            return res.redirect('/user/perfil');
-                          });
-                        });
-                      })
-                      .catch((err) => res.send(err));
-                  })
-                  .catch((err) => res.send(err));
-              })
-              .catch((err) => res.send(err));
+            const userSession = req.session.userLogin
+            const user = await db.Usuario.findByPk(userSession.id)
+
+            user.name= name,
+            user.surname= surname,
+            user.icon= req.file ? req.file.filename : userSession.icon
+            
+            await user.save()
+
+            req.session.userLogin = {
+              ...userSession,
+              name: user.name,
+              icon: user.icon
+            };
+            if (req.cookies.userGuaridaDelLector){
+              /* res.cookie('userGuaridaDelLector', '', { maxAge: -1 }); */
+              res.cookie('userGuaridaDelLector', req.session.userLogin, {maxAge: 1000*60*5});
+            }
+
+            
+            
+            const existFile = fs.existsSync(path.join(__dirname,`../../public/images/iconsProfile/${userSession.icon}`))
+            existFile && fs.unlinkSync(path.join(__dirname,`../../public/images/iconsProfile/${userSession.icon}`)) 
+            
+            
+            return res.redirect('/user/perfil');
+            
           } else {
 
             db.Usuario.findByPk(req.session.userLogin.id,{
@@ -207,6 +194,9 @@ module.exports = {
             })
             .catch(error => console.log(error))
           }
+        } catch (error) {
+          res.send(error)
+        }
       
 
     },
