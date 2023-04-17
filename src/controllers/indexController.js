@@ -68,15 +68,6 @@ module.exports = {
 
 
 
-
-
-
-
-
-
-
-
-
      /*  db.Libros.findAll({
         include :['genero', 'autor', 'editorial']
        })
@@ -107,6 +98,10 @@ module.exports = {
 
     nosotros : (req,res) =>{
       res.render('nosotros')
+    },
+
+    preguntasFrecuentes : (req,res) =>{
+      return res.render('preguntasFrecuentes')
     },
 
     listUsers : (req,res) =>{
