@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
 <%- include('./partials/head')  %>
 <body>
     
@@ -7,24 +12,38 @@
     <div>
         <h2>Preguntas Frecuentes</h2>
     </div> 
-
-        <div class="preguntasFrecuentes--iconos">
-            <a href="#busqueda">
+        <section class="preguntasFrecuentes__main__section--icon">
+          <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups" >
+          <div class="btn-group me-2" role="group" aria-label="First group">
+            <button type="button" class="btn btn-outline-secondary">
+              <a href="#busqueda">
                 <i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #403042;"></i>
             </a>
-            <a href="#compra-online">
+            </button>
+            <button type="button" class="btn btn-outline-secondary">
+              <a href="#compra-online">
                 <i class="fa-solid fa-cart-shopping fa-2xl" style="color: #403042;"></i>
             </a>
-            <a href="#medios-de-envios">
+            </button>
+            <button type="button" class="btn btn-outline-secondary">
+              <a href="#medios-de-envios">
                 <i class="fa-solid fa-truck fa-2xl" style="color: #403042;"></i>
-            <a href="#medios-de-pago">
-                <i class="fa-regular fa-credit-card fa-2xl" style="color: #403042;"></i>
             </a>
-            <a href="#devoluciones">
+            </button>
+            <button type="button" class="btn btn-outline-secondary">
+              <a href="#medios-de-pago">
+                <i class="fa-solid fa-credit-card fa-2xl" style="color: #403042;"></i>
+            </a>
+            </button>
+            <button type="button" class="btn btn-outline-secondary">
+              <a href="#devoluciones">
                 <i class="fa-solid fa-rotate-left fa-2xl" style="color: #403042;"></i>
             </a>
+            </button>
+          </div>
         </div>
-
+        </section>
+        
         <section class="preguntasFrecuentes__main__section">
 
             <div class="preguntasFrecuentes__main--titulares">
@@ -79,33 +98,94 @@
                 
                 Los envíos se realizan desde Argentina y los precios están expresados en pesos argentinos.
                 <br>
-                Costos
-                Región	                                Costo fijo
-                Buenos Aires (GBA)	                    ARS$ 350.00
-                Buenos Aires (Interior)	                ARS$ 500.00
-                Catamarca	                            ARS$ 500.00
-                Chaco	                                ARS$ 500.00
-                Chubut	                                ARS$ 600.00
-                Ciudad Autónoma de Buenos Aires	        ARS$ 350.00
-                Córdoba	                                ARS$ 500.00
-                Corrientes	                            ARS$ 500.00
-                Entre Ríos	                            ARS$ 500.00
-                Formosa	                                ARS$ 500.00
-                Jujuy	                                ARS$ 500.00
-                La Pampa	                            ARS$ 500.00
-                La Rioja	                            ARS$ 500.00
-                Mendoza	                                ARS$ 500.00
-                Misiones	                            ARS$ 500.00
-                Neuquen	                                ARS$ 600.00
-                Rio Negro	                            ARS$ 600.00
-                Salta	                                ARS$ 500.00
-                San Juan	                            ARS$ 500.00
-                San Luis	                            ARS$ 500.00
-                Santa Cruz	                            ARS$ 600.00
-                Santa Fe	                            ARS$ 500.00
-                Santiago del Estero	                    ARS$ 500.00
-                Tierra del Fuego	                    ARS$ 900.00
-                Tucumán	                                ARS$ 500.00
+            <h3>Costos</h3>
+            <div>
+                <table class="table">
+                    <tbody>
+                      <tr>
+                        <th>Region</th>
+                        <th>Costo Fijo</th>
+                      </tr>
+                      <tr>
+                        <td>Buenos Aires (GBA)</td>
+                        <td>ARS$ 350.00</td>
+                      </tr>
+                      <tr>
+                        <td>Buenos Aires (Interior)</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Catamarca</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Chaco</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Chubut</td>
+                        <td>ARS$ 600.00</td>
+                      </tr>
+                        <td>CABA</td>
+                        <td>ARS$ 350.00</td>
+                      </tr>
+                        <td>Cordoba</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Corrientes</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Entre Rios</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Formosa</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Jujuy</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>La Pampa</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>La Rioja</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Mendoza</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Misiones</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Neuquen</td>
+                        <td>ARS$ 600.00</td>
+                      </tr>
+                        <td>Rio Negro</td>
+                        <td>ARS$ 600.00</td>
+                      </tr>
+                        <td>Salta</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>San juan</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>San Luis</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Santa Cruz</td>
+                        <td>ARS$ 600.00</td>
+                      </tr>
+                        <td>Santa Fe</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Santiago del Estero</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                        <td>Tierra del Fuego</td>
+                        <td>ARS$ 900.00</td>
+                      </tr>
+                        <td>Tucumán</td>
+                        <td>ARS$ 500.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 <br>
                 Ejemplo 1:             
                 Si la compra debe ser entregada en CABA/GBA, el gasto de envío es AR$350.00.
@@ -124,24 +204,84 @@
                 <br>
                 Ejemplo; un producto que tiene salida de depósito normalmente en 3 días hábiles y que se entrega en una provincia o localidad sin medidas sanitarias que imposibiliten la entrada de la empresa postal, espere recibirlo en 6 dias hábiles.
                 <br>
-                Localidad	Tiempo de envío
-                Capital Federal	2 - 3 días hábiles
-                Provincia de Buenos Aires	2 - 4 días hábiles
-                Resto del país	3 - 5 días hábiles
+            <div>
+                <table class="table">
+                    <tbody>
+                      <tr>
+                        <th>Localidad</th>
+                        <th>Tiempo</th>
+                      </tr>
+                      <tr>
+                        <th>Capital Federal</th>
+                        <td>2 - 3 días hábiles</td>
+                      </tr>
+                      <tr>
+                        <th>Provincia de Buenos Aires</th>
+                        <td>2 - 4 días hábiles</td>
+                      </tr>
+                      <tr>
+                        <th>Resto del país</th>
+                        <td>3 - 5 días hábiles</td>
+                      </tr>
+                      <tr>
+                        <th>Provincia de Buenos Aires</th>
+                        <td>2 - 4 días hábiles</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>    
                 Notas aclaratorias:
                 - Si su compra se realiza durante el fin de semana, debe adicionar 48hs para el despacho.
                 Envíos internacionales
                 Los envíos se realizan desde Argentina y los precios están expresados en dólares.
                 <br>
-                Costos y tiempos de entrega
-                Región	Hasta 1 kg.	Kilo extra	Tiempo de envío
-                ZONA 1 (Brasil - Chile - Paraguay - Uruguay)	US$ 24.50	US$ 4.00	3 días hábiles
-                ZONA 2 (USA y Canadá)	US$ 30.50	US$ 5.00	4 días hábiles
-                ZONA 3 (Resto de América de Sur - Centro América- Caribe)	US$ 39.50	US$ 7.00	4 días hábiles
-                ZONA 4 (Europa Occidental)	US$ 43.50	US$ 8.50	5 días hábiles
-                ZONA 5 (Europa del Este y Asia)	US$ 43.50	US$ 8.50	6 días hábiles
-                ZONA 6 (Resto del Mundo)	US$ 43.50	US$ 8.50	7 días hábiles
-                <br>
+            <h3>Costos y tiempos de entrega</h3>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">zona</th>
+                        <th>Región	Hasta 1 kg.</th>
+                        <th>Kilo extra</th>
+                        <th>Tiempo de envío</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">zona 1</th>
+                        <th>(Brasil - Chile - Paraguay - Uruguay)</th>
+                        <th>US$ 24.50	US$ 4.00</th>
+                        <th>3 días hábiles</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">zona 2</th>
+                        <th>(USA y Canadá)</th>
+                        <th>US$ 30.50	US$ 5.00</th>
+                        <th>4 días hábiles</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">zona 3</th>
+                        <th>(Resto de América de Sur - Centro América- Caribe)</th>
+                        <th>US$ 39.50	US$ 7.00</th>
+                        <th>4 días hábiles</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">zona 4</th>
+                        <th>(Europa Occidental)</th>
+                        <th>US$ 43.50	US$ 8.50</th>
+                        <th>5 días hábiles</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">zona 5</th>
+                        <th>(Europa del Este y Asia)</th>
+                        <th>US$ 43.50	US$ 8.50</th>
+                        <th>6 días hábiles</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">zona 6</th>
+                        <th>(Resto del Mundo)</th>
+                        <th>US$ 43.50	US$ 8.50</th>
+                        <th>7 días hábiles</th>
+                    </tr>
+                </tbody>
+            </table>
             <h3>Tiempo de entrega</h3>
                 Para averiguar en cuánto tiempo se entrega su compra fuera de la Argentina, debe considerar el tiempo de salida de depósito (por ejemplo "normalmente salida del depósito en 3 días"), y el tiempo de envío.
                 <br>
@@ -255,9 +395,36 @@
                 Estamos comprometidos a brindar el mejor servicio en línea posible, verifique periódicamente si hubo algún cambio en esta página, pues el uso del sitio GuaridaDelLector.com implica el conocimiento y aceptación de nuestra política de privacidad.    
                 </p>
             </div>
+            
+          <h2 id="#Contacto">Fromulario de contacto</h2>
+            <div>
+            
+              <section class="contacto">
+                <div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"></label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nombre">
+                  </div>
+                 
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"></label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                  
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Escriba su consulta aqui</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                  
+                  <div class="separador">
+                  <input type="submit" name="formularioContainer$formulario$bEnviar" value="enviar" id="formularioContainer_formulario_bEnviar" class="bt btn btn-primary">
+                  </div>
+                </div>
+              </section>
+            </div>
         </section>
-        <%- include('./partials/redes')  %>
-</main>
+      </main>
+      <%- include('./partials/redes')  %>
 
         <%- include('./partials/footer') %>
 <!-- BOOTSTRAP -->
