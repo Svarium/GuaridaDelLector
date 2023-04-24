@@ -26,12 +26,15 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+const methodOverride = require('method-override');
+const session = require('express-session');
+
 const indexRouter = require('./src/routes/index');
 const productsRouter = require('./src/routes/products');
 const userRouter = require('./src/routes/user');
 const cartRouter = require('./src/routes/cart');
-const methodOverride = require('method-override');
-const session = require('express-session');
+const apiRouter = require('./src/routes/apis/usuario');
+
 const localsUserCheck = require('./src/middlewares/localsUserCheck');
 const cookieCheck = require('./src/middlewares/cookieCheck');
 
@@ -60,6 +63,7 @@ app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/user', userRouter);
 app.use('/', cartRouter);
+app.use('/api', apiRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
