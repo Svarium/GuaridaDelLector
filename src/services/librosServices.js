@@ -1,5 +1,5 @@
 const db = require('../database/models')
-const {literalQueryUrlImage} = require('../helpers')
+/* const {literalQueryUrlImage} = require('../helpers') */
 module.exports = {
     getAllLibros : async (req) => {
      try {
@@ -22,7 +22,10 @@ module.exports = {
                 exclude : ["createdAt","updatedAt","id","editorialId"]
             }
         }
-    ]
+    ]/* ,
+    attributes :{
+        include:[ literalQueryUrlImage(req,"libro","libro.imagen")]
+    } */
            })
       return libros
      } catch (error) {

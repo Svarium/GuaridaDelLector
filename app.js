@@ -35,7 +35,7 @@ const userRouter = require('./src/routes/user');
 const cartRouter = require('./src/routes/cart');
 
 /* apis */
-const apiRouter = require('./src/routes/apis/usuario');
+const apiUserRouter = require('./src/routes/api/usuario');
 const productsApiRouter = require('./src/routes/api/productsApi');
 
 const localsUserCheck = require('./src/middlewares/localsUserCheck');
@@ -68,7 +68,7 @@ app.use('/user', userRouter);
 app.use('/', cartRouter);
 
 /* apis */
-app.use('/api', apiRouter);
+app.use('/api/users', apiUserRouter);
 app.use('/api/libros',productsApiRouter)
 
 // catch 404 and forward to error handler
