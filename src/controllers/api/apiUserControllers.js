@@ -6,7 +6,7 @@ let { Op } = require('sequelize')
 module.exports = {
     listUser: async (req, res) => {
            try {
-            const users = await getAllUsers()
+            const users = await getAllUsers(req)
             return res.status(200).json({
                 ok: true,            
                 data : users,
@@ -23,7 +23,7 @@ module.exports = {
     },
     detail : async (req,res) =>{
         try {
-            const usuario = await getUserById(req.params.id)
+            const usuario = await getUserById(req.params.id, req)
 
 
             return res.status(200).json({

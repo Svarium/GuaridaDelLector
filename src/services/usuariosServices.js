@@ -1,13 +1,17 @@
 const db = require('../database/models')
+const literalQueryUrlImage = require('../helpers/literalQueryUrlImage')
 
 module.exports ={
 
-    getAllUsers : async () =>{
+    getAllUsers : async (req) =>{
         try {
             const users = await await db.Usuario.findAll(
                 {
                     attributes: {
-                      exclude: ['pass']
+                      exclude: ['pass'],
+                      include:[
+                        literalQueryUrlImage(req,'iconsProfile', 'icon', 'icon' )
+                      ]
                     }
                   }
             )
@@ -22,11 +26,14 @@ module.exports ={
     },
 
 
-     getUserById : async (id)=>{
+     getUserById : async (id, req)=>{
         try {
             const usuario = db.Usuario.findByPk(id,{
                 attributes: {
-                    exclude: ['pass']
+                    exclude: ['pass'],
+                    include:[
+                        literalQueryUrlImage(req,'iconsProfile', 'icon', 'icon' )
+                      ]
                   },
                 include : [{
                     association : "rol"

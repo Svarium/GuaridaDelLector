@@ -8,7 +8,7 @@ const literalQueryUrlImage = (
     
 ) => {
     const urlImage = (req) =>
-    `${req.protocol}://${req.get("host")}/images/${entity}`;
+    `${req.protocol}://${req.get("host")}/images/${entity}/`;
     /* field = campo */
     return [literal(`CONCAT('${urlImage(req)}',${nameImage})`),field];
 };

@@ -23,7 +23,7 @@ module.exports = {
     },
     detail : async (req,res)=>{
         try {
-            const libro = await getLibrosById(req.params.id)
+            const libro = await getLibrosById(req.params.id,req)
 
             return res.status(200).json({
                 ok: true,            
