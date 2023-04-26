@@ -1,26 +1,25 @@
-let db = require('../../database/models')
-const {getUserById} = require('../../services/usuariosServices')
+const createResponseError = require('../../helpers/createResponseError')
+const {getUserById, getAllUsers} = require('../../services/usuariosServices')
 let { Op } = require('sequelize')
 
 
 module.exports = {
     listUser: async (req, res) => {
-            await db.Usuario.findAll()
-            .then(users => {
-                let response = {
-                    status : 200,
-                    meta: {
-                        length : users.length,
-                        url :   'http://localhost:3000/api/listUser'
-                    },
-
-                    data : users
-                }
-                return res.status(200 ).json(response)
+           try {
+            const users = await getAllUsers()
+            return res.status(200).json({
+                ok: true,            
+                data : users,
+                meta : {
+                    status: 200,
+                    total : users.length,
+                    url : '/api/users'
+                },
             })
-            .catch(error => {
-                return res.send(error)
-            })
+           } catch (error) {
+            console.log(error)
+            return createResponseError(res, error)
+           }
     },
     detail : async (req,res) =>{
         try {
@@ -28,47 +27,19 @@ module.exports = {
 
 
             return res.status(200).json({
-                ok:true,
-                usuario
+                ok: true,            
+                data : usuario,
+                meta : {
+                    status: 200,
+                    total : 1,
+                    url : `/api/autors/${req.params.id}`
+                },
             })
 
         } catch (error) {
             console.log(error)
-            return res.status(error.status || 500).json({
-                  ok:false,
-                  error : {
-                    status :error.status || 500,
-                    message : error.message || "hubo un error"
-                  }
-            })
+            return createResponseError(res, error)
         }
     },
-    UserById: async (req, res) => {
-        let idParams = req.params.id
-
-        await db.Usuario.findone(
-            {
-                where : {id : idParams}
-            }
-        )
-        .then(user => {
-            if(user){
-                let response = {
-                    status : 200,
-                    meta: {
-                        url :   `http://localhost:3000/api/UserById/${idParams}`
-                    },
-    
-                    data : user
-                }
-                return res.status(200 ).json(response)
-            }else{
-                return res.send("no se hallo el usuario solicitado")
-            }
-        })
-        .catch(error => {
-            return res.send(error)
-        })
-},
-
+  
 }

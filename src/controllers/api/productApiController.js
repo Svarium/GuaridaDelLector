@@ -1,4 +1,5 @@
 const {getAllLibros,getLibrosById} = require('../../services/librosServices')
+const createResponseError = require('../../helpers/createResponseError')
 
 module.exports = {
     index : async (req,res)=>
@@ -6,43 +7,36 @@ module.exports = {
         try {
             const libros = await getAllLibros(req)
 
-       return res.status(200).json({
-        ok :true,
-        count : libros.length,
-        libros
-       })
-
+            return res.status(200).json({
+                ok: true,            
+                data : libros,
+                meta : {
+                    status: 200,
+                    total : libros.length,
+                    url : '/api/libros'
+                },
+            })
         } catch (error) {
             console.log(error)
-            return res.status(error.status || 500).json({
-                  ok:false,
-                  error : {
-                    status :error.status || 500,
-                    message : error.message || "hubo un error"
-                  }
-            })
-            
+            return createResponseError(res, error)   
         }
     },
     detail : async (req,res)=>{
         try {
             const libro = await getLibrosById(req.params.id)
 
-       return res.status(200).json({
-        ok :true,
-        libro
-       })
-
+            return res.status(200).json({
+                ok: true,            
+                data : libro,
+                meta : {
+                    status: 200,
+                    total : 1,
+                    url : `/api/libros/${req.params.id}`
+                },
+            })
         } catch (error) {
             console.log(error)
-            return res.status(error.status || 500).json({
-                  ok:false,
-                  error : {
-                    status :error.status || 500,
-                    message : error.message || "hubo un error"
-                  }
-            })
-            
+            return createResponseError(res, error) 
         }
     }
 }
