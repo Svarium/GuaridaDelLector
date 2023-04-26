@@ -33,7 +33,10 @@ const indexRouter = require('./src/routes/index');
 const productsRouter = require('./src/routes/products');
 const userRouter = require('./src/routes/user');
 const cartRouter = require('./src/routes/cart');
+
+/* apis */
 const apiRouter = require('./src/routes/apis/usuario');
+const productsApiRouter = require('./src/routes/api/productsApi');
 
 const localsUserCheck = require('./src/middlewares/localsUserCheck');
 const cookieCheck = require('./src/middlewares/cookieCheck');
@@ -63,7 +66,10 @@ app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/user', userRouter);
 app.use('/', cartRouter);
-app.use('/api', apiRouter)
+
+/* apis */
+app.use('/api', apiRouter);
+app.use('/api/libros',productsApiRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
