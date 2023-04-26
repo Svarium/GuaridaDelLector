@@ -1,5 +1,5 @@
 let db = require('../../database/models')
-
+const {getUserById} = require('../../services/usuariosServices')
 let { Op } = require('sequelize')
 
 
@@ -21,5 +21,26 @@ module.exports = {
             .catch(error => {
                 return res.send(error)
             })
+    },
+    detail : async (req,res) =>{
+        try {
+            const usuario = await getUserById(req.params.id)
+
+
+            return res.status(200).json({
+                ok:true,
+                usuario
+            })
+
+        } catch (error) {
+            console.log(error)
+            return res.status(error.status || 500).json({
+                  ok:false,
+                  error : {
+                    status :error.status || 500,
+                    message : error.message || "hubo un error"
+                  }
+            })
+        }
     }
 }
