@@ -4,7 +4,13 @@ module.exports ={
 
     getAllUsers : async () =>{
         try {
-            const users = await await db.Usuario.findAll()
+            const users = await await db.Usuario.findAll(
+                {
+                    attributes: {
+                      exclude: ['pass']
+                    }
+                  }
+            )
             return users
         } catch (error) {
             console.log(error)
@@ -19,11 +25,11 @@ module.exports ={
      getUserById : async (id)=>{
         try {
             const usuario = db.Usuario.findByPk(id,{
+                attributes: {
+                    exclude: ['pass']
+                  },
                 include : [{
-                    association : "rol",
-                    attributes :{
-                        exclude : ["createdAt","updatedAt","id","rolId"]
-                    }
+                    association : "rol"
                 }]
             })
             return usuario
