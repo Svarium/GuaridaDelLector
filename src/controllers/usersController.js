@@ -54,7 +54,7 @@ module.exports = {
         })
         .then(usuario => {             
                 
-          req.session.userLogin = {
+            req.session.userLogin = {
             id : usuario.id, 
             name : usuario.name,
             rol: usuario.rolId,
