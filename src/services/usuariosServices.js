@@ -93,6 +93,25 @@ module.exports ={
                 message : error.message
             }
         }
+     },
+
+     destroyUser : async (id) => {
+        try {
+
+            const userDestroy = await db.Usuario.destroy({
+                where:{id:id},
+                force:true
+            })
+
+            return userDestroy
+            
+        } catch (error) {
+            console.log(error)
+            throw{
+                status :500,
+                message : error.message
+            }
+        }
      }
 
 }

@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator')
 const createResponseError = require('../../helpers/createResponseError')
-const {getUserById, getAllUsers, createUser, updateUser} = require('../../services/usuariosServices')
+const {getUserById, getAllUsers, createUser, updateUser, destroyUser} = require('../../services/usuariosServices')
 let { Op } = require('sequelize')
 
 
@@ -116,7 +116,7 @@ module.exports = {
                 meta : {
                     status: 200,
                     total : 1,
-                    url : `/api/users/${user.id}` //chequear esta linea
+                    url : `/api/users/${req.params.id}` //chequear esta linea
                 },
             })
 
@@ -127,6 +127,26 @@ module.exports = {
             return createResponseError(res, error)
         }
 
+    },
+
+    destroy : async (req,res) => {
+        try {
+
+            const userDeleted = await destroyUser(req.params.id)
+            return res.status(200).json({
+                ok: true,            
+                data : userDeleted,
+                meta : {
+                    status: 200,
+                    total : 1,
+                    url : `/api/users/${req.params.id}`
+                },
+            })
+            
+        } catch (error) {
+            console.log(error)
+            return createResponseError(res, error) 
+        }
     }
   
 }
