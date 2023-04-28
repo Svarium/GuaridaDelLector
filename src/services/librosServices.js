@@ -76,5 +76,102 @@ module.exports = {
                 message : error.message
             }
         }
+    },
+
+
+    createLibro: async (data, image) => {
+        try {
+
+           /*  const [genero, autor, editorial] = await Promise.all([
+                db.Generos.findOne({
+                    order: [['nombre']],
+                    where :{id:data.genero.id},
+                    attributes: ['id']
+                }),
+
+                db.Autores.findOne({
+                    where :{id:data.autor.id},
+                    order: [['nombre']],
+                    attributes: ['id'],
+                 
+                }),
+                db.Editoriales.findOne({
+                    where :{id:data.editorial.id},
+                    order: [['nombre']],
+                    attributes: ['id']
+                })
+            ]); */
+                
+        const newLibro = await db.Libros.create({
+            titulo : data.titulo.trim(),
+            precio : data.precio.trim(),
+            autorId : data.autor,
+            generoId: data.genero,
+            editorialId: data.editorial,
+            video: data.video,
+            paginas : data.paginas,
+            description2 : data.description2,
+            imagen : image ? image.filename : "not image.png",
+        })     
+        
+        return newLibro
+
+        } catch (error) {
+            console.log(error)
+            throw{
+                status :500,
+                message : error.message
+            }
+        }
+    },
+
+    updateLibro: async(id, data, image) => {
+        try {
+             
+            const libroUpdated = await db.Libros.update({
+                titulo : data.titulo.trim(),
+                precio : data.precio.trim(),
+                autorId : data.autor,
+                generoId: data.genero,
+                editorialId: data.editorial,
+                video: data.video,
+                paginas : data.paginas,
+                description2 : data.description2,
+                imagen : image.file ? image.file.filename : data.icon,
+            },
+            {
+                where: {id:id}
+            }
+            )
+
+            return libroUpdated
+
+
+        } catch (error) {
+            console.log(error)
+            throw{
+                status :500,
+                message : error.message
+            }
+        }
+    },
+
+    destroyLibro : async (id) => {
+        try {
+
+            const libroDestroy = await db.Libros.destroy({
+                where:{id:id},
+                force:true
+            })
+
+            return libroDestroy
+            
+        } catch (error) {
+            console.log(error)
+            throw{
+                status :500,
+                message : error.message
+            }
+        }
     }
 }
