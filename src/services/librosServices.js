@@ -78,6 +78,48 @@ module.exports = {
         }
     },
 
+    getAllAutors : async () => {
+        try {
+            
+        } catch (error) {
+            console.log(error)
+            throw{
+                status :500,
+                message : error.message
+            }
+        }
+    },
+
+    getAllGeneros : async () => {
+        try {
+            const generos = await db.Generos.findAll({
+                order: [['nombre']],
+                    where :{id:data.genero.id},
+                    attributes: ['id', 'nombre']
+            })
+
+            return generos
+            
+        } catch (error) {
+            console.log(error)
+            throw{
+                status :500,
+                message : error.message
+            }
+        }
+    },
+
+    getAllEditoriales : async () => {
+        try {
+            
+        } catch (error) {
+            console.log(error)
+            throw{
+                status :500,
+                message : error.message
+            } 
+        }
+    },
 
     createLibro: async (data, image) => {
         try {

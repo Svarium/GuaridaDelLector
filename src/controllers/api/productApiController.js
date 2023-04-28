@@ -71,7 +71,10 @@ module.exports = {
             const newLibro = await createLibro(req.body, req.file)
             return res.status(200).json({
                 ok: true,            
-                data : newLibro,
+                data : {
+                    message:"Producto creado exitosamente",
+                    newLibro
+                },
                 meta : {
                     status: 200,
                     total : 1,
@@ -109,7 +112,10 @@ module.exports = {
 
             return res.status(200).json({
                 ok: true,            
-                data : libroUpdated,
+                data : {
+                    message:"Producto editado exitosamente",
+                    libroUpdated
+                },
                 meta : {
                     status: 200,
                     total : 1,
@@ -128,7 +134,9 @@ module.exports = {
             const libroDeleted = await destroyLibro(req.params.id)
             return res.status(200).json({
                 ok: true,            
-                data : libroDeleted,
+                data : {
+                    message:"Producto eliminado exitosamente",
+                    libroDeleted},
                 meta : {
                     status: 200,
                     total : 1,

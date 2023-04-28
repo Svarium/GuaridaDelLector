@@ -10,12 +10,19 @@ module.exports ={
             const users = await await db.Usuario.findAll(
                 {
                     attributes: {
-                      exclude: ['pass'],
+                      exclude: ['pass', 'createdAt', 'updatedAt', 'rolId'],
                       include:[
                         literalQueryUrlImage(req,'iconsProfile', 'icon', 'icon' )
                       ]
-                    }
+                    },
+                    include : [{
+                        association : "rol",
+                        attributes:{
+                            exclude:['id', 'createdAt', 'updatedAt']
+                        }
+                    }]
                   }
+                 
             )
             return users
         } catch (error) {
@@ -32,13 +39,16 @@ module.exports ={
         try {
             const usuario = db.Usuario.findByPk(id,{
                 attributes: {
-                    exclude: ['pass'],
+                    exclude: ['pass', 'createdAt', 'updatedAt', 'rolId'],
                     include:[
                         literalQueryUrlImage(req,'iconsProfile', 'icon', 'icon' )
                       ]
                   },
                 include : [{
-                    association : "rol"
+                    association : "rol",
+                    attributes:{
+                        exclude:['id', 'createdAt', 'updatedAt']
+                    }
                 }]
             })
             return usuario

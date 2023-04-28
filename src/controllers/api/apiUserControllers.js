@@ -74,7 +74,14 @@ module.exports = {
             const newUser = await createUser(req.body, req.file)
             return res.status(200).json({
                 ok: true,            
-                data : newUser,
+                data : {
+                    message: "usuario creado correctamente",
+                    newUser:{
+                        id: newUser.id,
+                        name:newUser.name,
+                        surname: newUser.surname,
+                        email:newUser.email
+                    }},
                 meta : {
                     status: 200,
                     total : 1,
@@ -112,11 +119,19 @@ module.exports = {
             const user = await updateUser(req.params.id, req.body, req.file)
             return res.status(200).json({
                 ok: true,            
-                data : user,
+                data : {
+                    message : "Usuario editado correctamente",
+                    user: {
+                        id: user.id,
+                        name:user.name,
+                        surname:user.surname,
+                        email:user.email
+                    }    
+                },
                 meta : {
                     status: 200,
                     total : 1,
-                    url : `/api/users/${req.params.id}` //chequear esta linea
+                    url : `/api/users/${req.params.id}` 
                 },
             })
 
@@ -135,7 +150,9 @@ module.exports = {
             const userDeleted = await destroyUser(req.params.id)
             return res.status(200).json({
                 ok: true,            
-                data : userDeleted,
+                data : {
+                    message : "Usuario eliminado Exitosamente",
+                    userDeleted},
                 meta : {
                     status: 200,
                     total : 1,
