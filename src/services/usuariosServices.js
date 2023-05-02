@@ -5,9 +5,10 @@ const bcrypt = require('bcrypt')
 
 module.exports ={
 
-    getAllUsers : async (req) =>{
+    getAllUsers : async (req, options = {limit : 10, offset:0}) =>{
         try {
-            const users = await await db.Usuario.findAll(
+            const {limit = 10, offset = 0} = options
+            const users = await await db.Usuario.findAndCountAll(
                 {
                     attributes: {
                       exclude: ['pass', 'createdAt', 'updatedAt', 'rolId'],
@@ -20,10 +21,10 @@ module.exports ={
                         attributes:{
                             exclude:['id', 'createdAt', 'updatedAt']
                         }
-                    }]
-                  }
-                 
-            )
+                    }],
+                   limit,
+                   offset, 
+                  });
             return users
         } catch (error) {
             console.log(error)

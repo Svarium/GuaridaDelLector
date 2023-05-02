@@ -3,23 +3,25 @@ const createResponseError = require('../../helpers/createResponseError')
 const { validationResult } = require('express-validator')
 
 module.exports = {
-    index : async (req,res)=>
-    {
+    index: async (req, res) => {
         try {
-            const libros = await getAllLibros(req)
-
+            const page = parseInt(req.query.page) || 1;
+            const limit = parseInt(req.query.limit) || 20;
+            const offset = (page - 1) * limit;
+            const libros = await getAllLibros(req, { limit, offset });
+    
             return res.status(200).json({
-                ok: true,            
-                data : libros,
-                meta : {
+                ok: true,
+                data: libros.rows,
+                meta: {
                     status: 200,
-                    total : libros.length,
-                    url : '/api/libros'
+                    total: libros.count,
+                    url: "/api/libros",
                 },
-            })
+            });
         } catch (error) {
-            console.log(error)
-            return createResponseError(res, error)   
+            console.log(error);
+            return createResponseError(res, error);
         }
     },
     detail : async (req,res)=>{

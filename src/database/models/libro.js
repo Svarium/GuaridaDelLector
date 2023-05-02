@@ -1,4 +1,6 @@
 'use strict';
+/* const sequelizePaginate = require('sequelize-paginate') */
+
 const {
   Model, ForeignKeyConstraintError
 } = require('sequelize');
@@ -40,5 +42,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Libros',
   });
+
+ /*  sequelizePaginate.paginate(Libros) */
   return Libros;
 };
