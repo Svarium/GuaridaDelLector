@@ -234,6 +234,40 @@ module.exports = {
         .catch(error => console.log(error))
 
      
+    },
+
+    editPass : (req,res) => {
+        return res.render('blanquearPass',{
+            title: "Restablece tu contraseña"
+        })
+    },
+
+    resetPass : (req, res) => {
+        const errors = validationResult(req);
+  
+        /*  return res.send(errors.mapped()) */
+
+        if(errors.isEmpty()){
+
+            db.Usuario.update({
+                pass : req.body.pass
+            },
+            {
+                where : {
+                    id:req.params.id
+                }
+            }).then(user => {
+                return res.redirect('/user/perfil');
+            })
+        } else {
+            return res.render('blanquearPass',{
+                title: "Restablece tu contraseña",
+                errors : errors.mapped(),
+                old : req.body
+            })
+        }
+
+       
     }
     
 
