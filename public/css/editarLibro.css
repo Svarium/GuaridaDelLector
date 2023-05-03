@@ -242,6 +242,18 @@
     border: 4px solid rgb(235, 105, 105);
 }
 
+.validInput{
+    border: 4px solid rgb(110, 152, 206);
+    
+}
+
+#errorForm{
+    text-align: center;
+    color: rgb(235, 105, 105);
+    font-weight: bolder;  
+}
+
+
 /* Tablet */
 
 
