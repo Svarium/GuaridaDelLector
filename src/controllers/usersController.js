@@ -245,12 +245,12 @@ module.exports = {
     resetPass : (req, res) => {
         const errors = validationResult(req);
   
-        /*  return res.send(errors.mapped()) */
+         /* return res.send(errors.mapped()) */
 
         if(errors.isEmpty()){
 
             db.Usuario.update({
-                pass : req.body.pass
+                pass : bcrypt.hashSync(req.body.newPass, 12),                
             },
             {
                 where : {
@@ -259,6 +259,7 @@ module.exports = {
             }).then(user => {
                 return res.redirect('/user/perfil');
             })
+
         } else {
             return res.render('blanquearPass',{
                 title: "Restablece tu contraseña",

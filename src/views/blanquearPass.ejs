@@ -52,20 +52,20 @@
 
                 <div class="mb-3">
                     <label for="password" class="form-label">Ingrese su email</label>
-                    <input type="email" name="email" class="form-control <%= (locals.errors && errors.pass) && 'is-invalid'%>" id="email">
-                    <small class="text-danger ms-2"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                    <input type="email" name="email" class="form-control <%= (locals.errors && errors.email) && 'is-invalid'%>" id="email">
+                    <small class="text-danger ms-2"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                   </div>
                
                 <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña antigua</label>
-                    <input type="password" name="oldPass" class="form-control <%= (locals.errors && errors.pass) && 'is-invalid'%>" id="oldPass">
-                    <small class="text-danger ms-2"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                    <label for="password" class="form-label">Contraseña actual</label>
+                    <input type="password" name="oldPass" class="form-control <%= (locals.errors && errors.oldPass) && 'is-invalid'%>" id="oldPass">
+                    <small class="text-danger ms-2"><%= locals.errors && errors.oldPass ? errors.oldPass.msg : null %></small>
                   </div>
                 <small class="text-danger "></small>
                 <div class="mb-3">
                     <label for="password" class="form-label">Nueva contraseña</label>
-                    <input type="password" name="newPass" class="form-control <%= (locals.errors && errors.pass) && 'is-invalid'%>" id="newPass">
-                    <small class="text-danger ms-2"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                    <input type="password" name="newPass" class="form-control <%= (locals.errors && errors.newPass) && 'is-invalid'%>" id="newPass">
+                    <small class="text-danger ms-2"><%= locals.errors && errors.newPass ? errors.newPass.msg : null %></small>
                   </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
               </form>
