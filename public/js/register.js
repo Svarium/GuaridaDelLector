@@ -32,6 +32,18 @@ const verifyEmail = async (email) => {
 }
 
 
+const checkedFields = () => {
+  const elements = $("formRegister").elements;
+  $("errorForm").innerHTML = null;
+
+  for (let i = 0; i < elements.length - 2; i++) {
+    if (elements[i].classList.contains("errorInput")) {
+      $("errorForm").innerHTML = "Hay campos con errores o están vacíos";
+    }
+  }
+};
+
+
 
 let regExLetter = /^[A-Z]+$/i;
 let regExEmail =
@@ -56,6 +68,7 @@ let regExPass2 =
         break
         default:
             this.classList.add('validInput')
+            checkedFields()
             break;
     }
   });
@@ -79,6 +92,7 @@ let regExPass2 =
         break
         default:
             this.classList.add('validInput')
+            checkedFields()
             break;
     }
   });
@@ -104,6 +118,7 @@ let regExPass2 =
         break
         default:
             this.classList.add('validInput')
+            checkedFields()
             break;
     }
   });
@@ -125,6 +140,7 @@ let regExPass2 =
         break
         default:
             this.classList.add('validInput')
+            checkedFields()
             break;
     }
   });
@@ -148,6 +164,7 @@ let regExPass2 =
         break
         default:
             this.classList.add('validInput')
+            checkedFields()
             break;
     }
   });
@@ -171,6 +188,7 @@ let regExPass2 =
         break
         default:
             this.classList.add('validInput')
+            checkedFields()
             break;
     }
   });

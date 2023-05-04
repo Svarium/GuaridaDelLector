@@ -13,6 +13,18 @@ const cleanError = (element, {target}) => {
     $(element).innerHTML = null
 }
 
+
+const checkedFields = () => {
+  const elements = $("formLogin").elements;
+  $("errorFormLogin").innerHTML = null;
+
+  for (let i = 0; i < elements.length - 2; i++) {
+    if (elements[i].classList.contains("errorInput")) {
+      $("errorFormLogin").innerHTML = "Hay campos con errores o están vacíos";
+    }
+  }
+};
+
 const verifyPass = async (email, password) => {
     try {
       let response = await fetch("/api/users/verify-pass", {
@@ -58,6 +70,7 @@ $('email').addEventListener('blur', function(e){
         break
         default:
             this.classList.add('validInput')
+            checkedFields();
             break;
     }
   });
@@ -84,6 +97,7 @@ $('email').addEventListener('blur', function(e){
         break
         default:
             this.classList.add('validInput')
+            checkedFields();
             break;
     }
   });
