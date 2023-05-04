@@ -253,6 +253,12 @@
     font-weight: bolder;  
 }
 
+#errorFormLogin{
+    text-align: center;
+    color: rgb(235, 105, 105);
+    font-weight: bolder; 
+}
+
 
 /* Tablet */
 

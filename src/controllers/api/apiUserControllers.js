@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator')
 const createResponseError = require('../../helpers/createResponseError')
-const {getUserById, getAllUsers, createUser, updateUser, destroyUser, verifyUserEmail} = require('../../services/usuariosServices')
+const {getUserById, getAllUsers, createUser, updateUser, destroyUser, verifyUserEmail, verifyUserPass} = require('../../services/usuariosServices')
 let { Op } = require('sequelize')
 
 
@@ -179,6 +179,22 @@ module.exports = {
                 },    
             })
             
+
+        } catch (error) {
+            console.log(error)
+            return createResponseError(res, error)
+        }
+    },
+
+    verifyPass : async (req,res) => {
+        try {
+            let existPass = await verifyUserPass(req.body)
+            return res.status(200).json({
+                ok: true,            
+                data : {
+                    existPass
+                },    
+            })
 
         } catch (error) {
             console.log(error)

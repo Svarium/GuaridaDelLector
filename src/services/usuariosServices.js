@@ -2,6 +2,7 @@ const db = require('../database/models')
 const literalQueryUrlImage = require('../helpers/literalQueryUrlImage')
 const {hashSync} = require('bcryptjs');
 const bcrypt = require('bcrypt')
+const {compareSync} = require('bcryptjs');
 
 module.exports ={
 
@@ -72,6 +73,24 @@ module.exports ={
             })
             return user ? true : false
             
+        } catch (error) {
+            console.log(error)
+            throw{
+                status :500,
+                message : error.message
+            }
+        }
+     },
+
+     verifyUserPass : async (data) => {
+       
+        try {
+            let user = await db.Usuario.findOne({
+                where : {
+                    email:data.email
+                }
+            })
+            return !user || !compareSync(data.password, user.pass) ? false : true 
         } catch (error) {
             console.log(error)
             throw{

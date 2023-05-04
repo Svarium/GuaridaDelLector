@@ -2,68 +2,38 @@
 <html lang="es">
     <%- include('./partials/head')  %>
 <body class="register__body">
-<!--     <header class="header">
-        <div class="header__nav-menu">
-            <div class="logo">  
-                <img src="/images/logo" alt="">
-            </div>
-            <nav class="header__nav">
-                <ul class="header__nav--lista">
-                    <li><a href="">Home |</a></li>
-                    <li><a href="">Novelas |</a></li>
-                    <li><a href="">Infantil |</a></li>
-                    <li><a href="">Divulgación Científica |</a></li>
-                    <li><a href="">Mangas y Comics |</a></li>
-                    <li><a href="">Nosotros</a></li>
-                </ul>
-            </nav>
-            <div class="header--buscador">
-                <form action="">
-                    <input type="search" name="buscador" placeholder="Buscar títulos y categorías">
-                    <button>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </form>
 
-            </div>
-            <div class="header__nav__menu--user">   
-                <a href="#"><i class="fa-solid fa-user"></i></a>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
-            <div class="burger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>     
-        
-    </header>  -->
    
     <main class="registro__main">
         
 
-        <!-- formulario registro -->
+        <!-- formulario Login -->
        <section class="register__section--form">
          
          
         
-            <form action="/user/login" method="POST" class="fomulario-registro">
+            <form action="/user/login" method="POST" class="fomulario-registro" id="formLogin">
                 <h2 class="titulo--registro">Login de usuario</h2>
 
                 <div class="datos--personales">
                 <input type="email" name="email" id="email" class="<%= locals.errors && errors.email ? 'errorInput' : null %>"  placeholder="Ingrese su email" >
-                <small><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+                <small id="errorEmail"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                 </div>
 
                 <div class="form--password" >
                     <input type="password" name="password" id="password" class="<%= locals.errors && errors.password ? 'errorInput' : null %>" placeholder="Ingrese su contraseña" >
-                    <small><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                    <small id="errorPass"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
                 </div>
+               
                 <div class="form--condiciones--recordar"> 
                     <input type="checkbox" name="recordar" id="">
                     <label for="recordar">Recordarme</label>
                 </div>
                 <div class="form--condiciones">
                     <a href="/user/register">¿No tenes Cuenta?</a>
+                    
                 </div>
+                <small id="errorFormLogin"></small>
                 <div class="form--buttons">
                     <button type="submit">Ingresar</button>
                     
@@ -78,36 +48,14 @@
 
     </main>
 
-  <!--   <footer class="footer"> 
-        <section class="footer__section">
-            <article class="footer__article--info">                 
-                <strong>¿Quienes somos?</strong>
-                <hr>
-                <p>Grupos de Lectura</p>
-                <hr>
-                <a href="#">Iniciar Sesion/Registrarse</a>                            
-    </article>
-    <article class="footer__article--info">             
-            <strong>¿En qué podemos ayudarte?</strong>
-            <hr>
-            <a href="#">Preguntas frecuentes</a>
-            <hr>
-            <a href="#">Contactanos</a>                          
-</article>
-    <article class="footer__info--metodoPago">
-        <strong>Aceptamos los siguientes métodos de pago</strong>
-        <img src="/images/pago2.png" alt="">
-    </article>
-        </section>       
-        <section class="copy">
-            <p>2022 - Guarida del Lector - Todos los derechos reservados</p>
-        </section><br>      
-    </footer> -->
+  
     <!-- AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
+
+    <script src="/js/login.js"> </script>
 
     <!-- GLIDER -->
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
