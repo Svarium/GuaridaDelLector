@@ -173,7 +173,11 @@ let regExPass2 =
             this.classList.add('validInput')
             break;
     }
+  });
+  $('icon').addEventListener('focus', function(e) {
+    cleanError('errorIcon', e)
   })
+  
 
 
   /* CHEQUEO DE ERRORES */
