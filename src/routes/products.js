@@ -19,7 +19,7 @@ router.get('/category', listCategory);
 router.get('/detail/:id', detail);
 
 /* agregar nuevo producto */
-router.get('/agregar/' /* ,checkUserAdmin */, agregar)
+router.get('/agregar/' ,checkUserAdmin, agregar)
 router.post('/', uploadProductImages.single('image'), addLibroValidator,  store)
 
 /* editar un producto */

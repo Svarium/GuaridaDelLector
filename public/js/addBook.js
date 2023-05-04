@@ -11,6 +11,18 @@ const cleanError = (element, {target}) => {
     $(element).innerHTML = null
 }
 
+
+const checkedFields = () => {
+  const elements = $("formAddBook").elements;
+  $("errorFormAdd").innerHTML = "¿Estas seguro de que deseas añadir este libro?";
+
+  for (let i = 0; i < elements.length - 2; i++) {
+    if (elements[i].classList.contains("errorInput")) {
+      $("errorFormAdd").innerHTML = "Hay campos con errores o están vacíos";
+    }
+  }
+};
+
 let regExLetter = /^[A-Z]+$/i;
 let regExEmail =
   /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
@@ -29,6 +41,7 @@ const regExLink = /^https:\/\/youtu\.be\/[a-zA-Z0-9_-]{11}$/;
             break;
         default:
             this.classList.add('validInput')
+            checkedFields();
             break;
     }
   });
@@ -49,6 +62,7 @@ const regExLink = /^https:\/\/youtu\.be\/[a-zA-Z0-9_-]{11}$/;
         break
         default:
             this.classList.add('validInput')
+            checkedFields();
             break;
     }
   });
@@ -69,6 +83,7 @@ const regExLink = /^https:\/\/youtu\.be\/[a-zA-Z0-9_-]{11}$/;
         break;
       default:
         this.classList.add('validInput')
+        checkedFields();
         break;
     }
   })
@@ -89,6 +104,7 @@ const regExLink = /^https:\/\/youtu\.be\/[a-zA-Z0-9_-]{11}$/;
         break;
       default:
         this.classList.add('validInput')
+        checkedFields();
         break;
     }
   })
@@ -106,6 +122,7 @@ const regExLink = /^https:\/\/youtu\.be\/[a-zA-Z0-9_-]{11}$/;
             break;
         default:
             this.classList.add('validInput')
+            checkedFields();
             break;
     }
   });
@@ -127,6 +144,7 @@ const regExLink = /^https:\/\/youtu\.be\/[a-zA-Z0-9_-]{11}$/;
           break
         default:
             this.classList.add('validInput')
+            checkedFields();
             break;
     }
   });
@@ -147,6 +165,7 @@ $('description2').addEventListener('blur', function(e){
       break
       default:
           this.classList.add('validInput')
+          checkedFields();
           break;
   }
 });
@@ -165,6 +184,7 @@ $('genero').addEventListener('blur', function(e){
           break;
       default:
           this.classList.add('validInput')
+          checkedFields();
           break;
   }
 });
@@ -188,6 +208,7 @@ $('image').addEventListener('change', function(e){
           break;
       default:
           this.classList.add('validInput')
+          checkedFields();
           break;
   }
 });
