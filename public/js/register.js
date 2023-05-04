@@ -11,6 +11,26 @@ const cleanError = (element, {target}) => {
     $(element).innerHTML = null
 }
 
+const verifyEmail = async (email) => {
+  try {
+    let response = await fetch("/api/users/verify-email", {
+      method: "POST",
+      body: JSON.stringify({
+        email:email
+      }),
+      headers: {
+        "Content-Type" : "application/json"
+      }
+      });
+
+      let result = await response.json();
+      console.log(result);
+      return result.data.existUser
+  } catch (error) {
+    console.error
+  }
+}
+
 
 
 let regExLetter = /^[A-Z]+$/i;
@@ -69,14 +89,18 @@ let regExPass2 =
 
   /* INPUT EMAIL */
 
-  $('email').addEventListener('blur', function(e){
+  $('email').addEventListener('blur', async function(e){
+    
     switch (true) {
         case !this.value.trim():
             msgError('errorEmail', "El email es obligatorio", e)
             break;
-
         case !regExEmail.test(this.value.trim()):
             msgError('errorEmail', "Tiene que ser un email válido",e)
+        break
+        case await verifyEmail(this.value.trim()) :
+          msgError('errorEmail', "El email ya se encuentra en uso", e)
+          
         break
         default:
             this.classList.add('validInput')
