@@ -17,6 +17,7 @@
 
                 <div class="datos--personales">
                 <input type="email" name="email" id="email" class="<%= locals.errors && errors.email ? 'errorInput' : null %>"  placeholder="Ingrese su email" >
+                
                 <small id="errorEmail"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                 </div>
 

@@ -10,7 +10,7 @@
          
          
         
-        <form action="/products/editar/<%= id %>?_method=PUT " method="POST" class="fomulario-edicion" enctype="multipart/form-data">
+        <form action="/products/editar/<%= id %>?_method=PUT " method="POST" class="fomulario-edicion" enctype="multipart/form-data" id="formEditBook">
             <h2 class="titulo--edicion">Editando el libro: <%= titulo %> </h2>
 
             <div class="datos--libro">
@@ -23,20 +23,20 @@
                    <option value="<%= id %>" <%= id === autorId && 'selected' %> ><%= nombre %> </option>
                   <% }) %>
                 </select>
-                <small><%= locals.errors && errors.autor ? errors.autor.msg : null %></small>
+                <small id="errorAutor"><%= locals.errors && errors.autor ? errors.autor.msg : null %></small>
               </div>
 
               <input type="text" class="<%= locals.errors && errors.titulo ? 'errorInput' : null %>" name="titulo" id="titulo"  placeholder="Editar el título del libro"  value="<%= titulo %>">
-              <small><%= locals.errors && errors.titulo ? errors.titulo.msg : null %></small>
+              <small id="errorTitulo"><%= locals.errors && errors.titulo ? errors.titulo.msg : null %></small>
                  
 
         
 
               <input type="number" class="<%= locals.errors && errors.precio ? 'errorInput' : null %>" name="precio" id="precio" placeholder="Editar el precio del libro $$$"  value="<%=  precio %>">
-              <small><%= locals.errors && errors.precio ? errors.precio.msg : null %></small>
+              <small id="priceError"><%= locals.errors && errors.precio ? errors.precio.msg : null %></small>
 
               <input type="number" class="<%= locals.errors && errors.paginas ? 'errorInput' : null %>" name="paginas" id="paginas" placeholder="Editar cantidad de paginas del libro"  value="<%= paginas %>">
-              <small><%= locals.errors && errors.paginas ? errors.paginas.msg : null %></small>
+              <small id="errorPaginas"><%= locals.errors && errors.paginas ? errors.paginas.msg : null %></small>
 
               <div class="selectEditorial">
                 <label for="editorial" class="titulo--edicion">Seleccionar Editorial</label>
@@ -46,17 +46,17 @@
                    <option value="<%= id %>" <%= id === editorialId && 'selected' %>  ><%= nombre %> </option>
                   <% }) %>
                 </select>
-                <small><%= locals.errors && errors.editorial ? errors.editorial.msg : null %></small>
+                <small id="errorEditorial"><%= locals.errors && errors.editorial ? errors.editorial.msg : null %></small>
               </div>
 
               
 
               <input type="text" class="<%= locals.errors && errors.video ? 'errorInput' : null %>"  name="video" id="video" placeholder="ingrese link de video reseña" value="<%= video %>"> <!-- agregar al controlador, al json y validar -->
-              <small><%= locals.errors && errors.video ? errors.video.msg : null %></small>
+              <small id="errorLink"><%= locals.errors && errors.video ? errors.video.msg : null %></small>
 
               <label for="description2" class="titulo--edicion">Editar descripción del Libro:</label>
               <textarea name="description2" class="<%= locals.errors && errors.description2 ? 'errorInput' : null %>" id="description2" placeholder="" rows="5"><%= description2 %></textarea>    
-              <small><%= locals.errors && errors.description2 ? errors.description2.msg : null %></small>      
+              <small id="errorDescript"><%= locals.errors && errors.description2 ? errors.description2.msg : null %></small>      
               </div>
 
               <div class="editar__categorias">
@@ -67,13 +67,13 @@
                    <option value="<%= id %>" <%= id === generoId && 'selected' %> ><%= nombre %> </option>
                   <% }) %>
                 </select>
-                <small><%= locals.errors && errors.genero ? errors.genero.msg : null %></small>
+                <small id="errorGenero"><%= locals.errors && errors.genero ? errors.genero.msg : null %></small>
             </div>
 
             <div class="editar__portada">
                 <label for="portada">Editar imagen de portada</label>
                 <input type="file" class="<%= locals.errors && errors.image ? 'errorInput' : null %>" name="image" id="image">
-                <small><%= locals.errors && errors.image ? errors.image.msg : null %></small>
+                <small id="errorImage"><%= locals.errors && errors.image ? errors.image.msg : null %></small>
             </div>
 
             <div class="edicion--buttons">
@@ -88,12 +88,12 @@
     <div class="container-modal">
         <div class="content-modal">
             <h2>¡ATENCION!</h2>
-            <p>¿Estas seguro de que deseas editar este libro?</p>
+            <p id="errorFormAdd">¿Estas seguro de que deseas añadir este libro?</p>
             <div class="btn-cerrar">
               
                 <button type="submit">EDITAR <i class="fa-solid fa-pen-to-square"></i> </i></button>
                
-                <label for="btn-modal">CANCELAR</i></label>
+                <label for="btn-modal">REGRESAR</i></label>
             </div>
         </div>
         <label for="btn-modal" class="cerrar-modal"></label>
@@ -132,6 +132,8 @@
         <script>
           AOS.init();
         </script>
+
+        <script src="/js/editBook.js"> </script>
     
         <!-- GLIDER -->
         <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
