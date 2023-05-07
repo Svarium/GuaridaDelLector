@@ -88,9 +88,9 @@ $('email').addEventListener('blur', function(e){
             msgError('errorPass', "la contraseña es obligatoria", e)
             break;
 
-        /* case !regExPass.test(this.value.trim()):
+        case !regExPass.test(this.value.trim()):
             msgError('errorPass', "Debe ser entre 6 y 12 caracteres y tener una mayúscula, minúscula y un número",e)
-        break */
+        break
         case await verifyPass(emailInput.value.trim(),this.value.trim()) :
           msgError('errorPass', "Credenciales inválidas", e)
           
