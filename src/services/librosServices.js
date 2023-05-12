@@ -2,10 +2,10 @@ const db = require('../database/models')
 const literalQueryUrlImage = require('../helpers/literalQueryUrlImage')
 
 module.exports = {
-    getAllLibros: async (req, options = { limit: 10, offset: 0 }) => {
+    getAllLibros: async (req, {withPagination = "false", page= 1, limit=10} = {}) => {
         try {
-            const { limit = 10, offset = 0 } = options;
-            const libros = await db.Libros.findAndCountAll({
+
+            let options = {
                 include: [
                     {
                         association: "autor",
@@ -28,10 +28,31 @@ module.exports = {
                 attributes: {
                     include: [literalQueryUrlImage(req, "libros", "imagen", "imagen")],
                 },
-                limit,
-                offset,
-            });
-            return libros;
+               
+            }
+
+            if(withPagination === "true"){
+                
+                options= {
+                    ...options,
+                    page,
+                    paginate: limit
+                }
+
+                const {docs, pages, total} = await db.Libros.paginate(options)
+                return {
+                    libros: docs,
+                    pages,
+                    count: total,
+                }
+            }
+           
+            const {count, rows:libros} = await db.Libros.findAndCountAll(options);
+            return {
+                count,
+                libros
+            }
+
         } catch (error) {
             console.log(error);
             throw {
