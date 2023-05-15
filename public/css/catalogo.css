@@ -30,6 +30,21 @@
     transform: translateY(-2%);
 }
 
+.pagination .page-link{
+    background-color: #f5f5f5; /*cambiar por el color de fondo deseado*/
+    color: var(--footer); /*cambiar por el color de los números deseado*/
+  }
+  
+  .pagination .page-link:hover{
+    background-color: rgb(214, 171, 118); /*cambiar por el color de fondo deseado on hover*/
+    color: #fff; /*cambiar por el color de los números deseado on hover*/
+  }
+  
+  .pagination .active .page-link{
+    background-color: var(--footer); /*cambiar por el color de fondo deseado para la página activa*/
+    color: #fff; /*cambiar por el color de los números deseado para la página activa*/
+  }
+
 
 @media (min-width:768px) { 
     .contenedor-catalogo{
