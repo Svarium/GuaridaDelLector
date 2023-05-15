@@ -2,7 +2,7 @@ const db = require('../database/models')
 const literalQueryUrlImage = require('../helpers/literalQueryUrlImage')
 
 module.exports = {
-    getAllLibros: async (req, {withPagination = "false", page= 1, limit=10} = {}) => {
+    getAllLibros: async (req, {withPagination = "false", page= 1, limit=8} = {}) => {
         try {
 
             let options = {

@@ -20,3 +20,9 @@ li{
 ol, ul {
     padding: 0;
 }
+
+#todos{
+    font-family: var(--tipografiaGeneral); 
+    color: black;
+    font-weight: bolder;
+}

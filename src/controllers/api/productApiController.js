@@ -5,7 +5,7 @@ const { validationResult } = require('express-validator')
 module.exports = {
     index: async (req, res) => {
         try {
-            const {withPagination = "true", page=1, limit = 10} = req.query
+            const {withPagination = "true", page=1, limit = 8} = req.query
             const {libros, count, pages} = await getAllLibros(req, { 
                 withPagination,
                 page,
