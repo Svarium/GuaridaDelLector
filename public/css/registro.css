@@ -140,6 +140,32 @@ input{
 }
 
 
+.LoginGoogle{
+    background-color: #dd4b39;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 3px;
+}
+
+.form--buttons:before {
+    content: "\f1a0";
+    font-family: "Font Awesome 5 Free";
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    left: 10px;
+  }
+
+
+
 
 /* TABLETS */
 

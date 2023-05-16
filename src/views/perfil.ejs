@@ -41,7 +41,7 @@
           <li class="nav-item me-3">
             <a class="nav-link active" href="#" aria-current="page">Bienvenido, <%= user.name %> <span class="visually-hidden">(current)</span></a>
           </li>        
-          <a href="/"><img src="/images/iconsProfile/<%= user.icon %>" class="icon-dash" alt=""></a>
+          <a href="/"><img src="<%= /http/.test(user.icon)? user.icon : `/images/iconsProfile/${user.icon}` %>" class="icon-dash" alt=""></a>
         </div>
       </div>
     </nav><br>
@@ -51,7 +51,7 @@
             <div class="row">
               <div class="col-12 col-md-3">
                 <div class="card">
-                  <img src="/images/iconsProfile/<%= user.icon %>" alt="User Profile Image" class="card-img-top">
+                  <img src="<%= /http/.test(user.icon)? user.icon : `/images/iconsProfile/${user.icon}` %>" alt="User Profile Image" class="card-img-top">
                   <div class="card-body">
                     <h5 class="card-title"> <%= user.name %> <%= user.surname %> </h5>
                   </div>

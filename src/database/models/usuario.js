@@ -23,7 +23,9 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     pass: DataTypes.STRING,
     icon: DataTypes.STRING,
-    rolId: DataTypes.INTEGER
+    socialId: DataTypes.STRING,
+    socialProvider: DataTypes.STRING,
+    rolId: {type : DataTypes.INTEGER, defaultValue:2}
   }, {
     sequelize,
     modelName: 'Usuario',

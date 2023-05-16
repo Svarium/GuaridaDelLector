@@ -7,6 +7,8 @@ const db =require('../database/models')
 
 module.exports = { 
     index:(req,res)=>{
+
+      console.log(req.session?.userLogin);
     
       db.Libros.findAll({
         attributes : ['imagen', 'precio', 'description2', 'id'],

@@ -24,6 +24,15 @@ module.exports = {
       icon: {
         type: Sequelize.STRING
       },
+
+      socialId:{
+        type: Sequelize.STRING
+      },
+
+      socialProvider:{
+        type: Sequelize.STRING
+      },
+
       rolId: {
         type: Sequelize.INTEGER,
         references: {
