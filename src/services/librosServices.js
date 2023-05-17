@@ -142,6 +142,38 @@ module.exports = {
         }
     },
 
+    getCountBooks : async () => {
+        try {
+
+            const totalBooks = await db.Libros.count()
+            return totalBooks
+            
+        } catch (error) {
+            console.log(error)
+            throw{
+                status :500,
+                message : error.message
+            } 
+        }
+    },
+
+    getCountAutors : async () => {
+        try {
+
+            const totalAutors = await db.Autores.count()
+            return totalAutors
+            
+        } catch (error) {
+            console.log(error)
+            throw{
+                status :500,
+                message : error.message
+            } 
+        }
+    },
+
+
+
     createLibro: async (data, image) => {
         try {
 

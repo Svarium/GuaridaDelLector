@@ -64,6 +64,21 @@ module.exports ={
 
      },
 
+    getCountUsers : async () => {
+        try {
+
+            const totalUsers = await db.Usuario.count()
+            return totalUsers
+            
+        } catch (error) {
+            console.log(error)
+            throw{
+                status :500,
+                message : error.message
+            } 
+        }
+    },
+
      verifyUserEmail : async (email) => {
         try {
             let user = await db.Usuario.findOne({
