@@ -130,6 +130,29 @@ module.exports = {
         }
     },
 
+    getLastBook : async (req) => {
+
+        try {
+            const lastBook = await db.Libros.findAll({
+                order: [['createdAt', 'DESC']],
+                limit: 1,
+                attributes: {
+                    include: [literalQueryUrlImage(req, "libros", "imagen", "imagen")],
+                },
+            })
+            
+            return lastBook
+            
+        } catch (error) {
+            console.log(error)
+            throw{
+                status :500,
+                message : error.message
+            }
+        }
+
+    },
+
     getAllEditoriales : async () => {
         try {
             

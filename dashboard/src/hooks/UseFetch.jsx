@@ -1,10 +1,10 @@
 export const UseFetch = async (endpoint, method = 'GET', data, token) => {
 
-const apiURLBase = process.env.REACT_APP_API_URL_BASE;
+const apiURLBase = import.meta.env.VITE_API_URL_BASE;
 
-const url = apiURLBase + endpoint // endpoint = "/libros"
+const url = apiURLBase + endpoint // enpoint = "/courses"
 
-let response; 
+let response;
 
 
 try {
@@ -17,18 +17,18 @@ try {
             method : 'POST',
             body : JSON.stringify(data),
             headers: {
-                'Content-Types' : 'application/json',
+                'Content-Type' : 'application/json',
                 Authorization: token
             }
         })
     }
     
-    let result = await response.json()
+    let result = await response.json();
 
-    return result
+    return result;
     
 } catch (error) {
-    console.log(error);
+    console.error;
 }
 
 }

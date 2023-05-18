@@ -24,6 +24,7 @@ const apiUserRouter = require('./src/routes/api/usuario');
 const productsApiRouter = require('./src/routes/api/productsApi');
 const mainApi = require('./src/routes/api/mainApi')
 
+
 const localsUserCheck = require('./src/middlewares/localsUserCheck');
 const cookieCheck = require('./src/middlewares/cookieCheck');
 
@@ -66,6 +67,7 @@ app.use('/auth', authRouter)
 app.use('/api/users', apiUserRouter);
 app.use('/api/libros',productsApiRouter)
 app.use('/api', mainApi)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

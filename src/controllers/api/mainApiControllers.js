@@ -1,5 +1,5 @@
 const createResponseError = require("../../helpers/createResponseError");
-const { getCountBooks, getCountAutors } = require("../../services/librosServices");
+const { getCountBooks, getCountAutors, getLastBook } = require("../../services/librosServices");
 const { getCountUsers } = require("../../services/usuariosServices");
 
 
@@ -26,6 +26,26 @@ module.exports = {
               console.log(error);
             return createResponseError(res, error);
         }
+    },
+
+    lastBookStore : async(req,res) => {
+        try {
+
+            const book = await getLastBook(req)
+
+            return res.status(200).json({
+                ok:true,
+                data:{
+                    book
+                }
+            })
+            
+        } catch (error) {
+            console.log(error);
+            return createResponseError(res, error);
+        }
     }
+
+
 
 }
