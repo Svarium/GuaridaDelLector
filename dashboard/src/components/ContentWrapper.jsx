@@ -1,6 +1,6 @@
 import React from 'react'
 import { Footer } from './Footer'
-import { TopBar } from './TopBar'
+/* import { TopBar } from './TopBar' */
 import { ContentRowTop } from './ContentRowTop'
 
 export const ContentWrapper = () => {
@@ -9,7 +9,7 @@ export const ContentWrapper = () => {
 
     <div id="content">
   
-    <TopBar/>
+    {/* <TopBar/> */}
   
     <ContentRowTop/>
     

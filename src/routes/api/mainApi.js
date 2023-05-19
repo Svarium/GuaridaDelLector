@@ -1,5 +1,5 @@
 var express = require('express');
-const { metrics, lastBookStore } = require('../../controllers/api/mainApiControllers');
+const { metrics, lastBookStore, getDataSession } = require('../../controllers/api/mainApiControllers');
 const { allGenres } = require('../../controllers/api/genresApiControllers');
 var router = express.Router();
 
@@ -8,7 +8,11 @@ var router = express.Router();
 router.get('/metrics', metrics);
 router.get('/genres', allGenres)
 router.get('/lastBook', lastBookStore)
+/* router.get('/session', getDataSession) */
+
 
 
 
 module.exports = router;
+
+

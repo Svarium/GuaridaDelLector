@@ -1,6 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { UseFetch } from '../hooks/UseFetch';
 
 export const TopBar = () => {
+
+
+  const[state, setState] = useState({
+  
+    loading : true,
+    user: []
+  
+  });
+
+  useEffect(() => {
+
+    UseFetch('/session')
+    .then(result => {
+      console.log(result);
+    })
+
+
+  })
+
+
+
   return (
     <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
     
