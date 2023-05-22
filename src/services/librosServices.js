@@ -99,18 +99,6 @@ module.exports = {
         }
     },
 
-    getAllAutors : async () => {
-        try {
-            
-        } catch (error) {
-            console.log(error)
-            throw{
-                status :500,
-                message : error.message
-            }
-        }
-    },
-
     getAllGeneros : async () => {
         try {
             const generos = await db.Generos.findAll({

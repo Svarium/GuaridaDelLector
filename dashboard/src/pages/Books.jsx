@@ -38,7 +38,7 @@ useEffect(() => {
             <BooksTable books = {state.books}/>
           </div>
           <div className="col-12 col-md-5">
-            <BookAdd books = {state.books} />
+            <BookAdd />
           </div>
         </div>
       </div>

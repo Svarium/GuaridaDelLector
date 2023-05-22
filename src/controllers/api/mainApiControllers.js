@@ -46,16 +46,7 @@ module.exports = {
         }
     },
 
-    /* getDataSession : (req,res) => { 
-        
-        console.log(req.session.userLogin);
-                
-                return res.status(200)
-                    .set('Content-Type', 'application/json')
-                    .json({  userLogin: req.session.userLogin })       
-                                     
-    }
- */
+
 
 
 }

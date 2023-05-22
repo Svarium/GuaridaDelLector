@@ -1,19 +1,20 @@
 const createResponseError = require("../../helpers/createResponseError");
-const { getAllGeneros } = require("../../services/genresServices");
+const { getAllEditorial } = require("../../services/editorialServices");
+
 
 
 
 module.exports = {
 
-    allGenres : async(req,res) => {
+    allEditorial : async(req,res) => {
 
         try {
 
-            const allGenres = await getAllGeneros()
+            const allEditorial = await getAllEditorial()
             return res.status(200).json({
                 ok:true,
                 data : {
-                   allGenres
+                   allEditorial
                 }
             })
             

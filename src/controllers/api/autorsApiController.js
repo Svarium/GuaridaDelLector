@@ -1,19 +1,21 @@
 const createResponseError = require("../../helpers/createResponseError");
-const { getAllGeneros } = require("../../services/genresServices");
+const { getAllAutors } = require("../../services/autorsServices");
+
+
 
 
 
 module.exports = {
 
-    allGenres : async(req,res) => {
+    allAutors : async(req,res) => {
 
         try {
 
-            const allGenres = await getAllGeneros()
+            const autors = await getAllAutors()
             return res.status(200).json({
                 ok:true,
                 data : {
-                   allGenres
+                   autors
                 }
             })
             

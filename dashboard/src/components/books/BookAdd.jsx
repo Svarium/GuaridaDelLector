@@ -1,8 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { UseFetch } from '../../hooks/UseFetch'
 
-export const BookAdd = ({books}) => {
+export const BookAdd = ({}) => {
 
-  console.log(books);
+
+    const [genresState, setGenresState] = useState({
+        loading: true,
+        genres: [],
+      });
+    
+      const [autorsState, setAutorsState] = useState({
+        loading: true,
+        autors: [],
+      });
+    
+      const [editorialState, setEditorialState] = useState({
+        loading: true,
+        editorial: [],
+      });
+    
+      useEffect(() => {
+        Promise.all([
+          UseFetch('/genres'),
+          UseFetch('/autores'),
+          UseFetch('/editoriales'),
+        ]).then(([genresRes, autorsRes, editorialRes]) => {
+          setGenresState({
+            loading: false,
+            genres: genresRes.data.allGenres,
+          });
+          setAutorsState({
+            loading: false,
+            autors: autorsRes.data.autors,
+          });
+          setEditorialState({
+            loading: false,
+            editorial: editorialRes.data.allEditorial,
+          });
+        }).catch(() => console.error);
+      }, []);
 
     
   return (
@@ -24,8 +60,25 @@ export const BookAdd = ({books}) => {
             />
         </div>
         <div className="col-12 col-md-6 mb-3">
+          <label htmlFor="genero" className="form-label">
+            Genero *
+          </label>
+          <select 
+            className="form-control" 
+            name="genero"
+             
+            >
+           <option hidden defaultValue value="">Seleccione...</option>
+              {
+                genresState.genres.map((genre, index) => (
+                  <option value={genre.id} key={index}>{genre.nombre}</option>
+                ))
+              }
+            </select>
+        </div>
+        <div className="col-12 col-md-6 mb-3">
           <label htmlFor="autor" className="form-label">
-            Autor * 
+            Autor
           </label>
           <select 
             className="form-control" 
@@ -33,32 +86,11 @@ export const BookAdd = ({books}) => {
              
             >
            <option hidden defaultValue value="">Seleccione...</option>
-
-           {
-            
-           }
-              {/* {
-                autor.map((auto, index) => (
-                  <option value={chef} key={index}>{chef}</option>
+              {
+                autorsState.autors.map((autor, index) => (
+                  <option value={autor.id} key={index}>{autor.nombre}</option>
                 ))
-              } */}
-            </select>
-        </div>
-        <div className="col-12 col-md-6 mb-3">
-          <label htmlFor="category" className="form-label">
-            Categoría *
-          </label>
-          <select 
-            className="form-control" 
-            name="category"
-             
-            >
-           <option hidden defaultValue value="">Seleccione...</option>
-             {/*  {
-                categories.map((category, index) => (
-                  <option value={category} key={index}>{category}</option>
-                ))
-              } */}
+              }
             </select>
         </div>
         <div className="col-12 col-md-6 mb-3">
@@ -72,15 +104,21 @@ export const BookAdd = ({books}) => {
           />
         </div>
         <div className="col-12 col-md-6 mb-3">
-          <label htmlFor="discount" className="form-label">
-            Descuento
+          <label htmlFor="editorial" className="form-label">
+            Editorial
           </label>
-          <input 
-          type="number" 
-          className="form-control" 
-          name="discount" 
-          defaultValue = {0}
-          />
+          <select 
+            className="form-control" 
+            name="editorial"
+             
+            >
+           <option hidden defaultValue value="">Seleccione...</option>
+              {
+                editorialState.editorial.map((editorial, index) => (
+                  <option value={editorial.id} key={index}>{editorial.nombre}</option>
+                ))
+              }
+            </select>
         </div>
         <div className="col-12 mb-3">
           <label htmlFor="description" className="form-label">
@@ -104,7 +142,7 @@ export const BookAdd = ({books}) => {
                     />
                     <div className="d-flex align-items-center justify-content-around">
                     <label className="btn btn-success my-1" htmlFor="image" >
-                        Cargar imagenes *
+                        Cargar portada *
                     </label>
                     <button className="btn btn-dark my-1 " type="reset" >
                         Limpiar
