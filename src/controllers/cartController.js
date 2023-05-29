@@ -27,4 +27,10 @@ module.exports = {
         .catch(error => console.log(error))
 
        
- }}
+ },
+
+ userCart : (req,res) => {
+    return res.render('carrito')
+ }
+
+}

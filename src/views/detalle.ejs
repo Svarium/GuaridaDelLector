@@ -33,8 +33,8 @@
                     
                 </div>
                 <div class="detalle__section__article--envio">
-                    <button class="">
-                        <a href="/cart/<%= libro.id %>"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <button class="" data-id="<%= libro.id %>" id="btn-addCart">
+                        <i class="fa-solid fa-cart-shopping"></i>
                     </button>
                                      
                 
@@ -149,5 +149,6 @@
       ]
     });
         </script>
+        <script src="/js/detail.js"></script>
     </body>
     </html>

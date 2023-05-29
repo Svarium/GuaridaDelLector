@@ -26,3 +26,28 @@ ol, ul {
     color: black;
     font-weight: bolder;
 }
+
+.comprar{
+    background-color:var(--footer); /* Color de fondo */
+    border: none; /* Sin borde */
+    color: white; /* Color de letra */
+    padding: 12px 15px; /* Espacio alrededor del texto */
+    text-align: center; /* Centrado del texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar como bloque en línea */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 4px 2px; /* Espacio entre botones */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    border-radius: 10px; /* Redondez del borde */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); 
+}
+
+.comprar:hover {
+    background-color: var(--botonesDeCompra);
+}
+
+.comprar:active{
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);  
+}

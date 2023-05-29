@@ -66,34 +66,6 @@ module.exports = {
           books
         })
       })
-
-
-
-
-     /*  db.Libros.findAll({
-        include :['genero', 'autor', 'editorial']
-       })
-       .then(libros =>{
-       
-        let elemento = req.query.search
-
-   
-        const books = 
-        libros.filter(libro => 
-          libro.titulo.toLowerCase().includes(elemento.toLowerCase()) ||
-          libro.autor.toLowerCase().includes(elemento.toLowerCase()) ||
-          libro.genero.toLowerCase().includes(elemento.toLowerCase()) ||
-          libro.editorial.toLowerCase().includes(elemento.toLowerCase())
-          )
-  
-        return res.render('busqueda', 
-        {
-          busqueda: elemento,
-          books
-        });
-       })
-       .catch(error => console.log(error)) */
-
       
     },
 

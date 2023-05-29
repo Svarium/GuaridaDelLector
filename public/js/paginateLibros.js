@@ -4,6 +4,7 @@ const btnPrev = $('#btn-prev')
 const btnNext = $('#btn-next')
 const containerItemPage = $('#container-items-page')
 const containerLibrosCard = $('#container-libros-card')
+const URL_API_SERVER= "http://localhost:3000/api/cart"
 
 let pageActive=1;
 
@@ -14,8 +15,9 @@ const getLibros = ({page = 1 } ={}) =>{
 }
 
 const paintLibros = (libros) =>{
-    containerLibrosCard.innerHTML= ''
+    containerLibrosCard.innerHTML= '';
     libros.forEach(libro => {
+        const priceFormatARG = libro.precio.toLocaleString("es-AR", {style:"currency", currency:"ARS"})
         const template = `      
     <div class="contenedor">    
     <div class="card--populares">
@@ -23,9 +25,10 @@ const paintLibros = (libros) =>{
         <img src="${libro.imagen}" alt="">
         </figure>
     <div class="contenido">
-        <h3>$ ${libro.precio}</h3>
+        <h3>${priceFormatARG}</h3>
         <p>  ${libro.description2.slice(0,100)}...  </p>
         <a href="/products/detail/ ${libro.id}">Leer más</a>
+        <button class="comprar" onclick="addProductToCart(${libro.id})" ><i class="fas fa-shopping-cart"></i></button>
     </div>
     </div>
         `;
@@ -141,3 +144,31 @@ btnPrev.addEventListener('click', async () => {
     }
 })
 
+const addProductToCart = async(id) => {
+
+    try {
+        const objBookId = {
+            bookId:id
+        }
+   const {ok} = await fetch(`${URL_API_SERVER}/addProduct`, {
+            method:"POST",
+            body: JSON.stringify(objBookId),
+            headers:{
+                "Content-Type": "application/json",
+            }
+        }).then((res) => res.json());
+
+        await Swal.fire({
+            title: ok ? "Producto agregado al carrito" : "Debes iniciar sesión",
+            icon: ok ? "success" : "warning",
+            showConfirmButton: false,
+            timer: 1200,
+          });
+        !ok && (location.href = "/user/login")
+
+    } catch (error) {
+        console.log(error);
+    }
+
+ 
+};

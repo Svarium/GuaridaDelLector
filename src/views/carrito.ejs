@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head')  %>
+      <!-- bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <%- include('./partials/header')  %>
+
+    <style>
+        .btn-clear {
+          transition: background-color 200ms, color 200ms;
+        }
+    
+        .btn-clear:hover {
+          background-color: rgb(240, 184, 184);
+          color: white;
+        }
+        a{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+
+ol, ul {
+    padding: 0;
+}
+
+      </style>
+   
+   <body class="cart">
+    <span class="envios-gratis-span">ENVIOS GRATIS EN PRODUCTOS MAYORES A $5000</span>
+    
+    
+      <!-- principal -->
+      <main class="container mt-2">
+
+        <div class="row position-relative">
+
+          <div id="card-container" class="col-8">
+
+         
+
+          </div>
+
+          <div class="card col-4 my-5 position-sticky" style="height:fit-content;top:20px">
+            <div class="card-body my-2 d-flex flex-column gap-2">
+              <button class="btn w-100 btn-danger" id="clear-cart">Vaciar Carrito</button>
+              <button class="btn w-100 btn-success" id="btn-buy">Comprar</button>
+              <a href="/libros" class="btn w-100 btn-dark">Seguir mirando</a>
+              <div class="text-end fs-3" >
+                <span >
+                  Total:
+                </span>
+                <output id="output-total">
+                  0
+                </output>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+
+     <!-- REDES SOCIALES -->              
+<section class="index__section__redes">
+    <h5>¡Seguinos en nuestras redes!</h5>
+    <div class="redes-sociales">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-youtube"></i></a>
+        <a href=""><i class="fa-brands fa-linkedin"></i></a>           
+    </div>
+
+</section>
+
+
+<%- include('./partials/footer')  %>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- GLIDER -->
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+<script>
+new Glider(document.querySelector('.glider'), {
+// Mobile-first defaults
+slidesToShow: 1,
+slidesToScroll: 1,
+scrollLock: true,
+dots: '#resp-dots',
+arrows: {
+prev: '.glider-prev',
+next: '.glider-next'
+},
+responsive: [
+{
+  // screens greater than >= 775px
+  breakpoint: 768,
+  settings: {
+    // Set to `auto` and provide item width to adjust to viewport
+    slidesToShow: '2',
+    slidesToScroll: '2',
+    itemWidth: 150,
+    duration: 0.25
+  }
+},{
+  // screens greater than >= 1024px
+  breakpoint: 1024,
+  settings: {
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    itemWidth: 100,
+    duration: 0.25
+  }
+}
+]
+});
+</script>
+<script src="/js/cart.js"></script>
+<!-- bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+crossorigin="anonymous"></script>
+</body>
+</html>
