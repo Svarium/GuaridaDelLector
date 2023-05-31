@@ -148,5 +148,29 @@ new Glider(document.querySelector('.glider'), {
   ]
 });
     </script>
+    <script>
+       const hamburguesa = document.getElementById('hamburguesa');        
+const nav = document.getElementById('nav');
+const buscador = document.getElementById('buscador')
+
+if (hamburguesa && nav && buscador) {
+  hamburguesa.addEventListener("click", function() {
+    if (nav.style.maxHeight && buscador.style.maxHeight ) {
+      nav.style.maxHeight = null;
+      buscador.style.maxHeight = null; // reset max-height value
+      setTimeout(function() {
+        nav.style.display = "none";
+        buscador.style.display = "none";
+      }, 300); // waits 0.3 seconds for transition to complete
+    } else {
+      nav.style.display = "block";
+      buscador.style.display = "block";
+      nav.style.maxHeight = nav.scrollHeight + "px";
+      buscador.style.maxHeight = buscador.scrollHeight + "px";
+      // sets max-height to the calculated height of the element
+    }
+  });
+}
+    </script>
 </body>
 </html>

@@ -4,6 +4,8 @@
             <a href="/"><img src="/images/logo" alt=""></a>
             <!-- <img src="/images/logo" alt=""> -->
         </div>
+     
+
         <div class="header--buscador">
             <form action="/search" method="get">
                 <input type="search" name="search" placeholder="Buscar títulos y categorías">
@@ -12,7 +14,6 @@
                 </button>
             </form>
         </div>
-
         
         <div class="header__nav__menu--user"> 
             <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -29,11 +30,27 @@
             <% } %>
            
         </div>
-      <!--   <div class="burger-menu">
-            <i class="fas fa-bars"></i>
-            </div>  -->
-            <nav class="header__nav">
+            <nav class="header__nav" id="nav">
                 <ul class="header__nav--lista">
+                    <li><a href="/">Home |</a></li>
+                    <li><a href="/#category">Categorias |</a></li>
+                    <!-- <li><a href="#">¿Quiénes somos?|</a></li> -->
+                    <li><a href="/#new">Novedades |</a></li>
+                    <li><a href="/libros">Catálogo Detallado |</a></li>
+                    <% if (locals.userLogin && locals.userLogin.rol === 1) { %>
+                        <li><a href="/admin">Dashboard |</a></li>
+                    <% } %>
+
+                    <% if (locals.userLogin) { %>
+                        <li><a href="/user/logout">Cerrar Sesión | </a></li>
+                        <li><a href="/user/perfil">Ir al Perfil</a></li>
+                    <% } else { %>
+                  <li><a href="/nosotros">Nosotros |</a></li>
+                    <% } %>
+                </ul>
+            </nav>
+            <nav class="header__nav__lg">
+                <ul class="header__nav__lg--lista">
                     <li><a href="/">Home |</a></li>
                     <li><a href="/#category">Categorias |</a></li>
                     <!-- <li><a href="#">¿Quiénes somos?|</a></li> -->
@@ -53,6 +70,15 @@
             </nav>
           
     </div>
+    <div class="header--buscador--mobile" id="buscador">
+        <form action="/search" method="get">
+            <input type="search" name="search" placeholder="Buscar títulos y categorías">
+            <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+    </div><br>
+
     
     
 </header> 
