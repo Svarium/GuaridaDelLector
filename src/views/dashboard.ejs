@@ -32,6 +32,7 @@
                 <a class="dropdown-item" href="/user/logout">Cerrar Sesión</a>
               </div>
             </li>
+            <a class="nav-link active" href="/" aria-current="page">Ir al Inicio<span class="visually-hidden">(current)</span></a>
           </ul>
           <form action="/search" method="get" class="d-flex my-2 my-lg-0">
             <input  class="form-control me-sm-2" type="search" name="search" placeholder="Buscar Libro">
@@ -44,39 +45,68 @@
 <main>
 
 
-   
-    
+   <div class="container">
     <table class="table">
-        <thead>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">libro</th>
+          <th scope="col">precio</th>
+          <th scope="col">autor</th>
+          <th scope="col">acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+       <% libros.forEach(({id,titulo,precio,autor, nombre}) => { %>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">libro</th>
-            <th scope="col">precio</th>
-            <th scope="col">autor</th>
-            <th scope="col">acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-         <% libros.forEach(({id,titulo,precio,autor, nombre}) => { %>
-            <tr>
-            <th scope="row"><%= id %></th>
-            <td><%= titulo %></td>
-            <td>$ <%= precio %></td>
-            <td><%= autor.nombre %></td>
-            <td>
-                <div class="d-flex gap-2">
-                    <!-- <a class="btn btn-sm btn-primary" href="/products/agregar"><i class="fas fa-plus"></i></a> -->
-                    <a class="btn btn-sm btn-primary" href="products/detail/<%= id %>"><i class="fa-solid fa-eye"></i></a>
-                    <a class="btn btn-sm btn-success" href="products/editar/<%= id %>"><i class="fa-solid fa-edit"></i></a>
-                    <a class="btn btn-sm btn-danger" href="/products/detail/<%=id%>"><i class="fa-solid fa-trash"></i></a>
-                </div>
-        </td>
-          </tr>
-         <% }) %>
-          
-         
-        </tbody>
-      </table>
+          <th scope="row"><%= id %></th>
+          <td><%= titulo %></td>
+          <td>$ <%= precio %></td>
+          <td><%= autor.nombre %></td>
+          <td>
+              <div class="d-flex gap-2">
+                  <!-- <a class="btn btn-sm btn-primary" href="/products/agregar"><i class="fas fa-plus"></i></a> -->
+                  <a class="btn btn-sm btn-primary" href="products/detail/<%= id %>"><i class="fa-solid fa-eye"></i></a>
+                  <a class="btn btn-sm btn-success" href="products/editar/<%= id %>"><i class="fa-solid fa-edit"></i></a>
+                   <!--Boton para abrir el modal-->
+              
+            <div class="boton-modal detalle-comprar">
+                <label class="btn btn-sm btn-success" for="btn-modal" style="background-color: rgb(199, 54, 66);">
+                  <i class="fa-solid fa-trash"></i>
+                </label>
+            </div>
+            <!--Fin de Boton-->
+                  <!-- <a class="btn btn-sm btn-danger" href="/products/detail/<%=id%>"><i class="fa-solid fa-trash"></i></a> -->
+              </div>
+      </td>
+        </tr>
+
+         <!--Ventana Modal para consultar si queire elminar producto-->
+     <input type="checkbox" id="btn-modal">
+     <div class="container-modal">
+         <div class="content-modal">
+             <h2>¡ATENCION!</h2>
+             <p>¿Estas seguro de que deseas eliminar esta publicación?</p>
+             <div class="btn-cerrar">
+               <form action="/products/delete/<%= id %>?_method=DELETE" method="POST" >
+                 <button type="submit">ELIMINAR <i class="fa-solid fa-trash"></i></button>
+                </form> 
+                 <label for="btn-modal">CANCELAR</i></label>
+             </div>
+         </div>
+         <label for="btn-modal" class="cerrar-modal"></label>
+     </div>
+    <!--Fin de Ventana Modal-->  
+       <% }) %>
+        
+       
+      </tbody>
+    </table>
+   </div>
+    
+   
+
+
 </main>
 
 

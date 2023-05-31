@@ -7,7 +7,7 @@
   
     <nav class="navbar navbar-expand-sm navbar-light bg-body-secondary">
         <div class="container">
-          <a href="/"><img src="/images/iconsProfile/<%= userLogin.icon %>" class="icon-dash" alt="" width="100px"></a>
+          <a href="/"><img src="<%= /http/.test(userLogin.icon) ? userLogin.icon : `/images/iconsProfile/${userLogin.icon}` %>" class="icon-dash" alt="" width="100px"></a>
         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -37,59 +37,61 @@
 <main>
 
 
-   
-    
-    <table class="table ms-5">
-        <thead>
+   <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Email</th>
+          <th scope="col">Rol</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+       <% usuarios.forEach(({id, name, surname, email, rolId, rol}) => { %>
           <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Email</th>
-            <th scope="col">Rol</th>
-            <th scope="col">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-         <% usuarios.forEach(({id, name, surname, email, rolId, rol}) => { %>
-            <tr>
-            <th scope="row"><%= name %></th>
-            <td><%= surname %></td>
-            <td><%= email%></td>
-            <td><%= rolId === 1 ? 'Admin' : 'Visitante' %></td>
-            <td>
-                <div class="d-flex">
-                  <form action="/user/rol/<%= usuarios.id %>" method="POST" class="row g-6">
-                    <input type="hidden" name="_method" value="PUT">
-                    <input type="hidden" name="userId" value="<%= id %>">
-                   
-                  <div class="col-md-8">
-                    <label for="nuevo_rol" class="form-label">Nuevo rol:</label>
-                    <select name="nuevoRol" id="nuevoRol" class="form-select">
-                      <option value="" selected hidden>Seleccione...</option>
-                      <option value="1">Administrador</option>
-                     <!--  <option value="2">Editor</option> -->
-                      <option value="2">Visitante</option>
-                    </select>
-                  </div>
-                  
-                  <div class="col-md-4 d-flex align-items-end">
-                    <button type="submit" class="btn btn-primary">Actualizar</button>
-                  </div>
-                   
-                </form>
-          
-                    <!-- <a class="btn btn-sm btn-primary" href="#"><i class="fa-solid fa-eye"></i></a>
-                    <a class="btn btn-sm btn-success" href="#"><i class="fa-solid fa-edit"></i></a> -->
-                    <!-- <a class="btn btn-sm btn-danger" href="#"><i class="fa-solid fa-trash"></i></a> -->
+          <th scope="row"><%= name %></th>
+          <td><%= surname %></td>
+          <td><%= email%></td>
+          <td><%= rolId === 1 ? 'Admin' : 'Visitante' %></td>
+          <td>
+              <div class="d-flex">
+                <form action="/user/rol/<%= usuarios.id %>" method="POST" class="row g-6">
+                  <input type="hidden" name="_method" value="PUT">
+                  <input type="hidden" name="userId" value="<%= id %>">
+                 
+                <div class="col-md-7">
+                  <label for="nuevo_rol" class="form-label">Nuevo rol:</label>
+                  <select name="nuevoRol" id="nuevoRol" class="form-select">
+                    <option value="" selected hidden>Seleccione...</option>
+                    <option value="1">Administrador</option>
+                   <!--  <option value="2">Editor</option> -->
+                    <option value="2">Visitante</option>
+                  </select>
                 </div>
                 
-        </td>
-          </tr>
-         <% }) %>
-          
-         
-        </tbody>
-      </table>
+                <div class="col-md-4 d-flex align-items-end">
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+                 
+              </form>
+        
+                  <!-- <a class="btn btn-sm btn-primary" href="#"><i class="fa-solid fa-eye"></i></a>
+                  <a class="btn btn-sm btn-success" href="#"><i class="fa-solid fa-edit"></i></a> -->
+                  <!-- <a class="btn btn-sm btn-danger" href="#"><i class="fa-solid fa-trash"></i></a> -->
+              </div>
+              
+      </td>
+        </tr>
+       <% }) %>
+        
+       
+      </tbody>
+    </table>
+   </div>
+    
+    
 </main>
 
 

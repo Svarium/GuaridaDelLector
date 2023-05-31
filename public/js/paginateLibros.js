@@ -164,7 +164,7 @@ const addProductToCart = async(id) => {
             showConfirmButton: false,
             timer: 1200,
           });
-        !ok && (location.href = "/user/login")
+          !ok ? (location.href = "/user/login") : (location.href = "/cart")
 
     } catch (error) {
         console.log(error);

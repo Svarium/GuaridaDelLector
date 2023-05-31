@@ -466,17 +466,5 @@
       "description1": "Stephen King regresa a la fantasía por todo lo alto con una novela magnífica sobre un inesperado héroe que deberá tomar parte en la épica batalla entre el bien y el mal.",
       "description2": " BIENVENIDOS AL LADO OSCURO DE ÉRASE UNA VEZ Charlie Reade parece un estudiante de instituto normal y corriente, pero carga con un gran peso sobre los hombros. Cuando él solo tenía diez años, su madre fue víctima de un atropello y la pena empujó a su padre a la bebida. Aunque era demasiado joven, Charlie tuvo que aprender a cuidarse solo... y también a ocuparse de su padre.",
       "imagen": "cuento-de-hadas.jpg"
-   },
-   {
-      "id": 38,
-      "titulo": "Dr Stone",
-      "precio": 2000,
-      "autorId": 34,
-      "generoId": 8,
-      "editorialId": 23,
-      "video": "https://youtu.be/WI9dx58itTk",
-      "paginas": 100,
-      "description2": "Dr. Stone es un manga y anime de ciencia ficción y aventuras. La historia sigue a un estudiante de secundaria llamado Taiju Oki, quien se despierta después de haber sido petrificado junto a toda la humanidad por un fenómeno misterioso. Con la ayuda de su amigo científico, Senku Ishigami, Taiju decide usar la ciencia para despetrificar a la humanidad y reconstruir la civilización. Sin embargo, el camino hacia este objetivo no será fácil, y enfrentarán muchos desafíos en el camino.",
-      "imagen": "1680113435390_products_.jpg"
    }
 ]

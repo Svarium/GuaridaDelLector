@@ -59,6 +59,27 @@ input{
     border-radius: 4px;
 }
 
+input[type="file"]::-webkit-file-upload-button {
+    background-color: var(--footer); /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border-radius: .25rem; /* Bordes redondeados */
+    padding: .375rem .75rem; /* Espaciado interno */
+    font-size: 0.8rem; /* Tamaño de fuente */
+    line-height: 1; /* Altura de línea */
+    border: none; /* Quitar borde */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out; /* Transición al hacer clic */
+  }
+
+  input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #ce5843; /* Cambio de color de fondo al pasar por encima */
+    color: #fff; /* Cambio de color del texto al pasar por encima */
+  }
+
+  input[type="file"]::-webkit-file-upload-button:focus {
+    outline: none; /* Quitar el borde al hacer clic */
+  }
+
 .datos--personales{
     display: flex;
     flex-direction: column;

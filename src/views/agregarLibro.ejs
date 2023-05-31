@@ -73,7 +73,7 @@
             </div>
 
             <div class="editar__portada">
-                <label for="portada">Agregar imagen de portada</label>
+                <label for="portada" class="file">Agregar imagen de portada</label>
                 <input type="file" class="<%= locals.errors && errors.image ? 'errorInput' : null %>" name="image" id="image">
                 <small id="errorImage"><%= locals.errors && errors.image ? errors.image.msg : null %></small>
             </div>
