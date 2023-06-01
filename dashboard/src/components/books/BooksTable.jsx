@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { BooksRow } from './BooksRow';
 
-export const BooksTable = ({books, pages, currrentPage, handleGetPage}) => {
+export const BooksTable = ({books, pages, currentPage, handleGetPage}) => {
 
     console.log(pages);
   const paginator = []
@@ -17,14 +17,14 @@ export const BooksTable = ({books, pages, currrentPage, handleGetPage}) => {
       <nav aria-label="Page navigation example">
   <ul class="pagination pagination-sm">
     <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
+      <a class="page-link" href="#" aria-label="Previous" onClick={() => handleGetPage(currentPage - 1)}>
         <span aria-hidden="true">&laquo;</span>
         <span class="sr-only">Previous</span>
       </a>
     </li>
     {
       paginator.map(page => (
-        <li key={page} className="page-item">
+        <li key={page} className={`page-item ${page === currentPage && "active"}`}>
           <a class="page-link" href="#" onClick={() => handleGetPage(page)}>
         {page}</a></li>    
       ))
@@ -33,7 +33,7 @@ export const BooksTable = ({books, pages, currrentPage, handleGetPage}) => {
     {/* <li class="page-item"><a class="page-link" href="#">2</a></li>
     <li class="page-item"><a class="page-link" href="#">3</a></li> */}
     <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
+      <a class="page-link" href="#" aria-label="Next" onClick={() => handleGetPage(currentPage + 1)}>
         <span aria-hidden="true">&raquo;</span>
         <span class="sr-only">Next</span>
       </a>
