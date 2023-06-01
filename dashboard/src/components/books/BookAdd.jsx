@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { UseFetch } from '../../hooks/UseFetch'
+import React, { useEffect, useState } from 'react';
+import { UseFetch } from '../../hooks/UseFetch';
+import {useFormik} from 'formik';
 
 export const BookAdd = ({}) => {
 
@@ -39,6 +40,15 @@ export const BookAdd = ({}) => {
           });
         }).catch(() => console.error);
       }, []);
+
+      const formik = useFormik ({
+        initialValues: {
+
+        },
+    onSubmit : (values) => {
+      console.log(values)
+    }
+      })
 
     
   return (
