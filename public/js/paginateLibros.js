@@ -13,8 +13,8 @@ const apiGetLibros = "http://localhost:3000/api/libros"
 const getLibros = ({page = 1 } ={}) =>{
   return fetch(`${apiGetLibros}?page=${page}`).then(res => res.json())
 }
-
 const paintLibros = (libros) =>{
+    
     containerLibrosCard.innerHTML= '';
     libros.forEach(libro => {
         const priceFormatARG = libro.precio.toLocaleString("es-AR", {style:"currency", currency:"ARS"})
@@ -89,33 +89,8 @@ window.addEventListener("load", async () => {
     } catch (error) {
         console.log(error);
     }
-    
-    
-  
-
 })
 
-
-/* const handleEventPrevNext = (btnElement, {isNext = false} = {}) => {
-    btnElement.addEventListener('click', async () => {
-        try {
-            let pageAct = pageActive
-            const {
-                data:{ pages, currentPage, libros}
-            } = await getLibros({page : isNext ? ++pageAct  : --pageAct});
-                    paintLibros(libros)    
-                    paintItemsPage({numberPages: pages, itemActive: currentPage})  
-                    statusPrevAndNext({currentPage, pages})
-    
-        } catch (error) {
-            console.log(error);
-        }
-    })
-}
-
-handleEventPrevNext(btnNext, {isNext:true});
-handleEventPrevNext(btnPrev, {pageActive});
- */
 
 
 btnNext.addEventListener('click', async () => {
