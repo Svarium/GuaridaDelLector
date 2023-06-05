@@ -24,11 +24,9 @@ const paintLibros = (libros) =>{
           <td>$ ${libro.precio}</td>
           <td>${libro.autor.nombre}</td>
           <td>
-              <div class="d-flex justify-content-center gap-2">
-                
-                  <a class="btn btn-sm btn-primary" href="products/detail/${libro.id}"><i class="fa-solid fa-eye"></i></a>
-                  <a class="btn btn-sm btn-success" href="products/editar/${libro.id}"><i class="fa-solid fa-edit"></i></a>
-                
+              <div class="d-flex justify-content-center gap-2"> 
+                  <a class="btn  btn-primary" href="products/detail/${libro.id}"><i class="fa-solid fa-eye"></i></a>
+                  <a class="btn  btn-success" href="products/editar/${libro.id}"><i class="fa-solid fa-edit"></i></a>              
               
             <div class="boton-modal detalle-comprar">
                 <label class="btn btn-sm btn-success" for="btn-modal" style="background-color: rgb(199, 54, 66);">

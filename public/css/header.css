@@ -53,6 +53,12 @@
     cursor: pointer;
     }
 
+#cartProfile{
+    color: var(--footer);
+    font-size: 20px;
+    cursor: pointer;
+}
+
 .header__nav__menu--user i:hover{   
         transform: rotate(0.5deg) scale(1.3);
         transition: width 1s, height 1s, transform 2s;

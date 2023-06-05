@@ -19,7 +19,6 @@
           <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
               <a class="nav-link active" href="/" aria-current="page">Ir al Inicio<span class="visually-hidden">(current)</span></a>
-              
               <li class="nav-item dropdown">
                   
                   <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menú</a>
@@ -29,8 +28,11 @@
                     <% if (locals.userLogin && locals.userLogin.rol === 1) { %>
                       <a class="dropdown-item" href="/admin">Dashboard</a>
                   <% } %>
+                  
                   </div>
+                  
                 </li>
+                <a class="nav-link active" href="/cart" aria-current="page"><i id="cartProfile" class="fa-solid fa-cart-shopping"></i><span class="visually-hidden">(current)</span></a>
               
             
             </ul>
