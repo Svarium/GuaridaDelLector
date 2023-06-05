@@ -171,9 +171,12 @@
     justify-content: center;
     align-items: center;
     z-index: 100;
+    box-shadow: 0 0 0;
+    border: none!important;
 }
 #btn-modal:checked ~ .container-modal{
     display: flex;
+    border: none!important;
 }
 .content-modal{
     width: 100%;
@@ -181,15 +184,18 @@
     padding: 20px;
     background-color: #fff;
     border-radius: 4px;
+    border: none!important;
 }
 .content-modal h2{
     margin-bottom: 15px;
+    border: none!important;
 }
 .content-modal p{
     padding: 10px 0px;
     border-top: 1px solid #dbdbdb;
     border-bottom: 1px solid #dbdbdb;
     text-align: center;
+    border: none!important;
 }
 .content-modal .btn-cerrar{
     width: 100%;
@@ -197,6 +203,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    border: none!important;
 }
 .content-modal .btn-cerrar label{
     padding: 10px 10px;
@@ -208,6 +215,7 @@
     font-size: 13px;
     text-align: flex-end;
     font-weight: bolder;
+    border: none!important;
 }
 .btn-cerrar button{
     padding: 10px 10px;
@@ -218,12 +226,14 @@
     transition: all 300ms ease;
     border: none;
     margin: 0 5px;
+    border: none!important;
 }
 
 
 
 .content-modal .btn-cerrar label:hover{
     background-color:#185E83;
+    border: none!important;
 }
 .cerrar-modal{
     width:100%;
@@ -231,6 +241,7 @@
     position: absolute;
     top:0; left: 0;
     z-index: -1;
+    border: none!important;
 }
 
 @media screen and (max-width:800px) {

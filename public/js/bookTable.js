@@ -26,8 +26,8 @@ const paintLibros = (libros) =>{
           <td>
               <div class="d-flex justify-content-center gap-2">
                 
-                  <a class="btn btn-sm btn-primary" href="products/detail/<%= id %>"><i class="fa-solid fa-eye"></i></a>
-                  <a class="btn btn-sm btn-success" href="products/editar/<%= id %>"><i class="fa-solid fa-edit"></i></a>
+                  <a class="btn btn-sm btn-primary" href="products/detail/${libro.id}"><i class="fa-solid fa-eye"></i></a>
+                  <a class="btn btn-sm btn-success" href="products/editar/${libro.id}"><i class="fa-solid fa-edit"></i></a>
                 
               
             <div class="boton-modal detalle-comprar">
@@ -48,7 +48,7 @@ const paintLibros = (libros) =>{
              <h2>¡ATENCION!</h2>
              <p>¿Estas seguro de que deseas eliminar esta publicación?</p>
              <div class="btn-cerrar">
-               <form action="/products/delete/<%= id %>?_method=DELETE" method="POST" >
+               <form action="/products/delete/${libro.id}?_method=DELETE" method="POST" >
                  <button type="submit">ELIMINAR <i class="fa-solid fa-trash"></i></button>
                 </form> 
                  <label for="btn-modal">CANCELAR</label>
