@@ -7,13 +7,11 @@ let { Op } = require('sequelize')
 module.exports = {
     listUser: async (req, res) => {
            try {
-            const page = parseInt(req.query.page) || 1;
-            const limit = parseInt(req.query.limit) || 2;
-            const offset = (page -1) * limit;
-            const users = await getAllUsers(req, {limit, offset});
+           
+            const users = await getAllUsers(req);
             return res.status(200).json({
                 ok: true,            
-                data : users.rows,
+                data : users,
                 meta : {
                     status: 200,
                     total : users.count,

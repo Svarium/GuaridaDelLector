@@ -30,8 +30,7 @@ export const BooksTable = ({books, pages, currentPage, handleGetPage}) => {
       ))
     }
    
-    {/* <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li> */}
+   
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Next" onClick={() => handleGetPage(currentPage + 1)}>
         <span aria-hidden="true">&raquo;</span>
@@ -51,7 +50,8 @@ export const BooksTable = ({books, pages, currentPage, handleGetPage}) => {
             <th scope="col">Precio</th>
             <th scope="col">Autor</th>
             <th scope="col">Genero</th>
-            <th scope="col">Acciones</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Portada</th>
           </tr>
         </thead>
         <tbody>

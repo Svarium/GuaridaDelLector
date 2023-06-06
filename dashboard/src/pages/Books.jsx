@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BooksTable } from '../components/books/BooksTable'
-import { BookAdd } from '../components/books/BookAdd'
+
 import { UseFetch } from "../hooks/UseFetch";
 
 export const Books = () => {
@@ -49,7 +49,7 @@ const handleGetPage = (page) => {
     <div className="card">
       <div className="card-body">
         <div className="row">
-          <div className="col-12 col-md-7">
+          <div className="col-12 col-md-12 col-lg-12">
             <BooksTable books = {state.books}
                         pages = {state.pages}
                         currentPage = {state.currentPage}
@@ -57,7 +57,7 @@ const handleGetPage = (page) => {
              />
           </div>
           <div className="col-12 col-md-5">
-            <BookAdd />
+            
           </div>
         </div>
       </div>

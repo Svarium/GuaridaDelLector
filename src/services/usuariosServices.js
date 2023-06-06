@@ -6,25 +6,20 @@ const {compareSync} = require('bcryptjs');
 
 module.exports ={
 
-    getAllUsers : async (req, options = {limit : 10, offset:0}) =>{
+    getAllUsers : async (req) =>{
         try {
-            const {limit = 10, offset = 0} = options
-            const users = await await db.Usuario.findAndCountAll(
+          
+            const users =  await db.Usuario.findAll(
                 {
                     attributes: {
-                      exclude: ['pass', 'createdAt', 'updatedAt', 'rolId'],
                       include:[
                         literalQueryUrlImage(req,'iconsProfile', 'icon', 'icon' )
                       ]
                     },
                     include : [{
                         association : "rol",
-                        attributes:{
-                            exclude:['id', 'createdAt', 'updatedAt']
-                        }
                     }],
-                   limit,
-                   offset, 
+                  
                   });
             return users
         } catch (error) {

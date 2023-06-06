@@ -29,11 +29,8 @@ import { Root } from '../components/Root'
                 {
                     path: "/Users",
                     element: <Users/>
-                },
-                {
-                    path:"/autors",
-                    element:<Autors/>
                 }
+                
             ]  
         },
     ])
