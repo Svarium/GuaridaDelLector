@@ -2,20 +2,20 @@
   
    {
       "id": 18,
-      "name": "sebastian",
-      "surname": "gallardo",
-      "email": "gallardosebastian@gmail.com",
-      "password": "$2a$10$N5.ORyCeloIX2I.CYITW..JGEU.SgX54pvbnoe.LYUJcxJka/WAyS",
-      "icon": "1678329221802_products_.png",
+      "name": "Tomate",
+      "surname": "Despachurrado",
+      "email": "tomate@gmail.com",
+      "password": "$2b$10$hooqmcEXWcM7RRPj9SI0NeM66CCdcYaTHM8ai7xuZJtwXO7okXw6W",
+      "icon": "1686094132256_user_.jpg",
       "rol": "admin"
    },
    {
       "id": 19,
       "name": "user",
-      "surname": "prueba",
-      "email": "user@gmail.com",
-      "password": "$2a$10$E29yBMXL6Ry5vCmZHsv16uot2NtAtSOYeDvsHucjkI7OxO2QFduw6",
-      "icon": "1680115213969_products_.jpg",
+      "surname": "user",
+      "email": "user2@gmail.com",
+      "password": "$2b$10$7rYC1fdTElx33shEG3Bes.pKpgJ2P.kWsFKpHdF40lTP1Bp6xgrZG",
+      "icon": "1686094222862_user_.webp",
       "rol": "user"
    }
    

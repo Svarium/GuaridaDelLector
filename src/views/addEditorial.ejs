@@ -39,7 +39,7 @@
             <input  class="form-control me-sm-2" type="search" name="search" placeholder="Buscar Libro">
             <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Buscar</button>
           </form> -->       
-          <a href="/"><img src="/images/iconsProfile/<%= userLogin.icon %>" class="icon-dash" alt=""></a>
+          <a href="/"><img src="<%= /http/.test(userLogin.icon) ? userLogin.icon : `/images/iconsProfile/${userLogin.icon}` %>" class="icon-dash" alt=""></a>
         </div>
       </div>
     </nav><br>

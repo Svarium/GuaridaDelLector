@@ -27,18 +27,17 @@ export const Users = () => {
   
 
   return (
-    <div className="container d-flex align-items-center justify-content-center">
+    <div className="container text-center d-flex align-items-center justify-content-center">
     <div className="card">
-      <div className="card-body">
-        <div className="row">
-          <div className="col-12 col-md-12 col-lg-12">
-            <UserTable users = {state.users}             
-             />
-          </div>
-          
+        <div className="card-body">
+            <div className="row justify-content-center">
+                <div className="col-12">
+                    <UserTable users={state.users} />
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
+
   )
 }

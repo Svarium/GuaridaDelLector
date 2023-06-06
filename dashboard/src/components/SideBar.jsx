@@ -55,6 +55,13 @@ export const SideBar = () => {
         </Link>
       </li>
 
+      <li className="nav-item">
+        <Link className="nav-link" to="http://localhost:3000/">
+        <i class="fas fa-home"></i>
+          <span>Inicio</span>
+        </Link>
+      </li>
+
       <hr className="sidebar-divider d-none d-md-block" />
     </ul>
   );

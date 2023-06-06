@@ -73,6 +73,12 @@ ol, ul {
     outline: none; /* Quitar el borde al hacer clic */
   }
 
+  #reactIcon{
+    color: var(--footer);
+    font-size: 20px;
+    cursor: pointer;
+  }
+
 
    /* INIICA ESTILOS TABLAS LICITACIONES */
 

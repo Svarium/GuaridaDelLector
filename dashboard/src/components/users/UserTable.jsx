@@ -19,7 +19,9 @@ export const UserTable = ({users}) => {
             <th scope="col">Email</th>
             <th scope="col">Rol</th>
             <th scope="col">Fecha de creación</th>
-            <th scope="col">Foto de perfil</th>            
+            <th scope="col">Fecha de actualización</th>
+
+            <th  colspan="2" scope="col">Foto de perfil</th>            
           </tr>
         </thead>
         <tbody>
