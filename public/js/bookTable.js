@@ -27,19 +27,17 @@ const paintLibros = (libros) =>{
               <div class="d-flex justify-content-center gap-2"> 
                   <a class="btn  btn-primary" href="products/detail/${libro.id}"><i class="fa-solid fa-eye"></i></a>
                   <a class="btn  btn-success" href="products/editar/${libro.id}"><i class="fa-solid fa-edit"></i></a>              
-              
+                  <form action="/products/delete/${libro.id}?_method=DELETE" method="POST" >
+                 <button type="submit">ELIMINAR <i class="fa-solid fa-trash"></i></button>
+                </form>  
             <div class="boton-modal detalle-comprar">
                 <label class="btn btn-sm btn-success" for="btn-modal" style="background-color: rgb(199, 54, 66);">
                   <i class="fa-solid fa-trash"></i>
                 </label>
-            </div>
-           
-                
+            </div>          
               </div>
       </td>
-        </tr>
-
-        
+        </tr>        
      <input type="checkbox" id="btn-modal">
      <div class="container-modal">
          <div class="content-modal">
@@ -55,16 +53,9 @@ const paintLibros = (libros) =>{
          <label for="btn-modal" class="cerrar-modal"></label>
      </div>
      </input>
-
-   
-      
-        
-       
       </tbody>`;
       bookTable.innerHTML += template
     });
-
-    
 }
 
 
