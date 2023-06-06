@@ -6,8 +6,8 @@
     "start": "node ./src/bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./src/app.js",
-    "db:create": "sequelize db:drop & sequelize db:create & sequelize:migrate",
-    "db:reset": "sequelize db:migrate:undo:all & sequelize db:migrate"
+    "db:create": "sequelize db:drop && sequelize db:create && sequelize db:migrate",
+    "db:reset": "sequelize db:migrate:undo:all && sequelize db:migrate"
   },
   "repository": {
     "type": "git",
