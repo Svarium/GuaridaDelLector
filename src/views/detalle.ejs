@@ -33,39 +33,13 @@
                     </button>
                                      
                 
-                   <% if (locals.userLogin && locals.userLogin.rol === 1) { %> 
-                   <!--Boton para abrir el modal-->
-                
-                <div class="boton-modal detalle-comprar">
-                  <label for="btn-modal">
-                     <i class="fa-solid fa-trash"></i>
-                  </label>
-              </div>
-              <!--Fin de Boton-->
-                       <% } else { %>
-                
-                  <% } %>
+                   
                
             </div>
           </article>
       </section>
 
-              <!--Ventana Modal para consultar si queire elminar producto-->
-    <input type="checkbox" id="btn-modal">
-    <div class="container-modal">
-        <div class="content-modal">
-            <h2>¡ATENCION!</h2>
-            <p>¿Estas seguro de que deseas eliminar este libro?</p>
-            <div class="btn-cerrar">
-              <form action="/products/delete/<%= libro.id %>?_method=DELETE" method="POST" >
-                <button type="submit">ELIMINAR <i class="fa-solid fa-trash"></i></button>
-               </form> 
-                <label for="btn-modal">CANCELAR</i></label>
-            </div>
-        </div>
-        <label for="btn-modal" class="cerrar-modal"></label>
-    </div>
-<!--Fin de Ventana Modal-->
+          
 
 
 <div class="videoReseña">
