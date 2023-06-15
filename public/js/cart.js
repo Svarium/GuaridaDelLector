@@ -4,7 +4,7 @@ const cardsContainer = $('#card-container')
 const clearCart = $('#clear-cart')
 const btnBuy = $('#btn-buy')
 const outputTotal = $('#output-total')
-const URL_API_SERVER= "http://localhost:3000/api/cart"
+const URL_API_SERVER= "https://guarida-del-lector-opxd.onrender.com/api/cart"
 
 const getOrder = () => {
     return fetch(`${URL_API_SERVER}/getOrderPending`, {

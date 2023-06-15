@@ -1,5 +1,5 @@
 const btnAddCart = document.querySelector('#btn-addCart')
-const URL_API_SERVER= "http://localhost:3000/api/cart"
+const URL_API_SERVER= "https://guarida-del-lector-opxd.onrender.com/api/cart"
 
 btnAddCart.addEventListener('click', async ()=> {
   const id = btnAddCart.getAttribute('data-id')
