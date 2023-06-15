@@ -125,7 +125,7 @@ const addProductToCart = async(id) => {
         const objBookId = {
             bookId:id
         }
-   const {ok} = await fetch(`${URL_API_SERVER}/addProduct`, {
+   const {ok} = await fetch(`${URL_API_SERVER}/api/cart/addProduct`, {
             method:"POST",
             body: JSON.stringify(objBookId),
             headers:{
