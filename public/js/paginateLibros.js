@@ -4,12 +4,12 @@ const btnPrev = $('#btn-prev')
 const btnNext = $('#btn-next')
 const containerItemPage = $('#container-items-page')
 const containerLibrosCard = $('#container-libros-card')
-const URL_API_SERVER= "http://localhost:3000/api/cart"
+const URL_API_SERVER= "https://guarida-del-lector-opxd.onrender.com"
 
 let pageActive=1;
 
 
-const apiGetLibros = "http://localhost:3000/api/libros"
+const apiGetLibros = `${URL_API_SERVER}/api/libros`
 const getLibros = ({page = 1 } ={}) =>{
   return fetch(`${apiGetLibros}?page=${page}`).then(res => res.json())
 }
